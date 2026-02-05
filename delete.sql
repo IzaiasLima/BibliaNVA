@@ -1,0 +1,2 @@
+-- select book, chapter from bible where book = 19 and verse = 0;
+-- delete from bible where book in (2, 5, 9, 14, 24);
