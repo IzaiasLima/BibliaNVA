@@ -1,24 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Bíblia Livre - Versão NVA</title>
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <link rel="stylesheet" href="./css/styles.css">
+
     </head>
 
+    <style>
+        body {
+            background: rgb(1, 73, 104, 0.5);
+        }
+    </style>
+
     <body>
-        <h1>Bíblia Livre - Versão NVA</h1>
-        <h2>
-            <ul>
-                <li>
-                    <a href="/pages/livros.html">Lista de livros</a>
-                </li>
-                <li>
-                    <a href="/pages/sobre.html">Sobre a API</a>
-                </li>
-            </ul>
-        </h2>
+        <div hx-on="htmx:configRequest: event.detail.headers=''; 
+        event.detail.headers['Content-Type']='application/x-www-form-urlencoded; 
+        charset=UTF-8'" />
+        <div class="container">
+            <div class="content">
+                <!-- <div class="spinner">
+                    <img src="./icons/spinner.svg">
+                </div> -->
+
+                <div class="hero">
+                    <img src="./images/biblia_nva_alfa.png" alt="">
+                </div>
+
+                <div id="toast" class="animate__animated animate__faster">
+                    <!-- Exibir mensagem de erro -->
+                </div>
+            </div>
+            <footer>
+                <div class="footer">
+                    <a href="/pages/books.html">
+                        <img class="icon" src="./icons/book.svg" alt="livros">
+                    </a>
+                    <a href="/pages/about.html">
+                        <img class="icon" src="./icons/license.svg" alt="license">
+                    </a>
+                </div>
+            </footer>
+        </div>
+
+        <script src="https://unpkg.com/htmx.org@1.9.10"
+            integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+            crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/htmx.org/dist/ext/client-side-templates.js"></script>
+        <script src="https://unpkg.com/mustache@latest"></script>
+        <script src="./js/functions.js"></script>
+
     </body>
 
 </html>

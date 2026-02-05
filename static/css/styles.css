@@ -1,13 +1,13 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:wght@300&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 
 :root {
     --body-color: #efefef;
     --border-color: rgba(26, 86, 48, 0.2);
     --bg-color: linear-gradient(135deg, #f9fcff, #cde4fc);
-    --bg-card-color: linear-gradient(135deg, #adf1ff, #016168);
+    --bg-card-color: linear-gradient(135deg, #adf1ff, #014968);
     --bg-menu: rgba(82, 138, 157, 0.2);
-    --bg-footer: rgb(1, 97, 104, 0.9);
+    --bg-footer: rgb(1, 73, 104, 0.8);
+    --bg-hero: rgb(1, 73, 104, 1);
     --bg-primary: #fff;
     --bg-secondary: #eeeeee;
     --btn-primary: #014968;
@@ -24,7 +24,6 @@
 
 * {
     font-family: Figtree, "Noto Sans", sans-serif;
-    /* font-family: Poppins, "Noto Sans", sans-serif; */
     color: var(--font-primary);
     border: solid 0px transparent;
     box-sizing: border-box;
@@ -62,12 +61,19 @@ body {
 .content {
     display: flex;
     flex-direction: column;
-    padding: 50px 5px;
+    padding: 60px 5px;
     flex-wrap: wrap;
 
     @media (width < 768px) {
         width: 100%;
     }
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
 }
 
 .title {
@@ -258,6 +264,14 @@ footer {
     background: var(--bg-footer);
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(7px);
+}
+
+.footer {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+
+
 }
 
 .footer a {

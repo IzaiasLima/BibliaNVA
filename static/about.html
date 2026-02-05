@@ -8,21 +8,12 @@
         <link rel="stylesheet" href="./css/styles.css">
 
         <style>
-            /* body {
-                margin-bottom: 80px;
-            } */
-
             a {
                 text-decoration: none;
                 color: var(--secondary);
             }
 
-            /* h1 {
-                font-size: 1.5rem;
-            } */
-
             h2 {
-                /* font-size: 1.2rem; */
                 text-align: start;
             }
 
@@ -37,7 +28,7 @@
         <div class="container">
             <div class="content">
                 <div class="header">
-                    <a href="/pages/livros.html">
+                    <a onclick="history.go(-1);">
                         <img src="./icons/chevron-left.svg" class="icon icon-menu">
                     </a>
                     <h1 class="title">Sobre a Bíblia NVA</h1>
@@ -60,7 +51,8 @@
 
                 <div class="sobre">
                     <h2> Motivação </h2>
-                    <p>Dado que exite o <a href="https://www.biblianva.com.br/" target="_blank">site oficial</a>,
+                    <p>Dado que exite o <a href="https://www.biblianva.com.br/" target="_blank"
+                            rel="noopener noreferrer">site oficial</a>,
                         por que este projeto seria necessário?
                     </p>
                     <p>Por dois motivos:</p>
@@ -68,18 +60,15 @@
                         <li>O site oficial não é otimizado para o uso em telas pequenas. Como
                             <a href="https://www.nic.br/noticia/na-midia/celular-e-unico-meio-de-acesso-para-62-dos-usuarios-de-internet-no-brasil/"
                                 target="_blank">mais de 60% das pessoas</a>, no Brasil, acessam a Web apenas por meio do
-                            celular
-                            (além daqueles
-                            que usam mais de uma forma de acesso), me propus a espelhar o conteúdo oficial da Bíblia NVA
-                            em uma
-                            aplicação PWA, que proporcionará uma experiência melhor para esses usuários.
+                            celular (além daqueles que usam mais de uma forma de acesso), me propus a espelhar o
+                            conteúdo oficial da Bíblia NVA em uma aplicação PWA, que proporcionará uma experiência
+                            melhor para esses usuários.
                         </li>
                         <li>
                             Permitir que o texto seja consultado por meio de uma API. Ainda que não tenha a pretensão de
-                            ser um
-                            local de consultas massivas, pois não poderia dar conta de um tráfego intenso, considero
-                            relevante
-                            oferecer a possibilidade desse tipo acesso para esta valiosa versão do texto bíblico.
+                            ser um local de consultas massivas, pois não poderia dar conta de um tráfego intenso,
+                            considero relevante oferecer a possibilidade desse tipo acesso para esta valiosa versão do
+                            texto bíblico.
                         </li>
                     </ol>
                 </div>
@@ -92,17 +81,11 @@
                     <ul>
                         <li> <b>/biblia</b> para a lista dos livros </li>
                         <li> <b>/biblia/{book}</b> para a lista dos capítulos de um livro, onde {book} é a sigla do
-                            livro.
-                            Exemplo:
-                            Mt, 1Co.</li>
+                            livro. Exemplo: Mt, 1Co.</li>
                         <li> <b>/biblia/{book}/{chapter}</b> para a lista de todos versículos do capítulo, onde
-                            {chapter} é
-                            o número
-                            do capítulo.</li>
+                            {chapter} é o número do capítulo.</li>
                         <li> <b>/biblia/{book}/{chapter}/{verses}</b> para acessar um ou mais versículos, onde /{verses}
-                            é o
-                            número
-                            de um versículo ou uma lista de versículos.<br>
+                            é o número de um versículo ou uma lista de versículos.<br>
                             Exemplos:
                             <a href="/biblia/jó/1/22">/biblia/jó/1/22;</a>
                             <a href="/biblia/jo/14/1-3">/biblia/jo/14/1-3;</a>
@@ -115,21 +98,46 @@
                     <h2>Termos de Uso</h2>
 
                     <p>
-                        Este serviço é gratuito, disponível para uso por qualquer pessoa, desde que não haja abuso. Este
-                        serviço tem um limite de requisições por segundo. Não use esta API para baixar a Bíblia inteira.
-                        Em
-                        vez disso, obtenha os dados da fonte original, informada no site oficial da NVA. Também não use
-                        os
-                        nossos <i>endpoints</i> como <i>backend</i> para uma aplicação que tenha alta demanda de
-                        acessos.
+                        Este serviço é gratuito, disponível para uso por qualquer pessoa, desde que não haja abuso em
+                        sua utlização. O serviço tem um limite de requisições por segundo, portanto não use esta API
+                        para baixar a Bíblia inteira. Em vez disso, obtenha os dados da fonte original, informada no
+                        site oficial da NVA. Também não use os nossos <i>endpoints</i> como <i>backend</i> para uma
+                        aplicação que tenha alta demanda de acessos.
                     </p>
 
                     <p>
                         Não há garantia de disponibilidade, qualidade ou a corretude deste serviço. O serviço pode ficar
                         fora do ar ocasionalmente, pois é disponibilizado apenas como um hobby. O código e os dados
-                        deste
-                        site/aplicativo estão disponíveis, caso você mesmo prefira hospedá-lo.
+                        deste site/aplicativo estão disponíveis no repositário do
+                        <a href="https://github.com/IzaiasLima/BibliaNVA.git" target="_blank"
+                            ref="noopener noreferrer">GitHub</a>, caso você mesmo prefira hospedá-lo.
                     </p>
+                </div>
+
+                <div class="sobre">
+                    <h2>O código deste site/aplicativo foi liberado sob a Licença MIT</h2>
+
+                    <p><b>MIT License</b></p>
+
+                    <p>Copyright (c) 2026 Izaias Moreira Lima</p>
+
+                    <p>Permission is hereby granted, free of charge, to any person obtaining a copy
+                        of this software and associated documentation files (the "Software"), to deal
+                        in the Software without restriction, including without limitation the rights
+                        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+                        copies of the Software, and to permit persons to whom the Software is
+                        furnished to do so, subject to the following conditions:</p>
+
+                    <p>The above copyright notice and this permission notice shall be included in all
+                        copies or substantial portions of the Software.</p>
+
+                    <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+                        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+                        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+                        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+                        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+                        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+                        SOFTWARE.</p>
                 </div>
             </div>
     </body>
