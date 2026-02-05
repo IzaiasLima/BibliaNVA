@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Lista de Livros</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <link rel="stylesheet" href="./css/styles.css">
+
+    </head>
+
+    <body>
+        <div hx-on="htmx:configRequest: event.detail.headers=''; 
+        event.detail.headers['Content-Type']='application/x-www-form-urlencoded; 
+        charset=UTF-8'" />
+        <div class="container">
+            <div class="content">
+                <div class="" hx-ext="client-side-templates" hx-get="/biblia" hx-trigger="load" hx-swap="innerText"
+                    mustache-array-template="livros">
+
+                    <div class="spinner">
+                        <img src="./icons/spinner.svg">
+                    </div>
+
+                </div>
+
+                <template id="livros">
+                    <div id="data-render">
+                        <div class="header">
+                            <a href="/pages/index.html">
+                                <img src="./icons/chevron-left.svg" class="icon icon-menu">
+                            </a>
+                            <h1 class="title">Bíblia NVA</h1>
+                        </div>
+
+                        <ul class="columns">
+                            {{#data}}
+                                {{#old}}
+                                    <li>
+                                        <div>
+                                            <a hx-ext="client-side-templates" hx-get="/biblia/{{bookAbbr}}"
+                                                hx-trigger="click" hx-swap="innerText" hx-target="#data-render"
+                                                mustache-array-template="chapters-list">
+                                                {{bookName}}
+                                            </a>
+                                        </div>
+                                    </li>
+                                {{/old}}
+                            {{/data}}
+                        </ul>
+
+                        <hr>
+
+                        <ul class="columns">
+                            {{#data}}
+                                {{#new}}
+                                    <li>
+                                        <div>
+                                            <a hx-ext="client-side-templates" hx-get="/biblia/{{bookAbbr}}"
+                                                hx-trigger="click" hx-swap="innerText" hx-target="#data-render"
+                                                mustache-array-template="chapters-list">
+                                                {{bookName}}
+                                            </a>
+                                        </div>
+                                    </li>
+                                {{/new}}
+                            {{/data}}
+                        </ul>
+                    </div>
+                </template>
+
+                <template id="chapters-list">
+                    <div id="chapter-render">
+                        {{#data}}
+                            <div class="header">
+                                <a href="/pages/livros.html">
+                                    <img src="./icons/chevron-left.svg" class="icon icon-menu">
+                                </a>
+                                <h2 class="title"> {{bookName}} </h2>
+                            </div>
+                            <div class="books">
+                                <!-- <h2 class="title"> {{bookName}} </h2> -->
+                                <div class="chapters">
+                                    {{#chapters}}
+                                        <a class="chapter" href="/biblia/{{bookAbbr}}/{{.}}"
+                                            hx-ext="client-side-templates" hx-get="/biblia/{{bookAbbr}}/{{.}}"
+                                            hx-trigger="click" hx-swap="innerText" hx-target="#chapter-render"
+                                            mustache-array-template="chapter-template">{{.}}
+                                        </a>
+                                    {{/chapters}}
+                                </div>
+                            </div>
+                        {{/data}}
+                    </div>
+                </template>
+
+                <template id="chapter-template">
+                    {{#data}}
+                        <div class="header">
+                            <a hx-ext="client-side-templates" hx-get="/biblia/{{bookAbbr}}" hx-trigger="click"
+                                hx-swap="innerText" hx-target="#data-render" mustache-array-template="chapters-list">
+                                <img src="./icons/chevron-left.svg" class="icon">
+                            </a>
+                            <h3 class="title">{{bookName}}, {{verses.0.chapter}}</h3>
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="./icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="./icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- <div class="title">
+                            <h2>{{bookName}}, {{verses.0.chapter}}</h2>
+                        </div> -->
+
+                        <div class="verses">
+
+                            <p class="title">{{title}}</p>
+
+                            {{#verses}}
+                                <p class="verse">
+                                    <span class="number">{{verse}}</span>&ensp;<span>{{text}}</span>
+                                </p>
+                            {{/verses}}
+                        </div>
+                    {{/data}}
+                </template>
+
+                <div id="toast" class="animate__animated animate__faster">
+                    <!-- Exibir mensagem de erro -->
+                </div>
+            </div>
+            <footer>
+                <div class="footer">
+                    <a href="/pages/sobre.html">Sobre a Bíblia Livre</a>
+                </div>
+            </footer>
+        </div>
+
+        <script src="https://unpkg.com/htmx.org@1.9.10"
+            integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+            crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/htmx.org/dist/ext/client-side-templates.js"></script>
+        <script src="https://unpkg.com/mustache@latest"></script>
+        <script src="./js/functions.js"></script>
+
+    </body>
+
+</html>
