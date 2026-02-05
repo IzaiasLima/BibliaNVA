@@ -1,0 +1,17 @@
+{
+    "sqltools.useNodeRuntime": true,
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "database",
+            "database": "database.db"
+        },
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "bible_bkp.db",
+            "name": "Backup"
+        }
+    ]
+}
