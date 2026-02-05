@@ -12,3 +12,6 @@ wheels/
 #git-sources & db-files
 *.db
 /sources/pt-br*
+
+# Environments
+.env
