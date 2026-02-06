@@ -20,7 +20,7 @@
                 <div class="" hx-ext="client-side-templates" hx-get="/biblia" hx-trigger="load" hx-swap="innerText"
                     mustache-array-template="livros">
 
-                    <div class="spinner">
+                    <div id="spinner">
                         <img src="./icons/spinner.svg">
                     </div>
 
@@ -35,6 +35,10 @@
                             <h1 class="title">Bíblia NVA</h1>
                         </div>
 
+                        <div id="spinner">
+                            <img src="./icons/spinner.svg">
+                        </div>
+
                         <ul class="columns">
                             {{#data}}
                                 {{#old}}
@@ -42,7 +46,7 @@
                                         <div>
                                             <a hx-ext="client-side-templates" hx-get="/biblia/{{bookAbbr}}"
                                                 hx-trigger="click" hx-swap="innerText" hx-target="#data-render"
-                                                mustache-array-template="chapters-list">
+                                                mustache-array-template="chapters-list" onclick="showSpinner()">
                                                 {{bookName}}
                                             </a>
                                         </div>
@@ -60,7 +64,7 @@
                                         <div>
                                             <a hx-ext="client-side-templates" hx-get="/biblia/{{bookAbbr}}"
                                                 hx-trigger="click" hx-swap="innerText" hx-target="#data-render"
-                                                mustache-array-template="chapters-list">
+                                                mustache-array-template="chapters-list" onclick="showSpinner()">
                                                 {{bookName}}
                                             </a>
                                         </div>
@@ -73,6 +77,11 @@
 
                 <template id="chapters-list">
                     <div id="chapter-render">
+
+                        <div id="spinner">
+                            <img src="./icons/spinner.svg">
+                        </div>
+
                         {{#data}}
                             <div class="header">
                                 <a href="/pages/books.html">
@@ -81,13 +90,12 @@
                                 <h2 class="title"> {{bookName}} </h2>
                             </div>
                             <div class="books">
-                                <!-- <h2 class="title"> {{bookName}} </h2> -->
                                 <div class="chapters">
                                     {{#chapters}}
-                                        <a class="chapter" href="/biblia/{{bookAbbr}}/{{.}}"
-                                            hx-ext="client-side-templates" hx-get="/biblia/{{bookAbbr}}/{{.}}"
-                                            hx-trigger="click" hx-swap="innerText" hx-target="#chapter-render"
-                                            mustache-array-template="chapter-template">{{.}}
+                                        <a class="chapter" hx-ext="client-side-templates"
+                                            hx-get="/biblia/{{bookAbbr}}/{{.}}" hx-trigger="click" hx-swap="innerText"
+                                            hx-target="#chapter-render" mustache-array-template="chapter-template"
+                                            onclick="showSpinner()">{{.}}
                                         </a>
                                     {{/chapters}}
                                 </div>
@@ -113,10 +121,6 @@
                                 </a>
                             </div>
                         </div>
-
-                        <!-- <div class="title">
-                            <h2>{{bookName}}, {{verses.0.chapter}}</h2>
-                        </div> -->
 
                         <div class="verses">
 

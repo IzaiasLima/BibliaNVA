@@ -67,7 +67,8 @@ def get_chapters(book: str, db: Session = Depends(get_db)):
 
         return chapters
 
-    except Exception:
+    except Exception as e:
+        print(e)
         return ChaptersSchema(bookName="", chapters=[])
 
 

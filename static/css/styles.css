@@ -80,7 +80,6 @@ body {
     flex-grow: 1;
     margin: 0;
     padding-right: 90px;
-    /* font-size: 1.1rem; */
     font-weight: 500;
     text-align: center;
 
@@ -441,12 +440,37 @@ button.swal2-cancel {
     display: none;
 }
 
-.spinner {
+/* .spinner {
     display: flex;
     height: 70vh;
     flex-wrap: wrap;
     justify-content: center;
+} */
+
+#spinner {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    img {
+        display: none;
+        width: 120px;
+    }
 }
+
+#spinner.show {
+    display: flex;
+    justify-content: center;
+
+    img {
+        display: block;
+    }
+}
+
 
 .spinner img {
     width: 120px;

@@ -48,6 +48,12 @@ function hideDetail() {
     info.classList.remove('show', 'animate__fadeInUp');
 }
 
+function showSpinner() {
+    spinner = document.getElementById("spinner");
+    spinner.classList.add("show");
+}
+
+
 function allowsEditing(obj) {
     const editing = document.querySelector('.editing');
 
