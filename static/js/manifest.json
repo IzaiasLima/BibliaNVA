@@ -2,7 +2,7 @@
   "name": "Bíblia Tradução de Acesso Livre (NVA)",
   "short_name": "Bíblia NVA",
   "description": "Aplicativo com a Bíblia Tradução de Acesso Livre (NVA) com API e com UI para telas pequenas.",
-  "start_url": "/pages/",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#014968",
   "theme_color": "#000000",
