@@ -1,6 +1,6 @@
 // Ativa o Service Worker que permite e site ser instalado como APP (PWA)
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/pages/js/service-worker.js')
+    navigator.serviceWorker.register('../js/service-worker.js')
         .then(reg => console.log('Service Worker registrado'))
         .catch(err => console.log('Erro:', err));
 }
