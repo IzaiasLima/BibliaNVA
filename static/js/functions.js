@@ -27,13 +27,12 @@ document.addEventListener(
     }
 );
 
+document.addEventListener('swiped-up', function (evt) {
+    const prev = document.getElementById("prev-book");
 
-document.addEventListener('swiped-left', function (evt) {
-    const next = document.getElementById("next-book");
+    if (!prev) return;
 
-    if (!next) return;
-
-    getChapters(next.innerHTML.trim());
+    getChapters(prev.innerHTML.trim());
 });
 
 document.addEventListener('swiped-right', function (evt) {
@@ -44,6 +43,20 @@ document.addEventListener('swiped-right', function (evt) {
     getChapters(prev.innerHTML.trim());
 });
 
+document.addEventListener('swiped-down', function (evt) {
+    const next = document.getElementById("next-book");
+
+    if (!next) return;
+
+    getChapters(next.innerHTML.trim());
+});
+document.addEventListener('swiped-left', function (evt) {
+    const next = document.getElementById("next-book");
+
+    if (!next) return;
+
+    getChapters(next.innerHTML.trim());
+});
 
 document.addEventListener('htmx:responseError', evt => {
     error = JSON.parse(evt.detail.xhr.responseText);

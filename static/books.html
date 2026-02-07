@@ -104,26 +104,26 @@
                             </div>
 
                             <nav class="navigation">
+                                <span id="prev-book">{{prevBook}}</span>
+                                <span id="next-book">{{nextBook}}</span>
                                 <!-- previous book -->
-                                <div class="arrow-left">
+                                <!--  <div class="arrow-left">
                                     <a id="prev-book" hx-ext="client-side-templates" hx-get="/biblia/{{prevBook}}"
                                         hx-trigger="click" hx-swap="innerText" hx-target="#data-render"
                                         mustache-array-template="chapters-list" onclick="showSpinner()">
                                         {{prevBook}}
                                     </a>
-                                </div>
+                                </div> -->
 
                                 <!-- next book -->
-                                <div class="arrow-right">
+                                <!-- <div class="arrow-right">
                                     <a id="next-book" hx-ext="client-side-templates" hx-get="/biblia/{{nextBook}}"
                                         hx-trigger="click" hx-swap="innerText" hx-target="#data-render"
                                         mustache-array-template="chapters-list" onclick="showSpinner()">
                                         {{nextBook}}
                                     </a>
-                                </div>
+                                </div> -->
                             </nav>
-                            <!-- </div> -->
-                            <!-- </div> -->
 
                         {{/data}}
                     </div>
