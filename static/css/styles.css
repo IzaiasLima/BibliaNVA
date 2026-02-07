@@ -22,38 +22,6 @@
     --success: #5c954f;
 }
 
-
-.arrow-left,
-.arrow-right {
-    width: 60px;
-    height: 40px;
-    padding-right: 10px;
-    padding-left: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    background-color: var(--btn-primary);
-    background-size: cover;
-    background-position: top left;
-    clip-path: polygon(75% 0, 100% 47%, 75% 100%, 0 100%, 0 0);
-    -webkit-clip-path: polygon(75% 0, 100% 47%, 75% 100%, 0 100%, 0 0);
-
-    a {
-        color: var(--btn-font-primary);
-    }
-}
-
-.arrow-left {
-    padding-left: 10px;
-    padding-right: 0;
-    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
-    -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
-}
-
-
-
-
 * {
     font-family: Figtree, "Noto Sans", sans-serif;
     color: var(--font-primary);
@@ -120,7 +88,6 @@ body {
     }
 }
 
-
 h1 {
     font-size: 1.3rem;
 }
@@ -130,7 +97,6 @@ h2 {
     font-size: 1.2rem;
     text-align: center;
 }
-
 
 h3 {
     flex-grow: 1;
@@ -179,6 +145,34 @@ h3 {
     justify-content: space-between;
     padding: 20px 40px;
     gap: 5px
+}
+
+.arrow-left,
+.arrow-right {
+    width: 60px;
+    height: 40px;
+    padding-right: 10px;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    background-color: var(--btn-primary);
+    background-size: cover;
+    background-position: top left;
+    clip-path: polygon(75% 0, 100% 47%, 75% 100%, 0 100%, 0 0);
+    -webkit-clip-path: polygon(75% 0, 100% 47%, 75% 100%, 0 100%, 0 0);
+
+    a {
+        color: var(--btn-font-primary);
+    }
+}
+
+.arrow-left {
+    padding-left: 10px;
+    padding-right: 0;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+    -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
 }
 
 .chapters {
