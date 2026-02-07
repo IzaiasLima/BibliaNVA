@@ -4,7 +4,7 @@
   "description": "Aplicativo com a Bíblia Tradução de Acesso Livre (NVA) com API e com UI para telas pequenas.",
   "start_url": "/pages/",
   "display": "standalone",
-  "background_color": "#014968;",
+  "background_color": "#014968",
   "theme_color": "#000000",
   "icons": [
     {
