@@ -6,10 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
         <title>Bíblia NVA - Lista de Livros</title>
-        <link rel="manifest" href="../js/manifest.json">
-        <link rel="icon" href="../icons/favicon.png" type="image/x-icon">
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-        <link rel="stylesheet" href="./css/styles.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
 
     </head>
 
@@ -23,7 +23,7 @@
                     mustache-array-template="livros">
 
                     <div id="spinner">
-                        <img src="./icons/spinner.svg">
+                        <img src="/pages/icons/spinner.svg">
                     </div>
 
                 </div>
@@ -32,13 +32,13 @@
                     <div id="data-render">
                         <div class="header">
                             <a href="/pages/index.html">
-                                <img src="./icons/chevron-left.svg" class="icon icon-menu">
+                                <img src="/pages/icons/chevron-left.svg" class="icon icon-menu">
                             </a>
                             <h1 class="title">Bíblia NVA</h1>
                         </div>
 
                         <div id="spinner">
-                            <img src="./icons/spinner.svg">
+                            <img src="/pages/icons/spinner.svg">
                         </div>
 
                         <ul class="columns">
@@ -81,13 +81,13 @@
                     <div id="chapter-render">
 
                         <div id="spinner">
-                            <img src="./icons/spinner.svg">
+                            <img src="/pages/icons/spinner.svg">
                         </div>
 
                         {{#data}}
                             <div class="header">
                                 <a href="/pages/books.html">
-                                    <img src="./icons/chevron-left.svg" class="icon icon-menu">
+                                    <img src="/pages/icons/chevron-left.svg" class="icon icon-menu">
                                 </a>
                                 <h2 class="title"> {{bookName}} </h2>
                             </div>
@@ -134,15 +134,15 @@
                         <div class="header">
                             <a hx-ext="client-side-templates" hx-get="/biblia/{{bookAbbr}}" hx-trigger="click"
                                 hx-swap="innerText" hx-target="#data-render" mustache-array-template="chapters-list">
-                                <img src="./icons/chevron-left.svg" class="icon">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
                             </a>
                             <h3 class="title">{{bookName}}, {{verses.0.chapter}}</h3>
                             <div class="icon-alpha">
                                 <a onclick="decFontSize()">
-                                    <img src="./icons/text-decrease.svg" class="icon text-decrease">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
                                 </a>
                                 <a onclick="incFontSize()">
-                                    <img src="./icons/text-increase.svg" class="icon text-increase">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
                                 </a>
                             </div>
                         </div>
@@ -171,11 +171,11 @@
             </footer>
         </div>
 
-        <script src="./js/htmx.min.js"></script>
-        <script src="./js/mustache.min.js"></script>
-        <script src="./js/client-side-templates.min.js"></script>
-        <script src="./js/functions.js"></script>
-        <script src="./js/swiped.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/swiped.js"></script>
 
     </body>
 
