@@ -68,6 +68,14 @@ bookIds = {
 }
 
 
+# booksAbbr = {v: k for k, v in bookIds.items()}
+
+
+def booksAbbr(id):
+    abbr = next((k for k, v in bookIds.items() if v == id), "")
+    return abbr
+
+
 booksNames = {
     1: "Gênesis",
     2: "Êxodo",

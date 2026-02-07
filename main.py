@@ -7,7 +7,7 @@ import uvicorn
 from db import get_db
 from models import BibleORM
 from schemas import ListVersesSchema, ListBibleSchema, ChaptersSchema, BooksSchema
-from utils import bookIds, booksNames
+from utils import bookIds, booksAbbr, booksNames
 
 app = FastAPI()
 
@@ -46,30 +46,33 @@ def get_books():
 # Endpoints
 @app.get("/biblia/{book}", response_model=ChaptersSchema)
 def get_chapters(book: str, db: Session = Depends(get_db)):
+    bookId = bookIds.get(book.upper(), 0)
+
     try:
         data = (
             db.query(BibleORM.chapter)
             .filter(
-                BibleORM.book == bookIds.get(book.upper(), 0),
+                BibleORM.book == bookId,
             )
             .distinct()
             .all()
         )
+
         chapters = (
             ChaptersSchema(
-                bookName=booksNames.get(bookIds.get(book.upper(), 0), ""),
+                bookName=booksNames.get(bookId, ""),
                 bookAbbr=book.upper(),
                 chapters=[chapter for (chapter,) in data],
+                prevBook=booksAbbr(bookId - 1),
+                nextBook=booksAbbr(bookId + 1),
             )
             if data
-            else ChaptersSchema(bookName="", chapters=[])
+            else ChaptersSchema(chapters=[])
         )
-
         return chapters
 
-    except Exception as e:
-        print(e)
-        return ChaptersSchema(bookName="", chapters=[])
+    except Exception:
+        return ChaptersSchema()
 
 
 @app.get("/biblia/{book}/{chapter}", response_model=ListVersesSchema)

@@ -102,7 +102,7 @@ def converter():
                 "Êxodo",
                 "Deuteronômio",
                 "2 Crônicas",
-                "1 Samuael",
+                "1 Samuel",
                 "Jeremias",
             ]:
                 continue

@@ -14,6 +14,8 @@ class ChaptersSchema(BaseModel):
     bookName: str
     bookAbbr: str
     chapters: list[int]
+    prevBook: str
+    nextBook: str
 
     class Config:
         from_attributes = True

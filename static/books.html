@@ -43,7 +43,7 @@
                             {{#data}}
                                 {{#old}}
                                     <li>
-                                        <div>
+                                        <div id="book-names">
                                             <a hx-ext="client-side-templates" hx-get="/biblia/{{bookAbbr}}"
                                                 hx-trigger="click" hx-swap="innerText" hx-target="#data-render"
                                                 mustache-array-template="chapters-list" onclick="showSpinner()">
@@ -100,6 +100,29 @@
                                     {{/chapters}}
                                 </div>
                             </div>
+
+                            <nav class="navigation">
+                                <!-- previous book -->
+                                <div class="arrow-left">
+                                    <a id="prev-book" hx-ext="client-side-templates" hx-get="/biblia/{{prevBook}}"
+                                        hx-trigger="click" hx-swap="innerText" hx-target="#data-render"
+                                        mustache-array-template="chapters-list" onclick="showSpinner()">
+                                        {{prevBook}}
+                                    </a>
+                                </div>
+
+                                <!-- next book -->
+                                <div class="arrow-right">
+                                    <a id="next-book" hx-ext="client-side-templates" hx-get="/biblia/{{nextBook}}"
+                                        hx-trigger="click" hx-swap="innerText" hx-target="#data-render"
+                                        mustache-array-template="chapters-list" onclick="showSpinner()">
+                                        {{nextBook}}
+                                    </a>
+                                </div>
+                            </nav>
+                            <!-- </div> -->
+                            <!-- </div> -->
+
                         {{/data}}
                     </div>
                 </template>
@@ -146,12 +169,11 @@
             </footer>
         </div>
 
-        <script src="https://unpkg.com/htmx.org@1.9.10"
-            integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
-            crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/htmx.org/dist/ext/client-side-templates.js"></script>
-        <script src="https://unpkg.com/mustache@latest"></script>
+        <script src="./js/htmx.min.js"></script>
+        <script src="./js/mustache.min.js"></script>
+        <script src="./js/client-side-templates.min.js"></script>
         <script src="./js/functions.js"></script>
+        <script src="./js/swiped.js"></script>
 
     </body>
 

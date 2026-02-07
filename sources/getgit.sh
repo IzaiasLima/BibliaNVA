@@ -15,6 +15,7 @@ REPOS=(
 	'2jn'
 	'2ki'
 	'2pe'
+	'1sa'
 	'2sa'
 	'2th'
 	'2ti'

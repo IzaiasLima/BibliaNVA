@@ -1,3 +1,9 @@
+// Ativa o Service Worker que permite e site ser instalado como APP (PWA)
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/pages/js/service-worker.js')
+        .then(reg => console.log('Service Worker registrado'))
+        .catch(err => console.log('Erro:', err));
+}
 
 document.addEventListener(
     "htmx:confirm",
@@ -21,10 +27,47 @@ document.addEventListener(
     }
 );
 
+
+document.addEventListener('swiped-left', function (evt) {
+    const next = document.getElementById("next-book");
+
+    if (!next) return;
+
+    getChapters(next.innerHTML.trim());
+});
+
+document.addEventListener('swiped-right', function (evt) {
+    const prev = document.getElementById("prev-book");
+
+    if (!prev) return;
+
+    getChapters(prev.innerHTML.trim());
+});
+
+
 document.addEventListener('htmx:responseError', evt => {
     error = JSON.parse(evt.detail.xhr.responseText);
     showToast(error.detail);
 });
+
+
+function getChapters(book) {
+    htmx.ajax('GET', `/biblia/${book}`, {
+        handler: function (elm, response) {
+            if (response.xhr.status >= 400) {
+                showToast(`Os dados não estão disponíveis! (${response.xhr.statusText} Error.)`, true);
+                return
+            }
+            const data = JSON.parse(response.xhr.responseText);
+
+            if (!data.bookAbbr) return
+
+            const template = document.getElementById('chapters-list').innerHTML;
+            const result = document.getElementById('data-render');
+            result.innerHTML = Mustache.render(template, { data: data });
+        }
+    });
+}
 
 
 function showToast(msg) {

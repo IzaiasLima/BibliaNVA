@@ -22,6 +22,38 @@
     --success: #5c954f;
 }
 
+
+.arrow-left,
+.arrow-right {
+    width: 60px;
+    height: 40px;
+    padding-right: 10px;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    background-color: var(--btn-primary);
+    background-size: cover;
+    background-position: top left;
+    clip-path: polygon(75% 0, 100% 47%, 75% 100%, 0 100%, 0 0);
+    -webkit-clip-path: polygon(75% 0, 100% 47%, 75% 100%, 0 100%, 0 0);
+
+    a {
+        color: var(--btn-font-primary);
+    }
+}
+
+.arrow-left {
+    padding-left: 10px;
+    padding-right: 0;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+    -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+}
+
+
+
+
 * {
     font-family: Figtree, "Noto Sans", sans-serif;
     color: var(--font-primary);
@@ -29,7 +61,8 @@
     box-sizing: border-box;
 }
 
-html {
+html,
+body {
     margin: 0;
     padding: 0;
     font-size: 24px;
@@ -58,6 +91,10 @@ body {
     align-items: center;
 }
 
+.container.home {
+    background: rgb(1, 73, 104, 0.5);
+}
+
 .content {
     display: flex;
     flex-direction: column;
@@ -73,20 +110,16 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
-}
+    align-content: center;
+    flex-wrap: wrap;
+    /* height: 100vh; */
+    padding-bottom: 100px;
 
-.title {
-    flex-grow: 1;
-    margin: 0;
-    padding-right: 90px;
-    font-weight: 500;
-    text-align: center;
-
-    @media (width < 768px) {
-        padding-right: 24px;
+    img {
+        width: 360px;
     }
 }
+
 
 h1 {
     font-size: 1.3rem;
@@ -136,6 +169,16 @@ h3 {
     flex-wrap: wrap;
     align-content: center;
     flex-direction: column;
+}
+
+.navigation {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 40px;
+    gap: 5px
 }
 
 .chapters {
@@ -204,6 +247,18 @@ p.title {
     font-weight: 500;
 }
 
+.title {
+    flex-grow: 1;
+    margin: 0;
+    padding-right: 20px;
+    font-weight: 500;
+    text-align: center;
+
+    @media (width < 768px) {
+        padding-right: 24px;
+    }
+}
+
 hr {
     margin: 10px 0;
     width: 100%;
@@ -214,6 +269,7 @@ ul.columns {
     margin: 0;
     padding: 0;
     width: 100%;
+    padding-left: 25px;
     list-style: none;
     column-count: 4;
     column-gap: 5px;

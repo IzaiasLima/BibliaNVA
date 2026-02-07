@@ -6,22 +6,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
         <title>Bíblia NVA</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
         <link rel="stylesheet" href="./css/styles.css">
 
     </head>
 
-    <style>
-        body {
-            background: rgb(1, 73, 104, 0.5);
-        }
-    </style>
-
     <body>
         <div hx-on="htmx:configRequest: event.detail.headers=''; 
         event.detail.headers['Content-Type']='application/x-www-form-urlencoded; 
         charset=UTF-8'" />
-        <div class="container">
+        <div class="container home">
             <div class="content">
                 <!-- <div class="spinner">
                     <img src="./icons/spinner.svg">
