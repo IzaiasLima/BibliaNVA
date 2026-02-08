@@ -83,7 +83,6 @@ async function chaptersList(book) {
             const result = document.getElementById('data-render');
             result.innerHTML = Mustache.render(template, { data: data });
             htmx.process(result);
-            scrollToTop();
         }
     });
 }
@@ -103,7 +102,6 @@ async function chapterView(book, chapter) {
             const result = document.getElementById('chapter-render');
             result.innerHTML = Mustache.render(template, { data: data });
             htmx.process(result);
-            scrollToTop();
         }
     });
 }
@@ -137,6 +135,7 @@ function hideDetail() {
 }
 
 function showSpinner() {
+    scrollToTop();
     spinner = document.getElementById("spinner");
     spinner.classList.add("show");
 }
