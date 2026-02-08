@@ -1,14 +1,14 @@
 # Bíblia NVA
 
 ## Apresentação
-Este site/aplicativo reproduz o texto da tradução da Bíblia Nova Versão de Acesso Livre (NVA) que é disponibilizado para acesso livre por meio da licença Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0.
+Este site/aplicativo reproduz o texto da tradução da [Bíblia Nova Versão de Acesso Livre (NVA)](https://www.biblianva.com.br/) que é disponibilizado para acesso livre por meio da licença [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](http://creativecommons.org/licenses/by-sa/4.0/).
 
 ## Motivação
-Dado que exite o site oficial, por que este projeto seria necessário?
+Dado que exite o [site oficial da Bíblia NVA](https://www.biblianva.com.br/), por que este projeto seria necessário?
 
 **Por dois motivos:**
 
-O site oficial não é otimizado para o uso em telas pequenas. Como mais de 60% das pessoas, no Brasil, acessam a Web apenas por meio do celular (além daqueles que usam mais de uma forma de acesso), me propus a espelhar o conteúdo oficial da Bíblia NVA em uma aplicação PWA, que proporcionará uma experiência melhor para esses usuários.
+O site oficial não é otimizado para o uso em telas pequenas. Como [mais de 60% das pessoas](https://www.nic.br/noticia/na-midia/celular-e-unico-meio-de-acesso-para-62-dos-usuarios-de-internet-no-brasil/), no Brasil, acessam a Web apenas por meio do celular (além daqueles que usam mais de uma forma de acesso), me propus a espelhar o conteúdo oficial da Bíblia NVA em uma aplicação PWA, que proporcionará uma experiência melhor para esses usuários.
 Permitir que o texto seja consultado por meio de uma API. Ainda que não tenha a pretensão de ser um local de consultas massivas, pois não poderia dar conta de um tráfego intenso, considero relevante oferecer a possibilidade desse tipo acesso para esta valiosa versão do texto bíblico.
 
 
@@ -24,7 +24,7 @@ As consulta à API desta aplicação deve ser feita nos seguintes endpoints:
 
 **/api/{book}/{chapter}/{verses}** para acessar um ou mais versículos, onde /{verses} é o número de um versículo ou uma lista de versículos.
 
-Exemplos: [/api/jó/1/22](/api/jó/1/22); [/api/jo/14/1-3](/api/jo/14/1-3); [/api/jo/14/1,2,3,18](/api/jo/14/1,2,3,18).
+Exemplos: [/api/jó/1/22](https://biblia.izaias.com.br/api/jó/1/22); [/api/jo/14/1-3](https://biblia.izaias.com.br/api/jo/14/1-3); [/api/jo/14/1,2,3,18](https://biblia.izaias.com.br/api/jo/14/1,2,3,18).
 
 
 ## Termos de Uso
