@@ -148,6 +148,10 @@ p.title {
     font-weight: 500;
 }
 
+#ids {
+    visibility: hidden;
+}
+
 #data-render {
     display: flex;
     flex-direction: column;
@@ -178,10 +182,10 @@ p.title {
     gap: 5px;
 }
 
-#prev-book,
+/* #prev-book,
 #next-book {
     color: var(--transparent);
-}
+} */
 
 
 .arrow-left,
@@ -202,6 +206,10 @@ p.title {
 
     a {
         color: var(--btn-font-primary);
+    }
+
+    @media (width < 768px) {
+        display: none;
     }
 }
 
@@ -293,6 +301,11 @@ ul.columns {
     &.text-decrease {
         width: 24px;
     }
+
+    &.disabled {
+        filter: brightness(70%);
+        cursor: default;
+    }
 }
 
 .sobre {
@@ -321,6 +334,7 @@ footer {
     background: var(--bg-footer);
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(7px);
+    z-index: 1000;
 }
 
 .footer {
@@ -423,12 +437,21 @@ footer {
     color: var(--font-secondary);
     background-color: var(--warning);
     border-radius: var(--border-radius);
-    z-index: 1000;
+    z-index: 100;
+
+    &.show {
+        visibility: visible;
+    }
+
+    @media (width < 768px) {
+        width: 100%;
+        left: 0;
+        bottom: 55px;
+        align-self: flex-end;
+        border-radius: 0;
+    }
 }
 
-#toast.show {
-    visibility: visible;
-}
 
 button.swal2-cancel {
     color: var(--font-secondary);
@@ -505,6 +528,10 @@ button.swal2-cancel {
     justify-content: center;
 } */
 
+/* .spinner img {
+    width: 120px;
+} */
+
 #spinner {
     display: none;
     position: fixed;
@@ -513,25 +540,22 @@ button.swal2-cancel {
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.2);
+    z-index: -1;
 
-    img {
+    & img {
         display: none;
         width: 120px;
     }
-}
 
-#spinner.show {
-    display: flex;
-    justify-content: center;
+    &.show {
+        display: flex;
+        justify-content: center;
+        z-index: 1000;
 
-    img {
-        display: block;
+        img {
+            display: block;
+        }
     }
-}
-
-
-.spinner img {
-    width: 120px;
 }
 
 .spacer {
@@ -794,10 +818,6 @@ tr.htmx-swapping td {
         width: 85%;
     }
 
-    #toast {
-        width: 90%;
-        margin: auto;
-    }
 
     table {
         font-size: 1.3em;

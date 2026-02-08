@@ -7,7 +7,7 @@ import uvicorn
 from db import get_db
 from models import BibleORM
 from schemas import ListVersesSchema, ListBibleSchema, ChaptersSchema, BooksSchema
-from utils import bookIds, booksAbbr, booksNames
+from utils import booksAbbr, bookIds, booksNames, maxChapters
 
 app = FastAPI()
 
@@ -19,12 +19,12 @@ def read_root():
     return RedirectResponse(url="/pages/index.html")
 
 
-@app.get("/api", response_class=RedirectResponse)
-def read_root():
-    return RedirectResponse(url="/pages/sobre.html")
+# @app.get("/api", response_class=RedirectResponse)
+# def read_root():
+#     return RedirectResponse(url="/pages/sobre.html")
 
 
-@app.get("/biblia", response_model=BooksSchema)
+@app.get("/api", response_model=BooksSchema)
 def get_books():
     old = [
         dict(book=id, bookAbbr=abbr, bookName=booksNames.get(id, ""))
@@ -44,7 +44,7 @@ def get_books():
 
 
 # Endpoints
-@app.get("/biblia/{book}", response_model=ChaptersSchema)
+@app.get("/api/{book}", response_model=ChaptersSchema)
 def get_chapters(book: str, db: Session = Depends(get_db)):
     bookId = bookIds.get(book.upper(), 0)
 
@@ -75,13 +75,16 @@ def get_chapters(book: str, db: Session = Depends(get_db)):
         return ChaptersSchema()
 
 
-@app.get("/biblia/{book}/{chapter}", response_model=ListVersesSchema)
+@app.get("/api/{book}/{chapter}", response_model=ListVersesSchema)
 def get_chapter(book: str, chapter: int, db: Session = Depends(get_db)):
+    bookId = bookIds.get(book.upper(), 0)
+    tot_chapters = maxChapters.get(bookId)
+
     try:
         title = (
             db.query(BibleORM)
             .filter(
-                BibleORM.book == bookIds.get(book.upper(), 0),
+                BibleORM.book == bookId,
                 BibleORM.chapter == chapter,
             )
             .where(BibleORM.verse == 0)
@@ -91,7 +94,7 @@ def get_chapter(book: str, chapter: int, db: Session = Depends(get_db)):
         data = (
             db.query(BibleORM)
             .filter(
-                BibleORM.book == bookIds.get(book.upper(), 0),
+                BibleORM.book == bookId,
                 BibleORM.chapter == chapter,
             )
             .where(BibleORM.verse > 0)
@@ -100,21 +103,25 @@ def get_chapter(book: str, chapter: int, db: Session = Depends(get_db)):
         )
 
         data_list = ListVersesSchema(
-            bookName=booksNames.get(bookIds.get(book.upper(), 0), ""),
+            bookName=booksNames.get(bookId, ""),
             bookAbbr=book.upper(),
-            title=title.text if title and len(title.text) > 10 else "",
+            chapter=chapter,
+            totalChapters=tot_chapters,
+            title=title.text if title and len(title.text) > 10 else None,
             verses=ListBibleSchema(root=data),
         )
+        return data_list
 
-        return data_list if data_list else ListVersesSchema(root=[])
     except Exception:
-        return ListVersesSchema(root=[])
+        return ListVersesSchema()
 
 
-@app.get("/biblia/{book}/{chapter}/{verses}", response_model=ListVersesSchema)
+@app.get("/api/{book}/{chapter}/{verses}", response_model=ListVersesSchema)
 def get_bible_verses(
     book: str, chapter: int, verses: str, db: Session = Depends(get_db)
 ):
+    bookId = bookIds.get(book.upper(), 0)
+
     try:
         if "-" in verses:
             start, end = map(int, verses.split("-"))
@@ -125,7 +132,7 @@ def get_bible_verses(
         data = (
             db.query(BibleORM)
             .filter(
-                BibleORM.book == bookIds.get(book.upper(), 0),
+                BibleORM.book == bookId,
                 BibleORM.chapter == chapter,
                 BibleORM.verse.in_(list_verses),
             )
@@ -133,18 +140,15 @@ def get_bible_verses(
         )
 
         data_list = ListVersesSchema(
-            bookName=booksNames.get(bookIds.get(book.upper(), 0), ""),
+            bookName=booksNames.get(bookId, ""),
             bookAbbr=book.upper(),
-            title="",
+            chapter=chapter,
             verses=ListBibleSchema(root=data),
         )
-
         return data_list
 
     except Exception:
-        return ListVersesSchema(
-            bookName="", bookAbbr="", title="", verses=ListBibleSchema(root=[])
-        )
+        return ListVersesSchema()
 
 
 if __name__ == "__main__":

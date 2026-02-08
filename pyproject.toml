@@ -1,5 +1,5 @@
 [project]
-name = "biblialivre"
+name = "Biblia NVA"
 version = "0.1.0"
 description = "API e frontend para a Bíblia NVA"
 readme = "README.md"

@@ -27,36 +27,40 @@ document.addEventListener(
     }
 );
 
-document.addEventListener('swiped-up', function (evt) {
-    const prev = document.getElementById("prev-book");
-
-    if (!prev) return;
-
-    getChapters(prev.innerHTML.trim());
+document.addEventListener('swiped-right', async function (evt) {
+    navigation(-1);
 });
 
-document.addEventListener('swiped-right', function (evt) {
-    const prev = document.getElementById("prev-book");
-
-    if (!prev) return;
-
-    getChapters(prev.innerHTML.trim());
+document.addEventListener('swiped-left', async function (evt) {
+    navigation(1);
 });
 
-document.addEventListener('swiped-down', function (evt) {
-    const next = document.getElementById("next-book");
+async function navigation(direction) {
+    const book = document.getElementById("book");
+    const nextBook = document.getElementById("next-book");
+    const chapter = document.getElementById("chapter");
+    const totChapter = document.getElementById("tot-chapter");
+    let total = 0;
 
-    if (!next) return;
+    console.log(book);
 
-    getChapters(next.innerHTML.trim());
-});
-document.addEventListener('swiped-left', function (evt) {
-    const next = document.getElementById("next-book");
 
-    if (!next) return;
+    if (totChapter) {
+        total = Number(totChapter.innerHTML.trim());
+    }
 
-    getChapters(next.innerHTML.trim());
-});
+    if (nextBook) {
+        await chaptersList(nextBook.innerHTML.trim());
+
+    } else if (book && chapter) {
+        const thisBook = book.innerHTML.trim();
+        const nextChapter = Number(chapter.innerHTML.trim()) + direction
+
+        if ((nextChapter >= 1) && (nextChapter <= total))
+            await chapterView(thisBook, nextChapter);
+    }
+
+};
 
 document.addEventListener('htmx:responseError', evt => {
     error = JSON.parse(evt.detail.xhr.responseText);
@@ -64,8 +68,8 @@ document.addEventListener('htmx:responseError', evt => {
 });
 
 
-function getChapters(book) {
-    htmx.ajax('GET', `/biblia/${book}`, {
+async function chaptersList(book) {
+    htmx.ajax('GET', `/api/${book}`, {
         handler: function (elm, response) {
             if (response.xhr.status >= 400) {
                 showToast(`Os dados não estão disponíveis! (${response.xhr.statusText} Error.)`, true);
@@ -78,6 +82,26 @@ function getChapters(book) {
             const template = document.getElementById('chapters-list').innerHTML;
             const result = document.getElementById('data-render');
             result.innerHTML = Mustache.render(template, { data: data });
+            htmx.process(result);
+        }
+    });
+}
+
+async function chapterView(book, chapter) {
+    htmx.ajax('GET', `/api/${book}/${chapter}`, {
+        handler: function (elm, response) {
+            if (response.xhr.status >= 400) {
+                showToast(`Os dados não estão disponíveis! (${response.xhr.statusText} Error.)`, true);
+                return
+            }
+            const data = JSON.parse(response.xhr.responseText);
+
+            if (!data.bookAbbr) return
+
+            const template = document.getElementById('chapter-template').innerHTML;
+            const result = document.getElementById('chapter-render');
+            result.innerHTML = Mustache.render(template, { data: data });
+            htmx.process(result);
         }
     });
 }

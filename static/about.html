@@ -81,17 +81,17 @@
                     <p> As consulta à API desta aplicação deve ser feita nos seguintes <i>endpoints</i>: </p>
 
                     <ul>
-                        <li> <b>/biblia</b> para a lista dos livros </li>
-                        <li> <b>/biblia/{book}</b> para a lista dos capítulos de um livro, onde {book} é a sigla do
+                        <li> <b>/api</b> para a lista dos livros </li>
+                        <li> <b>/api/{book}</b> para a lista dos capítulos de um livro, onde {book} é a sigla do
                             livro. Exemplo: Mt, 1Co.</li>
-                        <li> <b>/biblia/{book}/{chapter}</b> para a lista de todos versículos do capítulo, onde
+                        <li> <b>/api/{book}/{chapter}</b> para a lista de todos versículos do capítulo, onde
                             {chapter} é o número do capítulo.</li>
-                        <li> <b>/biblia/{book}/{chapter}/{verses}</b> para acessar um ou mais versículos, onde /{verses}
+                        <li> <b>/api/{book}/{chapter}/{verses}</b> para acessar um ou mais versículos, onde /{verses}
                             é o número de um versículo ou uma lista de versículos.<br>
                             Exemplos:
-                            <a href="/biblia/jó/1/22">/biblia/jó/1/22;</a>
-                            <a href="/biblia/jo/14/1-3">/biblia/jo/14/1-3;</a>
-                            <a href="/biblia/jo/14/1,2,3,18">/biblia/jo/14/1,2,3,18</a>.
+                            <a href="/api/jó/1/22">/api/jó/1/22;</a>
+                            <a href="/api/jo/14/1-3">/api/jo/14/1-3;</a>
+                            <a href="/api/jo/14/1,2,3,18">/api/jo/14/1,2,3,18</a>.
                         </li>
                     </ul>
                 </div>
@@ -142,6 +142,15 @@
                         SOFTWARE.</p>
                 </div>
             </div>
+
+            <footer>
+                <div class="footer">
+                    <a href="/pages/books.html">
+                        <img class="icon" src="./icons/book.svg" alt="livros">
+                    </a>
+                    <img class="icon disabled" src="./icons/license.svg" alt="license">
+                </div>
+            </footer>
     </body>
 
 </html>

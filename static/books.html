@@ -19,7 +19,7 @@
         charset=UTF-8'" />
         <div class="container">
             <div class="content">
-                <div class="" hx-ext="client-side-templates" hx-get="/biblia" hx-trigger="load" hx-swap="innerText"
+                <div class="" hx-ext="client-side-templates" hx-get="/api" hx-trigger="load" hx-swap="innerText"
                     mustache-array-template="livros">
 
                     <div id="spinner">
@@ -46,7 +46,7 @@
                                 {{#old}}
                                     <li>
                                         <div id="book-names">
-                                            <a hx-ext="client-side-templates" hx-get="/biblia/{{bookAbbr}}"
+                                            <a hx-ext="client-side-templates" hx-get="/api/{{bookAbbr}}"
                                                 hx-trigger="click" hx-swap="innerText" hx-target="#data-render"
                                                 mustache-array-template="chapters-list" onclick="showSpinner()">
                                                 {{bookName}}
@@ -64,7 +64,7 @@
                                 {{#new}}
                                     <li>
                                         <div>
-                                            <a hx-ext="client-side-templates" hx-get="/biblia/{{bookAbbr}}"
+                                            <a hx-ext="client-side-templates" hx-get="/api/{{bookAbbr}}"
                                                 hx-trigger="click" hx-swap="innerText" hx-target="#data-render"
                                                 mustache-array-template="chapters-list" onclick="showSpinner()">
                                                 {{bookName}}
@@ -95,34 +95,32 @@
                                 <div class="chapters">
                                     {{#chapters}}
                                         <a class="chapter" hx-ext="client-side-templates"
-                                            hx-get="/biblia/{{bookAbbr}}/{{.}}" hx-trigger="click" hx-swap="innerText"
+                                            hx-get="/api/{{bookAbbr}}/{{.}}" hx-trigger="click" hx-swap="innerText"
                                             hx-target="#chapter-render" mustache-array-template="chapter-template"
-                                            onclick="showSpinner()">{{.}}
+                                            onclick=" showSpinner()">{{.}}
                                         </a>
                                     {{/chapters}}
                                 </div>
                             </div>
 
                             <nav class="navigation">
-                                <span id="prev-book">{{prevBook}}</span>
-                                <span id="next-book">{{nextBook}}</span>
                                 <!-- previous book -->
-                                <!--  <div class="arrow-left">
-                                    <a id="prev-book" hx-ext="client-side-templates" hx-get="/biblia/{{prevBook}}"
+                                <div class="arrow-left">
+                                    <a id="prev-book" hx-ext="client-side-templates" hx-get="/api/{{prevBook}}"
                                         hx-trigger="click" hx-swap="innerText" hx-target="#data-render"
                                         mustache-array-template="chapters-list" onclick="showSpinner()">
                                         {{prevBook}}
                                     </a>
-                                </div> -->
+                                </div>
 
                                 <!-- next book -->
-                                <!-- <div class="arrow-right">
-                                    <a id="next-book" hx-ext="client-side-templates" hx-get="/biblia/{{nextBook}}"
+                                <div class="arrow-right">
+                                    <a id="next-book" hx-ext="client-side-templates" hx-get="/api/{{nextBook}}"
                                         hx-trigger="click" hx-swap="innerText" hx-target="#data-render"
                                         mustache-array-template="chapters-list" onclick="showSpinner()">
                                         {{nextBook}}
                                     </a>
-                                </div> -->
+                                </div>
                             </nav>
 
                         {{/data}}
@@ -132,11 +130,11 @@
                 <template id="chapter-template">
                     {{#data}}
                         <div class="header">
-                            <a hx-ext="client-side-templates" hx-get="/biblia/{{bookAbbr}}" hx-trigger="click"
+                            <a hx-ext="client-side-templates" hx-get="/api/{{bookAbbr}}" hx-trigger="click"
                                 hx-swap="innerText" hx-target="#data-render" mustache-array-template="chapters-list">
                                 <img src="/pages/icons/chevron-left.svg" class="icon">
                             </a>
-                            <h3 class="title">{{bookName}}, {{verses.0.chapter}}</h3>
+                            <h3 class="title">{{bookName}}, <span id="chapter">{{chapter}}</span></h3>
                             <div class="icon-alpha">
                                 <a onclick="decFontSize()">
                                     <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
@@ -157,6 +155,14 @@
                                 </p>
                             {{/verses}}
                         </div>
+
+                        <!-- IDS para uso exclusivo do JavaScript -->
+                        <div id="ids">
+                            <span id="book">{{bookAbbr}}</span>
+                            <span id="chapter">{{chapter}}</span>
+                            <span id="tot-chapter">{{totalChapters}}</span>
+                        </div>
+
                     {{/data}}
                 </template>
 
@@ -166,7 +172,12 @@
             </div>
             <footer>
                 <div class="footer">
-                    <a href="/pages/about.html">Sobre a Bíblia Livre</a>
+                    <a href="/pages/books.html">
+                        <img class="icon" src="./icons/book.svg" alt="livros">
+                    </a>
+                    <a href="/pages/about.html">
+                        <img class="icon" src="./icons/license.svg" alt="license">
+                    </a>
                 </div>
             </footer>
         </div>

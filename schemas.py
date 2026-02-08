@@ -1,3 +1,4 @@
+from typing import Optional
 from pydantic import BaseModel, RootModel
 
 
@@ -22,8 +23,6 @@ class ChaptersSchema(BaseModel):
 
 
 class BibleSchema(BaseModel):
-    book: int
-    chapter: int
     verse: int
     text: str
 
@@ -36,10 +35,12 @@ class ListBibleSchema(RootModel):
 
 
 class ListVersesSchema(BaseModel):
-    bookName: str
-    bookAbbr: str
-    title: str
-    verses: ListBibleSchema
+    bookName: Optional[str] = None
+    bookAbbr: Optional[str] = None
+    chapter: Optional[int] = None
+    totalChapters: Optional[int] = None
+    title: Optional[str] = None
+    verses: Optional[ListBibleSchema] = None
 
     class Config:
         from_attributes = True
