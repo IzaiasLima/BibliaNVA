@@ -1,15 +1,16 @@
 # Bíblia NVA
 
 ## Apresentação
-Este site/aplicativo reproduz o texto da tradução da [Bíblia Nova Versão de Acesso Livre (NVA)](https://www.biblianva.com.br/) que é disponibilizado para acesso livre por meio da licença [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](http://creativecommons.org/licenses/by-sa/4.0/).
+Este site/aplicativo reproduz o texto da tradução da [Bíblia Nova Versão de Acesso Livre (NVA)](https://www.biblianva.com.br/) que é disponibilizado para acesso livre por meio da licença [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/).
 
 ## Motivação
 Dado que exite o [site oficial da Bíblia NVA](https://www.biblianva.com.br/), por que este projeto seria necessário?
 
 **Por dois motivos:**
 
-O site oficial não é otimizado para o uso em telas pequenas. Como [mais de 60% das pessoas](https://www.nic.br/noticia/na-midia/celular-e-unico-meio-de-acesso-para-62-dos-usuarios-de-internet-no-brasil/), no Brasil, acessam a Web apenas por meio do celular (além daqueles que usam mais de uma forma de acesso), me propus a espelhar o conteúdo oficial da Bíblia NVA em uma aplicação PWA, que proporcionará uma experiência melhor para esses usuários.
-Permitir que o texto seja consultado por meio de uma API. Ainda que não tenha a pretensão de ser um local de consultas massivas, pois não poderia dar conta de um tráfego intenso, considero relevante oferecer a possibilidade desse tipo acesso para esta valiosa versão do texto bíblico.
+1. O site oficial não é otimizado para o uso em telas pequenas. Como [mais de 60% das pessoas](https://www.nic.br/noticia/na-midia/celular-e-unico-meio-de-acesso-para-62-dos-usuarios-de-internet-no-brasil/), no Brasil, acessam a Web apenas por meio do celular (além daqueles que usam mais de uma forma de acesso), me propus a espelhar o conteúdo oficial da Bíblia NVA em uma aplicação PWA, que proporcionará uma experiência melhor para esses usuários.
+
+2. Permitir que o texto seja consultado por meio de uma API. Ainda que não tenha a pretensão de ser um local de consultas massivas, pois não poderia dar conta de um tráfego intenso, considero relevante oferecer a possibilidade desse tipo acesso para esta valiosa versão do texto bíblico.
 
 
 ## Consultas à API
