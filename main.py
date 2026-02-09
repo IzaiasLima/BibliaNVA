@@ -1,15 +1,33 @@
 from fastapi import FastAPI, Depends
 from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
+
+from sqlalchemy import select, and_
 from sqlalchemy.orm import Session
 import uvicorn
 
 from db import get_db
 from models import BibleORM
-from schemas import ListVersesSchema, ListBibleSchema, ChaptersSchema, BooksSchema
+from schemas import (
+    ListVersesSchema,
+    ListBibleSchema,
+    ChaptersSchema,
+    BooksSchema,
+    BibleSchema,
+)
 from utils import booksAbbr, bookIds, booksNames, maxChapters
 
-app = FastAPI()
+app = FastAPI(
+    title="Bíblia Nova Versão de Acesso Livre (NVA)",
+    version="1.0.1",
+    summary="""Este site/aplicativo reproduz o texto da tradução da Bíblia Nova Versão de Acesso Livre (NVA), 
+    disponibilizado para acesso livre por meio da licença Creative Commons Attribution-ShareAlike 4.0 
+    International (CC BY-SA 4.0).""",
+    license_info={
+        "name": "CC BY-SA 4.0",
+        "url": "hhttps://creativecommons.org/licenses/by-sa/4.0/",
+    },
+)
 
 app.mount("/pages", StaticFiles(directory="static"), name="static")
 
@@ -17,11 +35,6 @@ app.mount("/pages", StaticFiles(directory="static"), name="static")
 @app.get("/", response_class=RedirectResponse)
 def read_root():
     return RedirectResponse(url="/pages/index.html")
-
-
-# @app.get("/api", response_class=RedirectResponse)
-# def read_root():
-#     return RedirectResponse(url="/pages/sobre.html")
 
 
 @app.get("/api", response_model=BooksSchema)
@@ -67,12 +80,32 @@ def get_chapters(book: str, db: Session = Depends(get_db)):
                 nextBook=booksAbbr(bookId + 1),
             )
             if data
-            else ChaptersSchema(chapters=[])
+            else ChaptersSchema()
         )
         return chapters
 
     except Exception:
         return ChaptersSchema()
+
+
+@app.get("/api/search/{terms}", response_model=list[BibleSchema])
+def biblie_search_words(terms: str, db: Session = Depends(get_db)):
+    words = terms.split()
+    filter = [BibleORM.text.like(f"%{word}%") for word in words]
+    stmt = select(BibleORM).where(and_(*filter))
+    results = db.execute(stmt).scalars().all()
+
+    result = [
+        BibleSchema(
+            bookName=booksNames.get(v.book, ""),
+            bookAbbr=booksAbbr(v.book),
+            chapter=v.chapter,
+            verse=v.verse,
+            text=v.text,
+        )
+        for v in results
+    ]
+    return result
 
 
 @app.get("/api/{book}/{chapter}", response_model=ListVersesSchema)

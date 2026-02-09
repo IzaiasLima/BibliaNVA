@@ -12,17 +12,22 @@ class BooksSchema(BaseModel):
 
 
 class ChaptersSchema(BaseModel):
-    bookName: str
-    bookAbbr: str
-    chapters: list[int]
-    prevBook: str
-    nextBook: str
+    bookName: Optional[str] = None
+    bookAbbr: Optional[str] = None
+    chapter: Optional[int] = None
+    chapters: Optional[list[int]] = []
+    prevBook: Optional[str] = None
+    nextBook: Optional[str] = None
 
     class Config:
         from_attributes = True
 
 
 class BibleSchema(BaseModel):
+    bookName: Optional[str] = None
+    bookAbbr: Optional[str] = None
+    book: Optional[int] = None
+    chapter: int
     verse: int
     text: str
 
@@ -44,21 +49,3 @@ class ListVersesSchema(BaseModel):
 
     class Config:
         from_attributes = True
-
-
-# data = ListBibleSchema.model_validate(
-#     [
-#         {
-#             "book": 1,
-#             "chapter": 1,
-#             "verse": 1,
-#             "text": "No princípio, criou Deus os céus e a terra.",
-#         },
-#         {
-#             "book": 1,
-#             "chapter": 1,
-#             "verse": 2,
-#             "text": "A terra estava sem forma e vazia; e as trevas estavam sobre a face do abismo; e o Espírito de Deus se movia sobre a face das águas.",
-#         },
-#     ]
-# )

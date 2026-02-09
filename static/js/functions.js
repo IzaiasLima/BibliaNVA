@@ -5,27 +5,39 @@ if ('serviceWorker' in navigator) {
         .catch(err => console.log('Erro:', err));
 }
 
-document.addEventListener(
-    "htmx:confirm",
-    function (evt) {
-        if (evt.detail.question !== null) {
-            evt.preventDefault();
-            Swal.fire({
-                // animation: false,
-                buttonsStyling: false,
-                showCancelButton: true,
-                reverseButtons: true,
-                // icon: 'question',
-                title: 'Favor confirmar!',
-                text: `Deseja mesmo excluir ${(evt.detail.question).toUpperCase()} desta lista?`,
-                showClass: { popup: 'animate__animated animate__fadeInUp animate__faster' },
-                hideClass: { popup: 'animate__animated animate__zoomOut animate__faster' },
-            }).then(function (res) {
-                if (res.isConfirmed) evt.detail.issueRequest(true)
-            })
-        }
+const input = document.getElementById("search");
+input.addEventListener('keyup', searchWords);
+
+
+// Exibe o campo de pesquisa (ou realiza a pesquisa, se o campo já está preenchido)
+function searchShow() {
+    const elm = document.getElementById("search-position");
+    elm.classList.add('show', 'animate__fadeInUp');
+    input.focus();
+
+    if (input.value) {
+        const elm = document.getElementById("search-position");
+        searcByhWords(input.value);
+        elm.classList.remove('show', 'animate__fadeInUp');
+        input.value = null;
     }
-);
+}
+
+// Realiza a pesquisa, se for digitado o ENTER
+function searchWords(evt) {
+    if (evt.type == 'keyup' && evt.key == 'Enter') {
+        const elm = document.getElementById("search-position");
+        searcByhWords(input.value);
+        elm.classList.remove('show', 'animate__fadeInUp');
+        input.value = null;
+    }
+}
+
+
+document.addEventListener('htmx:responseError', evt => {
+    error = JSON.parse(evt.detail.xhr.responseText);
+    showToast(error.detail);
+});
 
 document.addEventListener('swiped-right', async function (evt) {
     navigation(-1);
@@ -42,9 +54,6 @@ async function navigation(direction) {
     const totChapter = document.getElementById("tot-chapter");
     let total = 0;
 
-    console.log(book);
-
-
     if (totChapter) {
         total = Number(totChapter.innerHTML.trim());
     }
@@ -59,14 +68,7 @@ async function navigation(direction) {
         if ((nextChapter >= 1) && (nextChapter <= total))
             await chapterView(thisBook, nextChapter);
     }
-
 };
-
-document.addEventListener('htmx:responseError', evt => {
-    error = JSON.parse(evt.detail.xhr.responseText);
-    showToast(error.detail);
-});
-
 
 async function chaptersList(book) {
     htmx.ajax('GET', `/api/${book}`, {
@@ -82,6 +84,32 @@ async function chaptersList(book) {
             const template = document.getElementById('chapters-list').innerHTML;
             const result = document.getElementById('data-render');
             result.innerHTML = Mustache.render(template, { data: data });
+            htmx.process(result);
+        }
+    });
+}
+
+async function searcByhWords(words) {
+    htmx.ajax('GET', `/api/search/${words}`, {
+        handler: function (elm, response) {
+            if (response.xhr.status >= 400) {
+                showToast(`Os dados não estão disponíveis! (${response.xhr.statusText} Error.)`, true);
+                return
+            }
+            var data = JSON.parse(response.xhr.responseText);
+
+            if (!(data.length && data[0].bookName)) {
+                showToast('Nenhum versículo encontrado com as palavras informadas.', true);
+                return
+            }
+
+            words = words.split(' ');
+
+            const verses = data.map(v => ({ ...v, text: highlightedText(v.text, words) }));
+
+            const template = document.getElementById('search-template').innerHTML;
+            const result = document.getElementById('data-render');
+            result.innerHTML = Mustache.render(template, { data: verses });
             htmx.process(result);
         }
     });
@@ -117,21 +145,7 @@ function showToast(msg) {
     const elm = document.getElementById('toast');
     elm.innerHTML = msg;
     elm.classList.add('show', 'animate__fadeInUp');
-    setTimeout(function () { elm.classList.remove('show', 'animate__fadeInUp') }, 3000);
-}
-
-function showDetail() {
-    const detalhe = document.getElementById('detalhe');
-    const info = document.getElementById('info');
-    detalhe.classList.add('show');
-    info.classList.add('show', 'animate__fadeInUp');
-}
-
-function hideDetail() {
-    const detalhe = document.getElementById('detalhe');
-    const info = document.getElementById('info');
-    detalhe.classList.remove('show');
-    info.classList.remove('show', 'animate__fadeInUp');
+    setTimeout(function () { elm.classList.remove('show', 'animate__fadeInUp') }, 5000);
 }
 
 function showSpinner() {
@@ -140,15 +154,14 @@ function showSpinner() {
     spinner.classList.add("show");
 }
 
+function highlightedText(text, words) {
+    let result = text;
 
-function allowsEditing(obj) {
-    const editing = document.querySelector('.editing');
-
-    if (editing) {
-        htmx.trigger(editing, 'cancel')
-    } else {
-        htmx.trigger(obj, 'edit')
-    }
+    words.forEach(word => {
+        const regex = new RegExp(word, 'gi');
+        result = result.replace(regex, `<strong>$&</strong>`);
+    });
+    return result;
 }
 
 function decFontSize() {

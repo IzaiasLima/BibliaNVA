@@ -166,6 +166,32 @@
                     {{/data}}
                 </template>
 
+                <template id="search-template">
+                    <div class="header">
+                        <a href="/pages/books.html">
+                            <img src="/pages/icons/chevron-left.svg" class="icon icon-menu">
+                        </a>
+                        <h2 class="title">Resultado da pesquisa</h2>
+                    </div>
+
+                    <div class="search-result">
+                        {{#data}}
+                            <p>
+                                <span><strong>{{bookName}} {{chapter}}:{{verse}}</strong></span>
+                                <br>
+                                <span>{{{text}}}</span>
+                            </p>
+                        {{/data}}
+                    </div>
+
+                </template>
+
+                <div id="search-position" class="animate__animated animate__faster">
+                    <div class="search-container">
+                        <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                    </div>
+                </div>
+
                 <div id="toast" class="animate__animated animate__faster">
                     <!-- Exibir mensagem de erro -->
                 </div>
@@ -175,6 +201,9 @@
                     <a href="/pages/books.html">
                         <img class="icon" src="./icons/book.svg" alt="livros">
                     </a>
+
+                    <img class="icon search" src="./icons/search.svg" onclick="searchShow()" alt="search">
+
                     <a href="/pages/about.html">
                         <img class="icon" src="./icons/license.svg" alt="license">
                     </a>
