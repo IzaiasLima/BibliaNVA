@@ -1,6 +1,6 @@
 [project]
 name = "BibliaNVA"
-version = "0.1.0"
+version = "1.0.3"
 description = "API e frontend para a Bíblia NVA"
 readme = "README.md"
 requires-python = ">=3.12"
