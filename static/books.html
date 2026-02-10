@@ -19,13 +19,12 @@
         charset=UTF-8'" />
         <div class="container">
             <div class="content">
-                <div class="" hx-ext="client-side-templates" hx-get="/api" hx-trigger="load" hx-swap="innerText"
+                <div hx-ext="client-side-templates" hx-get="/api" hx-trigger="load" hx-swap="innerText"
                     mustache-array-template="livros">
 
                     <div id="spinner">
                         <img src="/pages/icons/spinner.svg">
                     </div>
-
                 </div>
 
                 <template id="livros">
@@ -166,6 +165,7 @@
                     {{/data}}
                 </template>
 
+                <!-- Renderiza o resultado da pesquisa -->
                 <template id="search-template">
                     <div class="header">
                         <a href="/pages/books.html">
@@ -174,16 +174,66 @@
                         <h2 class="title">Resultado da pesquisa</h2>
                     </div>
 
-                    <div class="search-result">
-                        {{#data}}
-                            <p>
-                                <span><strong>{{bookName}} {{chapter}}:{{verse}}</strong></span>
-                                <br>
-                                <span>{{{text}}}</span>
-                            </p>
-                        {{/data}}
+                    <div id="spinner">
+                        <img src="/pages/icons/spinner.svg">
                     </div>
 
+                    <div class="search-result">
+                        {{#data}}
+                            <a hx-ext="client-side-templates"
+                                hx-get="/api/{{bookAbbr}}/{{chapter}}/?words={{words}}&verse={{verse}}"
+                                hx-trigger="click" hx-swap="innerText" hx-target="#data-render"
+                                mustache-array-template="search-detail-template"
+                                onclick="showSpinner(); scrollToTop();">
+                                <p class="verse">
+                                    <span><strong>{{bookName}} {{chapter}}:{{verse}}</strong></span>
+                                    <br>
+                                    <span>{{{text}}}</span>
+                                </p>
+                            </a>
+                        {{/data}}
+                    </div>
+                </template>
+
+
+                <!-- Detalha o capítulo referente a um versículo exibido na PESQUISA -->
+                <template id="search-detail-template">
+                    <div id="chapter-render">
+                        {{#data}}
+                            <div class="header">
+                                <a hx-ext="client-side-templates" hx-get="/api/search/{{words}}" hx-trigger="click"
+                                    hx-swap="innerText" hx-target="#data-render"
+                                    mustache-array-template="search-template">
+                                    <img src="/pages/icons/chevron-left.svg" class="icon">
+                                </a>
+                                <h3 class="title">{{bookName}}, <span id="chapter">{{chapter}}</span></h3>
+                                <div class="icon-alpha">
+                                    <a onclick="decFontSize()">
+                                        <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                    </a>
+                                    <a onclick="incFontSize()">
+                                        <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="verses">
+                                <p class="title">{{title}}</p>
+                                {{#verses}}
+                                    <p class="verse {{strong}}">
+                                        <span class="number {{strong}}">{{verse}}</span>&ensp;<span>{{text}}</span>
+                                    </p>
+                                {{/verses}}
+                            </div>
+
+                            <!-- IDS para uso exclusivo do JavaScript -->
+                            <div id="ids">
+                                <span id="book">{{bookAbbr}}</span>
+                                <span id="chapter">{{chapter}}</span>
+                                <span id="tot-chapter">{{totalChapters}}</span>
+                            </div>
+                        {{/data}}
+                    </div>
                 </template>
 
                 <div id="search-position" class="animate__animated animate__faster">

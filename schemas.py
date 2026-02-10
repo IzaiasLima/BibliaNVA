@@ -24,12 +24,14 @@ class ChaptersSchema(BaseModel):
 
 
 class BibleSchema(BaseModel):
-    bookName: Optional[str] = None
-    bookAbbr: Optional[str] = None
     book: Optional[int] = None
     chapter: int
     verse: int
     text: str
+    bookName: Optional[str] = None
+    bookAbbr: Optional[str] = None
+    words: Optional[str] = None
+    strong: Optional[str] = None
 
     class Config:
         from_attributes = True
@@ -40,12 +42,13 @@ class ListBibleSchema(RootModel):
 
 
 class ListVersesSchema(BaseModel):
-    bookName: Optional[str] = None
-    bookAbbr: Optional[str] = None
     chapter: Optional[int] = None
     totalChapters: Optional[int] = None
-    title: Optional[str] = None
     verses: Optional[ListBibleSchema] = None
+    title: Optional[str] = None
+    bookName: Optional[str] = None
+    bookAbbr: Optional[str] = None
+    words: Optional[str] = None
 
     class Config:
         from_attributes = True

@@ -19,7 +19,7 @@ from utils import booksAbbr, bookIds, booksNames, maxChapters
 
 app = FastAPI(
     title="Bíblia Nova Versão de Acesso Livre (NVA)",
-    version="1.0.1",
+    version="1.0.5",
     summary="""Este site/aplicativo reproduz o texto da tradução da Bíblia Nova Versão de Acesso Livre (NVA), 
     disponibilizado para acesso livre por meio da licença Creative Commons Attribution-ShareAlike 4.0 
     International (CC BY-SA 4.0).""",
@@ -57,7 +57,11 @@ def get_books():
 
 
 # Endpoints
-@app.get("/api/{book}", response_model=ChaptersSchema)
+@app.get(
+    "/api/{book}",
+    response_model=ChaptersSchema,
+    response_model_exclude_none=True,
+)
 def get_chapters(book: str, db: Session = Depends(get_db)):
     bookId = bookIds.get(book.upper(), 0)
 
@@ -88,28 +92,43 @@ def get_chapters(book: str, db: Session = Depends(get_db)):
         return ChaptersSchema()
 
 
-@app.get("/api/search/{terms}", response_model=list[BibleSchema])
-def biblie_search_words(terms: str, db: Session = Depends(get_db)):
-    words = terms.split()
-    filter = [BibleORM.text.like(f"%{word}%") for word in words]
+@app.get(
+    "/api/search/{words}",
+    response_model=list[BibleSchema],
+    response_model_exclude_none=True,
+)
+def biblie_search_words(words: str, db: Session = Depends(get_db)):
+    terms = words.split()
+    filter = [BibleORM.text.like(f"%{word}%") for word in terms]
     stmt = select(BibleORM).where(and_(*filter))
     results = db.execute(stmt).scalars().all()
 
     result = [
         BibleSchema(
-            bookName=booksNames.get(v.book, ""),
-            bookAbbr=booksAbbr(v.book),
             chapter=v.chapter,
             verse=v.verse,
             text=v.text,
+            bookName=booksNames.get(v.book, ""),
+            bookAbbr=booksAbbr(v.book),
+            words=words,
         )
         for v in results
     ]
     return result
 
 
-@app.get("/api/{book}/{chapter}", response_model=ListVersesSchema)
-def get_chapter(book: str, chapter: int, db: Session = Depends(get_db)):
+@app.get(
+    "/api/{book}/{chapter}",
+    response_model=ListVersesSchema,
+    response_model_exclude_none=True,
+)
+def get_chapter(
+    book: str,
+    chapter: int,
+    words: str | None = None,
+    verse: int | None = None,
+    db: Session = Depends(get_db),
+):
     bookId = bookIds.get(book.upper(), 0)
     tot_chapters = maxChapters.get(bookId)
 
@@ -135,13 +154,27 @@ def get_chapter(book: str, chapter: int, db: Session = Depends(get_db)):
             .all()
         )
 
+        data = [
+            BibleSchema(
+                chapter=d.chapter,
+                verse=d.verse,
+                text=d.text,
+                bookName=booksNames.get(d.book, ""),
+                bookAbbr=booksAbbr(d.book),
+                words=words,
+                strong="strong" if verse and d.verse == verse else None,
+            )
+            for d in data
+        ]
+
         data_list = ListVersesSchema(
-            bookName=booksNames.get(bookId, ""),
-            bookAbbr=book.upper(),
             chapter=chapter,
-            totalChapters=tot_chapters,
             title=title.text if title and len(title.text) > 10 else None,
             verses=ListBibleSchema(root=data),
+            bookName=booksNames.get(bookId, ""),
+            bookAbbr=book.upper(),
+            totalChapters=tot_chapters,
+            words=words,
         )
         return data_list
 
@@ -149,7 +182,11 @@ def get_chapter(book: str, chapter: int, db: Session = Depends(get_db)):
         return ListVersesSchema()
 
 
-@app.get("/api/{book}/{chapter}/{verses}", response_model=ListVersesSchema)
+@app.get(
+    "/api/{book}/{chapter}/{verses}",
+    response_model=ListVersesSchema,
+    response_model_exclude_none=True,
+)
 def get_bible_verses(
     book: str, chapter: int, verses: str, db: Session = Depends(get_db)
 ):

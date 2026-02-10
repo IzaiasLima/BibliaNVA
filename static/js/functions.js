@@ -96,7 +96,7 @@ async function searcByhWords(words) {
                 showToast(`Os dados não estão disponíveis! (${response.xhr.statusText} Error.)`, true);
                 return
             }
-            var data = JSON.parse(response.xhr.responseText);
+            const data = JSON.parse(response.xhr.responseText);
 
             if (!(data.length && data[0].bookName)) {
                 showToast('Nenhum versículo encontrado com as palavras informadas.', true);
@@ -106,6 +106,7 @@ async function searcByhWords(words) {
             words = words.split(' ');
 
             const verses = data.map(v => ({ ...v, text: highlightedText(v.text, words) }));
+            // verses = { words: words, verses: verses };
 
             const template = document.getElementById('search-template').innerHTML;
             const result = document.getElementById('data-render');
@@ -149,7 +150,6 @@ function showToast(msg) {
 }
 
 function showSpinner() {
-    scrollToTop();
     spinner = document.getElementById("spinner");
     spinner.classList.add("show");
 }
