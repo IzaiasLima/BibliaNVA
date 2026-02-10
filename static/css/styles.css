@@ -122,6 +122,10 @@ strong {
 
 }
 
+mark {
+    font-variant: small-caps;
+}
+
 .header {
     position: fixed;
     display: flex;
