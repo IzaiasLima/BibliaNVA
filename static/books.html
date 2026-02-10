@@ -150,7 +150,7 @@
 
                             {{#verses}}
                                 <p class="verse">
-                                    <span class="number">{{verse}}</span>&ensp;<span>{{text}}</span>
+                                    <span class="number">{{verse}}</span>&ensp;<span>{{{text}}}</span>
                                 </p>
                             {{/verses}}
                         </div>
@@ -199,11 +199,16 @@
                 <!-- Detalha o capítulo referente a um versículo exibido na PESQUISA -->
                 <template id="search-detail-template">
                     <div id="chapter-render">
+
+                        <div id="spinner">
+                            <img src="/pages/icons/spinner.svg">
+                        </div>
+
                         {{#data}}
                             <div class="header">
                                 <a hx-ext="client-side-templates" hx-get="/api/search/{{words}}" hx-trigger="click"
                                     hx-swap="innerText" hx-target="#data-render"
-                                    mustache-array-template="search-template">
+                                    mustache-array-template="search-template" onclick="showSpinner();">
                                     <img src="/pages/icons/chevron-left.svg" class="icon">
                                 </a>
                                 <h3 class="title">{{bookName}}, <span id="chapter">{{chapter}}</span></h3>
@@ -221,7 +226,7 @@
                                 <p class="title">{{title}}</p>
                                 {{#verses}}
                                     <p class="verse {{strong}}">
-                                        <span class="number {{strong}}">{{verse}}</span>&ensp;<span>{{text}}</span>
+                                        <span class="number {{strong}}">{{verse}}</span>&ensp;<span>{{{text}}}</span>
                                     </p>
                                 {{/verses}}
                             </div>

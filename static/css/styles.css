@@ -113,17 +113,16 @@ h3 {
 }
 
 
-strong {
+strong,
+.strong,
+.strong mark {
     font-weight: 600;
 }
 
-.strong {
-    font-weight: 600 !important;
-
-}
-
 mark {
+    font-weight: 500;
     font-variant: small-caps;
+    background-color: var(--transparent);
 }
 
 .header {
@@ -259,6 +258,11 @@ p.verse {
     span.number {
         font-weight: 100;
     }
+
+    span.number.strong {
+        font-weight: 600;
+    }
+}
 }
 
 a {
