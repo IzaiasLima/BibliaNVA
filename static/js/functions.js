@@ -87,7 +87,7 @@ function showBtnRead() {
         const chapter = btn.dataset.chapter;
 
         if (!isReadChapters(book, chapter)) {
-            position.classList.add('show', 'animate__fadeInUp');
+
         } else {
             position.classList.remove('show', 'animate__fadeInUp');
         }
@@ -95,15 +95,23 @@ function showBtnRead() {
 }
 
 document.addEventListener('swiped-up', async function () {
-    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-    const h1 = document.getElementById("log");
+    // exibe botao para sinalizar capitulo lido
+    const position = document.getElementById("btn-position");
+    const btn = document.getElementById("btn-read");
 
-    if (h1) {
-        h1.innerHTML = `${scrollTop + clientHeight + 50 >= scrollHeight}`;
-    }
+    if (btn && position) {
+        const book = btn.dataset.book;
+        const chapter = btn.dataset.chapter;
 
-    if (scrollTop + clientHeight + 50 >= scrollHeight) {
-        showBtnRead();
+        if (!isReadChapters(book, chapter)) {
+            const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+
+            if (scrollTop + clientHeight + 50 >= scrollHeight) {
+                position.classList.add('show', 'animate__fadeInUp');
+            } else {
+                position.classList.remove('show', 'animate__fadeInUp');
+            }
+        }
     }
 
     // pinta os capitulos de verde, se já foram lidos
