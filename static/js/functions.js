@@ -43,15 +43,16 @@ function setReadChapters(book, chapter) {
     const readChapters = JSON.parse(localStorage.getItem('readChapters')) || { books: [] };
     const bookIndex = readChapters.books.findIndex(b => b.name === book);
 
-    if (bookIndex > -1) {
+    const btnRead = document.getElementById("btn-position");
+
+    if (bookIndex < 0) {
+        readChapters.books.push({ name: book, chapters: [chapter] });
+    } else {
         if (!(readChapters.books[bookIndex].chapters.includes(chapter))) {
             readChapters.books[bookIndex].chapters.push(chapter);
         }
-    } else {
-        readChapters.books.push({ name: book, chapters: [chapter] });
     }
     localStorage.setItem('readChapters', JSON.stringify(readChapters));
-    const btnRead = document.getElementById("btn-position");
     btnRead.classList.remove('show', 'animate__fadeInUp');
 }
 
@@ -95,8 +96,15 @@ function showBtnRead() {
     }
 }
 
-// document.addEventListener('swiped-up', async function () {
-document.addEventListener('scroll', async function () {
+const events = ['scroll', 'wheel', 'touchmove'];
+
+events.forEach(eventType => {
+    window.addEventListener(eventType, (e) => {
+        scrollHandler();
+    });
+});
+
+function scrollHandler() {
     // exibe botao para sinalizar capitulo lido
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 
@@ -135,7 +143,7 @@ document.addEventListener('scroll', async function () {
         }
     });
 
-});
+};
 
 document.addEventListener('swiped-right', async function () {
     navigation(-1);
