@@ -59,6 +59,7 @@ function setReadChapters(book, chapter) {
 function isReadChapters(book, chapter) {
     const readChapters = JSON.parse(localStorage.getItem('readChapters')) || { books: [] };
     const bookIndex = readChapters.books.findIndex(b => b.name === book);
+    if (bookIndex < 0) return;
     return readChapters.books[bookIndex].chapters.includes(chapter);
 }
 
@@ -94,18 +95,27 @@ function showBtnRead() {
     }
 }
 
-document.addEventListener('swiped-up', async function () {
+// document.addEventListener('swiped-up', async function () {
+document.addEventListener('scroll', async function () {
     // exibe botao para sinalizar capitulo lido
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+
     const position = document.getElementById("btn-position");
     const btn = document.getElementById("btn-read");
+
+    const log = document.getElementById("log")
+
+    if (log) {
+        log.innerHTML = `** ${scrollTop + clientHeight + 50 >= scrollHeight}`
+    }
+
+    position.classList.add('show', 'animate__fadeInUp');
 
     if (btn && position) {
         const book = btn.dataset.book;
         const chapter = btn.dataset.chapter;
 
         if (!isReadChapters(book, chapter)) {
-            const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-
             if (scrollTop + clientHeight + 50 >= scrollHeight) {
                 position.classList.add('show', 'animate__fadeInUp');
             } else {
