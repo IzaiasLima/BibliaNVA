@@ -210,9 +210,6 @@ p.title {
     -webkit-clip-path: polygon(75% 0, 100% 47%, 75% 100%, 0 100%, 0 0);
     color: var(--btn-font-primary);
 
-    /* a {
-    } */
-
     @media (width < 768px) {
         visibility: hidden;
     }
@@ -470,19 +467,14 @@ button.swal2-cancel {
     }
 }
 
-#btn-position,
-#search-position {
+#search-position,
+#btn-position {
     position: fixed;
-    visibility: hidden;
     bottom: 65px;
     width: 700px;
     align-self: center;
     background-color: var(--transparent);
     z-index: 100;
-
-    &.show {
-        visibility: visible;
-    }
 
     @media (width < 768px) {
         width: 100%;
@@ -490,6 +482,22 @@ button.swal2-cancel {
         bottom: 55px;
         align-self: flex-end;
         border-radius: 0;
+    }
+}
+
+#btn-position {
+    visibility: hidden;
+
+    &.show {
+        visibility: visible;
+    }
+}
+
+#search-position {
+    visibility: hidden;
+
+    &.show {
+        visibility: visible;
     }
 }
 

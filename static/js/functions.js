@@ -35,24 +35,19 @@ function searchWords(evt) {
 
 // salva capitulos lidos
 function setReadChapters(book, chapter) {
+    const readChapters = JSON.parse(localStorage.getItem('readChapters')) || { books: [] };
+    const bookIndex = readChapters.books.findIndex(b => b.name === book);
 
-    try {
-        const readChapters = JSON.parse(localStorage.getItem('readChapters')) || { books: [] };
-        const bookIndex = readChapters.books.findIndex(b => b.name === book);
-
-        if (bookIndex > -1) {
-            if (!(readChapters.books[bookIndex].chapters.includes(chapter))) {
-                readChapters.books[bookIndex].chapters.push(chapter);
-            }
-        } else {
-            readChapters.books.push({ name: book, chapters: [chapter] });
+    if (bookIndex > -1) {
+        if (!(readChapters.books[bookIndex].chapters.includes(chapter))) {
+            readChapters.books[bookIndex].chapters.push(chapter);
         }
-        localStorage.setItem('readChapters', JSON.stringify(readChapters));
-        const btnRead = document.getElementById("btn-position");
-        btnRead.classList.remove('show', 'animate__fadeInUp');
-    } catch {
-        showToast("Sem aparelho não permite registrar dados na memória local.");
+    } else {
+        readChapters.books.push({ name: book, chapters: [chapter] });
     }
+    localStorage.setItem('readChapters', JSON.stringify(readChapters));
+    const btnRead = document.getElementById("btn-position");
+    btnRead.classList.remove('show', 'animate__fadeInUp');
 }
 
 // verifica se o capitulo foi lido
