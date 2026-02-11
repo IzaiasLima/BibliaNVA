@@ -46,6 +46,9 @@ function setReadChapters(book, chapter) {
         readChapters.books.push({ name: book, chapters: [chapter] });
     }
     localStorage.setItem('readChapters', JSON.stringify(readChapters));
+    const btnRead = document.getElementById("btn-position");
+    btnRead.classList.remove('show', 'animate__fadeInUp');
+
 }
 
 // verifica se o capitulo foi lido
@@ -110,44 +113,51 @@ document.addEventListener('swiped-up', async function () {
 
 });
 
-
 document.addEventListener('swiped-right', async function () {
-    showSpinner();
     navigation(-1);
 });
 
 
 document.addEventListener('swiped-left', async function () {
-    showSpinner();
     navigation(1);
 });
 
-async function navigation(direction) {
-    const book = document.getElementById("book");
-    const nextBook = document.getElementById("next-book");
-    const chapter = document.getElementById("chapter");
-    const totChapter = document.getElementById("tot-chapter");
-    let total = 0;
+async function navigation(direction = 0) {
+    const navArrow = document.getElementById("nav-arrow");
 
-    if (totChapter) {
-        total = Number(totChapter.innerHTML.trim());
+    const book = navArrow.dataset.book;
+    const chapter = Number(navArrow.dataset.chapter);
+    const totChapter = Number(navArrow.dataset.total);
+
+    const nextBook = navArrow.dataset.nextbook;
+    const prevtBook = navArrow.dataset.prevbook;
+
+    if ((direction > 0) && nextBook) {
+        await chaptersList(nextBook);
+    } else if ((direction < 0) && prevtBook) {
+        await chaptersList(prevtBook);
     }
 
-    if (nextBook) {
-        await chaptersList(nextBook.innerHTML.trim());
+    if (book && chapter) {
+        const nextChapter = chapter + direction;
 
-    } else if (book && chapter) {
-        const thisBook = book.innerHTML.trim();
-        const nextChapter = Number(chapter.innerHTML.trim()) + direction
+        if ((nextChapter >= 1) && (nextChapter <= totChapter)) {
+            await chapterView(book, nextChapter);
+            setLastChapter(book, nextChapter);
 
-        if ((nextChapter >= 1) && (nextChapter <= total)) {
-            await chapterView(thisBook, nextChapter);
-            setLastChapter(thisBook, nextChapter);
+        } else {
+            const position = (nextChapter < 1) ? 'Início' : 'Final'
+            showToast(`${position} do livro!`, true);
+            showSpinner(false);
         }
+    } else {
+        showSpinner(false);
     }
-};
+}
 
 async function chaptersList(book) {
+    showSpinner();
+
     htmx.ajax('GET', `/api/${book}`, {
         handler: function (elm, response) {
             if (response.xhr.status >= 400) {
@@ -194,6 +204,8 @@ async function searcByhWords(words) {
 }
 
 async function chapterView(book, chapter) {
+    showSpinner();
+
     htmx.ajax('GET', `/api/${book}/${chapter}`, {
         handler: function (elm, response) {
             if (response.xhr.status >= 400) {
@@ -210,6 +222,7 @@ async function chapterView(book, chapter) {
             result = (result) ? result : document.getElementById('data-render');
             result.innerHTML = Mustache.render(template, { data: data });
             htmx.process(result);
+            showSpinner(false);
         }
     });
 }
@@ -221,16 +234,24 @@ function scrollToTop() {
     });
 }
 
-function showToast(msg) {
+function showToast(msg, advice = false) {
     const elm = document.getElementById('toast');
     elm.innerHTML = msg;
     elm.classList.add('show', 'animate__fadeInUp');
-    setTimeout(function () { elm.classList.remove('show', 'animate__fadeInUp') }, 5000);
+
+    if (advice) elm.classList.add('advice');
+
+    setTimeout(function () { elm.classList.remove('show', 'advice', 'animate__fadeInUp') }, 5000);
 }
 
-function showSpinner() {
+function showSpinner(show = true) {
     spinner = document.getElementById("spinner");
-    spinner.classList.add("show");
+
+    if (show) {
+        spinner.classList.add("show");
+    } else {
+        spinner.classList.remove("show");
+    }
 }
 
 function highlightedText(text, words) {

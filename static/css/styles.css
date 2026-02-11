@@ -198,6 +198,7 @@ p.title {
     height: 40px;
     padding-right: 10px;
     padding-left: 0;
+    visibility: visible;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -207,13 +208,13 @@ p.title {
     background-position: top left;
     clip-path: polygon(75% 0, 100% 47%, 75% 100%, 0 100%, 0 0);
     -webkit-clip-path: polygon(75% 0, 100% 47%, 75% 100%, 0 100%, 0 0);
+    color: var(--btn-font-primary);
 
-    a {
-        color: var(--btn-font-primary);
-    }
+    /* a {
+    } */
 
     @media (width < 768px) {
-        display: none;
+        visibility: hidden;
     }
 }
 
@@ -394,6 +395,10 @@ footer {
 
     &.show {
         visibility: visible;
+    }
+
+    &.advice {
+        background-color: var(--success);
     }
 
     @media (width < 768px) {

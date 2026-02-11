@@ -110,22 +110,11 @@
 
                             <nav class="navigation">
                                 <!-- previous book -->
-                                <div class="arrow-left">
-                                    <a id="prev-book" hx-ext="client-side-templates" hx-get="/api/{{prevBook}}"
-                                        hx-trigger="click" hx-swap="innerText" hx-target="#data-render"
-                                        mustache-array-template="chapters-list" onclick="showSpinner()">
-                                        {{prevBook}}
-                                    </a>
-                                </div>
-
+                                <a id="nav-arrow" class="arrow-left" data-prevbook="{{prevBook}}"
+                                    data-nextbook="{{nextBook}}" onclick="showSpinner();navigation(-1);">{{prevBook}}
+                                </a>
                                 <!-- next book -->
-                                <div class="arrow-right">
-                                    <a id="next-book" hx-ext="client-side-templates" hx-get="/api/{{nextBook}}"
-                                        hx-trigger="click" hx-swap="innerText" hx-target="#data-render"
-                                        mustache-array-template="chapters-list" onclick="showSpinner()">
-                                        {{nextBook}}
-                                    </a>
-                                </div>
+                                <a class="arrow-right" onclick="showSpinner();navigation(1);">{{nextBook}} </a>
                             </nav>
 
                         {{/data}}
@@ -166,21 +155,24 @@
                             {{/verses}}
                         </div>
 
-                        <!-- IDS para uso exclusivo do JavaScript -->
-                        <div id="ids">
-                            <span id="book">{{bookAbbr}}</span>
-                            <span id="chapter">{{chapter}}</span>
-                            <span id="tot-chapter">{{totalChapters}}</span>
-                        </div>
-
                         <!-- Registrar que o capitulo foi lido -->
-                        <div id="btn-position" "
-                            class=" animate__animated animate__faster">
+                        <div id="btn-position" class=" animate__animated animate__faster">
                             <button id="btn-read" data-book="{{bookAbbr}}" data-chapter="{{chapter}}"
                                 onclick="setReadChapters(this.dataset.book, this.dataset.chapter)">
                                 Registrar como lido
                             </button>
                         </div>
+
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="arrow-left" data-book="{{bookAbbr}}" data-chapter="{{chapter}}"
+                                data-total="{{totalChapters}}" onclick="showSpinner();navigation(-1);">
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="arrow-right" onclick="showSpinner();navigation(1);"></div>
+                        </nav>
                     {{/data}}
                 </template>
 
@@ -273,15 +265,17 @@
             <footer>
                 <div class="footer">
                     <a href="/pages/books.html">
-                        <img class="icon" src="./icons/book.svg" alt="livros">
+                        <img class="icon" src="/pages/icons/book.svg" alt="livros">
                     </a>
 
-                    <img class="icon search" src="./icons/search.svg" onclick="searchShow()" alt="search">
-                    <img class="icon search" src="./icons/last-chapter.svg" onclick="getLastChapter()"
+                    <img class="icon search" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+                    <img class="icon search" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()"
                         alt="last chapter">
+                    <!-- <img class="icon search" src="/pages/icons/favorites.svg" onclick="getLastChapter()"
+                        alt="last chapter"> -->
 
                     <a href="/pages/about.html">
-                        <img class="icon" src="./icons/license.svg" alt="license">
+                        <img class="icon" src="/pages/icons/license.svg" alt="license">
                     </a>
                 </div>
             </footer>
