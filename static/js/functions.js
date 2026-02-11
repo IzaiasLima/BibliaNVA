@@ -5,6 +5,11 @@ if ('serviceWorker' in navigator) {
         .catch(err => console.log('Erro:', err));
 }
 
+document.addEventListener('htmx:responseError', evt => {
+    error = JSON.parse(evt.detail.xhr.responseText);
+    showToast(error.detail);
+});
+
 const input = document.getElementById("search");
 if (input) input.addEventListener('keyup', searchWords);
 
@@ -74,7 +79,6 @@ function getLastChapter() {
 }
 
 function showBtnRead() {
-    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
     const btn = document.getElementById("btn-read");
     const position = document.getElementById("btn-position");
 
@@ -83,23 +87,26 @@ function showBtnRead() {
         const chapter = btn.dataset.chapter;
 
         if (!isReadChapters(book, chapter)) {
-            if (scrollTop + clientHeight >= scrollHeight - 20) {
-                position.classList.add('show', 'animate__fadeInUp');
-            } else {
-                position.classList.remove('show', 'animate__fadeInUp');
-            }
+            position.classList.add('show', 'animate__fadeInUp');
+        } else {
+            position.classList.remove('show', 'animate__fadeInUp');
         }
     }
 }
 
-document.addEventListener('htmx:responseError', evt => {
-    error = JSON.parse(evt.detail.xhr.responseText);
-    showToast(error.detail);
-});
-
-
 document.addEventListener('swiped-up', async function () {
-    showBtnRead();
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+    const h1 = document.getElementById("log");
+
+    if (h1) {
+        h1.innerHTML = `${scrollTop + clientHeight + 50 >= scrollHeight}`;
+    }
+
+    if (scrollTop + clientHeight + 50 >= scrollHeight) {
+        showBtnRead();
+    }
+
+    // pinta os capitulos de verde, se já foram lidos
     const btnChapter = document.getElementsByClassName("chapter");
 
     Array.from(btnChapter).forEach(btn => {
