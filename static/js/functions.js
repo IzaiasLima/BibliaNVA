@@ -14,7 +14,7 @@ const input = document.getElementById("search");
 if (input) input.addEventListener('keyup', searchWords);
 
 
-// Exibe o campo de pesquisa (ou realiza a pesquisa, se o campo já está preenchido)
+// Exibe o campo de pesquisa (ou faz a pesquisa, se o campo foi preenchido)
 function searchShow() {
     const elm = document.getElementById("search-position");
     elm.classList.add('show', 'animate__fadeInUp');
@@ -39,7 +39,7 @@ function searchWords(evt) {
 }
 
 // salva capitulos lidos
-function setReadChapters(book, chapter) {
+function updateReadChapters(book, chapter) {
     const readChapters = JSON.parse(localStorage.getItem('readChapters')) || { books: [] };
     const bookIndex = readChapters.books.findIndex(b => b.name === book);
 
@@ -80,70 +80,39 @@ function getLastChapter() {
     chapterView(lastState.book, lastState.chapter);
 }
 
-function showBtnRead() {
-    const btn = document.getElementById("btn-read");
-    const position = document.getElementById("btn-position");
-
-    if (btn && position) {
-        const book = btn.dataset.book;
-        const chapter = btn.dataset.chapter;
-
-        if (!isReadChapters(book, chapter)) {
-
-        } else {
-            position.classList.remove('show', 'animate__fadeInUp');
-        }
-    }
-}
-
 const events = ['scroll', 'wheel', 'touchmove'];
-
 events.forEach(eventType => {
     window.addEventListener(eventType, (e) => {
-        scrollHandler();
+        showBtnRead();
+        markChaptersRead();
     });
 });
 
-function scrollHandler() {
-    // exibe botao para sinalizar capitulo lido
-    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-
+// exibe botao para sinalizar capitulo lido
+function showBtnRead() {
+    const btnRead = document.getElementById("btn-read");
     const position = document.getElementById("btn-position");
-    const btn = document.getElementById("btn-read");
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+    const visible = (scrollTop + clientHeight + 50) >= scrollHeight
 
-    const log = document.getElementById("log")
+    if (visible && position) position.classList.add('show', 'animate__fadeInUp');
 
-    if (log) {
-        log.innerHTML = `** ${scrollTop + clientHeight + 50 >= scrollHeight}`
+    if (btnRead) {
+        const book = btnRead.dataset.book;
+        const chapter = btnRead.dataset.chapter;
+        if (isReadChapters(book, chapter)) position.classList.remove('show', 'animate__fadeInUp');
     }
+};
 
-    position.classList.add('show', 'animate__fadeInUp');
-
-    if (btn && position) {
-        const book = btn.dataset.book;
-        const chapter = btn.dataset.chapter;
-
-        if (!isReadChapters(book, chapter)) {
-            if (scrollTop + clientHeight + 50 >= scrollHeight) {
-                position.classList.add('show', 'animate__fadeInUp');
-            } else {
-                position.classList.remove('show', 'animate__fadeInUp');
-            }
-        }
-    }
-
-    // pinta os capitulos de verde, se já foram lidos
+// pinta os capitulos de verde, se já foram lidos
+function markChaptersRead() {
     const btnChapter = document.getElementsByClassName("chapter");
-
     Array.from(btnChapter).forEach(btn => {
         const book = btn.dataset.book;
         const chapter = btn.dataset.chapter;
-        if (isReadChapters(book, chapter)) {
-            btn.classList.add('bg-success');
-        }
+        if (isReadChapters(book, chapter)) btn.classList.add('bg-success');
     });
-
-};
+}
 
 document.addEventListener('swiped-right', async function () {
     navigation(-1);

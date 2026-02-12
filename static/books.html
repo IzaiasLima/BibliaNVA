@@ -151,14 +151,12 @@
                                     <span class="number">{{verse}}</span>&ensp;<span>{{{text}}}</span>
                                 </p>
                             {{/verses}}
-
-                            <h1 id="log">*</h1>
                         </div>
 
                         <!-- Registrar que o capitulo foi lido -->
                         <div id="btn-position" class="animate__animated animate__faster">
                             <button id="btn-read" data-book="{{bookAbbr}}" data-chapter="{{chapter}}"
-                                onclick="setReadChapters(this.dataset.book, this.dataset.chapter)">
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
                                 Registrar como lido
                             </button>
                         </div>
