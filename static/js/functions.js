@@ -95,7 +95,19 @@ function showBtnRead() {
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
     const visible = (scrollTop + clientHeight + 50) >= scrollHeight
 
-    if (visible && position) position.classList.add('show', 'animate__fadeInUp');
+    // if (visible && position) {
+    //     position.classList.add('show', 'animate__fadeInUp');
+    // } else {
+    //     position.classList.remove('show', 'animate__fadeInUp');
+    // }
+
+    if (position) {
+        if (visible) {
+            position.classList.add('show', 'animate__fadeInUp');
+        } else {
+            position.classList.remove('show', 'animate__fadeInUp');
+        }
+    }
 
     if (btnRead) {
         const book = btnRead.dataset.book;
@@ -148,7 +160,7 @@ async function navigation(direction = 0) {
 
         } else {
             const position = (nextChapter < 1) ? 'Início' : 'Final'
-            showToast(`${position} do livro!`, true);
+            showToast(`${position} do livro!`, 'advice');
             showSpinner(false);
         }
     } else {
@@ -162,7 +174,7 @@ async function chaptersList(book) {
     htmx.ajax('GET', `/api/${book}`, {
         handler: function (elm, response) {
             if (response.xhr.status >= 400) {
-                showToast(`Os dados não estão disponíveis! (${response.xhr.statusText} Error.)`, true);
+                showToast(`Os dados não estão disponíveis! (${response.xhr.statusText} Error.)`);
                 return
             }
             const data = JSON.parse(response.xhr.responseText);
@@ -181,13 +193,13 @@ async function searcByhWords(words) {
     htmx.ajax('GET', `/api/search/${words}`, {
         handler: function (elm, response) {
             if (response.xhr.status >= 400) {
-                showToast(`Os dados não estão disponíveis! (${response.xhr.statusText} Error.)`, true);
+                showToast(`Os dados não estão disponíveis! (${response.xhr.statusText} Error.)`);
                 return
             }
             const data = JSON.parse(response.xhr.responseText);
 
             if (!(data.length && data[0].bookName)) {
-                showToast('Nenhum versículo encontrado com as palavras informadas.', true);
+                showToast('Nenhum versículo encontrado com as palavras informadas.');
                 return
             }
 
@@ -210,7 +222,7 @@ async function chapterView(book, chapter) {
     htmx.ajax('GET', `/api/${book}/${chapter}`, {
         handler: function (elm, response) {
             if (response.xhr.status >= 400) {
-                showToast(`Os dados não estão disponíveis! (${response.xhr.statusText} Error.)`, true);
+                showToast(`Os dados não estão disponíveis! (${response.xhr.statusText} Error.)`);
                 return
             }
             const data = JSON.parse(response.xhr.responseText);
@@ -235,14 +247,16 @@ function scrollToTop() {
     });
 }
 
-function showToast(msg, advice = false) {
+function showToast(msg, styleClass = null) {
     const elm = document.getElementById('toast');
     elm.innerHTML = msg;
     elm.classList.add('show', 'animate__fadeInUp');
 
-    if (advice) elm.classList.add('advice');
+    if (styleClass) elm.classList.add(styleClass);
 
-    setTimeout(function () { elm.classList.remove('show', 'advice', 'animate__fadeInUp') }, 5000);
+    setTimeout(function () {
+        elm.classList.remove('show', 'animate__fadeInUp', styleClass)
+    }, 5000);
 }
 
 function showSpinner(show = true) {

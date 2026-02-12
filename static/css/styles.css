@@ -19,6 +19,7 @@
     --animate-duration: 1.5s;
     --border-radius: 7px;
     --warning: #b4293e;
+    --attention: #b4a829;
     --success: #5c954f;
     --transparent: rgba(255, 255, 255, 0);
 
@@ -382,7 +383,7 @@ footer {
     visibility: hidden;
     top: calc(50vh - 50px);
     width: calc(50vw + 50px);
-    padding: 0.5em;
+    padding: 0.8em;
     align-self: center;
     text-align: center;
     font-size: 1.1rem;
@@ -396,6 +397,10 @@ footer {
     }
 
     &.advice {
+        background-color: var(--attention);
+    }
+
+    &.info {
         background-color: var(--success);
     }
 
