@@ -95,12 +95,6 @@ function showBtnRead() {
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
     const visible = (scrollTop + clientHeight + 50) >= scrollHeight
 
-    // if (visible && position) {
-    //     position.classList.add('show', 'animate__fadeInUp');
-    // } else {
-    //     position.classList.remove('show', 'animate__fadeInUp');
-    // }
-
     if (position) {
         if (visible) {
             position.classList.add('show', 'animate__fadeInUp');

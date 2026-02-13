@@ -42,12 +42,12 @@ class ListBibleSchema(RootModel):
 
 
 class ListVersesSchema(BaseModel):
-    chapter: Optional[int] = None
-    totalChapters: Optional[int] = None
     verses: Optional[ListBibleSchema] = None
     title: Optional[str] = None
     bookName: Optional[str] = None
     bookAbbr: Optional[str] = None
+    chapter: Optional[int] = None
+    totalChapters: Optional[int] = None
     words: Optional[str] = None
 
     class Config:

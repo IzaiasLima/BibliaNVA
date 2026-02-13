@@ -15,11 +15,12 @@ from schemas import (
     BooksSchema,
     BibleSchema,
 )
-from utils import booksAbbr, bookIds, booksNames, maxChapters
+from utils import booksAbbr, bookIds, booksNames, maxChapters, favorites
+import random
 
 app = FastAPI(
     title="Bíblia Nova Versão de Acesso Livre (NVA)",
-    version="1.0.5",
+    version="1.0.7",
     summary="""Este site/aplicativo reproduz o texto da tradução da Bíblia Nova Versão de Acesso Livre (NVA), 
     disponibilizado para acesso livre por meio da licença Creative Commons Attribution-ShareAlike 4.0 
     International (CC BY-SA 4.0).""",
@@ -57,6 +58,33 @@ def get_books():
 
 
 # Endpoints
+@app.get(
+    "/api/favorites/{start=0}/{step=10}",
+    response_model=list[ListVersesSchema],
+    response_model_exclude_none=True,
+)
+def get_favorites(start: int = 0, step: int = 10, db: Session = Depends(get_db)):
+    fav_verses: list[ListVersesSchema] = []
+
+    for favorite in favorites[start:step]:
+        verse = get_bible_verses(*favorite, db)
+        fav_verses.append(verse)
+
+    return fav_verses
+
+
+@app.get(
+    "/api/random",
+    response_model=ListVersesSchema,
+    response_model_exclude_none=True,
+)
+def get_random_favorite(db: Session = Depends(get_db)):
+    random.shuffle(favorites)
+    book, chapter, verses = favorites[0]
+    verse = get_bible_verses(book, chapter, verses, db)
+    return verse
+
+
 @app.get(
     "/api/{book}",
     response_model=ChaptersSchema,

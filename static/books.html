@@ -203,7 +203,6 @@
                     </div>
                 </template>
 
-
                 <!-- Exibe capítulo ref. versículo selecionado na tela de pesquisa -->
                 <template id="search-detail-template">
                     <div id="chapter-render">
@@ -239,12 +238,24 @@
                                 {{/verses}}
                             </div>
 
-                            <!-- IDS para uso exclusivo do JavaScript -->
-                            <div id="ids">
-                                <span id="book">{{bookAbbr}}</span>
-                                <span id="chapter">{{chapter}}</span>
-                                <span id="tot-chapter">{{totalChapters}}</span>
+                            <!-- Registrar que o capitulo foi lido -->
+                            <div id="btn-position" class="animate__animated animate__faster">
+                                <button id="btn-read" data-book="{{bookAbbr}}" data-chapter="{{chapter}}"
+                                    onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                    Registrar como lido
+                                </button>
                             </div>
+
+                            <nav class="navigation">
+                                <!-- previous chapter -->
+                                <div id="nav-arrow" class="arrow-left" data-book="{{bookAbbr}}"
+                                    data-chapter="{{chapter}}" data-total="{{totalChapters}}"
+                                    onclick="showSpinner();navigation(-1);">
+                                </div>
+
+                                <!-- next chapter -->
+                                <div class="arrow-right" onclick="showSpinner();navigation(1);"></div>
+                            </nav>
                         {{/data}}
                     </div>
                 </template>
