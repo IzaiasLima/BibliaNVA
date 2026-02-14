@@ -22,7 +22,7 @@
                 <div hx-ext="client-side-templates" hx-get="/api" hx-trigger="load" hx-swap="innerText"
                     mustache-array-template="livros">
 
-                    <div id="spinner">
+                    <div id="spinner" class="show">
                         <img src="/pages/icons/spinner.svg">
                     </div>
                 </div>
@@ -102,7 +102,7 @@
                                             hx-ext="client-side-templates" hx-get="/api/{{bookAbbr}}/{{.}}"
                                             hx-trigger="click" hx-swap="innerText" hx-target="#chapter-render"
                                             mustache-array-template="chapter-template"
-                                            onclick="showSpinner(); setLastChapter(this.dataset.book, this.dataset.chapter);">{{.}}
+                                            onclick="showSpinner(); setLastChapter(this.dataset.book, this.dataset.chapter)">{{.}}
                                         </a>
                                     {{/chapters}}
                                 </div>
@@ -111,10 +111,10 @@
                             <nav class="navigation">
                                 <!-- previous book -->
                                 <a id="nav-arrow" class="arrow-left" data-prevbook="{{prevBook}}"
-                                    data-nextbook="{{nextBook}}" onclick="showSpinner();navigation(-1);">{{prevBook}}
+                                    data-nextbook="{{nextBook}}" onclick="showSpinner();navigation(-1)">{{prevBook}}
                                 </a>
                                 <!-- next book -->
-                                <a class="arrow-right" onclick="showSpinner();navigation(1);">{{nextBook}} </a>
+                                <a class="arrow-right" onclick="showSpinner();navigation(1)">{{nextBook}} </a>
                             </nav>
 
                         {{/data}}
@@ -164,12 +164,34 @@
                         <nav class="navigation">
                             <!-- previous chapter -->
                             <div id="nav-arrow" class="arrow-left" data-book="{{bookAbbr}}" data-chapter="{{chapter}}"
-                                data-total="{{totalChapters}}" onclick="showSpinner();navigation(-1);">
+                                data-total="{{totalChapters}}" onclick="showSpinner();navigation(-1)">
                             </div>
 
                             <!-- next chapter -->
-                            <div class="arrow-right" onclick="showSpinner();navigation(1);"></div>
+                            <div class="arrow-right" onclick="showSpinner();navigation(1)"></div>
                         </nav>
+                    {{/data}}
+                </template>
+
+                <!-- Exibe a lista de favoritos -->
+                <template id="favorites-template">
+                    <div class="header">
+                        <a href="/pages/books.html">
+                            <img src="/pages/icons/chevron-left.svg" class="icon icon-menu">
+                        </a>
+                        <h2 class="title">Os Top 200 Versos</h2>
+                    </div>
+
+                    <div id="spinner">
+                        <img src="/pages/icons/spinner.svg">
+                    </div>
+
+                    {{#data}}
+                        <p class="verse">
+                            <span><strong>{{bookName}} {{chapter}}</strong></span>
+                            <br>
+                            <span class="number">{{verse}}</span>&ensp;<span>{{{text}}}</span>
+                        </p>
                     {{/data}}
                 </template>
 
@@ -191,8 +213,7 @@
                             <a hx-ext="client-side-templates"
                                 hx-get="/api/{{bookAbbr}}/{{chapter}}/?words={{words}}&verse={{verse}}"
                                 hx-trigger="click" hx-swap="innerText" hx-target="#data-render"
-                                mustache-array-template="search-detail-template"
-                                onclick="showSpinner(); scrollToTop();">
+                                mustache-array-template="search-detail-template" onclick="showSpinner(); scrollToTop()">
                                 <p class="verse">
                                     <span><strong>{{bookName}} {{chapter}}:{{verse}}</strong></span>
                                     <br>
@@ -215,7 +236,7 @@
                             <div class="header">
                                 <a hx-ext="client-side-templates" hx-get="/api/search/{{words}}" hx-trigger="click"
                                     hx-swap="innerText" hx-target="#data-render"
-                                    mustache-array-template="search-template" onclick="showSpinner();">
+                                    mustache-array-template="search-template" onclick="showSpinner()">
                                     <img src="/pages/icons/chevron-left.svg" class="icon">
                                 </a>
                                 <h3 class="title">{{bookName}}, <span id="chapter">{{chapter}}</span></h3>
@@ -250,11 +271,11 @@
                                 <!-- previous chapter -->
                                 <div id="nav-arrow" class="arrow-left" data-book="{{bookAbbr}}"
                                     data-chapter="{{chapter}}" data-total="{{totalChapters}}"
-                                    onclick="showSpinner();navigation(-1);">
+                                    onclick="showSpinner();navigation(-1)">
                                 </div>
 
                                 <!-- next chapter -->
-                                <div class="arrow-right" onclick="showSpinner();navigation(1);"></div>
+                                <div class="arrow-right" onclick="showSpinner();navigation(1)"></div>
                             </nav>
                         {{/data}}
                     </div>
@@ -277,14 +298,13 @@
                     </a>
 
                     <img class="icon search" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
                     <img class="icon search" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()"
                         alt="last chapter">
-                    <!-- <img class="icon search" src="/pages/icons/favorites.svg" onclick="getLastChapter()"
-                        alt="last chapter"> -->
 
-                    <a href="/pages/about.html">
-                        <img class="icon" src="/pages/icons/license.svg" alt="license">
-                    </a>
+                    <img class="icon search" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                    <!-- <a href="/pages/about.html"> <img class="icon" src="/pages/icons/license.svg" alt="license"> </a> -->
                 </div>
             </footer>
         </div>

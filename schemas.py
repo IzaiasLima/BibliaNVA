@@ -4,8 +4,18 @@ from pydantic import BaseModel, RootModel
 
 # Pydantic Schema
 class BooksSchema(BaseModel):
-    old: list[dict]
-    new: list[dict]
+    bookId: int
+    bookName: str
+    bookAbbr: str
+    maxChapters: int
+
+    class Config:
+        from_attributes = True
+
+
+class ListBooksSchema(BaseModel):
+    old: list[BooksSchema]
+    new: list[BooksSchema]
 
     class Config:
         from_attributes = True
@@ -50,5 +60,5 @@ class ListVersesSchema(BaseModel):
     totalChapters: Optional[int] = None
     words: Optional[str] = None
 
-    class Config:
-        from_attributes = True
+    # class Config:
+    #     from_attributes = True

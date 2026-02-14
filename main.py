@@ -7,20 +7,22 @@ from sqlalchemy.orm import Session
 import uvicorn
 
 from db import get_db
-from models import BibleORM
+from models import BibleORM, BooksORM, FavoritesORM
 from schemas import (
     ListVersesSchema,
     ListBibleSchema,
     ChaptersSchema,
     BooksSchema,
     BibleSchema,
+    ListBooksSchema,
 )
-from utils import booksAbbr, bookIds, booksNames, maxChapters, favorites
+
+# from utils import booksAbbr, bookIds, booksNames, maxChapters, favorites
 import random
 
 app = FastAPI(
     title="Bíblia Nova Versão de Acesso Livre (NVA)",
-    version="1.0.7",
+    version="1.1.3",
     summary="""Este site/aplicativo reproduz o texto da tradução da Bíblia Nova Versão de Acesso Livre (NVA), 
     disponibilizado para acesso livre por meio da licença Creative Commons Attribution-ShareAlike 4.0 
     International (CC BY-SA 4.0).""",
@@ -38,51 +40,63 @@ def read_root():
     return RedirectResponse(url="/pages/index.html")
 
 
-@app.get("/api", response_model=BooksSchema)
-def get_books():
+@app.get("/api", response_model=ListBooksSchema)
+def get_books(db: Session = Depends(get_db)):
+    books_at = db.query(BooksORM).filter(BooksORM.book_id < 40).all()
+    books_nt = db.query(BooksORM).filter(BooksORM.book_id >= 40).all()
+
     old = [
-        dict(book=id, bookAbbr=abbr, bookName=booksNames.get(id, ""))
-        for abbr, id in bookIds.items()
-        if id < 40
+        BooksSchema(
+            bookId=book.book_id,
+            bookName=book.book_name,
+            bookAbbr=book.book_abbr,
+            maxChapters=book.max_chapters,
+        )
+        for book in books_at
     ]
+
     new = [
-        dict(book=id, bookAbbr=abbr, bookName=booksNames.get(id, ""))
-        for abbr, id in bookIds.items()
-        if id >= 40
+        BooksSchema(
+            bookId=book.book_id,
+            bookName=book.book_name,
+            bookAbbr=book.book_abbr,
+            maxChapters=book.max_chapters,
+        )
+        for book in books_nt
+    ]
+    return ListBooksSchema(old=old, new=new)
+
+
+@app.get(
+    "/api/favorites",
+    response_model=list[BibleSchema],
+    response_model_exclude_none=True,
+)
+def get_favorites(db: Session = Depends(get_db)):
+    data = (
+        db.query(BibleORM, BooksORM)
+        .join(BooksORM, BibleORM.book == BooksORM.book_id)
+        .filter(
+            BibleORM.book == FavoritesORM.book,
+            BibleORM.chapter == FavoritesORM.chapter,
+            BibleORM.verse == FavoritesORM.verse,
+        )
+        .order_by(BibleORM.book, BibleORM.chapter, BibleORM.verse)
+        .all()
+    )
+
+    resp = [
+        BibleSchema(
+            chapter=d.BibleORM.chapter,
+            verse=d.BibleORM.verse,
+            text=d.BibleORM.text,
+            bookName=d.BooksORM.book_name,
+            bookAbbr=d.BooksORM.book_abbr,
+        )
+        for d in data
     ]
 
-    old.sort(key=lambda x: x["book"])
-    new.sort(key=lambda x: x["book"])
-
-    return BooksSchema(old=old, new=new)
-
-
-# Endpoints
-@app.get(
-    "/api/favorites/{start=0}/{step=10}",
-    response_model=list[ListVersesSchema],
-    response_model_exclude_none=True,
-)
-def get_favorites(start: int = 0, step: int = 10, db: Session = Depends(get_db)):
-    fav_verses: list[ListVersesSchema] = []
-
-    for favorite in favorites[start:step]:
-        verse = get_bible_verses(*favorite, db)
-        fav_verses.append(verse)
-
-    return fav_verses
-
-
-@app.get(
-    "/api/random",
-    response_model=ListVersesSchema,
-    response_model_exclude_none=True,
-)
-def get_random_favorite(db: Session = Depends(get_db)):
-    random.shuffle(favorites)
-    book, chapter, verses = favorites[0]
-    verse = get_bible_verses(book, chapter, verses, db)
-    return verse
+    return resp
 
 
 @app.get(
@@ -91,33 +105,73 @@ def get_random_favorite(db: Session = Depends(get_db)):
     response_model_exclude_none=True,
 )
 def get_chapters(book: str, db: Session = Depends(get_db)):
-    bookId = bookIds.get(book.upper(), 0)
-
     try:
-        data = (
-            db.query(BibleORM.chapter)
-            .filter(
-                BibleORM.book == bookId,
-            )
-            .distinct()
-            .all()
+        this_book = (
+            db.query(BooksORM).filter(BooksORM.book_abbr == book.upper()).first()
         )
 
-        chapters = (
-            ChaptersSchema(
-                bookName=booksNames.get(bookId, ""),
-                bookAbbr=book.upper(),
-                chapters=[chapter for (chapter,) in data],
-                prevBook=booksAbbr(bookId - 1),
-                nextBook=booksAbbr(bookId + 1),
-            )
-            if data
-            else ChaptersSchema()
+        prev_book = (
+            db.query(BooksORM).filter(BooksORM.book_id == this_book.book_id - 1).first()
         )
+
+        next_book = (
+            db.query(BooksORM).filter(BooksORM.book_id == this_book.book_id + 1).first()
+        )
+
+        if this_book:
+            chapters = ChaptersSchema(
+                bookName=this_book.book_name,
+                bookAbbr=this_book.book_abbr,
+                prevBook=prev_book.book_abbr if prev_book else None,
+                nextBook=next_book.book_abbr if next_book else None,
+                chapters=[x + 1 for x in range(0, this_book.max_chapters)],
+            )
+        else:
+            chapters = ChaptersSchema()
+
         return chapters
 
     except Exception:
         return ChaptersSchema()
+
+
+@app.get(
+    "/api/favorite/random",
+    response_model=ListVersesSchema,
+    response_model_exclude_none=True,
+)
+def get_favorite_random(db: Session = Depends(get_db)):
+    favorites = db.query(FavoritesORM).all()
+    choice = random.randint(0, len(favorites) - 1)
+    favorite = favorites[choice] if choice < len(favorites) else 0
+
+    data = (
+        db.query(BibleORM, BooksORM)
+        .join(BooksORM, BooksORM.book_id == BibleORM.book)
+        .filter(
+            BibleORM.book == favorite.book,
+            BibleORM.chapter == favorite.chapter,
+            BibleORM.verse == favorite.verse,
+        )
+        .all()
+    )
+
+    resp = [
+        BibleSchema(
+            chapter=d.BibleORM.chapter,
+            verse=d.BibleORM.verse,
+            text=d.BibleORM.text,
+        )
+        for d in data
+    ]
+
+    result = ListVersesSchema(
+        bookName=data[0].BooksORM.book_name,
+        bookAbbr=data[0].BooksORM.book_abbr,
+        verses=ListBibleSchema(root=resp),
+    )
+
+    return result
 
 
 @app.get(
@@ -127,22 +181,28 @@ def get_chapters(book: str, db: Session = Depends(get_db)):
 )
 def biblie_search_words(words: str, db: Session = Depends(get_db)):
     terms = words.split()
-    filter = [BibleORM.text.like(f"%{word}%") for word in terms]
-    stmt = select(BibleORM).where(and_(*filter))
-    results = db.execute(stmt).scalars().all()
 
-    result = [
+    data = (
+        db.query(BibleORM, BooksORM)
+        .join(BooksORM)
+        .filter(and_(*[BibleORM.text.like(f"%{term}%") for term in terms]))
+        .order_by(BibleORM.verse)
+        .all()
+    )
+
+    resp = [
         BibleSchema(
-            chapter=v.chapter,
-            verse=v.verse,
-            text=v.text,
-            bookName=booksNames.get(v.book, ""),
-            bookAbbr=booksAbbr(v.book),
+            chapter=d.BibleORM.chapter,
+            verse=d.BibleORM.verse,
+            text=d.BibleORM.text,
+            bookName=d.BooksORM.book_name,
+            bookAbbr=d.BooksORM.book_abbr,
             words=words,
         )
-        for v in results
+        for d in data
     ]
-    return result
+
+    return resp
 
 
 @app.get(
@@ -157,52 +217,50 @@ def get_chapter(
     verse: int | None = None,
     db: Session = Depends(get_db),
 ):
-    bookId = bookIds.get(book.upper(), 0)
-    tot_chapters = maxChapters.get(bookId)
-
     try:
         title = (
-            db.query(BibleORM)
+            db.query(BibleORM, BooksORM)
+            .join(BooksORM)
             .filter(
-                BibleORM.book == bookId,
+                BooksORM.book_abbr == book.upper(),
                 BibleORM.chapter == chapter,
+                BibleORM.verse == 0,
             )
-            .where(BibleORM.verse == 0)
             .first()
         )
 
         data = (
-            db.query(BibleORM)
+            db.query(BibleORM, BooksORM)
+            .join(BooksORM)
             .filter(
-                BibleORM.book == bookId,
+                BooksORM.book_abbr == book.upper(),
                 BibleORM.chapter == chapter,
+                BibleORM.verse > 0,
             )
-            .where(BibleORM.verse > 0)
             .order_by(BibleORM.verse)
             .all()
         )
 
-        data = [
+        resp = [
             BibleSchema(
-                chapter=d.chapter,
-                verse=d.verse,
-                text=d.text,
-                bookName=booksNames.get(d.book, ""),
-                bookAbbr=booksAbbr(d.book),
-                words=words,
-                strong="strong" if verse and d.verse == verse else None,
+                chapter=d.BibleORM.chapter,
+                verse=d.BibleORM.verse,
+                text=d.BibleORM.text,
+                strong="strong" if verse and d.BibleORM.verse == verse else None,
             )
             for d in data
         ]
 
         data_list = ListVersesSchema(
-            chapter=chapter,
-            title=title.text if title and len(title.text) > 10 else None,
-            verses=ListBibleSchema(root=data),
-            bookName=booksNames.get(bookId, ""),
-            bookAbbr=book.upper(),
-            totalChapters=tot_chapters,
+            chapter=data[0].BibleORM.chapter,
+            bookName=data[0].BooksORM.book_name,
+            bookAbbr=data[0].BooksORM.book_abbr,
+            verses=ListBibleSchema(root=resp),
+            totalChapters=data[0].BooksORM.max_chapters,
             words=words,
+            title=(
+                title.BibleORM.text if title and len(title.BibleORM.text) > 10 else None
+            ),
         )
         return data_list
 
@@ -218,8 +276,6 @@ def get_chapter(
 def get_bible_verses(
     book: str, chapter: int, verses: str, db: Session = Depends(get_db)
 ):
-    bookId = bookIds.get(book.upper(), 0)
-
     try:
         if "-" in verses:
             start, end = map(int, verses.split("-"))
@@ -228,20 +284,30 @@ def get_bible_verses(
             list_verses = list(map(int, verses.split(",")))
 
         data = (
-            db.query(BibleORM)
+            db.query(BibleORM, BooksORM)
+            .join(BooksORM, BibleORM.book == BooksORM.book_id)
             .filter(
-                BibleORM.book == bookId,
+                BooksORM.book_abbr == book.upper(),
                 BibleORM.chapter == chapter,
                 BibleORM.verse.in_(list_verses),
             )
             .all()
         )
 
+        resp = [
+            BibleSchema(
+                chapter=d.BibleORM.chapter,
+                verse=d.BibleORM.verse,
+                text=d.BibleORM.text,
+            )
+            for d in data
+        ]
+
         data_list = ListVersesSchema(
-            bookName=booksNames.get(bookId, ""),
-            bookAbbr=book.upper(),
+            bookName=data[0].BooksORM.book_name,
+            bookAbbr=data[0].BooksORM.book_abbr,
             chapter=chapter,
-            verses=ListBibleSchema(root=data),
+            verses=ListBibleSchema(root=resp),
         )
         return data_list
 

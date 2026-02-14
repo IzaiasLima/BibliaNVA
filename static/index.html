@@ -19,13 +19,30 @@
         charset=UTF-8'" />
         <div class="container home">
             <div class="content">
-                <!-- <div class="spinner">
-                    <img src="./icons/spinner.svg">
-                </div> -->
+
 
                 <div class="hero">
                     <img src="./images/biblia-nva-alfa.png" alt="logotipo">
                 </div>
+
+                <a hx-ext="client-side-templates" hx-get="/api/favorite/random" hx-trigger="load" hx-swap="innerText"
+                    mustache-array-template="verse-of-day">
+                    <div id="spinner" class="show">
+                        <img src="/pages/icons/spinner.svg">
+                    </div>
+                </a>
+
+                <template id="verse-of-day">
+                    <div>
+                        <p class="card">
+                            {{#data}}
+                                {{#verses}}
+                                    {{text}}
+                                {{/verses}}
+                            {{/data}}
+                        </p>
+                    </div>
+                </template>
 
                 <div id="toast" class="animate__animated animate__faster">
                     <!-- Exibir mensagem de erro -->
@@ -34,7 +51,7 @@
             <footer>
                 <div class="footer">
                     <a href="/pages/books.html">
-                        <img class="icon" src="./icons/book.svg" alt="livros">
+                        <img class="icon" src="./icons/book.svg" onclick="showSpinner()" alt="livros">
                     </a>
 
                     <a href="/pages/about.html">

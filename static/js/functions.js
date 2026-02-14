@@ -85,6 +85,7 @@ events.forEach(eventType => {
     window.addEventListener(eventType, (e) => {
         showBtnRead();
         markChaptersRead();
+        getNextFavorites();
     });
 });
 
@@ -121,16 +122,20 @@ function markChaptersRead() {
 }
 
 document.addEventListener('swiped-right', async function () {
+    // showSpinner();
     navigation(-1);
 });
 
 
 document.addEventListener('swiped-left', async function () {
+    // showSpinner();
     navigation(1);
 });
 
 async function navigation(direction = 0) {
     const navArrow = document.getElementById("nav-arrow");
+
+    if (!navArrow) return;
 
     const book = navArrow.dataset.book;
     const chapter = Number(navArrow.dataset.chapter);
@@ -157,8 +162,8 @@ async function navigation(direction = 0) {
             showToast(`${position} do livro!`, 'advice');
             showSpinner(false);
         }
-    } else {
-        showSpinner(false);
+        // } else {
+        //     showSpinner(false);
     }
 }
 
@@ -169,16 +174,17 @@ async function chaptersList(book) {
         handler: function (elm, response) {
             if (response.xhr.status >= 400) {
                 showToast(`Os dados não estão disponíveis! (${response.xhr.statusText} Error.)`);
-                return
+                return;
             }
             const data = JSON.parse(response.xhr.responseText);
 
-            if (!data.bookAbbr) return
+            if (!data.bookAbbr) return;
 
             const template = document.getElementById('chapters-list').innerHTML;
             const result = document.getElementById('data-render');
             result.innerHTML = Mustache.render(template, { data: data });
             htmx.process(result);
+            showSpinner(false);
         }
     });
 }
@@ -187,41 +193,84 @@ async function searcByhWords(words) {
     htmx.ajax('GET', `/api/search/${words}`, {
         handler: function (elm, response) {
             if (response.xhr.status >= 400) {
-                showToast(`Os dados não estão disponíveis! (${response.xhr.statusText} Error.)`);
-                return
+                showToast(`Dados indisponíveis! (${response.xhr.statusText} Error.)`);
+                return;
             }
             const data = JSON.parse(response.xhr.responseText);
 
             if (!(data.length && data[0].bookName)) {
-                showToast('Nenhum versículo encontrado com as palavras informadas.');
-                return
+                showToast('Não encontrada nenhuma das palavras pesquisadas.');
+                return;
             }
 
             words = words.split(' ');
 
             const verses = data.map(v => ({ ...v, text: highlightedText(v.text, words) }));
-            // verses = { words: words, verses: verses };
 
             const template = document.getElementById('search-template').innerHTML;
             const result = document.getElementById('data-render');
             result.innerHTML = Mustache.render(template, { data: verses });
             htmx.process(result);
+            showSpinner(false);
         }
     });
 }
+
+function getNextFavorites() {
+    const elm = document.getElementById("favorites");
+
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+    const next = (scrollTop + clientHeight + 10) >= scrollHeight
+
+
+
+    if (!(elm && next)) return;
+
+    const start = elm.dataset.start;
+    getFavorites(start);
+}
+
+async function getFavorites() {
+    showSpinner();
+
+    htmx.ajax('GET', `/api/favorites`, {
+        handler: function (elm, response) {
+            showSpinner(false);
+            if (response.xhr.status >= 400) {
+                showToast(`Favoritos indisponíveis. (${response.xhr.statusText} Error.)`);
+                return;
+            }
+            const favorites = JSON.parse(response.xhr.responseText);
+
+            if (!(favorites.length && favorites[0].bookName)) {
+                showToast('A lista de favoritos não foi localizada.');
+                return;
+            }
+
+            const template = document.getElementById('favorites-template').innerHTML;
+            const result = document.getElementById('data-render');
+            const rendered = Mustache.render(template, { data: favorites });
+            result.innerHTML = rendered
+            htmx.process(result);
+            // showSpinner(false);
+        }
+    });
+}
+
 
 async function chapterView(book, chapter) {
     showSpinner();
 
     htmx.ajax('GET', `/api/${book}/${chapter}`, {
         handler: function (elm, response) {
+            showSpinner(false);
             if (response.xhr.status >= 400) {
                 showToast(`Os dados não estão disponíveis! (${response.xhr.statusText} Error.)`);
-                return
+                return;
             }
             const data = JSON.parse(response.xhr.responseText);
 
-            if (!data.bookAbbr) return
+            if (!data.bookAbbr) return;
 
             const template = document.getElementById('chapter-template').innerHTML;
             var result = document.getElementById('chapter-render')
@@ -229,7 +278,7 @@ async function chapterView(book, chapter) {
             result = (result) ? result : document.getElementById('data-render');
             result.innerHTML = Mustache.render(template, { data: data });
             htmx.process(result);
-            showSpinner(false);
+            // showSpinner(false);
         }
     });
 }
