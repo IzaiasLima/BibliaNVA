@@ -274,10 +274,11 @@ async function getFavorites() {
 }
 
 
-async function chapterView(book, chapter, verse) {
+async function chapterView(book, chapter, verse = null) {
+    const url = (verse) ? `/api/${book}/${chapter}?verse=${verse}` : `/api/${book}/${chapter}`;
     showSpinner();
 
-    htmx.ajax('GET', `/api/${book}/${chapter}?verse=${verse}`, {
+    htmx.ajax('GET', url, {
         handler: function (elm, response) {
             showSpinner(false);
             if (response.xhr.status >= 400) {
