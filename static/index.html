@@ -18,47 +18,51 @@
         event.detail.headers['Content-Type']='application/x-www-form-urlencoded; 
         charset=UTF-8'" />
         <div class="container home">
-            <div class="content">
+            <div class="hero">
 
-
-                <div class="hero">
-                    <img src="./images/biblia-nva-alfa.png" alt="logotipo">
+                <div class="logo">
+                    <h1 class="title">Biblia NVA</h1>
+                    <img class="logo" src="./images/nva-logo.png" alt="logotipo">
                 </div>
 
-                <a hx-ext="client-side-templates" hx-get="/api/favorite/random" hx-trigger="load" hx-swap="innerText"
-                    mustache-array-template="verse-of-day">
+                <div id="verse">
                     <div id="spinner" class="show">
                         <img src="/pages/icons/spinner.svg">
                     </div>
-                </a>
-
-                <template id="verse-of-day">
-                    <div>
-                        <p class="card">
-                            {{#data}}
-                                {{#verses}}
-                                    {{text}}
-                                {{/verses}}
-                            {{/data}}
-                        </p>
-                    </div>
-                </template>
-
-                <div id="toast" class="animate__animated animate__faster">
-                    <!-- Exibir mensagem de erro -->
                 </div>
             </div>
-            <footer>
-                <div class="footer">
-                    <a href="/pages/books.html">
-                        <img class="icon" src="./icons/book.svg" onclick="showSpinner()" alt="livros">
-                    </a>
+        </div>
 
-                    <a href="/pages/about.html">
-                        <img class="icon" src="./icons/license.svg" alt="license">
+        <a hx-ext="client-side-templates" hx-get="/api/favorite/random" hx-trigger="load" hx-swap="innerText"
+            hx-target="#verse" mustache-array-template="verse-of-day"> </a>
+
+        <template id="verse-of-day">
+            {{#data}}
+                {{#verses}}
+                    <a class="card"
+                        href="/pages/books.html?book={{{bookAbbr}}}&chapter={{{chapter}}}&verse={{{verse}}}">
+                        {{{text}}}
+                        {{{book}}}
                     </a>
-                </div>
-            </footer>
+                {{/verses}}
+            {{/data}}
+        </template>
+
+        <div id="toast" class="animate__animated animate__faster">
+            <!-- Exibir mensagem de erro -->
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books.html">
+                    <img class="icon" src="./icons/book.svg" onclick="showSpinner()" alt="livros">
+                </a>
+
+                <a href="/pages/about.html">
+                    <img class="icon" src="./icons/license.svg" alt="license">
+                </a>
+            </div>
+        </footer>
         </div>
 
         <script src="https://unpkg.com/htmx.org@1.9.10"

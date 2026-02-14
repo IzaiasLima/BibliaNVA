@@ -147,8 +147,10 @@
                         <div class="verses">
                             <p class="title">{{title}}</p>
                             {{#verses}}
-                                <p class="verse">
-                                    <span class="number">{{verse}}</span>&ensp;<span>{{{text}}}</span>
+                                <!-- <p class="verse"> -->
+                                <p class="verse {{strong}}">
+                                    <!-- <span class="number"> -->
+                                    <span class="number {{strong}}">{{verse}}</span>&ensp;<span>{{{text}}}</span>
                                 </p>
                             {{/verses}}
                         </div>
@@ -211,7 +213,7 @@
                     <div class="search-result">
                         {{#data}}
                             <a hx-ext="client-side-templates"
-                                hx-get="/api/{{bookAbbr}}/{{chapter}}/?words={{words}}&verse={{verse}}"
+                                hx-get="/api/{{bookAbbr}}/{{chapter}}?words={{words}}&verse={{verse}}"
                                 hx-trigger="click" hx-swap="innerText" hx-target="#data-render"
                                 mustache-array-template="search-detail-template" onclick="showSpinner(); scrollToTop()">
                                 <p class="verse">

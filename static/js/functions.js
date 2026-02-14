@@ -1,3 +1,27 @@
+window.addEventListener('load', function () {
+    const urlParams = new URLSearchParams(window.location.search);
+
+    // Recebe parâmetros da página anterior
+    // E exibe o capítulo passado, se for o caso
+    const book = urlParams.get('book');
+    const chapter = urlParams.get('chapter');
+    const verse = urlParams.get('verse');
+
+    if (book && chapter && verse) {
+        chapterView(book, chapter, verse);
+    }
+});
+
+// Captura eventos
+const events = ['scroll', 'wheel', 'touchmove'];
+events.forEach(eventType => {
+    window.addEventListener(eventType, (e) => {
+        showBtnRead();
+        markChaptersRead();
+        getNextFavorites();
+    });
+});
+
 // Ativa o Service Worker que permite e site ser instalado como APP (PWA)
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/pages/js/service-worker.js')
@@ -80,14 +104,6 @@ function getLastChapter() {
     chapterView(lastState.book, lastState.chapter);
 }
 
-const events = ['scroll', 'wheel', 'touchmove'];
-events.forEach(eventType => {
-    window.addEventListener(eventType, (e) => {
-        showBtnRead();
-        markChaptersRead();
-        getNextFavorites();
-    });
-});
 
 // exibe botao para sinalizar capitulo lido
 function showBtnRead() {
@@ -258,14 +274,14 @@ async function getFavorites() {
 }
 
 
-async function chapterView(book, chapter) {
+async function chapterView(book, chapter, verse) {
     showSpinner();
 
-    htmx.ajax('GET', `/api/${book}/${chapter}`, {
+    htmx.ajax('GET', `/api/${book}/${chapter}?verse=${verse}`, {
         handler: function (elm, response) {
             showSpinner(false);
             if (response.xhr.status >= 400) {
-                showToast(`Os dados não estão disponíveis! (${response.xhr.statusText} Error.)`);
+                showToast(`Os dados não estão disponíveis!(${response.xhr.statusText} Error.)`);
                 return;
             }
             const data = JSON.parse(response.xhr.responseText);
@@ -317,7 +333,7 @@ function highlightedText(text, words) {
 
     words.forEach(word => {
         const regex = new RegExp(word, 'gi');
-        result = result.replace(regex, `<strong>$&</strong>`);
+        result = result.replace(regex, `<strong>${word}</strong>`);
     });
     return result;
 }

@@ -186,7 +186,7 @@ def biblie_search_words(words: str, db: Session = Depends(get_db)):
         db.query(BibleORM, BooksORM)
         .join(BooksORM)
         .filter(and_(*[BibleORM.text.like(f"%{term}%") for term in terms]))
-        .order_by(BibleORM.verse)
+        .order_by(BibleORM.book, BibleORM.chapter, BibleORM.verse)
         .all()
     )
 
