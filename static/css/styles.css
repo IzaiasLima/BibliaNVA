@@ -262,7 +262,12 @@ mark {
 }
 
 .chevron {
+    font-display: block;
     cursor: pointer;
+
+    @media (width < 768px) {
+        display: none;
+    }
 
     img {
         width: 48px;
