@@ -102,15 +102,21 @@ body {
         margin: auto;
         padding: 20px;
         display: flex;
-        font-size: 1.1rem;
-        color: var(--font-secondary);
-        font-style: italic;
         background: rgba(195, 195, 195, 0.098);
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
         backdrop-filter: blur(9px);
         -webkit-backdrop-filter: blur(5px);
         border: 1px solid rgba(255, 255, 255, 0.247);
         border-radius: 16px;
+
+        p {
+            margin: 0;
+            padding: 0;
+            color: var(--font-secondary);
+            font-size: 1.1rem;
+            font-style: italic;
+            text-align: left;
+        }
 
     }
 }
@@ -188,19 +194,17 @@ strong,
 }
 
 mark {
-    font-weight: 500;
-    font-variant: small-caps;
-    background-color: var(--transparent);
+    font-size: 1.1em;
+    color: unset;
+    background-color: unset;
+    font-variant-caps: small-caps;
+    font-size-adjust: 0.4;
 }
-
-/* #ids {
-    visibility: hidden;
-} */
 
 #data-render {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
 }
 
 #chapter-render {
@@ -255,6 +259,15 @@ mark {
     padding-right: 0;
     clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
     -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+}
+
+.chevron {
+    cursor: pointer;
+
+    img {
+        width: 48px;
+        filter: invert(30%) sepia(100%) saturate(5000%) hue-rotate(170deg);
+    }
 }
 
 .chapters {

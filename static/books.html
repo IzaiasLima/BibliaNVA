@@ -165,12 +165,19 @@
 
                         <nav class="navigation">
                             <!-- previous chapter -->
-                            <div id="nav-arrow" class="arrow-left" data-book="{{bookAbbr}}" data-chapter="{{chapter}}"
+                            <div id="nav-arrow" class="chevron" data-book="{{bookAbbr}}" data-chapter="{{chapter}}"
                                 data-total="{{totalChapters}}" onclick="showSpinner();navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
                             </div>
 
                             <!-- next chapter -->
-                            <div class="arrow-right" onclick="showSpinner();navigation(1)"></div>
+                            <div class="chevron" onclick="showSpinner();navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
                         </nav>
                     {{/data}}
                 </template>
