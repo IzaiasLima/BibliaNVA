@@ -19,8 +19,8 @@
         charset=UTF-8'" />
         <div class="container">
             <div class="content">
-                <div hx-ext="client-side-templates" hx-get="/api" hx-trigger="load" hx-swap="innerText"
-                    mustache-array-template="livros">
+                <div id="book-list" hx-ext="client-side-templates" hx-get="/api" hx-trigger="load" hx-swap="innerText"
+                    mustache-array-template="books">
 
                     <div id="spinner" class="show">
                         <img src="/pages/icons/spinner.svg">
@@ -28,7 +28,7 @@
                 </div>
 
                 <!-- Listar todos os livros -->
-                <template id="livros">
+                <template id="books">
                     <div id="data-render">
                         <div class="header">
                             <a href="/pages/index.html">
@@ -92,7 +92,14 @@
                                 <a href="/pages/books.html">
                                     <img src="/pages/icons/chevron-left.svg" class="icon icon-menu">
                                 </a>
-                                <h2 class="title"> {{bookName}} </h2>
+
+                                <!-- reexibe a lista de livros -->
+                                <h2 class="title">
+                                    <a hx-ext="client-side-templates" hx-get="/api" hx-trigger="click"
+                                        hx-swap="innerText" hx-target="#book-list" mustache-array-template="books">
+                                        {{bookName}}
+                                    </a>
+                                </h2>
                             </div>
                             <div class="books">
                                 <div class="chapters">
@@ -125,11 +132,18 @@
                 <template id="chapter-template">
                     {{#data}}
                         <div class="header">
+                            <!-- reexibe os capítulos -->
                             <a hx-ext="client-side-templates" hx-get="/api/{{bookAbbr}}" hx-trigger="click"
                                 hx-swap="innerText" hx-target="#data-render" mustache-array-template="chapters-list">
                                 <img src="/pages/icons/chevron-left.svg" class="icon">
                             </a>
-                            <h3 class="title">{{bookName}}, <span id="chapter">{{chapter}}</span></h3>
+
+                            <!-- reexibe a lista de livros -->
+                            <a hx-ext="client-side-templates" hx-get="/api" hx-trigger="click" hx-swap="innerText"
+                                hx-target="#book-list" mustache-array-template="books">
+                                <h3 class="title">{{bookName}}, <span id="chapter">{{chapter}}</span></h3>
+                            </a>
+
                             <div class="icon-alpha">
                                 <a onclick="decFontSize()">
                                     <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
@@ -248,7 +262,17 @@
                                     mustache-array-template="search-template" onclick="showSpinner()">
                                     <img src="/pages/icons/chevron-left.svg" class="icon">
                                 </a>
-                                <h3 class="title">{{bookName}}, <span id="chapter">{{chapter}}</span></h3>
+
+                                <!-- <h3 class="title">{{bookName}}, <span id="chapter">{{chapter}}</span></h3> -->
+
+                                <!-- reexibe a lista de livros -->
+                                <h3 class="title">
+                                    <a hx-ext="client-side-templates" hx-get="/api" hx-trigger="click"
+                                        hx-swap="innerText" hx-target="#book-list" mustache-array-template="books">
+                                        {{bookName}}, <span id="chapter">{{chapter}}</span>
+                                    </a>
+                                </h3>
+
                                 <div class="icon-alpha">
                                     <a onclick="decFontSize()">
                                         <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
@@ -257,6 +281,7 @@
                                         <img src="/pages/icons/text-increase.svg" class="icon text-increase">
                                     </a>
                                 </div>
+
                             </div>
 
                             <div class="verses">

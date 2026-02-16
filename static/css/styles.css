@@ -199,15 +199,16 @@ h3 {
 strong,
 .strong,
 .strong mark {
-    font-weight: 600;
+    font-weight: 700;
 }
 
 mark {
-    font-size: 1.1em;
+    font-size: 1.13em;
+    font-weight: 500;
     color: unset;
     background-color: unset;
     font-variant-caps: small-caps;
-    font-size-adjust: 0.4;
+    font-size-adjust: 0.45;
 }
 
 #data-render {

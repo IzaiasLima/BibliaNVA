@@ -31,4 +31,5 @@ class FavoritesORM(Base):
     id = Column(Integer, primary_key=True)
     book = Column(Integer)
     chapter = Column(Integer)
-    verse = Column(String)
+    verse = Column(Integer)
+    verses = Column(String)

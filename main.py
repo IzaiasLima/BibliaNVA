@@ -141,35 +141,61 @@ def get_chapters(book: str, db: Session = Depends(get_db)):
     response_model_exclude_none=True,
 )
 def get_favorite_random(db: Session = Depends(get_db)):
-    favorites = db.query(FavoritesORM).all()
-    choice = random.randint(0, len(favorites) - 1)
-    favorite = favorites[choice] if choice < len(favorites) else 0
-
-    data = (
-        db.query(BibleORM, BooksORM)
-        .join(BooksORM, BooksORM.book_id == BibleORM.book)
-        .filter(
-            BibleORM.book == favorite.book,
-            BibleORM.chapter == favorite.chapter,
-            BibleORM.verse == favorite.verse,
-        )
+    favorites = (
+        db.query(FavoritesORM, BooksORM.book_abbr)
+        .join(BooksORM, FavoritesORM.book == BooksORM.book_id)
         .all()
     )
+    choice = random.randint(0, len(favorites) - 1)
+    selected = favorites[choice] if choice < len(favorites) else 0
+    favorite, book = selected
 
-    resp = [
-        BibleSchema(
-            chapter=d.BibleORM.chapter,
-            verse=d.BibleORM.verse,
-            text=d.BibleORM.text,
+    # se for uma lista de versículos (str)
+    if favorite.verses:
+        data = get_bible_verses(book, favorite.chapter, favorite.verses, db)
+        text = " ".join(t.text for t in data.verses.root)
+
+        resp = [
+            BibleSchema(
+                chapter=favorite.chapter,
+                verse=favorite.verse,
+                text=text,
+            )
+        ]
+
+        result = ListVersesSchema(
+            bookName=data.bookName,
+            bookAbbr=data.bookAbbr,
+            verses=ListBibleSchema(root=resp),
         )
-        for d in data
-    ]
 
-    result = ListVersesSchema(
-        bookName=data[0].BooksORM.book_name,
-        bookAbbr=data[0].BooksORM.book_abbr,
-        verses=ListBibleSchema(root=resp),
-    )
+    else:
+        # um vesículo individual (int)
+        data = (
+            db.query(BibleORM, BooksORM)
+            .join(BooksORM, BooksORM.book_id == BibleORM.book)
+            .filter(
+                BibleORM.book == favorite.book,
+                BibleORM.chapter == favorite.chapter,
+                BibleORM.verse == favorite.verse,
+            )
+            .all()
+        )
+
+        resp = [
+            BibleSchema(
+                chapter=d.BibleORM.chapter,
+                verse=d.BibleORM.verse,
+                text=d.BibleORM.text,
+            )
+            for d in data
+        ]
+
+        result = ListVersesSchema(
+            bookName=data[0].BooksORM.book_name,
+            bookAbbr=data[0].BooksORM.book_abbr,
+            verses=ListBibleSchema(root=resp),
+        )
 
     return result
 
