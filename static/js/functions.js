@@ -34,9 +34,20 @@ document.addEventListener('htmx:responseError', evt => {
     showToast(error.detail);
 });
 
+document.addEventListener('htmx:afterSwap', ev => {
+    scrollToTop();
+});
+
 const input = document.getElementById("search");
 if (input) input.addEventListener('keyup', searchWords);
 
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'auto'
+    });
+}
 
 // Exibe o campo de pesquisa (ou faz a pesquisa, se o campo foi preenchido)
 function searchShow() {
@@ -142,7 +153,6 @@ document.addEventListener('swiped-right', async function () {
     navigation(-1);
 });
 
-
 document.addEventListener('swiped-left', async function () {
     // showSpinner();
     navigation(1);
@@ -205,6 +215,7 @@ async function chaptersList(book) {
     });
 }
 
+// busca pelas palavra digitadas no campo de pesquisa
 async function searcByhWords(words) {
     htmx.ajax('GET', `/api/search/${words}`, {
         handler: function (elm, response) {
@@ -273,7 +284,6 @@ async function getFavorites() {
     });
 }
 
-
 async function chapterView(book, chapter, verse = null) {
     const url = (verse) ? `/api/${book}/${chapter}?verse=${verse}` : `/api/${book}/${chapter}`;
     showSpinner();
@@ -295,15 +305,7 @@ async function chapterView(book, chapter, verse = null) {
             result = (result) ? result : document.getElementById('data-render');
             result.innerHTML = Mustache.render(template, { data: data });
             htmx.process(result);
-            // showSpinner(false);
         }
-    });
-}
-
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
     });
 }
 

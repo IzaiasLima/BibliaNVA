@@ -233,10 +233,12 @@
 
                     <div class="search-result">
                         {{#data}}
+
+                            <!-- Seleciona o capítulo de acordo com o versículo selecionado na pesquisa -->
                             <a hx-ext="client-side-templates"
                                 hx-get="/api/{{bookAbbr}}/{{chapter}}?words={{words}}&verse={{verse}}"
                                 hx-trigger="click" hx-swap="innerText" hx-target="#data-render"
-                                mustache-array-template="search-detail-template" onclick="showSpinner(); scrollToTop()">
+                                mustache-array-template="search-detail-template" onclick="showSpinner()">
                                 <p class="verse">
                                     <span><strong>{{bookName}} {{chapter}}:{{verse}}</strong></span>
                                     <br>
