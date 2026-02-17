@@ -2,7 +2,102 @@ from pathlib import Path
 from database import *
 
 
-livros = {
+def converter():
+    # Converter os arquivos de texto, baixados do Git, para o banco de dados
+
+    p = Path(".")
+
+    folders = [f for f in p.iterdir() if f.is_dir()]
+
+    for folder in folders:
+        t = folder / "front" / "title.txt"
+
+        if t.exists():
+            with t.open() as tit:
+                title = tit.read()
+
+            book_id = books.get(title)
+
+            if book_id is None:
+                print(
+                    f"Erro na pasta '{folder}': O nome do livro '{title}' parece estar grafado incorretamente no arquivo 'title.txt'."
+                )
+                continue
+
+            path = Path(folder)
+
+            # processar apenas um ou mais livros específicos, ignorando os demais
+            # if title not in [
+            #     "João",
+            #     "Êxodo",
+            #     "Deuteronômio",
+            #     "2 Crônicas",
+            #     "1 Samuel",
+            #     "Jeremias",
+            # ]:
+            #     continue
+
+            print(f"Processando: {title}")
+
+            for file in path.iterdir():
+                if file.name.isdigit():
+                    verse_files = [v for v in file.iterdir() if v.name != "title.txt"]
+                    verse_files.sort()
+                    paragraph = 0
+
+                    for verse in verse_files:
+                        with verse.open() as v:
+                            text = v.readlines()
+
+                        for txt in text:
+                            t = txt.split("\\v ")
+                            paragraph += 1
+
+                            if len(t) > 1:
+                                for msg in t[1:]:
+                                    msg = msg.split(" ")
+                                    nr_verse = msg[0].strip()
+                                    txt_verse = " ".join(msg[1:]).strip()
+
+                                    try:
+                                        add_verse(
+                                            db,
+                                            int(book_id),
+                                            int(file.name),
+                                            paragraph,
+                                            int(nr_verse),
+                                            txt_verse,
+                                        )
+                                    except Exception as e:
+                                        print(f"Erro ao adicionar verso: {e}")
+                                        print(
+                                            f"Provável local do erro: {verse} ==> {txt}"
+                                        )
+
+                            else:
+                                msg = t[0].strip()
+                                msg = " ".join(msg.split(" ")[2:])
+                                nr_verse = "0"
+                                txt_verse = msg
+
+                                if txt_verse != "":
+                                    try:
+                                        add_verse(
+                                            db,
+                                            int(book_id),
+                                            int(file.name),
+                                            paragraph,
+                                            int(nr_verse),
+                                            txt_verse,
+                                        )
+                                    except Exception as e:
+                                        print(f"Erro ao adicionar verso: {e}")
+                                        print(
+                                            f"Provável local do erro: {verse} ==> {txt}"
+                                        )
+
+
+books = {
     "Ageu": "37",
     "Amós": "30",
     "Apocalipse": "66",
@@ -72,110 +167,25 @@ livros = {
 }
 
 
-def converter():
-    # Converter os arquivos de texto, baixados do Git, para o banco de dados
-
-    p = Path(".")
-
-    folders = [f for f in p.iterdir() if f.is_dir()]
-
-    for folder in folders:
-        t = folder / "front" / "title.txt"
-
-        if t.exists():
-            with t.open() as tit:
-                title = tit.read()
-
-            book_id = livros.get(title)
-
-            if book_id is None:
-                print(
-                    f"Erro na pasta '{folder}': O nome do livro '{title}' parece estar grafado incorretamente no arquivo 'title.txt'."
-                )
-                continue
-
-            path = Path(folder)
-
-            # processar apenas um ou mais livros específicos, ignorando os demais
-            if title not in [
-                "João",
-                "Êxodo",
-                "Deuteronômio",
-                "2 Crônicas",
-                "1 Samuel",
-                "Jeremias",
-            ]:
-                continue
-
-            print(f"Processando: {title}")
-
-            for file in path.iterdir():
-                if file.name.isdigit():
-                    verse_files = [v for v in file.iterdir() if v.name != "title.txt"]
-                    verse_files.sort()
-                    paragraph = 0
-
-                    for verse in verse_files:
-                        with verse.open() as v:
-                            text = v.readlines()
-
-                        for txt in text:
-                            t = txt.split("\\v ")
-                            paragraph += 1
-
-                            if len(t) > 1:
-                                for msg in t[1:]:
-                                    msg = msg.split(" ")
-                                    nr_verse = msg[0].strip()
-                                    txt_verse = " ".join(msg[1:]).strip()
-
-                                    try:
-                                        add_verse(
-                                            db,
-                                            int(book_id),
-                                            int(file.name),
-                                            paragraph,
-                                            int(nr_verse),
-                                            txt_verse,
-                                        )
-                                    except Exception as e:
-                                        print(f"Erro ao adicionar verso: {e}")
-                                        print(
-                                            f"Provável local do erro: {verse} ==> {txt}"
-                                        )
-
-                            else:
-                                msg = t[0].strip()
-                                msg = " ".join(msg.split(" ")[2:])
-                                nr_verse = "0"
-                                txt_verse = msg
-
-                                if txt_verse != "":
-                                    try:
-                                        add_verse(
-                                            db,
-                                            int(book_id),
-                                            int(file.name),
-                                            paragraph,
-                                            int(nr_verse),
-                                            txt_verse,
-                                        )
-                                    except Exception as e:
-                                        print(f"Erro ao adicionar verso: {e}")
-                                        print(
-                                            f"Provável local do erro: {verse} ==> {txt}"
-                                        )
-
-
 if __name__ == "__main__":
-
     db = connect("../database.db")
 
     create(db)
 
     try:
+        print("Iníci da conversão dos arquivos fontes...")
         converter()
-    except Exception as e:
-        print(f"Erro durante a conversão: {e}")
+
+        print("Criando tabela de livros...")
+        execsql("books.sql", db)
+
+        print("Criando tabela de favoritos...")
+        execsql("favorites.sql", db)
+
+        print("Fazendo ajustes no texto...")
+        execsql("replace.sql", db)
+
+        print("Processo cuncluído!")
+
     finally:
         close(db)

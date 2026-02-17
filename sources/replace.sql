@@ -1,7 +1,5 @@
+-- SUBSTITUI ALGUMAS OCORRÊNCIAS DE YAHWEH POR SENHOR
 --
--- Update de Yahweh para SENHOR em alguns textos
---
-
 -- No inicio da frase
 --
 UPDATE bible
@@ -24,8 +22,25 @@ SET text = REPLACE(
     )
 WHERE text LIKE '%diz Yahweh dos Exércitos%';
 --
+-- Elimina notas de rodapé
+--
+UPDATE bible
+SET text = SUBSTR(text, 1, INSTR(text, '[Nota:') - 1) || '' || SUBSTR(text, INSTR(text, ']') + 1)
+WHERE text LIKE '%[Nota:%]%';
+--
+--
+UPDATE bible
+SET text = SUBSTR(text, 1, INSTR(text, '[Algumas versões') - 1) || '' || SUBSTR(text, INSTR(text, ']') + 1)
+WHERE text LIKE '%[Algumas versões%]%';
+--
 -- Eliminar espacos duplos
 --
 UPDATE bible
 SET text = REPLACE(text, '  ', ' ')
 WHERE text LIKE '%  %';
+--
+-- Eliminar pontos duplos
+--
+UPDATE bible
+SET text = REPLACE(text, '. .', '.')
+WHERE text LIKE '%. .%';

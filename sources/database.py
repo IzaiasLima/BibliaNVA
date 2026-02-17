@@ -44,6 +44,16 @@ def add_verse(
     conexao.commit()
 
 
+def execsql(sqlfile, conexao: sqlite3.Connection):
+    cursor = conexao.cursor()
+
+    with open(sqlfile) as file:
+        sql = file.read()
+
+    cursor.executescript(sql)
+    conexao.commit
+
+
 def close(conexao: sqlite3.Connection) -> None:
     """Fecha a conexão com o banco de dados."""
     conexao.close()
