@@ -8,20 +8,26 @@ Dado que exite o [site oficial da Bíblia NVA](https://www.biblianva.com.br/), p
 
 **Por dois motivos:**
 
-1. O site oficial não é otimizado para o uso em telas pequenas. Como [mais de 60% das pessoas](https://www.nic.br/noticia/na-midia/celular-e-unico-meio-de-acesso-para-62-dos-usuarios-de-internet-no-brasil/), no Brasil, acessam a Web apenas por meio do celular (além daqueles que usam mais de uma forma de acesso), me propus a espelhar o conteúdo oficial da Bíblia NVA em uma aplicação PWA, que proporcionará uma experiência melhor para esses usuários.
+1. O site oficial não é otimizado para o uso em telas pequenas. Como mais de 60% das pessoas, no Brasil, acessam a Web apenas por meio do celular (além daqueles que usam mais de uma forma de acesso), me propus a espelhar o conteúdo oficial da Bíblia NVA nesta aplicação PWA, que proporcionará uma experiência melhor para esses usuários.
 
 2. Permitir que o texto seja consultado por meio de uma API. Ainda que não tenha a pretensão de ser um local de consultas massivas, pois não poderia dar conta de um tráfego intenso, considero relevante oferecer a possibilidade desse tipo acesso para esta valiosa versão do texto bíblico.
 
+## Adaptação textual
+Ao longo da vida tive mais contato e familiaridade com as versões baseadas na Almeida, por isso, certas expressões em que Yahweh é usado na presente versão, como Yahweh é o meu pastor" ou "Yahweh dos Exércitos" soam bastante estranhas. Sendo assim, optei por utilizar, em seu lugar, o título Senhor, em versalete, como na maioria das versões mais tradicionais. Adotei esse procedimento apenas para algumas dessas expressões, mantendo o nome sagrado Yahweh nos demais casos.
+
+Por conveniência e praticidade para o público deste aplicativo, eliminamos a maioria das notas de rodapé, deixando o texto mais limpo e mais fluido. Aos estudantes e demais interessados em uma análise mais aprofudada do texto, recomendamos acessar o conteúdo em sua forma original diretamente no site oficial da Bíblia NVA.
+
+A versão do texto que adotamos neste projeto é a que estava disponível nos repositórios oficiais em 02/02/2026.
 
 ## Consultas à API
 
 As consulta à API desta aplicação deve ser feita nos seguintes endpoints:
 
-**/api** para a lista dos livros
+**/api** lista dos livros
 
-**/api/{book}** para a lista dos capítulos de um livro, onde {book} é a sigla do livro ( exemplo: Mt, 1Co).
+**/api/{book}** lista dos capítulos de um livro, onde {book} é a sigla do livro ( exemplo: Mt, 1Co).
 
-**/api/{book}/{chapter}** para a lista de todos versículos do capítulo, onde {chapter} é o número do capítulo.
+**/api/{book}/{chapter}** lista de todos versículos do capítulo, onde {chapter} é o número do capítulo.
 
 **/api/{book}/{chapter}/{verses}** para acessar um ou mais versículos, onde /{verses} é o número de um versículo ou uma lista de versículos.
 
@@ -31,7 +37,7 @@ Exemplos: [/api/jó/1/22](https://biblia.izaias.com.br/api/jó/1/22); [/api/jo/1
 ## Termos de Uso
 Este serviço é gratuito, disponível para uso por qualquer pessoa, desde que não haja abuso em sua utlização. O serviço tem um limite de requisições por segundo, portanto não use esta API para baixar a Bíblia inteira. Em vez disso, obtenha os dados da fonte original, informada no site oficial da NVA. Também não use os nossos endpoints como backend para uma aplicação que tenha alta demanda de acessos.
 
-Não há garantia de disponibilidade, qualidade ou a corretude deste serviço. O serviço pode ficar fora do ar ocasionalmente, pois é disponibilizado apenas como um hobby. O código e os dados deste site/aplicativo estão disponíveis no repositário do GitHub, caso você mesmo prefira hospedá-lo.
+Não há garantia de disponibilidade, qualidade ou a corretude deste serviço. O serviço pode ficar fora do ar ocasionalmente, pois é disponibilizado apenas como um hobby. O código e os dados deste site/aplicativo estão disponíveis neste repositário, caso você mesmo prefira hospedá-lo.
 
 ## Processamento dos arquivos
 
@@ -56,4 +62,4 @@ python3 convert.py
 
 3. Em algums textos há uma quebra de linha não prevista que ocasiona um erro não detectado no processamento. É necessário eliminar esse problema antes do processamento ou excluir o livro todo da base de dados e reprocessar a penas esse livro. Esse tipo de problema se encontra em Êxodo, capítulos 13, verso 13, capítulo 14, verso 12, capítulo 25, verso 30 e capítulo 39, verso 3; em Deutoronômio, capítulo 1, verso 21 e capítulo 15, verso 14; também em 2 Crônicas, capítulos 16, versos 12 e 13, e Capítulo 29, verso 9; em 1 Samuel, capítulos 9, verso 19 e capítulo 28, verso 19; e em Jeremias, capítulo 23, verso 36. 
 
-Recomendo executar o script uma vez para localizar os problemas. Fazer as correções necessárias e, antes de executar o script novamete, zerar a tabela _bible_ para não ter problemas com a duplicação de chaves, que poderia mascarar outros problemas de importação.
+Recomendo fazer as correções necessárias antes de executar o script de conversão. Se tiver que repetir o processo, sugiro _dropar_ a tabela _bible_ para não ter problemas com a chave primária. O excesso de erros exibidos, devido à duplicação de chaves, poderia mascarar outros problemas de importação.
