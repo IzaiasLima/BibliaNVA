@@ -25,22 +25,25 @@
                     <img class="logo" src="/pages/images/nva-logo.png" alt="logotipo">
                 </div>
 
-                <div id="verse">
-                    <div id="spinner" class="show">
-                        <img src="/pages/icons/spinner.svg">
-                    </div>
+                <div id="spinner" class="show">
+                    <img src="/pages/icons/spinner.svg">
+                </div>
+
+                <div id="data-render">
+                    <!-- Hook para renderizar os dados -->
                 </div>
             </div>
         </div>
+        </div>
 
-        <a hx-ext="client-side-templates" hx-get="/api/favorite/random" hx-trigger="load" hx-swap="innerText"
-            hx-target="#verse" mustache-array-template="verse-of-day"> </a>
+        <a hx-ext="client-side-templates" hx-get="/api/favorite/random" hx-trigger="load" hx-swap="innerHTML"
+            hx-target="#data-render" mustache-array-template="verse-of-day"> </a>
 
         <template id="verse-of-day">
             {{#data}}
                 {{#verses}}
                     <a class="card"
-                        href="/pages/books.html?book={{{bookAbbr}}}&chapter={{{chapter}}}&verse={{{verse}}}">
+                        href="/pages/bible.html?book={{{bookAbbr}}}&chapter={{{chapter}}}&verse={{{verse}}}">
                         <p>{{{text}}}</p>
                     </a>
                 {{/verses}}
@@ -48,12 +51,12 @@
         </template>
 
         <div id="toast" class="animate__animated animate__faster">
-            <!-- Exibir mensagem de erro -->
+            <!-- Hook para exibir mensagem de erro -->
         </div>
 
         <footer>
             <div class="footer">
-                <a href="/pages/books.html">
+                <a href="/pages/bible.html">
                     <img class="icon" src="./icons/book.svg" onclick="showSpinner()" alt="livros">
                 </a>
 

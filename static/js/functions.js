@@ -18,7 +18,6 @@ events.forEach(eventType => {
     window.addEventListener(eventType, (e) => {
         showBtnRead();
         markChaptersRead();
-        getNextFavorites();
     });
 });
 
@@ -34,13 +33,16 @@ document.addEventListener('htmx:responseError', evt => {
     showToast(error.detail);
 });
 
-document.addEventListener('htmx:afterSwap', ev => {
-    scrollToTop();
+document.addEventListener('htmx:beforeRequest', ev => {
+    showSpinner();
+});
+
+document.addEventListener('htmx:afterRequest', ev => {
+    showSpinner(false);
 });
 
 const input = document.getElementById("search");
 if (input) input.addEventListener('keyup', searchWords);
-
 
 function scrollToTop() {
     window.scrollTo({
@@ -115,7 +117,6 @@ function getLastChapter() {
     chapterView(lastState.book, lastState.chapter);
 }
 
-
 // exibe botao para sinalizar capitulo lido
 function showBtnRead() {
     const btnRead = document.getElementById("btn-read");
@@ -149,12 +150,10 @@ function markChaptersRead() {
 }
 
 document.addEventListener('swiped-right', async function () {
-    // showSpinner();
     navigation(-1);
 });
 
 document.addEventListener('swiped-left', async function () {
-    // showSpinner();
     navigation(1);
 });
 
@@ -186,33 +185,8 @@ async function navigation(direction = 0) {
         } else {
             const position = (nextChapter < 1) ? 'Início' : 'Final'
             showToast(`${position} do livro!`, 'advice');
-            showSpinner(false);
         }
-        // } else {
-        //     showSpinner(false);
     }
-}
-
-async function chaptersList(book) {
-    showSpinner();
-
-    htmx.ajax('GET', `/api/${book}`, {
-        handler: function (elm, response) {
-            if (response.xhr.status >= 400) {
-                showToast(`Os dados não estão disponíveis! (${response.xhr.statusText} Error.)`);
-                return;
-            }
-            const data = JSON.parse(response.xhr.responseText);
-
-            if (!data.bookAbbr) return;
-
-            const template = document.getElementById('chapters-list').innerHTML;
-            const result = document.getElementById('data-render');
-            result.innerHTML = Mustache.render(template, { data: data });
-            htmx.process(result);
-            showSpinner(false);
-        }
-    });
 }
 
 // busca pelas palavra digitadas no campo de pesquisa
@@ -238,28 +212,11 @@ async function searcByhWords(words) {
             const result = document.getElementById('data-render');
             result.innerHTML = Mustache.render(template, { data: verses });
             htmx.process(result);
-            showSpinner(false);
         }
     });
 }
 
-function getNextFavorites() {
-    const elm = document.getElementById("favorites");
-
-    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-    const next = (scrollTop + clientHeight + 10) >= scrollHeight
-
-
-
-    if (!(elm && next)) return;
-
-    const start = elm.dataset.start;
-    getFavorites(start);
-}
-
 async function getFavorites() {
-    showSpinner();
-
     htmx.ajax('GET', `/api/favorites`, {
         handler: function (elm, response) {
             showSpinner(false);
@@ -279,15 +236,34 @@ async function getFavorites() {
             const rendered = Mustache.render(template, { data: favorites });
             result.innerHTML = rendered
             htmx.process(result);
-            // showSpinner(false);
+            scrollToTop();
+        }
+    });
+}
+
+async function chaptersList(book) {
+    showSpinner();
+
+    htmx.ajax('GET', `/api/${book}`, {
+        handler: function (elm, response) {
+            if (response.xhr.status >= 400) {
+                showToast(`Os dados não estão disponíveis! (${response.xhr.statusText} Error.)`);
+                return;
+            }
+            const data = JSON.parse(response.xhr.responseText);
+
+            if (!data.bookAbbr) return;
+
+            const template = document.getElementById('chapters-list').innerHTML;
+            const result = document.getElementById('data-render');
+            result.innerHTML = Mustache.render(template, { data: data });
+            htmx.process(result);
         }
     });
 }
 
 async function chapterView(book, chapter, verse = null) {
     const url = (verse) ? `/api/${book}/${chapter}?verse=${verse}` : `/api/${book}/${chapter}`;
-    showSpinner();
-
     htmx.ajax('GET', url, {
         handler: function (elm, response) {
             showSpinner(false);

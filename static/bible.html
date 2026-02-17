@@ -19,84 +19,80 @@
         charset=UTF-8'" />
         <div class="container">
             <div class="content">
-                <div id="book-list" hx-ext="client-side-templates" hx-get="/api" hx-trigger="load" hx-swap="innerText"
-                    mustache-array-template="books">
 
-                    <div id="spinner" class="show">
-                        <img src="/pages/icons/spinner.svg">
+                <!-- Aguardando carregamento... -->
+                <div id="spinner" class="show">
+                    <img src="/pages/icons/spinner.svg">
+                </div>
+
+                <!-- Hook para exibe o conteúdo das páginas -->
+                <div id="data-render">
+                    <div class="header">
+                        <img src="/pages/icons/chevron-left.svg" class="icon icon-menu">
+                        <h1 class="title">Bíblia NVA</h1>
                     </div>
                 </div>
 
-                <!-- Listar todos os livros -->
+                <!-- Load Livros -->
+                <div hx-ext="client-side-templates" hx-get="/api" hx-trigger="load" hx-swap="innerHTML"
+                    hx-target="#data-render" mustache-array-template="books">
+                </div>
+
+                <!-- Template dos Livros -->
                 <template id="books">
-                    <div id="data-render">
-                        <div class="header">
-                            <a href="/pages/index.html">
-                                <img src="/pages/icons/chevron-left.svg" class="icon icon-menu">
-                            </a>
-                            <h1 class="title">Bíblia NVA</h1>
-                        </div>
-
-                        <div id="spinner">
-                            <img src="/pages/icons/spinner.svg">
-                        </div>
-
-                        <ul class="columns">
-                            {{#data}}
-                                {{#old}}
-                                    <li>
-                                        <div id="book-names">
-                                            <!-- seleciona livro do Velho Testamento -->
-                                            <a hx-ext="client-side-templates" hx-get="/api/{{bookAbbr}}"
-                                                hx-trigger="click" hx-swap="innerText" hx-target="#data-render"
-                                                mustache-array-template="chapters-list" onclick="showSpinner()">
-                                                {{bookName}}
-                                            </a>
-                                        </div>
-                                    </li>
-                                {{/old}}
-                            {{/data}}
-                        </ul>
-
-                        <hr>
-
-                        <ul class="columns">
-                            {{#data}}
-                                {{#new}}
-                                    <li>
-                                        <div>
-                                            <!-- seleciona livro do Novo Testamento? -->
-                                            <a hx-ext="client-side-templates" hx-get="/api/{{bookAbbr}}"
-                                                hx-trigger="click" hx-swap="innerText" hx-target="#data-render"
-                                                mustache-array-template="chapters-list" onclick="showSpinner()">
-                                                {{bookName}}
-                                            </a>
-                                        </div>
-                                    </li>
-                                {{/new}}
-                            {{/data}}
-                        </ul>
+                    <div class="header">
+                        <a href="/pages/index.html">
+                            <img src="/pages/icons/chevron-left.svg" class="icon icon-menu">
+                        </a>
+                        <h1 class="title">Bíblia NVA</h1>
                     </div>
+
+                    <ul class="columns">
+                        {{#data}}
+                            {{#old}}
+                                <li>
+                                    <a hx-ext="client-side-templates" hx-get="/api/{{bookAbbr}}" hx-trigger="click"
+                                        hx-swap="innerHTML show:window:top" hx-target="#data-render"
+                                        mustache-array-template="chapters-list">
+                                        {{bookName}}
+                                    </a>
+                                </li>
+                            {{/old}}
+                        {{/data}}
+                    </ul>
+
+                    <hr>
+
+                    <ul class="columns">
+                        {{#data}}
+                            {{#new}}
+                                <li>
+                                    <a hx-ext="client-side-templates" hx-get="/api/{{bookAbbr}}" hx-trigger="click"
+                                        hx-swap="innerHTML" hx-target="#data-render"
+                                        mustache-array-template="chapters-list">
+                                        {{bookName}}
+                                    </a>
+                                </li>
+                            {{/new}}
+                        {{/data}}
+                    </ul>
                 </template>
 
-                <!-- Lista os capítulos de um livro selecionada -->
+                <!-- Template dos capítulos de um livro -->
                 <template id="chapters-list">
                     <div id="chapter-render">
 
-                        <div id="spinner">
-                            <img src="/pages/icons/spinner.svg">
-                        </div>
-
                         {{#data}}
                             <div class="header">
-                                <a href="/pages/books.html">
+                                <a href="/pages/bible.html">
                                     <img src="/pages/icons/chevron-left.svg" class="icon icon-menu">
                                 </a>
 
                                 <!-- reexibe a lista de livros -->
                                 <h2 class="title">
                                     <a hx-ext="client-side-templates" hx-get="/api" hx-trigger="click"
-                                        hx-swap="innerText" hx-target="#book-list" mustache-array-template="books">
+                                        hx-swap="innerHTML show:window:top" hx-target="#data-render"
+                                        mustache-array-template="books">
                                         {{bookName}}
                                     </a>
                                 </h2>
@@ -107,9 +103,9 @@
                                         <!-- seleciona o capítulo -->
                                         <a class="chapter" data-book="{{bookAbbr}}" data-chapter="{{.}}"
                                             hx-ext="client-side-templates" hx-get="/api/{{bookAbbr}}/{{.}}"
-                                            hx-trigger="click" hx-swap="innerText" hx-target="#chapter-render"
-                                            mustache-array-template="chapter-template"
-                                            onclick="showSpinner(); setLastChapter(this.dataset.book, this.dataset.chapter)">{{.}}
+                                            hx-trigger="click" hx-swap="innerHTML show:window:top"
+                                            hx-target="#data-render" mustache-array-template="chapter-template"
+                                            onclick="setLastChapter(this.dataset.book, this.dataset.chapter)">{{.}}
                                         </a>
                                     {{/chapters}}
                                 </div>
@@ -118,29 +114,30 @@
                             <nav class="navigation">
                                 <!-- previous book -->
                                 <a id="nav-arrow" class="arrow-left" data-prevbook="{{prevBook}}"
-                                    data-nextbook="{{nextBook}}" onclick="showSpinner();navigation(-1)">{{prevBook}}
+                                    data-nextbook="{{nextBook}}" onclick="navigation(-1)">{{prevBook}}
                                 </a>
                                 <!-- next book -->
-                                <a class="arrow-right" onclick="showSpinner();navigation(1)">{{nextBook}} </a>
+                                <a class="arrow-right" onclick="navigation(1)">{{nextBook}} </a>
                             </nav>
-
                         {{/data}}
                     </div>
                 </template>
 
-                <!-- Exibe o capítulo selecionado -->
+                <!-- Template para o capítulo selecionado -->
                 <template id="chapter-template">
                     {{#data}}
                         <div class="header">
                             <!-- reexibe os capítulos -->
                             <a hx-ext="client-side-templates" hx-get="/api/{{bookAbbr}}" hx-trigger="click"
-                                hx-swap="innerText" hx-target="#data-render" mustache-array-template="chapters-list">
+                                hx-swap="innerHTML show:window:top" hx-target="#data-render"
+                                mustache-array-template="chapters-list">
                                 <img src="/pages/icons/chevron-left.svg" class="icon">
                             </a>
 
                             <!-- reexibe a lista de livros -->
-                            <a hx-ext="client-side-templates" hx-get="/api" hx-trigger="click" hx-swap="innerText"
-                                hx-target="#book-list" mustache-array-template="books">
+                            <a hx-ext="client-side-templates" hx-get="/api" hx-trigger="click"
+                                hx-swap="innerHTML show:window:top" hx-target="#data-render"
+                                mustache-array-template="books">
                                 <h3 class="title">{{bookName}}, <span id="chapter">{{chapter}}</span></h3>
                             </a>
 
@@ -152,10 +149,6 @@
                                     <img src="/pages/icons/text-increase.svg" class="icon text-increase">
                                 </a>
                             </div>
-                        </div>
-
-                        <div id="spinner">
-                            <img src="/pages/icons/spinner.svg">
                         </div>
 
                         <div class="verses">
@@ -180,14 +173,14 @@
                         <nav class="navigation">
                             <!-- previous chapter -->
                             <div id="nav-arrow" class="chevron" data-book="{{bookAbbr}}" data-chapter="{{chapter}}"
-                                data-total="{{totalChapters}}" onclick="showSpinner();navigation(-1)">
+                                data-total="{{totalChapters}}" onclick="navigation(-1)">
                                 &nbsp;
                                 <img src="/pages/icons/chevron-left.svg">
                                 &nbsp;
                             </div>
 
                             <!-- next chapter -->
-                            <div class="chevron" onclick="showSpinner();navigation(1)">
+                            <div class="chevron" onclick="navigation(1)">
                                 &nbsp;
                                 <img class="chevron" src="/pages/icons/chevron-right.svg">
                                 &nbsp;
@@ -199,36 +192,32 @@
                 <!-- Exibe a lista de favoritos -->
                 <template id="favorites-template">
                     <div class="header">
-                        <a href="/pages/books.html">
+                        <a href="/pages/bible.html">
                             <img src="/pages/icons/chevron-left.svg" class="icon icon-menu">
                         </a>
                         <h2 class="title">Os Top 200 Versos</h2>
                     </div>
 
-                    <div id="spinner">
-                        <img src="/pages/icons/spinner.svg">
-                    </div>
-
                     {{#data}}
                         <p class="verse">
-                            <span><strong>{{bookName}} {{chapter}}</strong></span>
-                            <br>
-                            <span class="number">{{verse}}</span>&ensp;<span>{{{text}}}</span>
+                            <a hx-ext="client-side-templates" hx-get="/api/{{bookAbbr}}/{{chapter}}?verse={{verse}}"
+                                hx-trigger="click" hx-swap="innerHTML show:window:top" hx-target="#data-render"
+                                mustache-array-template="chapter-template">
+                                <span><strong>{{bookName}} {{chapter}}</strong></span>
+                                <br>
+                                <span class="number">{{verse}}</span>&ensp;<span>{{{text}}}</span>
+                            </a>
                         </p>
                     {{/data}}
                 </template>
 
-                <!-- Exibe o resultado da pesquisa -->
+                <!-- Template do resultado da pesquisa -->
                 <template id="search-template">
                     <div class="header">
-                        <a href="/pages/books.html">
+                        <a href="/pages/bible.html">
                             <img src="/pages/icons/chevron-left.svg" class="icon icon-menu">
                         </a>
                         <h2 class="title">Resultado da pesquisa</h2>
-                    </div>
-
-                    <div id="spinner">
-                        <img src="/pages/icons/spinner.svg">
                     </div>
 
                     <div class="search-result">
@@ -237,8 +226,8 @@
                             <!-- Seleciona o capítulo de acordo com o versículo selecionado na pesquisa -->
                             <a hx-ext="client-side-templates"
                                 hx-get="/api/{{bookAbbr}}/{{chapter}}?words={{words}}&verse={{verse}}"
-                                hx-trigger="click" hx-swap="innerText" hx-target="#data-render"
-                                mustache-array-template="search-detail-template" onclick="showSpinner()">
+                                hx-trigger="click" hx-swap="innerHTML show:window:top" hx-target="#data-render"
+                                mustache-array-template="search-detail-template">
                                 <p class="verse">
                                     <span><strong>{{bookName}} {{chapter}}:{{verse}}</strong></span>
                                     <br>
@@ -249,28 +238,22 @@
                     </div>
                 </template>
 
-                <!-- Exibe capítulo ref. versículo selecionado na tela de pesquisa -->
+                <!-- Templete do capítulo ref. versículo selecionado da lista da pesquisa -->
                 <template id="search-detail-template">
                     <div id="chapter-render">
-
-                        <div id="spinner">
-                            <img src="/pages/icons/spinner.svg">
-                        </div>
 
                         {{#data}}
                             <div class="header">
                                 <a hx-ext="client-side-templates" hx-get="/api/search/{{words}}" hx-trigger="click"
-                                    hx-swap="innerText" hx-target="#data-render"
-                                    mustache-array-template="search-template" onclick="showSpinner()">
+                                    hx-swap="innerHTML show:window:top" hx-target="#data-render"
+                                    mustache-array-template="search-template">
                                     <img src="/pages/icons/chevron-left.svg" class="icon">
                                 </a>
-
-                                <!-- <h3 class="title">{{bookName}}, <span id="chapter">{{chapter}}</span></h3> -->
 
                                 <!-- reexibe a lista de livros -->
                                 <h3 class="title">
                                     <a hx-ext="client-side-templates" hx-get="/api" hx-trigger="click"
-                                        hx-swap="innerText" hx-target="#book-list" mustache-array-template="books">
+                                        hx-swap="innerHTML" hx-target="#data-render" mustache-array-template="books">
                                         {{bookName}}, <span id="chapter">{{chapter}}</span>
                                     </a>
                                 </h3>
@@ -306,44 +289,42 @@
                             <nav class="navigation">
                                 <!-- previous chapter -->
                                 <div id="nav-arrow" class="arrow-left" data-book="{{bookAbbr}}"
-                                    data-chapter="{{chapter}}" data-total="{{totalChapters}}"
-                                    onclick="showSpinner();navigation(-1)">
+                                    data-chapter="{{chapter}}" data-total="{{totalChapters}}" onclick="navigation(-1)">
                                 </div>
 
                                 <!-- next chapter -->
-                                <div class="arrow-right" onclick="showSpinner();navigation(1)"></div>
+                                <div class="arrow-right" onclick="navigation(1)"></div>
                             </nav>
                         {{/data}}
                     </div>
                 </template>
+            </div>
 
-                <div id="search-position" class="animate__animated animate__faster">
-                    <div class="search-container">
-                        <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
-                    </div>
-                </div>
 
-                <div id="toast" class="animate__animated animate__faster">
-                    <!-- Exibir mensagem de erro -->
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
                 </div>
             </div>
-            <footer>
-                <div class="footer">
-                    <a href="/pages/books.html">
-                        <img class="icon" src="/pages/icons/book.svg" alt="livros">
-                    </a>
 
-                    <img class="icon search" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
-
-                    <img class="icon search" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()"
-                        alt="last chapter">
-
-                    <img class="icon search" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
-
-                    <!-- <a href="/pages/about.html"> <img class="icon" src="/pages/icons/license.svg" alt="license"> </a> -->
-                </div>
-            </footer>
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
         </div>
+        <footer>
+            <div class="footer">
+                <a href="/pages/bible.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon search" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon search" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()"
+                    alt="last chapter">
+
+                <img class="icon search" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
 
         <script src="/pages/js/htmx.min.js"></script>
         <script src="/pages/js/mustache.min.js"></script>

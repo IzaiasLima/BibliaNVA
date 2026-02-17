@@ -169,7 +169,7 @@ body {
     text-align: center;
 
     @media (width < 768px) {
-        padding-right: 24px;
+        padding-right: 25px;
     }
 }
 
