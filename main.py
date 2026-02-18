@@ -2,7 +2,7 @@ from fastapi import FastAPI, Depends
 from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
-from sqlalchemy import select, and_
+from sqlalchemy import and_
 from sqlalchemy.orm import Session
 import uvicorn
 
@@ -21,7 +21,7 @@ from schemas import (
 import random
 
 app = FastAPI(
-    title="Bíblia Nova Versão de Acesso Livre (NVA)",
+    title="Bíblia NVA - API",
     version="1.1.3",
     summary="""Este site/aplicativo reproduz o texto da tradução da Bíblia Nova Versão de Acesso Livre (NVA), 
     disponibilizado para acesso livre por meio da licença Creative Commons Attribution-ShareAlike 4.0 
@@ -178,7 +178,8 @@ def get_favorite_random(db: Session = Depends(get_db)):
     response_model_exclude_none=True,
 )
 def biblie_search_words(words: str, db: Session = Depends(get_db)):
-    terms = words.split()
+    terms = [w for w in words.split() if len(w) > 2]
+    words = " ".join(terms)
 
     data = (
         db.query(BibleORM, BooksORM)

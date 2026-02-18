@@ -5,9 +5,9 @@
     --border-color: rgba(26, 86, 48, 0.2);
     --bg-color: linear-gradient(135deg, rgb(249, 252, 255), rgba(0, 157, 174, 0.228));
     --bg-card-color: linear-gradient(135deg, #adf1ff, #014968);
-    --bg-menu: rgb(109, 214, 216);
+    --bg-menu: #6dd6d8;
     --bg-footer: rgba(6, 25, 66, 0.75);
-    --bg-hero: rgb(1, 73, 104, 1);
+    --bg-hero: #014968;
     --bg-primary: #fff;
     --bg-secondary: #eeeeee;
     --btn-primary: rgb(6, 25, 66, 0.8);
@@ -20,7 +20,7 @@
     --border-radius: 7px;
     --warning: #b4293e;
     --attention: #b4a829;
-    --success: #35919b;
+    --success: #6dd6d8;
     --transparent: rgba(255, 255, 255, 0);
 
     font-size: 24px;
