@@ -21,15 +21,15 @@ A versão do texto que adotamos neste projeto é a que estava disponível nos re
 
 ## Consultas à API
 
-As consulta à API desta aplicação deve ser feita nos seguintes endpoints:
+As consulta à API desta aplicação deve ser feita nos seguintes _endpoints_:
 
 **/api** lista dos livros
 
-**/api/{book}** lista dos capítulos de um livro, onde {book} é a sigla do livro ( exemplo: Mt, 1Co).
+**/api/{book}** lista dos capítulos de um livro, onde {book} é a sigla do livro (exemplo: Mt, 1Co).
 
-**/api/{book}/{chapter}** lista de todos versículos do capítulo, onde {chapter} é o número do capítulo.
+**/api/{book}/{chapter}** lista de todos os versículos do capítulo, onde {chapter} é o número do capítulo.
 
-**/api/{book}/{chapter}/{verses}** para acessar um ou mais versículos, onde /{verses} é o número de um versículo ou uma lista de versículos.
+**/api/{book}/{chapter}/{verses}** para acessar um ou mais versículos, onde {verses} é o número de um versículo ou uma lista de versículos.
 
 Exemplos: [/api/jó/1/22](https://biblia.izaias.com.br/api/jó/1/22); [/api/jo/14/1-3](https://biblia.izaias.com.br/api/jo/14/1-3); [/api/jo/14/1,2,3,18](https://biblia.izaias.com.br/api/jo/14/1,2,3,18).
 
@@ -37,7 +37,7 @@ Exemplos: [/api/jó/1/22](https://biblia.izaias.com.br/api/jó/1/22); [/api/jo/1
 ## Termos de Uso
 Este serviço é gratuito, disponível para uso por qualquer pessoa, desde que não haja abuso em sua utlização. O serviço tem um limite de requisições por segundo, portanto não use esta API para baixar a Bíblia inteira. Em vez disso, obtenha os dados da fonte original, informada no site oficial da NVA. Também não use os nossos endpoints como backend para uma aplicação que tenha alta demanda de acessos.
 
-Não há garantia de disponibilidade, qualidade ou a corretude deste serviço. O serviço pode ficar fora do ar ocasionalmente, pois é disponibilizado apenas como um hobby. O código e os dados deste site/aplicativo estão disponíveis neste repositário, caso você mesmo prefira hospedá-lo.
+Não há garantia de disponibilidade, qualidade ou a corretude deste serviço. O serviço pode ficar fora do ar ocasionalmente, pois é disponibilizado apenas como um hobby. O código e os dados deste site/aplicativo estão disponíveis neste repositório, caso prefira hospedá-lo você mesmo.
 
 ## Processamento dos arquivos
 
