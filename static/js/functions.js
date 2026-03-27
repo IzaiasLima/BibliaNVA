@@ -31,8 +31,6 @@ events.forEach(eventType => {
     });
 });
 
-
-
 document.addEventListener('htmx:responseError', evt => {
     error = JSON.parse(evt.detail.xhr.responseText);
     showToast(error.detail);
@@ -303,13 +301,14 @@ function showToast(msg, styleClass = null) {
 }
 
 function showSpinner(show = true) {
-    spinner = document.getElementById("spinner");
+    return
+    // spinner = document.getElementById("spinner");
 
-    if (show) {
-        spinner.classList.add("show");
-    } else {
-        spinner.classList.remove("show");
-    }
+    // if (show) {
+    //     spinner.classList.add("show");
+    // } else {
+    //     spinner.classList.remove("show");
+    // }
 }
 
 function highlightedText(text, words) {
