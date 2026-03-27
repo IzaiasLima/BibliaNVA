@@ -1,11 +1,3 @@
-// self.addEventListener('install', (event) => {
-//     console.log('Service Worker instalado');
-// });
-
-// self.addEventListener('fetch', (event) => {
-//     event.respondWith(fetch(event.request));
-// });
-
 // ============================================================
 //  Bíblia NVA — Service Worker
 //  Estratégia: Cache-First para a API (conteúdo imutável)
@@ -20,8 +12,8 @@
 // ============================================================
 
 const CACHE_VERSION = 'v1';
-const CACHE_API     = `biblia-api-${CACHE_VERSION}`;
-const CACHE_STATIC  = `biblia-static-${CACHE_VERSION}`;
+const CACHE_API = `biblia-api-${CACHE_VERSION}`;
+const CACHE_STATIC = `biblia-static-${CACHE_VERSION}`;
 
 /**
  * Converte a abreviação do livro para uma URL de path segura.
@@ -38,41 +30,41 @@ function abbrToPath(abbr) {
 // ------------------------------------------------------------------
 const BOOKS = [
   // Antigo Testamento
-  { abbr: 'GN',  chapters: 50 }, { abbr: 'EX',  chapters: 40 },
-  { abbr: 'LV',  chapters: 27 }, { abbr: 'NM',  chapters: 36 },
-  { abbr: 'DT',  chapters: 34 }, { abbr: 'JS',  chapters: 24 },
-  { abbr: 'JZ',  chapters: 21 }, { abbr: 'RT',  chapters:  4 },
+  { abbr: 'GN', chapters: 50 }, { abbr: 'EX', chapters: 40 },
+  { abbr: 'LV', chapters: 27 }, { abbr: 'NM', chapters: 36 },
+  { abbr: 'DT', chapters: 34 }, { abbr: 'JS', chapters: 24 },
+  { abbr: 'JZ', chapters: 21 }, { abbr: 'RT', chapters: 4 },
   { abbr: '1SM', chapters: 31 }, { abbr: '2SM', chapters: 24 },
   { abbr: '1RS', chapters: 22 }, { abbr: '2RS', chapters: 25 },
   { abbr: '1CR', chapters: 29 }, { abbr: '2CR', chapters: 36 },
-  { abbr: 'ED',  chapters: 10 }, { abbr: 'NE',  chapters: 13 },
-  { abbr: 'ET',  chapters: 10 }, { abbr: 'JÓ',  chapters: 42 },
-  { abbr: 'SL',  chapters: 150}, { abbr: 'PV',  chapters: 31 },
-  { abbr: 'EC',  chapters: 12 }, { abbr: 'CT',  chapters:  8 },
-  { abbr: 'IS',  chapters: 66 }, { abbr: 'JR',  chapters: 52 },
-  { abbr: 'LM',  chapters:  5 }, { abbr: 'EZ',  chapters: 48 },
-  { abbr: 'DN',  chapters: 12 }, { abbr: 'OS',  chapters: 14 },
-  { abbr: 'JL',  chapters:  3 }, { abbr: 'AM',  chapters:  9 },
-  { abbr: 'OB',  chapters:  1 }, { abbr: 'JN',  chapters:  4 },
-  { abbr: 'MQ',  chapters:  7 }, { abbr: 'NA',  chapters:  3 },
-  { abbr: 'HC',  chapters:  3 }, { abbr: 'SF',  chapters:  3 },
-  { abbr: 'AG',  chapters:  2 }, { abbr: 'ZC',  chapters: 14 },
-  { abbr: 'ML',  chapters:  4 },
+  { abbr: 'ED', chapters: 10 }, { abbr: 'NE', chapters: 13 },
+  { abbr: 'ET', chapters: 10 }, { abbr: 'JÓ', chapters: 42 },
+  { abbr: 'SL', chapters: 150 }, { abbr: 'PV', chapters: 31 },
+  { abbr: 'EC', chapters: 12 }, { abbr: 'CT', chapters: 8 },
+  { abbr: 'IS', chapters: 66 }, { abbr: 'JR', chapters: 52 },
+  { abbr: 'LM', chapters: 5 }, { abbr: 'EZ', chapters: 48 },
+  { abbr: 'DN', chapters: 12 }, { abbr: 'OS', chapters: 14 },
+  { abbr: 'JL', chapters: 3 }, { abbr: 'AM', chapters: 9 },
+  { abbr: 'OB', chapters: 1 }, { abbr: 'JN', chapters: 4 },
+  { abbr: 'MQ', chapters: 7 }, { abbr: 'NA', chapters: 3 },
+  { abbr: 'HC', chapters: 3 }, { abbr: 'SF', chapters: 3 },
+  { abbr: 'AG', chapters: 2 }, { abbr: 'ZC', chapters: 14 },
+  { abbr: 'ML', chapters: 4 },
   // Novo Testamento
-  { abbr: 'MT',  chapters: 28 }, { abbr: 'MC',  chapters: 16 },
-  { abbr: 'LC',  chapters: 24 }, { abbr: 'JO',  chapters: 21 },
-  { abbr: 'AT',  chapters: 28 }, { abbr: 'RM',  chapters: 16 },
+  { abbr: 'MT', chapters: 28 }, { abbr: 'MC', chapters: 16 },
+  { abbr: 'LC', chapters: 24 }, { abbr: 'JO', chapters: 21 },
+  { abbr: 'AT', chapters: 28 }, { abbr: 'RM', chapters: 16 },
   { abbr: '1CO', chapters: 16 }, { abbr: '2CO', chapters: 13 },
-  { abbr: 'GL',  chapters:  6 }, { abbr: 'EF',  chapters:  6 },
-  { abbr: 'FP',  chapters:  4 }, { abbr: 'CL',  chapters:  4 },
-  { abbr: '1TS', chapters:  5 }, { abbr: '2TS', chapters:  3 },
-  { abbr: '1TM', chapters:  6 }, { abbr: '2TM', chapters:  4 },
-  { abbr: 'TT',  chapters:  3 }, { abbr: 'FL',  chapters:  1 },
-  { abbr: 'HB',  chapters: 13 }, { abbr: 'TG',  chapters:  5 },
-  { abbr: '1PE', chapters:  5 }, { abbr: '2PE', chapters:  3 },
-  { abbr: '1JO', chapters:  5 }, { abbr: '2JO', chapters:  1 },
-  { abbr: '3JO', chapters:  1 }, { abbr: 'JD',  chapters:  1 },
-  { abbr: 'AP',  chapters: 22 },
+  { abbr: 'GL', chapters: 6 }, { abbr: 'EF', chapters: 6 },
+  { abbr: 'FP', chapters: 4 }, { abbr: 'CL', chapters: 4 },
+  { abbr: '1TS', chapters: 5 }, { abbr: '2TS', chapters: 3 },
+  { abbr: '1TM', chapters: 6 }, { abbr: '2TM', chapters: 4 },
+  { abbr: 'TT', chapters: 3 }, { abbr: 'FL', chapters: 1 },
+  { abbr: 'HB', chapters: 13 }, { abbr: 'TG', chapters: 5 },
+  { abbr: '1PE', chapters: 5 }, { abbr: '2PE', chapters: 3 },
+  { abbr: '1JO', chapters: 5 }, { abbr: '2JO', chapters: 1 },
+  { abbr: '3JO', chapters: 1 }, { abbr: 'JD', chapters: 1 },
+  { abbr: 'AP', chapters: 22 },
 ];
 
 // ------------------------------------------------------------------
@@ -190,7 +182,7 @@ self.addEventListener('fetch', (event) => {
  * @param {Request} request   - request original (pode ter headers HTMX)
  */
 async function cacheFirst(cacheKey, cacheName, request) {
-  const cache  = await caches.open(cacheName);
+  const cache = await caches.open(cacheName);
   const cached = await cache.match(cacheKey);
   if (cached) return cached;
 
@@ -226,7 +218,7 @@ async function networkFirst(request, cacheName) {
     }
     return response;
   } catch (_err) {
-    const cache  = await caches.open(cacheName);
+    const cache = await caches.open(cacheName);
     const cached = await cache.match(cacheKey);
     if (cached) return cached;
     return offlineFallback(cacheKey);

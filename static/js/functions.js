@@ -1,3 +1,13 @@
+// Ativa o Service Worker que permite o site ser instalado como APP (PWA)
+// Neste APP, o service worker é utilizado para cachear os dados, 
+// permitindo o acesso offline dos dados, melhorando a performance do site.
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/pages/js/service-worker.js')
+        .then(reg => console.log('Service Worker registrado'))
+        .catch(err => console.log('Erro:', err));
+}
+
 window.addEventListener('load', function () {
     const urlParams = new URLSearchParams(window.location.search);
 
@@ -21,12 +31,7 @@ events.forEach(eventType => {
     });
 });
 
-// Ativa o Service Worker que permite e site ser instalado como APP (PWA)
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/pages/js/service-worker.js')
-        .then(reg => console.log('Service Worker registrado'))
-        .catch(err => console.log('Erro:', err));
-}
+
 
 document.addEventListener('htmx:responseError', evt => {
     error = JSON.parse(evt.detail.xhr.responseText);
