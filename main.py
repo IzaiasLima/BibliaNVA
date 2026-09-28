@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Depends
-from fastapi.responses import RedirectResponse
+from fastapi.responses import FileResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
 from sqlalchemy import and_
@@ -33,6 +33,22 @@ app = FastAPI(
 )
 
 app.mount("/pages", StaticFiles(directory="static"), name="static")
+
+
+@app.get("/service-worker.js", include_in_schema=False)
+def service_worker():
+    """Serve o Service Worker na raiz da origem.
+
+    O escopo padrão de um SW é o diretório do próprio script; servido em
+    /pages/js/, ele não controlaria as páginas nem interceptaria /api.
+    Na raiz, o escopo '/' cobre toda a aplicação (essencial para o modo
+    off-line). Cache-Control no-cache garante atualização do SW.
+    """
+    return FileResponse(
+        "static/js/service-worker.js",
+        media_type="application/javascript",
+        headers={"Cache-Control": "no-cache", "Service-Worker-Allowed": "/"},
+    )
 
 
 @app.get("/", response_class=RedirectResponse)

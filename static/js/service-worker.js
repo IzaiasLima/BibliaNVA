@@ -11,7 +11,10 @@
 //  - URLs com caracteres Unicode (ex: /api/jó → /api/j%C3%B3)
 // ============================================================
 
-const CACHE_VERSION = 'v1';
+// v2: força re-download dos assets estáticos (functions.js ganhou guarda
+// de busca off-line e registro do SW na raiz; HTML/CSS também mudaram).
+// Sem o bump, usuários receberiam para sempre o functions.js antigo do cache.
+const CACHE_VERSION = 'v2';
 const CACHE_API = `biblia-api-${CACHE_VERSION}`;
 const CACHE_STATIC = `biblia-static-${CACHE_VERSION}`;
 
@@ -20,7 +23,7 @@ const CACHE_STATIC = `biblia-static-${CACHE_VERSION}`;
  * Necessário para livros com caracteres acentuados como JÓ (Jó).
  * Exemplo: 'JÓ' → 'j%C3%B3'
  */
-function abbrToPath(abbr) {
+function pathSafeAbbr(abbr) {
   return encodeURIComponent(abbr.toLowerCase());
 }
 
@@ -69,38 +72,45 @@ const BOOKS = [
 
 // ------------------------------------------------------------------
 // URLs da API que serão pré-cacheadas na instalação do SW.
-// abbrToPath() garante encoding correto para livros com acentos (ex: JÓ).
+// pathSafeAbbr() garante encoding correto para livros com acentos (ex: JÓ).
 // ------------------------------------------------------------------
-const PRECACHE_API_URLS = [
-  '/api',           // lista de todos os livros
-  '/api/favorites', // favoritos do usuário
-  // Uma URL por livro (retorna metadados + lista de capítulos)
-  ...BOOKS.map(b => `/api/${abbrToPath(b.abbr)}`),
-];
-
 // Total de capítulos: ~1.189 — cacheados sob demanda (lazy) na primeira leitura
-// e opcionalmente via precache em background após o install.
+// e opcionalmente via precache em background (PRECACHE_ALL_CHAPTERS).
+const TOTAL_CHAPTERS = BOOKS.reduce((sum, b) => sum + b.chapters, 0);
+
+// ------------------------------------------------------------------
+// Estado do pré-cache manual (modo off-line)
+// ------------------------------------------------------------------
+let cancelPrecache = false;       // sinaliza cancelamento do download
+let cancelledPrecache = false;    // indica que o download foi cancelado
+let downloadedFromCache = 0;      // nº de capítulos cacheados (baixados ou já existentes)
+let requestingClient = null;      // janela que iniciou o download (recebe progresso)
 
 // ==================================================================
-//  INSTALL — pré-cacheia rotas fixas
+//  INSTALL — pré-cacheia o essencial e ativa rapidamente
+//
+//  Importante: o install NÃO deve bloquear a ativação em dezenas de
+//  fetches de rede. Com a API no Turso, 68 requests levariam 60-90s
+//  (e minutos numa rede móvel ruim), atrasando o controle da página.
+//  Aqui pré-cacheamos apenas /api (lista de livros, necessária para a
+//  navegação off-line); os metadados dos livros e os capítulos são
+//  baixados em background (PRECACHE_ALL_CHAPTERS) ou on-demand pelo
+//  fetch handler Cache-First.
 // ==================================================================
 self.addEventListener('install', (event) => {
-  console.log('[SW] Instalando e pré-cacheando rotas da API...');
+  console.log('[SW] Instalando (pré-cache rápido de /api)...');
 
   event.waitUntil(
-    caches.open(CACHE_API).then((cache) => {
-      // Usa addAll com Promise.allSettled para não abortar se um endpoint falhar
-      return Promise.allSettled(
-        PRECACHE_API_URLS.map((url) =>
-          cache.add(url).catch((err) =>
-            console.warn(`[SW] Falha ao pré-cachear ${url}:`, err)
-          )
+    caches.open(CACHE_API)
+      .then((cache) =>
+        cache.add('/api').catch((err) =>
+          console.warn('[SW] Falha ao pré-cachear /api:', err)
         )
-      );
-    }).then(() => {
-      console.log('[SW] Pré-cache da API concluído.');
-      self.skipWaiting(); // ativa imediatamente sem esperar aba fechar
-    })
+      )
+      .then(() => {
+        console.log('[SW] Install concluído.');
+        self.skipWaiting(); // ativa imediatamente sem esperar aba fechar
+      })
   );
 });
 
@@ -173,6 +183,32 @@ self.addEventListener('fetch', (event) => {
 // ==================================================================
 
 /**
+ * Normaliza a caixa do livro em paths da API para busca no cache.
+ *
+ * A UI navega com o bookAbbr canônico da API (MAIÚSCULO: /api/SL/23,
+ * /api/JÓ/3), mas o precache armazena em minúsculas (/api/sl/23,
+ * /api/j%C3%B3/3). O servidor ignora a caixa, mas o Cache Storage
+ * trata chaves literalmente — sem esta normalização, a leitura
+ * off-line falharia com 503 para qualquer livro.
+ *
+ * Exemplos: '/api/SL/23' → '/api/sl/23'; '/api/J%C3%B3' → '/api/j%C3%B3'
+ * (segmentos seguintes, como termos de busca em /api/search/{words},
+ * não são alterados).
+ */
+function normalizeApiPath(pathname) {
+  try {
+    const segments = decodeURIComponent(pathname).split('/');
+    if (segments.length >= 3 && segments[1] === 'api') {
+      segments[2] = segments[2].toLowerCase();
+      return segments.map(encodeURIComponent).join('/');
+    }
+  } catch (_err) {
+    // path com encoding inválido — usa como está
+  }
+  return pathname;
+}
+
+/**
  * Cache-First: serve do cache imediatamente.
  * Se não houver, busca na rede com o request original (que pode ter
  * headers HTMX), armazena usando apenas a URL como chave, e retorna.
@@ -183,7 +219,16 @@ self.addEventListener('fetch', (event) => {
  */
 async function cacheFirst(cacheKey, cacheName, request) {
   const cache = await caches.open(cacheName);
-  const cached = await cache.match(cacheKey);
+  let cached = await cache.match(cacheKey);
+
+  // Fallback de caixa para paths da API (a UI usa bookAbbr maiúsculo,
+  // o cache armazena minúsculo)
+  if (!cached && cacheName === CACHE_API) {
+    const normalized = normalizeApiPath(new URL(cacheKey).pathname);
+    if (normalized !== new URL(cacheKey).pathname) {
+      cached = await cache.match(new URL(normalized, new URL(cacheKey).origin).href);
+    }
+  }
   if (cached) return cached;
 
   try {
@@ -249,10 +294,39 @@ function offlineFallback(url) {
 //  PRECACHE DE CAPÍTULOS EM BACKGROUND
 //  Acionado pela página principal via postMessage após o app carregar
 // ==================================================================
-self.addEventListener('message', async (event) => {
+self.addEventListener('message', (event) => {
   if (event.data?.type === 'PRECACHE_ALL_CHAPTERS') {
     console.log('[SW] Iniciando pré-cache de todos os capítulos em background...');
-    precacheAllChapters();
+
+    // Guarda a janela solicitante para enviar progresso e conclusão
+    if (event.source) {
+      requestingClient = event.source;
+    } else {
+      self.clients.matchAll().then((all) => { requestingClient = all[0] || null; });
+    }
+
+    cancelPrecache = false;
+    cancelledPrecache = false;
+    downloadedFromCache = 0;
+
+    // ESSENCIAL: event.waitUntil mantém o Service Worker vivo durante
+    // todo o download (~10-20 min). Sem isso, o Chrome encerra o SW
+    // considerando-o inativo e o download morre no meio.
+    event.waitUntil(precacheAllChapters());
+  }
+
+  if (event.data?.type === 'PRECACHE_CANCEL') {
+    console.log('[SW] Cancelamento de pré-cache solicitado.');
+    cancelPrecache = true;
+  }
+
+  if (event.data?.type === 'PRECACHE_COUNT_REQUEST') {
+    sendPrecacheCount(event.source);
+  }
+
+  if (event.data?.type === 'PRECACHE_DELETE') {
+    // O SW não pode ser encerrado antes de concluir a exclusão
+    event.waitUntil(deletePrecachedData());
   }
 
   if (event.data?.type === 'SKIP_WAITING') {
@@ -265,15 +339,39 @@ async function precacheAllChapters() {
   let cached = 0;
   let skipped = 0;
 
+  // Feedback imediato: a UI exibe a barra desde o primeiro instante,
+  // inclusive durante a fase de metadados dos livros abaixo
+  notifyProgress();
+
+  // Garante primeiro os metadados dos livros (listas de capítulos)
+  for (const book of BOOKS) {
+    const bookUrl = `/api/${pathSafeAbbr(book.abbr)}`;
+    if (!(await cache.match(bookUrl))) {
+      try {
+        const response = await fetch(bookUrl);
+        if (response.ok) await cache.put(bookUrl, response);
+      } catch (_err) {
+        // offline — tentará na próxima visita
+      }
+    }
+  }
+
   for (const book of BOOKS) {
     for (let ch = 1; ch <= book.chapters; ch++) {
-      // abbrToPath() faz encodeURIComponent — essencial para 'JÓ' → 'j%C3%B3'
-      const url = `/api/${abbrToPath(book.abbr)}/${ch}`;
+      if (cancelPrecache) {
+        cancelledPrecache = true;
+        break;
+      }
 
-      // Pula se já estiver no cache
+      // pathSafeAbbr() faz encodeURIComponent — essencial para 'JÓ' → 'j%C3%B3'
+      const url = `/api/${pathSafeAbbr(book.abbr)}/${ch}`;
+
+      // Pula se já estiver no cache, mas conta como "cacheado"
+      // para o cálculo de disponibilidade off-line
       const exists = await cache.match(url);
       if (exists) {
         skipped++;
+        downloadedFromCache++;
         continue;
       }
 
@@ -282,36 +380,140 @@ async function precacheAllChapters() {
         if (response.ok) {
           await cache.put(url, response);
           cached++;
+          downloadedFromCache++;
         }
       } catch (_err) {
         // Offline durante o precache — tentará na próxima visita
       }
 
-      // Pausa de 30 ms entre requests para não sobrecarregar a rede
-      await sleep(30);
+      // Informa progresso a cada 10 capítulos processados
+      // (as requests sequenciais já se auto-limitam; sem pausa artificial —
+      //  timers no SW oculto sofrem throttle agressivo do Chrome)
+      if (downloadedFromCache % 10 === 0) {
+        notifyProgress();
+      }
     }
+
+    if (cancelPrecache) break;
   }
 
+  notifyProgress();
   console.log(`[SW] Pré-cache concluído: ${cached} capítulos baixados, ${skipped} já estavam em cache.`);
 
-  // Notifica todas as abas abertas
-  const clients = await self.clients.matchAll();
-  clients.forEach((client) =>
-    client.postMessage({
-      type: 'PRECACHE_DONE',
-      cached,
-      skipped,
-      total: cached + skipped,
-    })
-  );
+  const doneType = cancelledPrecache ? 'PRECACHE_CANCELLED' : 'PRECACHE_DONE';
+  const message = cancelledPrecache
+    ? 'Download cancelado'
+    : 'Download concluído';
+
+  // Notifica a janela solicitante (ou todas, se ela não existir mais)
+  const doneMsg = { type: doneType, message };
+  let notified = false;
+  if (requestingClient) {
+    try {
+      requestingClient.postMessage(doneMsg);
+      notified = true;
+    } catch (_err) {
+      requestingClient = null;
+    }
+  }
+  if (!notified) {
+    self.clients.matchAll({ includeUncontrolled: true }).then((all) => {
+      all.forEach((client) => {
+        try {
+          client.postMessage(doneMsg);
+        } catch (_err) {
+          // janela indisponível — ignora
+        }
+      });
+    });
+  }
+
+  cancelPrecache = false;
+  cancelledPrecache = false;
+  requestingClient = null;
 }
 
 // ==================================================================
 //  UTILITÁRIOS
 // ==================================================================
 
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+/**
+ * Envia progresso do pré-cache para a janela que solicitou o download.
+ * downloadedFromCache conta capítulos baixados OU já presentes no cache,
+ * de modo que o percentual reflete a disponibilidade off-line real.
+ *
+ * Robustez: se a janela solicitante foi fechada ou recarregou, postMessage
+ * lança exceção — um erro não tratado aqui rejeitaria a promessa do
+ * event.waitUntil e ENCERRARIA o Service Worker no meio do download.
+ * Por isso: try/catch + broadcast para as demais janelas abertas.
+ */
+function notifyProgress() {
+  const msg = {
+    type: 'PRECACHE_PROGRESS',
+    downloaded: downloadedFromCache,
+    total: TOTAL_CHAPTERS,
+  };
+
+  if (requestingClient) {
+    try {
+      requestingClient.postMessage(msg);
+      return;
+    } catch (_err) {
+      requestingClient = null; // cliente morto — cai para o broadcast
+    }
+  }
+
+  // Broadcast: qualquer painel aberto recebe o progresso
+  self.clients.matchAll({ includeUncontrolled: true }).then((all) => {
+    all.forEach((client) => {
+      try {
+        client.postMessage(msg);
+      } catch (_err) {
+        // janela indisponível — ignora
+      }
+    });
+  });
+}
+
+/**
+ * Conta quantos dos 1.189 capítulos estão no cache (por amostragem —
+ * testa 1 capítulo por livro) e informa a janela solicitante.
+ */
+async function sendPrecacheCount(client) {
+  const cache = await caches.open(CACHE_API);
+  let count = 0;
+
+  for (const book of BOOKS) {
+    const url = `/api/${pathSafeAbbr(book.abbr)}/1`;
+    const hit = await cache.match(url);
+    if (hit) {
+      count += book.chapters;
+    }
+  }
+
+  client?.postMessage({
+    type: 'PRECACHE_COUNT',
+    cached: count,
+    total: TOTAL_CHAPTERS,
+  });
+}
+
+/**
+ * Remove TODOS os capítulos pré-cacheados (botão "Limpar dados"),
+ * preservando o cache de assets estáticos. Os capítulos lidos recentemente
+ * serão re-baixados na próxima visita online.
+ */
+async function deletePrecachedData() {
+  await caches.delete(CACHE_API);
+  console.log('[SW] Cache da API removido.');
+
+  // Reabre o cache vazio e re-pré-cacheia apenas o essencial (/api),
+  // no mesmo espírito do install não-bloqueante
+  const cache = await caches.open(CACHE_API);
+  await cache.add('/api').catch(() => {});
+
+  const clients = await self.clients.matchAll();
+  clients.forEach((client) => client.postMessage({ type: 'PRECACHE_DELETED' }));
 }
 
 function isStaticAsset(pathname) {

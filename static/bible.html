@@ -8,7 +8,7 @@
         <title>Bíblia NVA - Lista de Livros</title>
         <link rel="manifest" href="/pages/js/manifest.json">
         <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
         <link rel="stylesheet" href="/pages/css/styles.css">
 
     </head>
@@ -323,8 +323,31 @@
                     alt="last chapter">
 
                 <img class="icon search" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon search" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
             </div>
         </footer>
+
+        <!-- Painel do modo off-line: download e exclusão do conteúdo para uso sem conexão -->
+        <div id="offline-panel" class="animate__animated animate__faster">
+            <div class="offline-header">
+                <span class="offline-title">Modo off-line</span>
+                <span id="offline-close" class="offline-close" onclick="toggleOfflinePanel()">&times;</span>
+            </div>
+
+            <div class="offline-body">
+                <p id="offline-status">Verificando dados armazenados...</p>
+                <div id="offline-progress">
+                    <div id="offline-progress-bar"></div>
+                </div>
+                <div class="offline-actions">
+                    <button id="btn-offline-download" onclick="startOfflineDownload()">Baixar Bíblia</button>
+                    <button id="btn-offline-cancel" class="hidden" onclick="cancelOfflineDownload()">Cancelar</button>
+                    <button id="btn-offline-delete" class="offline-danger hidden"
+                        onclick="deleteOfflineData()">Limpar dados</button>
+                </div>
+            </div>
+        </div>
 
         <script src="/pages/js/functions.js"></script>
         <script src="/pages/js/htmx.min.js"></script>

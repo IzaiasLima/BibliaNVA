@@ -33,6 +33,18 @@ As consulta à API desta aplicação deve ser feita nos seguintes _endpoints_:
 
 Exemplos: [/api/jó/1/22](https://biblia.izaias.com.br/api/jó/1/22); [/api/jo/14/1-3](https://biblia.izaias.com.br/api/jo/14/1-3); [/api/jo/14/1,2,3,18](https://biblia.izaias.com.br/api/jo/14/1,2,3,18).
 
+## Modo off-line
+
+O aplicativo pode armazenar todo o texto bíblico no dispositivo, permitindo a leitura sem conexão com a internet. Os dados ficam no Cache Storage do navegador, gerenciado pelo _Service Worker_ (`static/js/service-worker.js`).
+
+**Como usar:**
+
+1. Abra o aplicativo e toque no ícone de download (nuvem) na barra inferior;
+2. Toque em **Baixar Bíblia** e aguarde (~10 MB, pode levar alguns minutos);
+3. Após a conclusão, o texto completo fica disponível off-line.
+
+O download pode ser interrompido com **Cancelar** (o que foi baixado é mantido) e os dados podem ser liberados a qualquer momento com **Limpar dados**. A busca por palavras continua dependendo de conexão, pois é processada no servidor.
+
 
 ## Termos de Uso
 Este serviço é gratuito, disponível para uso por qualquer pessoa, desde que não haja abuso em sua utlização. O serviço tem um limite de requisições por segundo, portanto não use esta API para baixar a Bíblia inteira. Em vez disso, obtenha os dados da fonte original, informada no site oficial da NVA. Também não use os nossos endpoints como backend para uma aplicação que tenha alta demanda de acessos.

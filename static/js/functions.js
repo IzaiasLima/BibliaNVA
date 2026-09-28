@@ -3,7 +3,8 @@
 // permitindo o acesso offline dos dados, melhorando a performance do site.
 
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/pages/js/service-worker.js')
+    // Registrado na raiz da origem para que o escopo '/' cubra as páginas e a API
+    navigator.serviceWorker.register('/service-worker.js')
         .then(reg => console.log('Service Worker registrado'))
         .catch(err => console.log('Erro:', err));
 }
@@ -46,6 +47,167 @@ document.addEventListener('htmx:afterRequest', ev => {
 
 const input = document.getElementById("search");
 if (input) input.addEventListener('keyup', searchWords);
+
+// ==================================================================
+//  MODO OFF-LINE
+//  Comunica-se com o Service Worker (static/js/service-worker.js)
+//  via postMessage para baixar, monitorar, cancelar e excluir
+//  o conteúdo armazenado para uso sem conexão.
+// ==================================================================
+
+let offlineActive = false; // download em andamento
+let offlineState = 'unknown'; // unknown | partial | full
+let offlineListenerAdded = false; // evita registrar o listener repetidamente
+
+// Verifica o estado atual (chamado ao abrir o painel)
+function checkOfflineStatus() {
+    if (!offlineSWReady()) return;
+
+    if (!offlineListenerAdded) {
+        navigator.serviceWorker.addEventListener('message', offlineSWListener);
+        offlineListenerAdded = true;
+    }
+
+    navigator.serviceWorker.controller.postMessage({ type: 'PRECACHE_COUNT_REQUEST' });
+}
+
+// Garante que há um Service Worker controlando a página
+function offlineSWReady() {
+    if (!(navigator.serviceWorker && navigator.serviceWorker.controller)) {
+        const status = document.getElementById('offline-status');
+        if (status) status.textContent = 'Recurso indisponível. Recarregue a página para ativá-lo.';
+        return false;
+    }
+    return true;
+}
+
+// Inicia o download de todos os capítulos
+function startOfflineDownload() {
+    if (!offlineSWReady() || offlineActive) return;
+
+    offlineActive = true;
+    setOfflineButtons();
+    navigator.serviceWorker.controller.postMessage({ type: 'PRECACHE_ALL_CHAPTERS' });
+}
+
+// Cancela o download em andamento
+function cancelOfflineDownload() {
+    if (!offlineSWReady()) return;
+    navigator.serviceWorker.controller.postMessage({ type: 'PRECACHE_CANCEL' });
+}
+
+// Exclui os dados armazenados para uso off-line
+function deleteOfflineData() {
+    if (!offlineSWReady()) return;
+    navigator.serviceWorker.controller.postMessage({ type: 'PRECACHE_DELETE' });
+}
+
+// Mostra/oculta o painel do modo off-line
+function toggleOfflinePanel() {
+    const panel = document.getElementById('offline-panel');
+    const visible = panel.classList.contains('show');
+
+    if (visible) {
+        panel.classList.remove('show', 'animate__fadeInUp');
+    } else {
+        panel.classList.add('show', 'animate__fadeInUp');
+        checkOfflineStatus();
+    }
+}
+
+// Ajusta a exibição dos botões conforme o estado do download
+function setOfflineButtons() {
+    const btnDownload = document.getElementById('btn-offline-download');
+    const btnCancel = document.getElementById('btn-offline-cancel');
+    const btnDelete = document.getElementById('btn-offline-delete');
+    const progress = document.getElementById('offline-progress');
+
+    if (offlineActive) {
+        // Download em andamento: progresso visível + botão cancelar
+        progress.classList.add('show');
+        btnDownload.classList.add('hidden');
+        btnCancel.classList.remove('hidden');
+        btnDelete.classList.add('hidden');
+    } else if (offlineState === 'full') {
+        // Bíblia completa armazenada: só permite excluir
+        progress.classList.remove('show');
+        btnDownload.classList.add('hidden');
+        btnCancel.classList.add('hidden');
+        btnDelete.classList.remove('hidden');
+    } else {
+        // Sem download completo: botão baixar disponível
+        progress.classList.remove('show');
+        btnDownload.classList.remove('hidden');
+        btnCancel.classList.add('hidden');
+        btnDelete.classList.add('hidden');
+    }
+}
+
+// Atualiza a barra de progresso e o texto de status
+function updateOfflineProgress(downloaded, total) {
+    const bar = document.getElementById('offline-progress-bar');
+    const status = document.getElementById('offline-status');
+    const percent = total > 0 ? Math.round((downloaded / total) * 100) : 0;
+
+    bar.style.width = `${percent}%`;
+    status.textContent = `Baixando... ${downloaded} de ${total} capítulos (${percent}%)`;
+}
+
+// Listener de mensagens enviadas pelo Service Worker
+function offlineSWListener(event) {
+    const status = document.getElementById('offline-status');
+    const panel = document.getElementById('offline-panel');
+
+    switch (event.data?.type) {
+        case 'PRECACHE_COUNT': {
+            offlineState = (event.data.cached >= event.data.total) ? 'full' : 'partial';
+            setOfflineButtons();
+
+            if (offlineState === 'full') {
+                status.textContent = 'Bíblia completa armazenada neste dispositivo.';
+            } else if (event.data.cached > 0) {
+                status.textContent = 'Parte do conteúdo está armazenado. Baixe o restante para uso off-line.';
+            } else {
+                status.textContent = 'Nenhum conteúdo armazenado. Baixe para usar sem conexão.';
+            }
+            break;
+        }
+
+        case 'PRECACHE_PROGRESS':
+            offlineActive = true;
+            setOfflineButtons();
+            updateOfflineProgress(event.data.downloaded, event.data.total);
+            break;
+
+        case 'PRECACHE_DONE':
+            offlineActive = false;
+            offlineState = 'full';
+            setOfflineButtons();
+            status.textContent = event.data.message;
+            showToast('Bíblia disponível para uso off-line.', 'info');
+            break;
+
+        case 'PRECACHE_CANCELLED':
+            offlineActive = false;
+            setOfflineButtons();
+            status.textContent = 'Download cancelado. O conteúdo baixado até aqui foi mantido.';
+            break;
+
+        case 'PRECACHE_DELETED':
+            offlineActive = false;
+            offlineState = 'partial';
+            setOfflineButtons();
+            status.textContent = 'Dados excluídos deste dispositivo.';
+            break;
+    }
+
+    // Fecha o painel automaticamente ao concluir ou cancelar
+    if (['PRECACHE_DONE', 'PRECACHE_CANCELLED', 'PRECACHE_DELETED'].includes(event.data?.type)) {
+        setTimeout(() => {
+            panel.classList.remove('show', 'animate__fadeInUp');
+        }, 2500);
+    }
+}
 
 function scrollToTop() {
     window.scrollTo({
@@ -194,6 +356,14 @@ async function navigation(direction = 0) {
 
 // busca pelas palavra digitadas no campo de pesquisa
 async function searcByhWords(words) {
+    // A pesquisa é processada no servidor (SQL LIKE) e não funciona off-line.
+    // O handler customizado do htmx 2.x não é invocado em respostas 4xx/5xx,
+    // então sem este guarda o usuário ficaria sem qualquer feedback.
+    if (!navigator.onLine) {
+        showToast('A pesquisa requer conexão com a internet.', 'advice');
+        return;
+    }
+
     htmx.ajax('GET', `/api/search/${words}`, {
         handler: function (elm, response) {
             if (response.xhr.status >= 400) {
