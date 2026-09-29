@@ -726,6 +726,43 @@ input#search {
     background-color: var(--warning);
 }
 
+/* Confirmação de exclusão: modal sobre o painel do modo off-line */
+.confirm-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 200;
+}
+
+.confirm-overlay.hidden {
+    display: none;
+}
+
+.confirm-box {
+    width: min(400px, calc(100vw - 30px));
+    padding: 20px;
+    background-color: var(--bg-primary);
+    border-radius: var(--border-radius);
+    box-shadow: 4px 4px 7px rgba(34, 34, 34, 0.2);
+}
+
+.confirm-box p {
+    margin: 0 0 15px;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.confirm-box .offline-actions button {
+    min-width: 110px;
+}
+
+.confirm-box .offline-actions button.plain {
+    background-color: var(--btn-primary);
+}
+
 .offline-actions button.hidden {
     display: none;
 }

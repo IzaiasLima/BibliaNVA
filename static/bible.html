@@ -343,8 +343,19 @@
                 <div class="offline-actions">
                     <button id="btn-offline-download" onclick="startOfflineDownload()">Baixar Bíblia</button>
                     <button id="btn-offline-cancel" class="hidden" onclick="cancelOfflineDownload()">Cancelar</button>
-                    <button id="btn-offline-delete" class="offline-danger hidden" onclick="deleteOfflineData()">Limpar
+                    <button id="btn-offline-delete" class="offline-danger hidden" onclick="confirmDeleteOfflineData()">Limpar
                         dados</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Confirmação antes de excluir o conteúdo baixado para uso off-line -->
+        <div id="confirm-offline-delete" class="confirm-overlay hidden">
+            <div class="confirm-box">
+                <p>Excluir todo o conteúdo baixado deste dispositivo?</p>
+                <div class="offline-actions">
+                    <button class="plain" onclick="deleteOfflineData()">Excluir</button>
+                    <button onclick="closeConfirmDeleteOffline()">Manter</button>
                 </div>
             </div>
         </div>

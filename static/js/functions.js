@@ -123,11 +123,30 @@ function cancelOfflineDownload() {
     navigator.serviceWorker.controller.postMessage({ type: 'PRECACHE_CANCEL' });
 }
 
-// Exclui os dados armazenados para uso off-line
+// Exclui os dados armazenados para uso off-line (após confirmação)
 function deleteOfflineData() {
     if (!offlineSWReady()) return;
+    closeConfirmDeleteOffline();
     navigator.serviceWorker.controller.postMessage({ type: 'PRECACHE_DELETE' });
 }
+
+// Mostra o diálogo de confirmação antes de excluir os dados off-line
+function confirmDeleteOfflineData() {
+    if (!offlineSWReady()) return;
+    document.getElementById('confirm-offline-delete').classList.remove('hidden');
+}
+
+// Fecha o diálogo de confirmação sem excluir nada
+function closeConfirmDeleteOffline() {
+    // index.html também carrega este script, mas não tem o diálogo
+    const overlay = document.getElementById('confirm-offline-delete');
+    if (overlay) overlay.classList.add('hidden');
+}
+
+// Esc também cancela a exclusão
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeConfirmDeleteOffline();
+});
 
 // Mostra/oculta o painel do modo off-line
 function toggleOfflinePanel() {

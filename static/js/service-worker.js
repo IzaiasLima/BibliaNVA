@@ -16,8 +16,10 @@
 // v3: functions.js com mensagens de erro amigáveis (apiErrorMessage) —
 // elimina "undefined" em capítulos ausentes do cache off-line.
 // v4: styles.css sem @import do Google Fonts — Figtree servida localmente.
+// v5: functions.js pede confirmação antes de excluir os dados off-line;
+// styles.css ganhou o modal de confirmação.
 // Sem o bump, usuários receberiam para sempre o functions.js antigo do cache.
-const CACHE_VERSION = 'v4';
+const CACHE_VERSION = 'v5';
 const CACHE_API = `biblia-api-${CACHE_VERSION}`;
 const CACHE_STATIC = `biblia-static-${CACHE_VERSION}`;
 
