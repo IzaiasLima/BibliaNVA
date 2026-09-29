@@ -641,7 +641,7 @@ input#search {
     bottom: 65px;
     left: 50%;
     transform: translateX(-50%);
-    width: min(700px, calc(100vw - 20px));
+    width: min(600px, calc(100vw - 30px));
     padding: 15px;
     background-color: var(--bg-primary);
     border-radius: var(--border-radius);
