@@ -738,7 +738,7 @@ input#search {
 }
 
 .confirm-box {
-    width: min(400px, calc(100vw - 30px));
+    width: min(500px, calc(100vw - 30px));
     padding: 20px;
     background-color: var(--bg-primary);
     border-radius: var(--border-radius);
@@ -756,7 +756,7 @@ input#search {
 }
 
 .confirm-box .offline-actions button.plain {
-    background-color: var(--btn-primary);
+    background-color: var(--warning);
 }
 
 .offline-actions button.hidden {

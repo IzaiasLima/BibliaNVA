@@ -35,7 +35,7 @@ Exemplos: [/api/jó/1/22](https://biblia.izaias.com.br/api/jó/1/22); [/api/jo/1
 
 ## Modo off-line
 
-O aplicativo pode armazenar todo o texto bíblico no dispositivo, permitindo a leitura sem conexão com a internet. Os dados ficam no Cache Storage do navegador, gerenciado pelo _Service Worker_ (`static/js/service-worker.js`).
+O aplicativo pode armazenar todo o texto bíblico no dispositivo, permitindo a leitura sem conexão com a internet. Os dados ficam no Cache Storage do navegador, gerenciado pelo _Service Worker_ (`static/js/service-worker.js`). O modo off-line foi desenvolvido com a ajuda de inteligência artificial usando o agente de programação [Freebuff](www.freebuff.com). 
 
 **Como usar:**
 

@@ -44,13 +44,13 @@ document.addEventListener('htmx:responseError', evt => {
     }
 });
 
-document.addEventListener('htmx:beforeRequest', ev => {
-    showSpinner();
-});
+// document.addEventListener('htmx:beforeRequest', ev => {
+//     showSpinner();
+// });
 
-document.addEventListener('htmx:afterRequest', ev => {
-    showSpinner(false);
-});
+// document.addEventListener('htmx:afterRequest', ev => {
+//     showSpinner(false);
+// });
 
 const input = document.getElementById("search");
 if (input) input.addEventListener('keyup', searchWords);
@@ -140,7 +140,13 @@ function confirmDeleteOfflineData() {
 function closeConfirmDeleteOffline() {
     // index.html também carrega este script, mas não tem o diálogo
     const overlay = document.getElementById('confirm-offline-delete');
-    if (overlay) overlay.classList.add('hidden');
+    if (overlay) {
+        overlay.classList.add('hidden');
+        const panel = document.getElementById('offline-panel');
+        if (panel) {
+            panel.classList.remove('show', 'animate__fadeInUp');
+        }
+    }
 }
 
 // Esc também cancela a exclusão
@@ -459,7 +465,7 @@ async function searcByhWords(words) {
 async function getFavorites() {
     htmx.ajax('GET', `/api/favorites`, {
         handler: function (elm, response) {
-            showSpinner(false);
+            // showSpinner(false);
             if (response.xhr.status >= 400) {
                 showToast(`Favoritos indisponíveis. (${response.xhr.statusText} Error.)`);
                 return;
@@ -482,7 +488,7 @@ async function getFavorites() {
 }
 
 async function chaptersList(book) {
-    showSpinner();
+    // showSpinner();
 
     htmx.ajax('GET', `/api/${book}`, {
         handler: function (elm, response) {
@@ -506,7 +512,7 @@ async function chapterView(book, chapter, verse = null) {
     const url = (verse) ? `/api/${book}/${chapter}?verse=${verse}` : `/api/${book}/${chapter}`;
     htmx.ajax('GET', url, {
         handler: function (elm, response) {
-            showSpinner(false);
+            // showSpinner(false);
             if (response.xhr.status >= 400) {
                 // Ex.: capítulo ausente do cache off-line → orientação do SW
                 showToast(apiErrorMessage(response.xhr, 'Os dados não estão disponíveis.'), 'advice');
@@ -538,16 +544,16 @@ function showToast(msg, styleClass = null) {
     }, 5000);
 }
 
-function showSpinner(show = true) {
-    return
-    // spinner = document.getElementById("spinner");
+// function showSpinner(show = true) {
+// return
+// spinner = document.getElementById("spinner");
 
-    // if (show) {
-    //     spinner.classList.add("show");
-    // } else {
-    //     spinner.classList.remove("show");
-    // }
-}
+// if (show) {
+//     spinner.classList.add("show");
+// } else {
+//     spinner.classList.remove("show");
+// }
+// }
 
 function highlightedText(text, words) {
     let result = text;

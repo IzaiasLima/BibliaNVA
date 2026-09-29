@@ -19,7 +19,7 @@
 // v5: functions.js pede confirmação antes de excluir os dados off-line;
 // styles.css ganhou o modal de confirmação.
 // Sem o bump, usuários receberiam para sempre o functions.js antigo do cache.
-const CACHE_VERSION = 'v5';
+const CACHE_VERSION = 'v7';
 const CACHE_API = `biblia-api-${CACHE_VERSION}`;
 const CACHE_STATIC = `biblia-static-${CACHE_VERSION}`;
 
@@ -36,7 +36,7 @@ function pathSafeAbbr(abbr) {
 // Todos os 66 livros com suas abreviações e quantidade de capítulos.
 // Gerado a partir de /api — atualize bookAbbr/maxChapters se a API mudar.
 // ------------------------------------------------------------------
-const BOOKS = [
+const BOOKS_ = [
   // Antigo Testamento
   { abbr: 'GN', chapters: 50 }, { abbr: 'EX', chapters: 40 },
   { abbr: 'LV', chapters: 27 }, { abbr: 'NM', chapters: 36 },
@@ -74,6 +74,12 @@ const BOOKS = [
   { abbr: '3JO', chapters: 1 }, { abbr: 'JD', chapters: 1 },
   { abbr: 'AP', chapters: 22 },
 ];
+
+const BOOKS = [
+  { abbr: 'MC', chapters: 16 },
+  { abbr: 'LC', chapters: 24 },
+]
+
 
 // ------------------------------------------------------------------
 // URLs da API que serão pré-cacheadas na instalação do SW.
