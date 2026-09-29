@@ -392,10 +392,6 @@ ul.columns {
         width: 24px;
     }
 
-    &.search {
-        filter: invert();
-    }
-
     &.disabled {
         filter: brightness(70%);
         cursor: default;
