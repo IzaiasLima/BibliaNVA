@@ -13,8 +13,10 @@
 
 // v2: força re-download dos assets estáticos (functions.js ganhou guarda
 // de busca off-line e registro do SW na raiz; HTML/CSS também mudaram).
+// v3: functions.js com mensagens de erro amigáveis (apiErrorMessage) —
+// elimina "undefined" em capítulos ausentes do cache off-line.
 // Sem o bump, usuários receberiam para sempre o functions.js antigo do cache.
-const CACHE_VERSION = 'v2';
+const CACHE_VERSION = 'v3';
 const CACHE_API = `biblia-api-${CACHE_VERSION}`;
 const CACHE_STATIC = `biblia-static-${CACHE_VERSION}`;
 
@@ -84,6 +86,7 @@ const TOTAL_CHAPTERS = BOOKS.reduce((sum, b) => sum + b.chapters, 0);
 let cancelPrecache = false;       // sinaliza cancelamento do download
 let cancelledPrecache = false;    // indica que o download foi cancelado
 let downloadedFromCache = 0;      // nº de capítulos cacheados (baixados ou já existentes)
+let failedCount = 0;              // capítulos que não puderam ser baixados (ex.: offline)
 let requestingClient = null;      // janela que iniciou o download (recebe progresso)
 
 // ==================================================================
@@ -275,6 +278,9 @@ async function networkFirst(request, cacheName) {
  * (o template {{#data}}...{{/data}} não renderiza nada com data vazio)
  * ou uma resposta genérica para outros recursos.
  *
+ * A chave "detail" é lida pelo listener htmx:responseError em functions.js
+ * e exibida como toast — sem ela, o usuário veria um "undefined".
+ *
  * @param {string} url - URL da requisição que falhou
  */
 function offlineFallback(url) {
@@ -282,7 +288,10 @@ function offlineFallback(url) {
   if (pathname.startsWith('/api')) {
     // Retorna estrutura compatível com o que o Mustache espera:
     // { data: [] } → {{#data}} não itera, nada é exibido
-    return new Response(JSON.stringify({ data: [], offline: true }), {
+    const detail = pathname.match(/^\/api\/[^/]+\/\d+$/)
+      ? 'Capítulo não disponível off-line. Conecte-se e toque em Baixar Bíblia no modo off-line.'
+      : 'Sem conexão com a internet.';
+    return new Response(JSON.stringify({ data: [], detail, offline: true }), {
       status: 503,
       headers: { 'Content-Type': 'application/json' },
     });
@@ -308,6 +317,7 @@ self.addEventListener('message', (event) => {
     cancelPrecache = false;
     cancelledPrecache = false;
     downloadedFromCache = 0;
+    failedCount = 0;
 
     // ESSENCIAL: event.waitUntil mantém o Service Worker vivo durante
     // todo o download (~10-20 min). Sem isso, o Chrome encerra o SW
@@ -338,6 +348,7 @@ async function precacheAllChapters() {
   const cache = await caches.open(CACHE_API);
   let cached = 0;
   let skipped = 0;
+  failedCount = 0;
 
   // Feedback imediato: a UI exibe a barra desde o primeiro instante,
   // inclusive durante a fase de metadados dos livros abaixo
@@ -381,15 +392,19 @@ async function precacheAllChapters() {
           await cache.put(url, response);
           cached++;
           downloadedFromCache++;
+        } else {
+          failedCount++;
         }
       } catch (_err) {
-        // Offline durante o precache — tentará na próxima visita
+        // Sem rede (ou erro de rede): conta como falha para que o
+        // resultado final reflita a verdade em vez de "concluído"
+        failedCount++;
       }
 
-      // Informa progresso a cada 10 capítulos processados
+      // Informa progresso a cada capítulo processado
       // (as requests sequenciais já se auto-limitam; sem pausa artificial —
       //  timers no SW oculto sofrem throttle agressivo do Chrome)
-      if (downloadedFromCache % 10 === 0) {
+      if (downloadedFromCache % 1 === 0) {
         notifyProgress();
       }
     }
@@ -398,12 +413,23 @@ async function precacheAllChapters() {
   }
 
   notifyProgress();
-  console.log(`[SW] Pré-cache concluído: ${cached} capítulos baixados, ${skipped} já estavam em cache.`);
+  console.log(`[SW] Pré-cache encerrado: ${cached} baixados, ${skipped} já em cache, ${failedCount} falharam.`);
 
-  const doneType = cancelledPrecache ? 'PRECACHE_CANCELLED' : 'PRECACHE_DONE';
-  const message = cancelledPrecache
-    ? 'Download cancelado'
-    : 'Download concluído';
+  // O resultado deve refletir a realidade: se houve falhas de rede (ex.:
+  // usuário iniciou o download off-line ou perdeu conexão no meio), não
+  // é "concluído" — é parcial com falha, e o usuário precisa saber.
+  let doneType = 'PRECACHE_DONE';
+  let message = 'Download concluído';
+  if (cancelledPrecache) {
+    doneType = 'PRECACHE_CANCELLED';
+    message = 'Download cancelado';
+  } else if (failedCount > 0 && downloadedFromCache === 0) {
+    doneType = 'PRECACHE_OFFLINE';
+    message = 'Sem conexão com a internet. O download será possível quando a conexão for restabelecida.';
+  } else if (failedCount > 0) {
+    doneType = 'PRECACHE_PARTIAL';
+    message = `Download parcial: ${downloadedFromCache} de ${TOTAL_CHAPTERS} capítulos. Conecte-se e toque em Baixar Bíblia para concluir.`;
+  }
 
   // Notifica a janela solicitante (ou todas, se ela não existir mais)
   const doneMsg = { type: doneType, message };
@@ -510,7 +536,7 @@ async function deletePrecachedData() {
   // Reabre o cache vazio e re-pré-cacheia apenas o essencial (/api),
   // no mesmo espírito do install não-bloqueante
   const cache = await caches.open(CACHE_API);
-  await cache.add('/api').catch(() => {});
+  await cache.add('/api').catch(() => { });
 
   const clients = await self.clients.matchAll();
   clients.forEach((client) => client.postMessage({ type: 'PRECACHE_DELETED' }));

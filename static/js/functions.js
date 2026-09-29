@@ -33,8 +33,15 @@ events.forEach(eventType => {
 });
 
 document.addEventListener('htmx:responseError', evt => {
-    error = JSON.parse(evt.detail.xhr.responseText);
-    showToast(error.detail);
+    // O fallback off-line do SW responde {detail: "..."}; erros de validação
+    // da API também usam {detail}. Qualquer outro corpo mostra mensagem
+    // genérica — nunca o literal "undefined".
+    try {
+        const error = JSON.parse(evt.detail.xhr.responseText);
+        showToast(error.detail || 'Sem conexão com a internet.');
+    } catch (_err) {
+        showToast('Sem conexão com a internet.');
+    }
 });
 
 document.addEventListener('htmx:beforeRequest', ev => {
@@ -47,6 +54,18 @@ document.addEventListener('htmx:afterRequest', ev => {
 
 const input = document.getElementById("search");
 if (input) input.addEventListener('keyup', searchWords);
+
+// Extrai a mensagem amigável do corpo de erro (o fallback off-line do SW
+// responde {detail: "..."}; a API usa {detail} nas validações). Garante
+// texto útil na tela — nunca o literal "undefined".
+function apiErrorMessage(xhr, fallback = 'Sem conexão com a internet.') {
+    try {
+        const body = JSON.parse(xhr.responseText);
+        return body.detail || fallback;
+    } catch (_err) {
+        return fallback;
+    }
+}
 
 // ==================================================================
 //  MODO OFF-LINE
@@ -84,6 +103,14 @@ function offlineSWReady() {
 // Inicia o download de todos os capítulos
 function startOfflineDownload() {
     if (!offlineSWReady() || offlineActive) return;
+
+    // Avisar antes de tentar: iniciar download sem rede só geraria falhas
+    if (!navigator.onLine) {
+        const status = document.getElementById('offline-status');
+        status.textContent = 'Sem conexão com a internet. Conecte-se para baixar o conteúdo.';
+        showToast('Sem conexão com a internet.', 'advice');
+        return;
+    }
 
     offlineActive = true;
     setOfflineButtons();
@@ -150,7 +177,12 @@ function updateOfflineProgress(downloaded, total) {
     const percent = total > 0 ? Math.round((downloaded / total) * 100) : 0;
 
     bar.style.width = `${percent}%`;
-    status.textContent = `Baixando... ${downloaded} de ${total} capítulos (${percent}%)`;
+
+    if (percent > 0) {
+        status.textContent = `Baixando ${downloaded} de ${total} capítulos (${percent}%)`;
+    } else {
+        status.textContent = 'Aguardando início do download...';
+    }
 }
 
 // Listener de mensagens enviadas pelo Service Worker
@@ -170,6 +202,11 @@ function offlineSWListener(event) {
             } else {
                 status.textContent = 'Nenhum conteúdo armazenado. Baixe para usar sem conexão.';
             }
+
+            // Contexto útil para quem abriu o painel já off-line
+            if (!navigator.onLine) {
+                status.textContent += ' Você está sem conexão: apenas o conteúdo armazenado pode ser lido.';
+            }
             break;
         }
 
@@ -185,6 +222,17 @@ function offlineSWListener(event) {
             setOfflineButtons();
             status.textContent = event.data.message;
             showToast('Bíblia disponível para uso off-line.', 'info');
+            break;
+
+        case 'PRECACHE_OFFLINE':
+        case 'PRECACHE_PARTIAL':
+            // O download terminou com falhas de rede: não é "concluído".
+            // O painel permanece aberto para o usuário ler a orientação.
+            offlineActive = false;
+            offlineState = 'partial';
+            setOfflineButtons();
+            status.textContent = event.data.message;
+            showToast(event.data.message, 'advice');
             break;
 
         case 'PRECACHE_CANCELLED':
@@ -367,7 +415,7 @@ async function searcByhWords(words) {
     htmx.ajax('GET', `/api/search/${words}`, {
         handler: function (elm, response) {
             if (response.xhr.status >= 400) {
-                showToast(`Dados indisponíveis! (${response.xhr.statusText} Error.)`);
+                showToast(apiErrorMessage(response.xhr, 'Dados indisponíveis.'), 'advice');
                 return;
             }
             const data = JSON.parse(response.xhr.responseText);
@@ -420,7 +468,7 @@ async function chaptersList(book) {
     htmx.ajax('GET', `/api/${book}`, {
         handler: function (elm, response) {
             if (response.xhr.status >= 400) {
-                showToast(`Os dados não estão disponíveis! (${response.xhr.statusText} Error.)`);
+                showToast(apiErrorMessage(response.xhr, 'Os dados não estão disponíveis.'), 'advice');
                 return;
             }
             const data = JSON.parse(response.xhr.responseText);
@@ -441,7 +489,8 @@ async function chapterView(book, chapter, verse = null) {
         handler: function (elm, response) {
             showSpinner(false);
             if (response.xhr.status >= 400) {
-                showToast(`Os dados não estão disponíveis!(${response.xhr.statusText} Error.)`);
+                // Ex.: capítulo ausente do cache off-line → orientação do SW
+                showToast(apiErrorMessage(response.xhr, 'Os dados não estão disponíveis.'), 'advice');
                 return;
             }
             const data = JSON.parse(response.xhr.responseText);
