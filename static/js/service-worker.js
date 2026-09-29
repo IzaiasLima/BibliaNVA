@@ -292,7 +292,7 @@ function offlineFallback(url) {
     // Retorna estrutura compatível com o que o Mustache espera:
     // { data: [] } → {{#data}} não itera, nada é exibido
     const detail = pathname.match(/^\/api\/[^/]+\/\d+$/)
-      ? 'Capítulo não disponível off-line. Conecte-se e toque em Baixar Bíblia no modo off-line.'
+      ? 'Capítulo não disponível off-line. Conecte-se à internet e toque em Baixar Bíblia para fazer o download dos dados.'
       : 'Sem conexão com a internet.';
     return new Response(JSON.stringify({ data: [], detail, offline: true }), {
       status: 503,
