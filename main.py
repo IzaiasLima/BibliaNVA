@@ -17,7 +17,7 @@ from schemas import (
     ListBooksSchema,
 )
 
-# from utils import booksAbbr, bookIds, booksNames, maxChapters, favorites
+from utils import db_guard, is_quota_blocked_error, quota_blocked_response
 import random
 
 app = FastAPI(
@@ -33,6 +33,18 @@ app = FastAPI(
 )
 
 app.mount("/pages", StaticFiles(directory="static"), name="static")
+
+
+@app.exception_handler(Exception)
+async def unhandled_exception_handler(request, exc):
+    """Converte falhas do banco (ex.: cota do Turso esgotada) em 503 amigável.
+
+    Sem este handler, o FastAPI devolveria 500 com o corpo padrão
+    {"detail": "Internal Server Error"}, sem contexto para o usuário.
+    """
+    if is_quota_blocked_error(exc):
+        return quota_blocked_response()
+    raise exc
 
 
 @app.get("/service-worker.js", include_in_schema=False)
@@ -58,8 +70,12 @@ def read_root():
 
 @app.get("/api", response_model=ListBooksSchema)
 def get_books(db: Session = Depends(get_db)):
-    books_at = db.query(BooksORM).filter(BooksORM.book_id < 40).all()
-    books_nt = db.query(BooksORM).filter(BooksORM.book_id >= 40).all()
+    try:
+        books_at = db.query(BooksORM).filter(BooksORM.book_id < 40).all()
+        books_nt = db.query(BooksORM).filter(BooksORM.book_id >= 40).all()
+    except Exception as exc:
+        # Cota do Turso esgotada → 503 com mensagem de manutenção
+        return db_guard(exc, ListBooksSchema(old=[], new=[]))
 
     old = [
         BooksSchema(
@@ -80,6 +96,7 @@ def get_books(db: Session = Depends(get_db)):
         )
         for book in books_nt
     ]
+
     return ListBooksSchema(old=old, new=new)
 
 
@@ -147,8 +164,8 @@ def get_chapters(book: str, db: Session = Depends(get_db)):
 
         return chapters
 
-    except Exception:
-        return ChaptersSchema()
+    except Exception as exc:
+        return db_guard(exc, ChaptersSchema())
 
 
 @app.get(
@@ -279,8 +296,8 @@ def get_chapter(
         )
         return data_list
 
-    except Exception:
-        return ListVersesSchema()
+    except Exception as exc:
+        return db_guard(exc, ListVersesSchema())
 
 
 @app.get(
@@ -326,8 +343,8 @@ def get_bible_verses(
         )
         return data_list
 
-    except Exception:
-        return ListVersesSchema()
+    except Exception as exc:
+        return db_guard(exc, ListVersesSchema())
 
 
 if __name__ == "__main__":
