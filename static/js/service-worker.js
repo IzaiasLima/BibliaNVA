@@ -19,7 +19,10 @@
 // v5: functions.js pede confirmação antes de excluir os dados off-line;
 // styles.css ganhou o modal de confirmação.
 // Sem o bump, usuários receberiam para sempre o functions.js antigo do cache.
-const CACHE_VERSION = 'v8';
+// v9: /api/favorite/random passa a ser Network-First — sem o bump, o verso
+// aleatório continuaria vindo do cache (sempre o mesmo) ficando também
+// congelado até a próxima troca de CACHE_VERSION.
+const CACHE_VERSION = 'v9';
 const CACHE_API = `biblia-api-${CACHE_VERSION}`;
 const CACHE_STATIC = `biblia-static-${CACHE_VERSION}`;
 
@@ -161,8 +164,11 @@ self.addEventListener('fetch', (event) => {
   if (url.pathname.startsWith('/api')) {
 
     // /api/favorites pode mudar (usuário adiciona/remove) → Network-First.
-    // Para qualquer outra rota da API (texto bíblico imutável) → Cache-First.
-    if (url.pathname === '/api/favorites') {
+    // /api/favorite/random também: o verso é sorteado a cada leitura — do
+    // cache viria sempre o mesmo. Offline, o networkFirst serve o último
+    // verso em cache (a página não fica vazia).
+    // Para as demais rotas da API (texto bíblico imutável) → Cache-First.
+    if (url.pathname === '/api/favorites' || url.pathname === '/api/favorite/random') {
       event.respondWith(networkFirst(req, CACHE_API));
     } else {
       // Cria uma Request "limpa" sem os headers do HTMX para a chave de cache.
