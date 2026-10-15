@@ -22,7 +22,7 @@
 // v9: /api/favorite/random passa a ser Network-First — sem o bump, o verso
 // aleatório continuaria vindo do cache (sempre o mesmo) ficando também
 // congelado até a próxima troca de CACHE_VERSION.
-const CACHE_VERSION = 'v9';
+const CACHE_VERSION = 'v10';
 const CACHE_API = `biblia-api-${CACHE_VERSION}`;
 const CACHE_STATIC = `biblia-static-${CACHE_VERSION}`;
 
