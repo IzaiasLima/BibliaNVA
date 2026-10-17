@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Ester, 4</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/ET/4. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Ester, <span id="chapter">4</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Quando Mardoqueu soube tudo o que havia acontecido, ele rasgou suas vestes, vestiu-se de panos de saco, cobriu-se de cinzas, foi para o meio da cidade e chorou com um alto e amargo choro.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Ele foi até os portões do palácio do rei, porque ninguém poderia entrar vestido de panos de saco pelas portas.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Em toda província, onde quer que a ordem e o decreto alcançassem, havia grande luto entre os judeus, com jejum, choro e lamento. Muitos deles ficaram com pano de saco e cinzas.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Quando as criadas de Ester e os eunucos vieram informá-la, a rainha ficou angustiada. Ela enviou vestuários para Mardoqueu, para que ele tirasse seus panos de sacos, mas ele não aceitou.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Então, Ester chamou por Hatá, um dos eunucos do rei, que fora designado para servi-la; ela ordenou que ele fosse até Mardoqueu e soubesse o que havia acontecido, e o que significava aquilo.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Saiu Hatá para falar com Mardoqueu na praça da cidade, diante dos portões do rei.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Mardoqueu lhe relatou tudo o que acontecera, e o total da prata que Hamã prometera depositar na tesouraria do rei, a fim de destruir os judeus.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Também lhe deu uma cópia do decreto publicado em Susã, para a destruição dos judeus, a fim de que Hatá mostrasse a Ester, dando a ela a responsabilidade de ir ao rei suplicar por sua misericórdia, em favor do seu povo.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Saiu Hatá e falou para Ester o que Mardoqueu dissera.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Então, Ester falou a Hatá que voltasse a Mardoqueu.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Ela disse: "Todos os servos do rei e o povo das províncias do rei sabem que qualquer homem ou mulher que vá ao rei, até o interior do pátio, sem ser chamado, para ele há somente uma lei: 'morrerá'; exceto para aquele a quem o rei estender o cetro de ouro, então, viverá. Porém eu não fui chamada para estar com o rei nesses trinta dias".</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Então, Hatá levou as palavras de Ester para Mardoqueu.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Mardoqueu enviou de volta essa mensagem: "Não penses tu que irás escapar, no palácio do rei, mais do que qualquer outro judeu;</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>se te calares agora, socorro e livramento se levantarão de outro lugar, mas tu e a casa de teu pai perecerão. Quem sabe, não foi para esta ocasião que fostes escolhida para ser rainha?".</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Então, Ester enviou esta mensagem para Mardoqueu:</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>"Vá, reúne todos os judeus que vivem em Susã, jejueis por mim, não comais, nem bebais por três dias, noite e dia. Eu e minhas criadas jejuaremos também. Então, irei ao rei, ainda que seja contra a lei, e, se eu perecer, perecerei".</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Mardoqueu foi e fez tudo o que Ester lhe mandara fazer.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="ET" data-chapter="4"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="ET" data-chapter="4"
+                                data-total="10" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - 2 Crônicas, 17</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/2CR/17. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">2 Crônicas, <span id="chapter">17</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Josafá, filho de Asa, reinou em seu lugar e se fortaleceu contra Israel.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Ele colocou tropas em todas as cidades fortificadas de Judá e colocou guarnições na terra de Judá e nas cidades de Efraim, que Asa, seu pai, havia capturado.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>O <mark>Senhor</mark> era com Josafá, porque ele andou nos primeiros caminhos de Davi, seu ancestral, e não seguiu os baalins.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Ao invés disso, ele buscou o Deus de seu ancestral,  andou conforme seus mandamentos, e não de acordo com as obras de Israel.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Então, Yahweh estabeleceu o reino em sua mão; todo o Judá o trouxe tributos a Josafá. Ele teve riquezas e honra em abundância.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Seu coração estava comprometido com os caminhos do <mark>Senhor</mark>. Ele também removeu os altares e os postes-ídolos de Aserá de Judá.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>No terceiro ano de seu reinado, enviou seus oficiais Bene-Hail, Obadias, Zacarias, Netanel e Micaías para ensinarem nas cidades de Judá.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Com eles, estavam os levitas: Semaías, Netanias, Zebadias, Asael, Semiramote, Jônatas, Adonias, Tobias e Tobadonias; e com esses levitas, os sacerdotes  Elisama e Jeorão.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Eles ensinaram em Judá, tendo o Livro da Lei do <mark>Senhor</mark> com eles. Eles percorriam  todas cidades de Judá e ensinavam o povo.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>O temor do <mark>Senhor</mark> caiu sobre todas os reinos  das terras que estavam ao redor de Judá, de maneira que não guerrearam contra Josafá.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Alguns dos filisteus trouxeram presentes a Josafá e prata como tributo. Os árabes também trouxeram a ele rebanhos,  sete mil e setecentos carneiros e sete mil e setecentos bodes.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Josafá tornou-se muito poderoso. Construiu fortalezas e cidades-celeiros em Judá.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Ele tinha muitos suprimentos nas cidades de Judá e soldados, homens fortes e corajosos,  em Jerusalém.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Aqui está uma lista deles ordenada pelo nome das suas familias: em Judá, eram comandantes de mil:  com o comandante Adná, trezentos mil guerreiros;</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>com o comandante Joanã, duzentos e oitenta mil homens;</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>e depois, com Amasias, filho de Zicri, que voluntariamente se ofereceu para servir a Yahweh, duzentos mil guerreiros.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>De Benjamim: Eliadá, homem poderoso e destemido,  e com ele, duzentos mil armados com arcos e escudos;</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>depois dele, Jozabade  e, com ele, cento e oitenta mil preparados para a guerra;</span></p> 
+<p class="verse "><span class="number ">19</span>&ensp;<span>Esses foram os que serviram ao rei Josafá, além daqueles a quem o rei designou para as cidades fortificadas por todo o Judá.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="2CR" data-chapter="17"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="2CR" data-chapter="17"
+                                data-total="36" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Oséias, 12</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/OS/12. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Oséias, <span id="chapter">12</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Efraim se alimenta de vento e segue após o vento leste. Multiplica, continuamente, mentira e violência. Faz aliança com a Assíria e leva azeite para o Egito.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>O <mark>Senhor</mark> também tem uma demanda contra Judá e castigará Jacó por aquilo que tem feito, e vai retribuí-lo por suas obras.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Ainda no útero, Jacó agarrou seu irmão pelo calcanhar e, na sua humanidade, brigou com Deus.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Ele brigou com o anjo e venceu. Chorou e implorou por Seu favor. Ele encontrou Deus em Betel; ali, Deus falou com ele.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Este é Yahweh, o Deus dos Exércitos; "Yahweh" é o nome pelo qual deve ser chamado.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Então, volta para o teu Deus. Guarda o amor leal e a justiça, e espere continuamente por teu Deus.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Os mercadores têm balanças falsas em suas mãos; eles amam defraudar.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Efraim disse, "Eu me tornei muito rico por mim mesmo. Em todo o meu trabalho eles não encontrarão qualquer iniquidade em mim, qualquer coisa que possa ser pecado."</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>"Eu sou Yahweh, teu Deus, da terra do Egito. Eu farei, novamente, com que vivam em tendas, como nos dias dos festivais estabelecidos.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Eu falei aos profetas e lhes dei muitas visões. Pelas mãos dos profetas eu dei parábolas."</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Gileade certamente tem ídolos por vaidade. Em Gilgal, eles sacrificam touros; seus altares serão como um amontoado de pedras nos sulcos dos campos.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Jacó fugiu para a terra de Aram; Israel trabalhou para conseguir uma esposa;  guardou rebanhos de ovelhas para consegui-la.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>O <mark>Senhor</mark> trouxe Israel do Egito por meio de um profeta e, o profeta cuidou deles.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Efraim rudemente provocou a ira do <mark>Senhor</mark>. Por isso o Senhor deixará o sangue derramado sobre Efraim, e trará desgraça sobre ele.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="OS" data-chapter="12"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="OS" data-chapter="12"
+                                data-total="14" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

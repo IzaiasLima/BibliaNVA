@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Isaías, 11</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/IS/11. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Isaías, <span id="chapter">11</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Um ramo brotará a partir do tronco de Jessé, um arbusto crescerá da sua raiz e dará fruto.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>O Espírito do <mark>Senhor</mark> repousará sobre Ele, o Espírito de sabedoria e de entendimento, o Espírito de instrução e de poder, o Espírito de conhecimento e de temor a Yahweh.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Seu prazer será o temor a Yahweh. Ele não julgará pelo que Seus olhos veem, nem decidirá pelo que Seus ouvidos ouvem.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Ao invés disso, Ele julgará os pobres com justiça e decidirá, de forma justa, a favor dos humildes da terra. Ele ferirá a terra com a vara da Sua boca, e, com o sopro dos Seus lábios, matará o corrupto.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>A justiça será o cinto dos Seus lombos, e a fidelidade, o cinto ao redor da Sua cintura.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>O lobo habitará com o cordeiro, o leopardo se deitará com o cabrito, o bezerro, o leãozinho e o bezerro engordado, juntos. Uma criança pequena os conduzirá.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>A vaca e o urso pastarão juntos, os seus filhotes deitarão um ao lado do outro, o leão comerá palha, como o boi.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Um bebê brincará em cima do buraco da cobra e a criança desmamada colocará a mão na toca da serpente.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Ninguém ferirá nem causará destruição em todo o Meu santo monte; pois a terra será cheia do conhecimento do <mark>Senhor</mark>, como as águas cobrem o mar.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Naquele dia, a raiz de Jessé será como uma bandeira para os povos. As nações A procurarão, e Seu lugar de descanso será glorioso.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Naquele dia, o Senhor, novamente, estenderá Sua mão para resgatar o remanescente do Seu povo, que permanece na Assíria, no Egito, em Patros, na Etiópia, em Elão, em Sinar, em Hamate e nas ilhas do mar.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Ele levantará uma bandeira para as nações e recolherá os desterrados de Israel e os dispersos de Judá desde os quatro cantos da terra.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Ele cessará a inveja de Efraim e as hostilidades de Judá serão eliminadas. Efraim não invejará Judá, e Judá não será hostil a Efraim.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Em vez disso, eles se lançarão sobre as colinas dos filisteus ao oeste e, juntos, saquearão o povo do leste. Eles atacarão Edom e Moabe, e o povo de Amom lhes obedecerá.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>O <mark>Senhor</mark> destruirá completamente o golfo do mar do Egito. Com Seu vento ardente, Ele moverá a mão sobre o rio Eufrates e o dividirá em sete correntes. Assim, este poderá ser atravessado de sandálias.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Haverá uma estrada para o remanescente do Seu povo que voltar da Assíria, como foi para Israel na sua vinda da terra do Egito.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="IS" data-chapter="11"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="IS" data-chapter="11"
+                                data-total="66" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

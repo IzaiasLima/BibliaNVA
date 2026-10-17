@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Jó, 16</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/JÓ/16. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Jó, <span id="chapter">16</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Então, Jó respondeu:</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>"Eu tenho ouvido muitas coisas como essas; sois todos consoladores miseráveis.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Não terão fim essas palavras inúteis? O que está errado convosco para responderdes assim?</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Eu também poderia falar como vós, se estivésseis em meu lugar; eu poderia amontoar palavras contra vós e menear minha cabeça zombando de vós.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Ah, como eu poderia encorajar-vos com a minha boca! Como a consolação de meus lábios poderia aliviar a vossa dor!</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Se falo, a minha dor não é aliviada; se não falo, como posso ter auxílio?</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Mas agora, Deus, Tu me tornaste alguém sem nenhum vigor; Tu fizeste a minha família desolada.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Fizeste-me secar, isso constitui uma testemunha contra mim, o emagrecimento do meu corpo depõe contra mim e testifica contra meu rosto.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Deus, em Sua ira, me deixou em pedaços e me perseguiu; Ele tem rangido Seus dentes contra mim; e meu inimigo fixa seus olhos em mim enquanto Ele me deixa em pedaços.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Pessoas estão de boca aberta para mim, elas me esmurram no queixo; elas se reuniram contra mim.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Deus me entregou nas mãos dos perversos e me faz cair nas mãos dos corruptos.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Eu estava tranquilo, mas Ele me despedaçou. Então, Ele me agarrou pelo pescoço, deixou-me em pedaços e também fez de mim o Seu alvo.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Seus flecheiros me rodeiam; Deus penetra os meus rins, não me poupa; derrama no chão a minha bilis.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Ele me esmaga contra o muro uma vez e de novo. Ele corre contra mim como um guerreiro.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Costurei vestes de luto sobre minha pele; enterrei minha testa na terra.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>O meu rosto está vermelho de tanto choro. A sombra da morte circunda os meus olhos.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Mesmo que não haja violência nas minhas mãos e seja pura a minha oração.</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>Terra, não cubras o meu sangue! Que meu choro não tenha lugar de descanso.</span></p> 
+<p class="verse "><span class="number ">19</span>&ensp;<span>Eis que agora, minha testemunha está nos céus; alguém, que me defende, está nas alturas.</span></p> 
+<p class="verse "><span class="number ">20</span>&ensp;<span>Meus amigos zombam de mim, mas os meus olhos derramam lágrimas diante de Deus.</span></p> 
+<p class="verse "><span class="number ">21</span>&ensp;<span>Eu peço para que uma testemunha no céu defenda a  causa deste homem diante de Deus, como um homem faz com seu próximo.</span></p> 
+<p class="verse "><span class="number ">22</span>&ensp;<span>Pois, em alguns poucos anos, irei a um lugar de onde não mais voltarei.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="JÓ" data-chapter="16"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="JÓ" data-chapter="16"
+                                data-total="42" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

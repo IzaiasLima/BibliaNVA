@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Oséias, 11</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/OS/11. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Oséias, <span id="chapter">11</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>“Quando Israel era jovem Eu o amei, e chamei Meu filho para fora do Egito.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Quanto mais eram chamados, mais se afastavam de Mim. Eles sacrificavam aos baalins e queimavam incenso aos ídolos. [Algumas das versões mais modernas bem como algumas versões antigas apresentam: "eles se afastavam de Mim". O texto hebraico traz "eles se afastavam deles"]</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Todavia, fui Eu quem ensinei Efraim a andar; fui Eu quem os levantou pelos braços, mas eles não perceberam que Eu cuidava deles.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Eu lhes orientei com laços de amor, com laços de ternura. Eu era para eles como alguém que tirou o jugo de sobre suas cabeças, inclinando-Me e lhes alimentando.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Eles não voltarão para a terra do Egito. A Assíria será seu rei; porque eles se recusam a voltar para Mim.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>A espada cairá sobre suas cidades e destruirá as trancas das suas portas; serão destruídas por causa do seus próprios planos.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Meu povo está determinado a se virar contra Mim. Embora eles Me chamem de Altíssimo, ninguém os ajudará.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Como desistirei de ti, Efraim? Como te entregarei, Israel? Como te farei como Admá? Ou como Zeboim? Meu coração se comove dentro de Mim; toda Minha compaixão está agitada.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Eu não vou executar Minha ira; não vou destruir Efraim. Pois Eu Sou Deus e não homem; Eu Sou O Santo entre vós, e não virei com Minha ira.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Eles seguirão Yahweh; e Ele rugirá como o leão. Quando Ele rugir, seus filhos virão tremendo do oeste.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Eles virão tremendo como um pássaro, os do Egito; e como uma pomba, os da terra da Assíria. Eu os farei viver nas suas casas" — esta é a declaração do <mark>Senhor</mark>.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>"Efraim Me rodeia com falsidade; e a casa de Israel, com engano. Mas Judá ainda anda Comigo, ainda é fiel a Mim, O Único Santo".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="OS" data-chapter="11"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="OS" data-chapter="11"
+                                data-total="14" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

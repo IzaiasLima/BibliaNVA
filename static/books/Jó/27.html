@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Jó, 27</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/JÓ/27. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Jó, <span id="chapter">27</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Jó,retmou sua fala e disse:</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>"Tão certo como Deus vive, Quem arrancou a minha justiça, o Todo Poderoso, que tornou minha vida amarga,</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>pois, enquanto a minha vida ainda estiver em mim e o fôlego de Deus em minhas narinas, é isto que farei.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Meus lábios não falarão iniquidade, nem a minha língua falará engano.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Nunca vou admitir que vós três estáveis certos; até que eu morra, eu nunca negarei minha integridade.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Eu me apego à minha justiça e não a deixarei ir; meus pensamentos não me repreenderão enquanto eu viver.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Que o meu inimigo seja como o homem corrupto; e aquele que se levanta contra mim seja como o homem injusto.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Pois qual é a esperança de um homem corrupto quando Deus o destrói, quando Deus tira-lhe a vida?</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Poderá Deus ouvir seu choro quando a aflição vier sobre ele?</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Alegrar-se-á ele no Todo Poderoso e clamará a Deus em todos os tempos?</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Eu vos ensinarei a respeito da mão de Deus; não ocultarei os pensamentos do Todo Poderoso.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Vede, todos vós tendes visto isto pessoalmente; por que, então, tendes falado tudo isso sem nenhum sentido?</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Este é o destino do homem corrupto com Deus, a herança do opressor que ele recebe do Todo Poderoso:</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>se seus filhos se multipicarem, será para a espada; sua prole nunca terá comida suficiente.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Todos os que sobreviverem serão sepultados pela praga e suas viúvas não farão lamentação alguma por eles.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Ainda que o homem corrupto acumule prata como o pó e acumule roupas como barro,</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>ele poderá acumular roupas, mas pessoas justas as vestirão e as pessoas inocentes dividirão a prata entre elas.</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>Ele constrói sua casa como a da aranha, como a cabana que um guarda faz.</span></p> 
+<p class="verse "><span class="number ">19</span>&ensp;<span>Ele se deita em riquezas, mas não fará isto para sempre; ele abre seus olhos e tudo se foi.</span></p> 
+<p class="verse "><span class="number ">20</span>&ensp;<span>Terrores o inundam como águas; uma tempestade o arrasta pela noite.</span></p> 
+<p class="verse "><span class="number ">21</span>&ensp;<span>O vento do leste o leva para longe e ele sai; e o varre do seu lugar.</span></p> 
+<p class="verse "><span class="number ">22</span>&ensp;<span>O vento do leste se joga sobre ele e não pára; ele tenta escapar das suas mãos.</span></p> 
+<p class="verse "><span class="number ">23</span>&ensp;<span>O vento bate palmas a ele em gozação; seus assobios o tiram do seu lugar.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="JÓ" data-chapter="27"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="JÓ" data-chapter="27"
+                                data-total="42" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

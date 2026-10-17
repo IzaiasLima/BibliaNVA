@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Isaías, 52</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/IS/52. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Isaías, <span id="chapter">52</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Desperta, desperta! Reveste-te de força, Sião; põe teus belos vestidos, Jerusalém, cidade santa; porque nunca mais os impuros e os incircuncisos entrarão por teus portões.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Sacode de ti mesma a poeira, levanta-te e assenta-te, Jerusalém; arranca a corrente do teu pescoço, ó cativa filha de Sião.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Porque isto é o que Yahweh diz: "Tu foste vendida por nada e serás redimida sem dinheiro".</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Isto é o que diz o Senhor Yahweh: "No início, Meu povo desceu para viver temporariamente no Egito; recentemente, a Assíria os tem oprimido.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Agora, o que Eu tenho aqui —  esta é a declaração do <mark>Senhor</mark> — visto que o Meu povo foi levado embora por nada? Aqueles que os dominam zombam — esta é a declaração do <mark>Senhor</mark> — e o Meu Nome é blasfemado continuamente, o dia todo. [Nota: em vez de "zombam", algumas versões modernas identificam uma palavra hebraica diferente que significa "lamentam".]</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Entretanto, Meu povo conhecerá o Meu nome; eles saberão, naquele dia, que sou Eu quem fala: 'Sim, sou Eu'".</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Como são bonitos, sobre os montes, os pés do mensageiro que traz boas novas, que anuncia a paz, que testemunha boas novas, que anuncia a salvação, que diz a Sião: "Teu Deus reina!"</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Ouve! Teus sentinelas levantam a voz e, juntos, gritam de alegria; pois eles verão, com os próprios olhos, o retorno do <mark>Senhor</mark> a Sião.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Rompei em júbilo, cantando juntas, vós, ruínas de Jerusalém; porque Yahweh confortou o Seu povo; Ele redimiu Jerusalém.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>O <mark>Senhor</mark> despiu Seu santo braço à vista de todas as nações; toda a terra verá a salvação do nosso Deus.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Afastai-vos, afastai-vos! Saí daí; não toqueis em nada impuro; saí do meio dela! Purificai-vos, vós que carregais os vasos do <mark>Senhor</mark>.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Não partireis correndo, nem saireis em pânico, porque Yahweh irá adiante de vós; o Deus de Israel será a vossa retaguarda.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Vê! Meu Servo agirá sabiamente; Ele será engrandecido e elevado; Ele será exaltado.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Assim como muitos ficaram horrorizados diante Dele, pois Sua aparência estava tão desfigurada que não parecia de um homem (Seu aspecto não  mais parecia humano),</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>assim Meu servo causará admiração a muitas nações; reis fecharão suas bocas por causa Dele, porque eles verão o que não lhes havia sido contado, e entenderão aquilo que nunca tinham ouvido.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="IS" data-chapter="52"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="IS" data-chapter="52"
+                                data-total="66" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

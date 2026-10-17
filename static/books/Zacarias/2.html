@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Zacarias, 2</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/ZC/2. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Zacarias, <span id="chapter">2</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Voltei a levantar os meus olhos, e vi um homem com um cordel de medir em suas mãos.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>E eu disse: "Aonde tu vais?". Ele me respondeu: "Medir Jerusalém, para ver o seu comprimento e a sua largura".</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Então, o anjo que havia falado comigo saiu, e outro anjo foi ao encontro dele.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>O segundo anjo lhe disse: "Corre e fala a esse jovem que Jerusalém habitará numa terra aberta por causa da multidão de pessoas e animais.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Porque Eu, diz Yahweh, serei o muro de fogo ao redor dela e serei a glória em seu meio.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Levantai! Levantai! Fugi da terra do norte, diz Yahweh, pois vos tenho dispersado como os quatro ventos do céu, diz Yahweh.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Levantai! Fugi, ó Sião, vós que viveis com a filha da Babilônia!".</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Depois que Yahweh dos Exércitos me honrou e me enviou contra as nações que vos roubaram, todo aquele que vos tocar, toca na menina dos olhos de Deus! Depois do <mark>Senhor</mark> ter feito essas coisas, Ele disse:</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>"Eu mesmo levantarei a Minha mão sobre eles e eles serão servos dos seus escravos". E sabereis que Yahweh dos Exércitos me enviou.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>"Canta alegremente, ó filha de Sião, porque Eu estou prestes a vir acampar no meio de ti!", diz Yahweh.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Então, grandes nações se ajuntarão a Yahweh nesse dia. Ele diz: "E serás o Meu povo; portanto, acamparei no meio de ti", e tu saberás que Yahweh dos Exércitos me enviou a ti.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Portanto, Yahweh herdará Judá como Sua propriedade justa na terra santa e também escolherá Jerusalém para Si.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Cale-se toda a carne, diante do <mark>Senhor</mark>, porque Ele tem Se levantado do Seu santo lugar!</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="ZC" data-chapter="2"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="ZC" data-chapter="2"
+                                data-total="14" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

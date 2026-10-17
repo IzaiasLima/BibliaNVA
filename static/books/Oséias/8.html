@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Oséias, 8</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/OS/8. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Oséias, <span id="chapter">8</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>"Põe uma trombeta em tua boca! Ele virá como uma águia sobre a Casa do <mark>Senhor</mark>; porque o povo quebrou Minha Aliança e se rebelou contra Minha Lei.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Eles clamam a Mim: 'Ó Deus, nós, Israel, Te conhecemos'.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Mas Israel rejeitou o que é bom, e o inimigo o perseguirá.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Eles estabeleceram reis, mas não por Mim. Eles constituíram príncipes, mas sem Meu conhecimento. Com sua prata e ouro fizeram ídolos para si, mas foi somente para serem destruídos."</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>O teu bezerro foi rejeitado, Samaria. A Minha ira se acendeu contra este povo. Por quanto tempo eles serão culpados?</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Pois esse ídolo vem de Israel; um artífice o fez — isto não é Deus! O bezerro de Samaria será destruído em pedaços.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Pois as pessoas semearam vento e colheram tormenta. O talo existente não florescerá; ele não produzirá farinha. Se ele amadurecer, os estrangeiros o devorarão.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Israel foi devorado; agora ele está entre as nações como coisa inútil.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Pois eles subiram para a Assíria como um solitário jumento selvagem. Efraim contratou para si os seus amantes.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Mesmo que eles tenham contratado seus amantes entre as nações, Eu os reunirei. Eles começarão a  definhar por causa da opressão do rei dos príncipes.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Pois Efraim multiplicou altares para fazer ofertas pelo pecado; mas, ao invés disso, eles se tornaram altares para cometer pecados.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Eu poderia escrever a Minha Lei para eles dez mil vezes, mas eles a iriam ver como algo estranho.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Quanto aos sacrifícios das Minhas ofertas, eles sacrificam carne e a comem, mas Eu, Yahweh, não os aceitarei. Agora, lembrarei da sua iniquidade e punirei seus pecados. Eles voltarão para o Egito.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Israel se esqueceu de Mim, o seu Criador, e construíram templos. Judá fortificou muitas cidades, mas enviarei fogo nas suas cidades, este fogo destruirá seus palácios.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="OS" data-chapter="8"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="OS" data-chapter="8"
+                                data-total="14" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - 1 Crônicas, 14</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/1CR/14. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">1 Crônicas, <span id="chapter">14</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Então, Hirão, rei de Tiro, enviou a Davi mensageiros, árvores de cedro, carpinteiros e pedreiros. Eles construíram uma casa para ele.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Davi soube que Yahweh o tinha estabelecido como rei sobre Israel e que seu reino tinha sido exaltado por causa de Seu povo Israel.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Em Jerusalém, Davi tomou outras esposas, e se tornou pai de mais filhos e filhas.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Estes foram os nomes dos filhos dele, que nasceram em Jerusalém: Samua, Sobabe, Natã, Salomão,</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Ibar, Elisua, Elpelete,</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Nogá, Nefegue, Jafia,</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Elisama, Beeliada e Elifelete.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Quando os filisteus ouviram que Davi tinha sido ungido como rei sobre todo o Israel, todos eles saíram a procurá-lo. Mas Davi soube disso e saiu contra eles.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Os filisteus vieram e invadiram o vale de Refaim.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Então, Davi pediu ajuda a Deus. Ele disse: "Devo atacar os filisteus? Tu darás vitória sobre eles?". Yahweh lhe disse: "Ataca, pois Eu certamente os darei a ti".</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Então, eles foram a Baal-Perazim, e lá ele os derrotou. Ele comentou: "Yahweh destruiu meus inimigos por minha mão, como uma explosão de torrentes de água". Então, o nome daquele lugar se tornou Baal-Perazim.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Os filisteus abandonaram seus deuses os quais foram queimados por ordem de Davi.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Então, os filisteus invadiram o vale novamente.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Naquela ocasião, Davi pediu ajuda a Deus outra vez. Deus lhe disse: "Não ataques pela frente, mas dá a volta por trás, e passa pela floresta de amoreira.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Quando tu ouvires o som de marcha pelo vento, soprando nas copas das amoreiras, ataca com força. Faze isso, pois Deus terá saído antes de ti para atacar o exército dos filisteus".</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Então, Davi fez conforme Deus havia ordenado. Ele derrotou o exército dos filisteus desde Gibeão até Gezer.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Assim, a fama de Davi percorreu por todas as terras, e Yahweh fez com que todas as nações o temessem.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="1CR" data-chapter="14"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="1CR" data-chapter="14"
+                                data-total="29" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

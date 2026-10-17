@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - 1 Timóteo, 1</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/1TM/1. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">1 Timóteo, <span id="chapter">1</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Paulo, apóstolo de Cristo Jesus de acordo com a ordem de Deus, nosso Salvador, e de Cristo Jesus, nossa esperança,</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>a Timóteo, um verdadeiro filho na fé: graça, misericórdia e paz de Deus Pai e de Cristo Jesus, nosso Senhor.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Como eu te roguei, quando partia para Macedônia, permanece em Éfeso para que tu possas advertir certas pessoas de que não ensinem uma doutrina diferente,</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>nem prestem atenção a histórias e genealogias sem fim, que causam discussões em vez de ajudarem o plano de Deus, que é pela fé.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Mas o objetivo dessa advertência é o amor que procede de um coração puro, de uma boa consciência e de uma fé sincera.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Algumas pessoas têm se enganado e se desviado disso com conversas tolas,</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>querendo ser mestres da lei, mas sem entender o que dizem, nem o que insistentemente afirmam.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Mas nós sabemos que a lei é boa se usada de forma legítima.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>E sabemos isto: a lei não é feita para o justo, mas para os rebeldes e sem lei, para os incrédulos e pecadores, para os que são ímpios e profanos, para os que matam os próprios pais e mães, para os assassinos,</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>para as pessoas sexualmente imorais, para os homossexuais, para os traficantes de escravos, para os mentirosos, para as falsas testemunhas e para tudo o que é contra a sã doutrina.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Essa doutrina está de acordo com o Evangelho glorioso do Deus bendito, que me foi confiado.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Eu agradeço a Cristo Jesus, nosso Senhor, que me fortaleceu, pois me considerou fiel e me colocou nesta obra.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Eu era um homem blasfemo, perseguidor e violento, mas recebi misericórdia, porque agia ignorantemente na minha incredulidade.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Mas a graça do nosso Senhor transbordou com a fé e o amor que há em Cristo Jesus.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Esta mensagem é confiável e digna de toda aceitação: Cristo Jesus veio ao mundo para salvar os pecadores, e eu sou o pior deles.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Mas, por essa razão, eu recebi misericórdia, de forma que em mim, o pior dos pecadores, Cristo Jesus pudesse demonstrar toda paciência. Ele fez isso como um exemplo para aqueles que haveriam de crer Nele para a vida eterna.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Assim, ao Rei eterno, imortal e invisível, o único Deus, sejam a honra e a glória para sempre e sempre. Amém.</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>Eu te entrego essa instrução, Timóteo, meu filho, em concordância com as profecias feitas a teu respeito, para que te empenhes no bom combate.</span></p> 
+<p class="verse "><span class="number ">19</span>&ensp;<span>Faze isso para que tu tenhas fé e uma boa consciência. Algumas pessoas as têm rejeitado e naufragaram na fé,</span></p> 
+<p class="verse "><span class="number ">20</span>&ensp;<span>entre elas estão Himeneu e Alexandre, os quais entreguei a Satanás para que eles aprendam a não blasfemar.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="1TM" data-chapter="1"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="1TM" data-chapter="1"
+                                data-total="6" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

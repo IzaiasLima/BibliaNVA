@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Miquéias, 5</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/MQ/5. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Miquéias, <span id="chapter">5</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Agora, ajunta-te em posição de batalha, filha de guerreiros. Os guerreiros montaram um cerco ao redor da cidade, com uma vara eles batem na face do Juiz de Israel. [Nota: Em vez de "ajunta-te em posição de batalha", alguns intérpretes traduzem "cortam a si mesmos", referindo-se à prática pagã de se cortar enquanto se reza para os ídolos. Além disso, algumas versões modernas seguem uma versão antiga que diz "construa tuas fortificações".]</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Mas tu, Belém Efrata, ainda que sejas pequena entre as famílias de Judá, de ti virá para Mim Aquele que governará em Israel, cuja procedência é desde os tempos antigos, desde a eternidade.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Portanto Deus os abandonará até o momento em que aquela que está em trabalho de parto dê à luz um filho, e o restante dos seus irmãos voltem aos filhos de Israel.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Ele Se levantará e pastoreará Seu rebanho, na força do <mark>Senhor</mark>, na majestade do Nome do <mark>Senhor</mark>, seu Deus. Eles permanecerão, porque naquele tempo Ele será grande até os confins da terra.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Ele será nossa paz. Quando os assírios vierem para a nossa terra, quando marcharem contra nossas fortalezas; então, levantaremos contra eles sete pastores e oito nobres.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Esses homens pastorearão a terra da Assíria, com a espada, e a terra de Ninrode, em suas entradas. [Nota: O texto hebraico tem "em suas entradas", isto é, em seus portões. No entanto, algumas versões modernas supõem que uma palavra hebraica diferente se pretendia: "com uma espada desembainhada".]</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>O remanescente de Jacó estará entre muitos povos, como o orvalho do <mark>Senhor</mark>, como os chuviscos sobre a relva, que não esperam pelo homem, nem pelos filhos dos seres humanos.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>O remanescente de Jacó estará entre as nações, no meio de muitos povos, como o leão entre os animais da floresta, como um leãozinho entre os rebanhos das ovelhas. Quando ele passar por eles, irá pisá-los e despedaçá-los, e não haverá quem poderá salvá-los.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Tua mão estará levantada contra teus inimigos e ela os destruirá.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>"Acontecerá naquele Dia", diz Yahweh "que destruirei do meio de ti os teus cavalos e demolirei tuas carruagens.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Eu destruirei as cidades da tua terra e derrubarei todas as tuas fortalezas.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Eu destruirei a feitiçaria das tuas mãos, e não terás mais advinhos.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Eu destruirei tuas imagens esculpidas e tuas colunas sagradas de pedra, que estão no meio de ti. Não mais adorarás as obras de tuas mãos.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Eu arrancarei do teu meio os postes de Aserá, e destruirei tuas cidades.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Eu executarei vingança com ira e furor sobre as nações que não Me obedeceram".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="MQ" data-chapter="5"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="MQ" data-chapter="5"
+                                data-total="7" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

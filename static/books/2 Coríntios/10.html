@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - 2 Coríntios, 10</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/2CO/10. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">2 Coríntios, <span id="chapter">10</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Eu, Paulo, rogo-vos, pela humildade e gentileza de Cristo, eu que sou manso na vossa presença, mas ousado convosco quando ausente,</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>peço-vos que, quando estiver presente convosco, não precise ser ousado e autoconfiante. Mas penso que terei que ser ousado quando me opuser aos que supõem que nós estamos vivendo conforme a carne.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Mesmo que andemos na carne, não militamos de acordo com a carne;</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>porque as armas com que lutamos não são carnais, mas têm poder divino para destruir fortalezas, e aniquilam argumentos enganosos.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Nós também destruímos qualquer coisa altiva que se levanta contra o conhecimento de Deus, e levamos cativo todo pensamento à obediência de Cristo.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>E estamos nos preparando para punir todo ato de desobediência, tão logo a vossa obediência esteja completa.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Vede o que está claramente na frente de vós. Se alguém está convencido que é de Cristo, lembre a si mesmo de que, da mesma forma que é de Cristo, assim também nós somos.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Mesmo que eu me orgulhe um pouco mais da nossa autoridade, a qual o Senhor deu para vos edificar e não para vos destruir, não me envergonharei.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Eu não quero que pareça que estou vos aterrorizando com minhas cartas.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Porque alguns dizem: "As cartas dele são sérias e poderosas; mas fisicamente ele é fraco, e seu discurso não é digno de ser ouvido".</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Tal pessoa deve entender que o que somos nas palavras de nossas cartas, quando estamos ausentes, é o que seremos em ações quando estivermos aí.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Não chegaremos ao ponto de nos classificar ou nos comparar com os que louvam a si mesmos mas, quando se medem e se comparam um com o outro, não têm entendimento.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Nós, entretanto, não nos gloriaremos além dos limites; mas o faremos somente nos limites que Deus nos designou, os quais vos alcançam.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Porque não nos excedemos quando vos alcançamos, e fomos os primeiros a vos alcançar com o Evangelho de Cristo.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Nós não nos gloriamos demasiadamente nos trabalhos alheios; pelo contrário, esperamos que, enquanto a vossa fé cresce, nossa área de trabalho se expanda, dentro dos nossos limites de atuação.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Esperamos por isto, para que possamos pregar o Evangelho mesmo em regiões além da vossa. Não nos gloriaremos do trabalho feito na área de outros.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>"Mas aquele que se gloria, glorie-se no Senhor".</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>Porque não é o que recomenda a si mesmo que é aprovado, mas aquele a quem o Senhor recomenda.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="2CO" data-chapter="10"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="2CO" data-chapter="10"
+                                data-total="13" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

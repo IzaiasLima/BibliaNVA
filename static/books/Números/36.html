@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Números, 36</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/NM/36. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Números, <span id="chapter">36</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Então, os líderes das famílias de seus antepassados, do clã de Gileade, filho de Maquir, filho de Manassés dos clãs dos descendentes de José, aproximaram-se e falaram diante de Moisés e dos líderes, que eram príncipes e chefes de famílias do povo de Israel.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Eles disseram: "Yahweh te ordenou, nosso mestre, compartilhar uma parte da terra, por porção ao povo de Israel. Tu fostes ordenado por Yahweh, para dar a parte de Zelofeade, nosso irmão, para suas filhas.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Mas, se elas se casarem com homens de outras tribos, entre o povo de Israel, então, a porção da terra será removida da parte de nosso antepassado. E será acrescentada como parte da tribo a que se unirem. Neste caso, a parte será removida e diminuída de nossa herança.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>E, quando chegar o ano do Jubileu do povo de Israel, a parte delas será somada à herança da tribo a que pertencerem. Assim, a parte delas será tirada da herança da tribo de nossos antepassados".</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Moisés deu uma ordem ao povo de Israel, pela palavra do <mark>Senhor</mark>. Ele disse: "O que a tribo dos descendentes de José diz está certo.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Isto é o que Yahweh ordenou a respeito das filhas de Zelofeade. Ele disse: 'Que elas se casem com quem escolherem, mas devem se casar somente com os da tribo de seu pai'.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Nenhuma herança do povo de Israel deve mudar de uma tribo para outra. Cada tribo do povo de Israel continuará com a herança da tribo de seu antepassado.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Cada mulher do povo de Israel que possuir herança de sua tribo, deve casar-se com alguém da família da tribo de seu pai. Assim, cada um entre o povo de Israel conservará herança de seus antepassados.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>E nenhuma herança mudará de mãos, de uma tribo para outra. Cada uma das tribos do povo de Israel deve preservar a sua herança".</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Assim, as filhas de Zelofeade fizeram como Yaweh havia ordenado a Moisés;</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Macla, Tirza, Holga, Milca e Noa, filhas de Zelofeade, casaram-se com os descendentes de Manassés.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Casaram-se com familiares dos filhos de Manassés, filho de José. Dessa forma, a herança delas continuou na tribo do clã de seu pai.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>São essas as ordens e as leis que Yahweh deu ao povo de Israel, por intermédio de Moisés, nas planícies de Moabe, junto ao Jordão, em Jericó.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="NM" data-chapter="36"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="NM" data-chapter="36"
+                                data-total="36" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

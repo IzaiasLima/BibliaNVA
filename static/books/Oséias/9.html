@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Oséias, 9</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/OS/9. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Oséias, <span id="chapter">9</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Não te alegres, Israel, não exultes como os outros povos. Pois tu tens sido infiel, renunciando ao Teu Deus. Amas o salário de prostituta em todas as eiras de trigo.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Mas a eira e o lagar não os alimentarão, e o vinho novo lhes faltará.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Eles não continuarão vivendo na terra do <mark>Senhor</mark>; em vez disso, Efraim voltará para o Egito e comerão comida impura na Assíria.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Não derramarão ofertas de vinho a Yahweh, também não Lhe agradarão com ofertas. Os seus sacrifícios serão como alimento de luto: todo aquele que comer será profanado. Pois seu alimento será somente para eles; não entrará na casa do <mark>Senhor</mark>.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>O que fareis no dia da solenidade, e no dia da festa para Yahweh?</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Vede! Se eles escaparem da destruição, o Egito os ceifará, e  Mênfis os sepultará. Quanto aos seus tesouros de prata, as urtigas os possuirão e os espinhos encherão as suas tendas.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Os dias do castigo estão vindo; os dias da retribuição estão chegando. Que todo o Israel saiba destas coisas. O profeta é um tolo, e o homem inspirado é louco, por causa da sua grande iniquidade e hostilidade.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>O vigia de Efraim está com o meu Deus, mas o profeta é como uma armadilha para aves em todos os seus caminhos, inimizade na casa do seu Deus.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Eles têm-se corrompido profundamente, como nos dias de Gibeá. Yahweh lembrará de suas iniquidades, e punirá os seus pecados.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>O <mark>Senhor</mark> diz: "Quando encontrei Israel, foi como apanhar uvas no deserto. Vi seus pais como se vê o primeiro fruto da figueira. Mas eles foram para Baal-Peor, e se consagraram a esse ídolo vergonhoso. Se tornaram tão detestáveis como o ídolo que amaram.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Quanto a Efraim, a sua glória voará como um pássaro. Não haverá nascimento, nem gravidez, nem concepção.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Embora venham a criar filhos, Eu os tirarei para que não fique nenhum deles. Ai deles quando Eu me afastar!</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Vejo Efraim, como vejo Tiro, plantado no campo, mas Efraim trará seus filhos a alguém que os matará."</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Dá-lhes, Yahweh — o que o Senhor lhes dará? Dê-hes útero que aborte e seios sem leite.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>"Por causa de toda a sua maldade em Gilgal, passei a odiá-los desde aquele momento. Por causa das suas práticas pecaminosas, Eu os lançarei fora da Minha casa. Não os amarei mais; todos os seus príncipes são rebeldes.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Efraim está doente, e as suas raízes secaram; não darão fruto. Ainda que tenham filhos, Eu matarei seus amados filhos".</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>O meu Deus os rejeitará porque não Lhe obedeceram. Eles andarão errantes entre as nações.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="OS" data-chapter="9"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="OS" data-chapter="9"
+                                data-total="14" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

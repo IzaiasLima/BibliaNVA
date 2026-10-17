@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Ezequiel, 2</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/EZ/2. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Ezequiel, <span id="chapter">2</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>E Ele me disse: "Filho do homem, põe-te em pé, e falarei contigo".</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Então, enquanto me falava, o Espírito entrou em mim e me pôs em pé, e O ouvi falando comigo.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Ele me disse: "Filho do homem, estou te enviando ao povo de Israel, às nações rebeldes que têm se rebelado contra Mim. Tanto eles como seus antepassados têm pecado contra Mim até o dia de hoje!</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Seus descendentes têm semblantes teimosos e corações duros. Eu te envio a eles, para que lhes digas: 'Isto é o que Yahweh Deus diz',</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>quer te ouçam, quer não, pois são uma casa rebelde. Ao menos, saberão que um profeta esteve no meio deles.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Tu, filho do homem, não tenhas medo deles nem das suas palavras. Não temas, embora estejas entre sarças e espinhos e vivas entre escorpiões. Não tenhas medo das suas palavras, nem desfaleças por causa dos seus rostos, pois são uma casa rebelde.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Porém, tu lhes dirás Minhas palavras, quer ouçam, quer não, pois são muito rebeldes.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Mas tu, filho do homem, ouve o que Eu te digo, não sejas rebelde como aquela casa rebelde. Abre a tua boca e come o que Eu estou para te dar!".</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Então olhei, e uma mão me foi estendida; nela, havia um rolo de um livro.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Ele o desenrolou diante de mim. O livro estava escrito por dentro e por fora e, nele, estavam escritos prantos, lamentações e tristezas.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="EZ" data-chapter="2"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="EZ" data-chapter="2"
+                                data-total="48" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

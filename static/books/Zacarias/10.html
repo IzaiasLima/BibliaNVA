@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Zacarias, 10</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/ZC/10. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Zacarias, <span id="chapter">10</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Pedi por chuva a Yahweh na estação das chuvas da primavera — Yahweh é quem faz tempestades — e Ele dá chuvas a todos e vegetação no campo.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Pois os ídolos do lar falam falsamente; os adivinhos imaginam mentiras; eles contam sonhos enganosos e dão consolação vazia, pois sofrem como ovelhas que não têm pastor.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>A Minha ira se acende contra os pastores; são os bodes — os líderes — que punirei. Yahweh dos Exércitos também cuidará de Seu rebanho, a casa de Judá, e fará deles como o Seu cavalo de guerra em batalha!</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>De Judá, sairá a pedra angular; dela, virá o pilar da tenda, o arco da guerra e todos os líderes juntos.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Serão como guerreiros que pisam seus inimigos na lama das ruas da batalha; eles farão guerra, pois Yahweh está com eles, e irão envergonhar os que montam os cavalos de guerra.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Eu fortificarei a casa de Judá e salvarei a casa de José; pois os restaurarei e terei misericórdia deles. Serão como se Eu não os tivesse jogado para fora, pois Eu sou Yahweh, Deus deles, e os ouvirei.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Então, Efraim será como um guerreiro, e o seu coração se alegrará como pelo vinho, seus filhos verão e se alegrarão. Seu coração se alegrará em Mim.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Eu assobiarei por eles e os reunirei, pois irei remi-los, e eles se tornarão grandes como foram antes!</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Eu os semeei entre os povos, mas eles se lembrarão de mim em países distantes. Então, eles e suas crianças viverão e retornarão.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Pois os restaurarei da terra do Egito e os ajuntarei da Assíria. Eu os trarei da terra de Gileade e do Líbano até que não haja mais espaço para eles.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Eu passarei pelo mar da sua aflição, ferirei as ondas desse mar e secarei todas as profundezas do Nilo. A majestade da Assíria será lançada para baixo e o cetro do Egito será tirado dos egípcios.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Eu os reforçarei em Mim mesmo, e eles andarão em Meu nome — essa é a declaração do <mark>Senhor</mark>.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="ZC" data-chapter="10"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="ZC" data-chapter="10"
+                                data-total="14" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

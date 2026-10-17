@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Salmos, 84</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/SL/84. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Salmos, <span id="chapter">84</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title">Para o regente musical; adaptado ao estilo Gitite. Salmo dos filhos de Corá.</p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Quão amável é o lugar da Tua habitação, Yahweh dos Exércitos!</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Minha alma anseia e desfalece pelos átrios do <mark>Senhor</mark>; meu coração e todo o meu ser clamam pelo Deus vivo.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Até o pardal achou casa, e a andorinha, ninho para si, onde possa abrigar seus filhotes; eu encontrei Teus altares, Yahweh dos Exércitos, meu Rei e meu Deus!</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Abençoados são aqueles que vivem em Tua casa; aqueles que Te louvam continuamente. [Interlúdio]</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Abençoado é o homem cuja força está em Ti, em cujo coração, estão os caminhos retos.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Passando pelo vale de Baca, eles encontram fontes de água para beber, como as primeiras chuvas fazem ao transbordar as cisternas.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Eles caminham com vigor crescente, até que cada um se apresente a Deus em Sião.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Yahweh, Deus dos Exércitos, ouve minha oração; escuta o que estou dizendo, Deus de Jacó! [Interlúdio]</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Ó Deus, nosso escudo, mostra preocupação pelo Teu ungido.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Pois mais vale um dia em Teus átrios que mil em outro lugar. Eu prefiro ficar à porta da casa do meu Deus a viver nas tendas dos ímpios.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Pois Yahweh Deus é sol e escudo; Yahweh dá graça e honra; Ele não recusa nenhum bem àqueles que caminham em integridade.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>O <mark>Senhor</mark> dos Exércitos, abençoado é o homem que em Ti confia.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="SL" data-chapter="84"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="SL" data-chapter="84"
+                                data-total="150" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

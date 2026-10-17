@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - 2 Coríntios, 9</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/2CO/9. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">2 Coríntios, <span id="chapter">9</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>No que diz respeito ao ministério para os santos, não me é necessário vos escrever.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Conheço vosso desejo e dele me orgulhei diante do povo da Macedônia. Eu lhes disse que a Acaia estava se preparando desde o ano passado. Vosso zelo motivou a maioria deles à ação.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Enviei os irmãos para que nosso orgulho acerca de vós não fosse fútil e para que estivésseis prontos, como eu disse que estaríeis.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>De outro modo, caso alguns macedônios fossem comigo e vos encontrassem despreparados, nós, para não dizer vós, seríamos envergonhados por termos tanta confiança em vós.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Então eu pensei que era necessário convencer os irmãos a irem até vós e fazerem preparativos de antemão para a doação que prometestes. Isso é, para que ela esteja pronta como bênção e não como obrigação.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>A questão é esta: aquele que semeia pouco também colherá pouco, e aquele que semeia com o propósito de abençoar também colherá uma bênção.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Que cada um dê como planejou em seu coração. Não por tristeza ou por constrangimento, pois Deus ama quem dá com alegria.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>E Deus é capaz de fazer toda bênção multiplicar para vós, para que sempre, em todas as coisas, tenhais tudo o que precisais, para que assim possais multiplicar toda boa obra.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Como está escrito: "Distribuiu suas riquezas e as deu aos pobres; Sua justiça permanece para sempre".</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Aquele que dá semente ao semeador e pão para alimento também suprirá e multiplicará vossa semente para semeadura e aumentará a colheita da vossa justiça.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Vós sereis enriquecidos de todos os modos para que sejais generosos, e isso resultará em ações de graças a Deus através de nós.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Porque a realização desse serviço não atende somente às necessidades dos santos, mas também se multiplica em muitas ações de graças a Deus.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Pois ao serdes testados e aprovados por esse serviço, também glorificareis a Deus pela obediência de vossa confissão do evangelho de Cristo e pela generosidade de vossa doação a eles e a todos.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>E eles anseiam e oram por vós, por causa da extraordinária graça de Deus que está sobre vós.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Graças a Deus pelo Seu dom inexprimível!</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="2CO" data-chapter="9"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="2CO" data-chapter="9"
+                                data-total="13" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

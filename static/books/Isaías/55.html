@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Isaías, 55</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/IS/55. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Isaías, <span id="chapter">55</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>"Vinde, todos vós que estais com sede, vinde às águas! E vós que não tendes dinheiro, vinde, comprai e comei; sim, vinde e comprai vinho e leite, sem dinheiro e sem custo.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Por que gastais dinheiro com aquilo que não é pão e trabalhais por aquilo que não satisfaz? Ouvi-Me, atentamente, comei o que é bom, desfrutai da fartura.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Inclinai vossos ouvidos e vinde a Mim! Ouvi, para que possais viver! Eu farei uma aliança eterna convosco: Minha fidelidade prometida a Davi.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Vede, Eu o pus como uma testemunha às nações, como um líder e comandante para os povos.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Vede, chamareis uma nação que não conheceis; e uma nação que não vos conhecia correrá para vós, por causa do <mark>Senhor</mark>, vosso Deus, O Santo de Israel, que vos glorificou".</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Buscai a Yahweh enquanto Ele pode ser encontrado; invocai-O enquanto Ele está perto.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Que o ímpio deixe seu caminho e o homem mau, os seus pensamentos. Que ele se volte para Yahweh, que Se compadecerá dele; o nosso Deus é Quem o perdoará abundantemente.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>"Pois os Meus pensamentos não são os vossos pensamentos, nem os vossos caminhos, Meus caminhos" — diz Yahweh.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>"Porque, assim como os céus são mais altos que a terra, os Meus caminhos são mais altos que os vossos caminhos e os Meus pensamentos são mais altos que os vossos pensamentos.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Assim como a chuva e a neve caem do céu e não retornam para lá sem que reguem a terra, fazendo-a germinar e dar semente ao semeador e pão ao que come,</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>assim também será a palavra que sair da Minha boca: não voltará a Mim sem efeito, mas cumprirá aquilo que desejo e terá êxito no propósito para o qual Eu a enviei.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Saireis com alegria e sereis conduzidos pacificamente; montanhas e vales romperão em cânticos diante de vós e todas as árvores dos campos baterão palmas.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>No lugar dos espinheiros, crescerão pastagens e, no lugar da urtiga, a murta crescerá; e serão, pelo nome do <mark>Senhor</mark>, um sinal eterno que jamais será cortado".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="IS" data-chapter="55"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="IS" data-chapter="55"
+                                data-total="66" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

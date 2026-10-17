@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Salmos, 48</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/SL/48. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Salmos, <span id="chapter">48</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title">Cântico. Salmo dos filhos de Corá.</p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Grande é Yahweh, e digno de ser louvado na cidade de nosso Deus, em Seu santo monte.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Belo em elevação, e alegria de toda a terra, é o monte Sião, sobre os lados do norte, a cidade do grande Rei.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Deus se fez conhecido em seus palácios, como um refúgio.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Pois, vede, os reis se reuniram e juntos passaram.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Quando eles viram isso, ficaram maravilhados e, assombrados, fugiram apressadamente.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>O temor tomou conta deles; sentiram dores como as da mulher em trabalho de parto.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Com o vento oriental Tu quebraste os navios de Társis.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Como nós ouvimos, assim temos visto na cidade do <mark>Senhor</mark> dos Exércitos, na cidade do nosso Deus; Deus a estabelece para sempre. [Interlúdio]</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Nós meditamos em Teu amor leal, ó Deus, no meio do Teu templo.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Assim como é o Teu nome, Deus, também o Teu louvor se estende até os confins da terra. Tua mão direita está cheia de retidão.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Que o monte Sião se alegre, que as filhas de Judá se regozijem por causa dos Teus justos decretos.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Andai em volta do Monte Sião, caminhai ao redor dele, contai suas torres,</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>observai bem suas muralhas e notai seus palácios, para contardes à próxima geração.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Porque este Deus é o nosso Deus para sempre e sempre. Ele será nosso guia até a morte.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="SL" data-chapter="48"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="SL" data-chapter="48"
+                                data-total="150" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

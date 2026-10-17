@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Miquéias, 3</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/MQ/3. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Miquéias, <span id="chapter">3</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Eu disse: "Agora ouvi, vós, líderes de Jacó e chefes da casa de Israel: não é certo que vós entendeis a justiça?</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Odiais o bem e amais o mal, vós que tirais a pele do Meu povo e a carne de seus ossos.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Vós também comeis sua carne, e arrancais a pele, quebrais seus ossos, e os repartis em pedaços, como carne na panela, assim como carne no caldeirão".</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Então, vós, governantes, clamareis a Yahweh, mas Ele não vos responderá. Naquele tempo, Ele esconderá a Sua face de vós, porque praticastes más obras".</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Assim diz Yahweh a respeito dos profetas que fazem vaguear o Meu povo: "Para aqueles que os alimentam, eles anunciam: 'Haverá prosperidade'. Mas, para os que não põem nada em suas bocas, contra esses, eles começam uma guerra.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Portanto, será noite para vós, sem visão alguma; tereis trevas para que não façais nenhuma adivinhação. O sol se porá sobre os profetas, e o dia se escurecerá para eles.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Os videntes serão envergonhados, e os adivinhadores se confundirão. Todos eles cobrirão os seus lábios, porque de Mim não haverá resposta".</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Mas, quanto a mim, estou cheio do Poder pelo Espírito do <mark>Senhor</mark>, e cheio de justiça e de força, para declarar a Jacó a sua transgressão, e para Israel o seu pecado.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Agora, ouvi isto, vós, líderes da casa do Jacó, e chefes da casa de Israel, vós que detestais a justiça e perverteis tudo que é direito.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Construístes Sião com sangue e Jerusalém com iniquidade.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Os vossos líderes dão sentenças por suborno, vossos sacerdotes ensinam por lucro, e vossos profetas adivinham por dinheiro. E ainda confiais em Yahweh, e dizeis: "Não está Yahweh conosco? Nenhum mal virá sobre nós".</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Portanto, por causa de vós, Sião será lavrada como um campo, Jerusalém se tornará um amontoado de escombros, e o monte do Templo será como um matagal.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="MQ" data-chapter="3"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="MQ" data-chapter="3"
+                                data-total="7" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

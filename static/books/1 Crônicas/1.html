@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - 1 Crônicas, 1</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/1CR/1. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">1 Crônicas, <span id="chapter">1</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Adão, Sete, Enos,</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Quenã, Maalalel, Jarede,</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Enoque, Matusalém, Lameque,</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Noé, Sem, Cam e Jafé. [Algumas versões trazem a expressão "Os filhos de Noé foram...", mas outras omitem].</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Os filhos de Jafé foram Gomer, Magogue, Madai, Javã, Tubal, Meseque e Tiras.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Os filhos de Gomer foram Asquenaz, Rifate e Togarma. [Algumas versões trazem "Difate" em vez de "Rifate". Entretanto, "Difate" era, provavelmente, um erro ortográfico. Muitas cópias antigas corrigiram para "Rifate", para concordar com o mesmo nome em Gn. 10:2]</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Os filhos de Javã foram Elisá, Társis, Quitim e Dodanim.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Os filhos de Cam foram Cuxe, Mizraim, Pute e Canaã.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Os filhos de Cuxe foram Seba, Havilá, Sabtá, Raamá e Sabtecá. Os filhos de Raamá foram Sebá e Dedã.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Cuxe gerou Ninrode, que foi o primeiro poderoso na terra.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Mizraim gerou os luditas, os anamitas, os leabitas, os naftuítas,</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>os patrusitas, os casluítas (dos quais vieram os filisteus) e os caftoritas.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Canaã gerou Sidom, seu primogênito, e Hete.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Ele também gerou os jebuseus, os amorreus, os girgaseus,</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>os heveus, os arqueus, os sineus,</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>os arvadeus, os zemareus e os hamateus.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Os filhos de Sem foram Elão, Assur, Arfaxade, Lude, Arã, Uz, Hul, Geter e Meseque.</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>Arfaxade gerou Selá, e Selá gerou Héber.</span></p> 
+<p class="verse "><span class="number ">19</span>&ensp;<span>Héber teve dois filhos; o nome de um era Pelegue, porque em seus dias a Terra foi dividida, e o nome de seu irmão era Joctã.</span></p> 
+<p class="verse "><span class="number ">20</span>&ensp;<span>Joctã gerou Almodá, Salefe, Hazarmavé, Jerá,</span></p> 
+<p class="verse "><span class="number ">21</span>&ensp;<span>Hadorão, Uzal, Dicla,</span></p> 
+<p class="verse "><span class="number ">22</span>&ensp;<span>Ebal, Abimael, Sebá,</span></p> 
+<p class="verse "><span class="number ">23</span>&ensp;<span>Ofir, Havilá e Jobabe. Todos esses eram filhos de Joctã.</span></p> 
+<p class="verse "><span class="number ">24</span>&ensp;<span>Sem, Arfaxade, Selá,</span></p> 
+<p class="verse "><span class="number ">25</span>&ensp;<span>Héber, Pelegue, Reú,</span></p> 
+<p class="verse "><span class="number ">26</span>&ensp;<span>Serugue, Naor, Terá,</span></p> 
+<p class="verse "><span class="number ">27</span>&ensp;<span>Abrão, que é Abraão.</span></p> 
+<p class="verse "><span class="number ">28</span>&ensp;<span>Os filhos de Abraão foram Isaque e Ismael.</span></p> 
+<p class="verse "><span class="number ">29</span>&ensp;<span>Esses são os seus filhos: o primogênito de Ismael era Nebaiote, depois Quedar, Adbeel, Mibsão,</span></p> 
+<p class="verse "><span class="number ">30</span>&ensp;<span>Misma, Dumá, Massá, Hadade, Tema,</span></p> 
+<p class="verse "><span class="number ">31</span>&ensp;<span>Jetur, Nafis e Quedemá. Esses foram os filhos de Ismael.</span></p> 
+<p class="verse "><span class="number ">32</span>&ensp;<span>Os filhos de Quetura, concubina de Abraão, foram Zinrã, Jocsã, Medã, Midiã, Isbaque e Suá. Os filhos de Jocsã foram Sabá e Dedã.</span></p> 
+<p class="verse "><span class="number ">33</span>&ensp;<span>Os filhos de Midiã foram Efá, Efer, Enoque, Abida e Elda. Todos esses foram descendentes de Quetura.</span></p> 
+<p class="verse "><span class="number ">34</span>&ensp;<span>Abraão gerou Isaque. Os filhos de Isaque foram Esaú e Israel.</span></p> 
+<p class="verse "><span class="number ">35</span>&ensp;<span>Os filhos de Esaú foram Elifaz, Reuel, Jeús, Jalão e Corá.</span></p> 
+<p class="verse "><span class="number ">36</span>&ensp;<span>Os filhos de Elifaz foram Temã, Omar, Zefi, Gatã, Quenaz, Timna e Amaleque.</span></p> 
+<p class="verse "><span class="number ">37</span>&ensp;<span>Os filhos de Reuel foram Naate, Zerá, Samá e Mizá.</span></p> 
+<p class="verse "><span class="number ">38</span>&ensp;<span>Os filhos de Seir foram Lotã, Sobal, Zibeão, Anás, Disom, Eser e Disã.</span></p> 
+<p class="verse "><span class="number ">39</span>&ensp;<span>Os filhos de Lotã foram Hori e Homã, e Timna era irmã de Lotã.</span></p> 
+<p class="verse "><span class="number ">40</span>&ensp;<span>Os filhos de Sobal foram Aliã, Manaate, Ebal, Sefi e Onã. Os filhos de Zibeão foram Aías e Anás.</span></p> 
+<p class="verse "><span class="number ">41</span>&ensp;<span>O filho de Anás foi Disom. Os filhos de Disom foram Hanrão, Esbã, Itrã e Querã.</span></p> 
+<p class="verse "><span class="number ">42</span>&ensp;<span>Os filhos de Eser foram Bilã, Zaavã e Jaacã. Os filhos de Disã foram Uz e Arã.</span></p> 
+<p class="verse "><span class="number ">43</span>&ensp;<span>Estes foram os reis que reinaram na terra de Edom, antes de qualquer rei ter reinado sobre os israelitas: Belá, filho de Beor; o nome de sua cidade era Dinabá.</span></p> 
+<p class="verse "><span class="number ">44</span>&ensp;<span>Quando Belá morreu, então, Jobabe, filho de Zerá, de Bozra, reinou em seu lugar.</span></p> 
+<p class="verse "><span class="number ">45</span>&ensp;<span>Quando Jobabe morreu, Husão, da terra dos temanitas, reinou em seu lugar.</span></p> 
+<p class="verse "><span class="number ">46</span>&ensp;<span>Quando Husão morreu, Hadade, filho de Bedade, que derrotou os midianitas na terra de Moabe, reinou em seu lugar. O nome de sua cidade era Avite.</span></p> 
+<p class="verse "><span class="number ">47</span>&ensp;<span>Quando Hadade morreu, então, Sâmela, de Masreca, reinou em seu lugar.</span></p> 
+<p class="verse "><span class="number ">48</span>&ensp;<span>Quando Sâmela morreu, então, Saul, de Reobote, que vivia junto ao rio, reinou em seu lugar.</span></p> 
+<p class="verse "><span class="number ">49</span>&ensp;<span>Quando Saul morreu, então, Baal-Hanã, filho de Acbor, reinou em seu lugar.</span></p> 
+<p class="verse "><span class="number ">50</span>&ensp;<span>Quando Baal-Hanã, filho de Acbor, morreu, então, Hadade reinou em seu lugar. O nome de sua cidade era Paú. O nome de sua mulher era Meetabel, a filha de Matrede, a neta de Mezaabe.</span></p> 
+<p class="verse "><span class="number ">51</span>&ensp;<span>Hadade morreu. Os chefes do clã em Edom eram Timna, Aliá, Jetete,</span></p> 
+<p class="verse "><span class="number ">52</span>&ensp;<span>Aolíbama, Elá, Pinom,</span></p> 
+<p class="verse "><span class="number ">53</span>&ensp;<span>Quenaz, Temã, Mibzar,</span></p> 
+<p class="verse "><span class="number ">54</span>&ensp;<span>Magdiel e Irão. Esses eram os chefes dos clãs em Edom.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="1CR" data-chapter="1"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="1CR" data-chapter="1"
+                                data-total="29" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

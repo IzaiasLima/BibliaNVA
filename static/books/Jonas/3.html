@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Jonas, 3</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/JN/3. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Jonas, <span id="chapter">3</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>A palavra do <mark>Senhor</mark> veio a Jonas pela segunda vez, dizendo:</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>"Levanta, vai a Nínive, aquela grande cidade, e proclama a ela a mensagem que te ordenei''.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Então Jonas se levantou e foi para Nínive, em obediência à palavra do <mark>Senhor</mark>. Era cidade muito grande, sendo necessários três dias para percorrê-la.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Jonas entrou na cidade e a percorreu durante um dia, proclamando: "Daqui a quarenta dias, Nínive será destruída".</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Os habitantes de Nínive creram em Deus e  proclamaram um jejum. Todos puseram sobre si panos de saco, desde o maior até o menor.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Quando a notícia chegou ao rei de Nínive, ele se levantou do trono, tirou as vestes reais, cobriu-se com pano de saco e sentou-se sobre cinzas.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Então fez uma proclamação e a publicou em Nínive: "Pelo decreto do rei e seus nobres, não há permissão para homem ou animal, manada ou ovelha comer coisa alguma. Não os deixeis comer, nem beber água,</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>mas sejam cobertos de pano de saco, tanto os homens como os animais, e clamem a Deus com força. Cada um abandone seus maus caminhos e a violência que está em suas mãos.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Quem sabe abrirá Deus mão de Sua ira e mudará Sua decisão, para que não sejamos destruídos?"</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>E Deus viu o que fez o povo, como abandonou seus maus caminhos. Então Deus mudou de ideia sobre a punição que Ele disse que lhe faria, e não o fez.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="JN" data-chapter="3"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="JN" data-chapter="3"
+                                data-total="4" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

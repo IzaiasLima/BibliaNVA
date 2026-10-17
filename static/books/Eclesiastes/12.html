@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Eclesiastes, 12</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/EC/12. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Eclesiastes, <span id="chapter">12</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Lembra-te do teu Criador nos dias da tua juventude, antes que venham os dias de dificuldade, e antes que cheguem os anos quando dirás: "Não tenho neles prazer".</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Faze isso antes que se apague a luz do sol, da lua e das estrelas, e as nuvens escuras retornem após a chuva.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Chegará o tempo quando tremerá o guardião do palácio, e os homens fortes se curvarão, e as mulheres cessarão seus moedores, por serem poucos, e aqueles que olham para fora das janelas já não verão claramente.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Chegará o tempo quando as portas serão fechadas na rua, e cessará o som da moagem; quando os homens ficarão assustados com o som de um pássaro, e o canto das vozes das meninas desaparecerá.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Chegará o tempo quando os homens terão medo de altura e de perigos nas estradas,  quando a amendoeira florescer, quando os gafanhotos se arrastarem, e quando os desejos naturais falharem. Então, o homem irá para o lar eterno e os enlutados descerão pelas ruas.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Lembra-te do teu Criador antes que o fio de prata seja cortado, ou a taça dourada seja esmagada, ou o jarro, estilhaçado na primavera, ou a roda d'água seja quebrada no poço;</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>antes que o pó volte à terra, de onde veio, e o espírito retorne a Deus que o deu.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Vaidade das vaidades, diz o pregador, tudo é inútil.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>O sábio era erudito e ensinava o conhecimento ao povo. Ele estudou e contemplou, e colocou em ordem muitos provérbios.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>O pregador procurou escrever usando palavras vívidas e verdadeiras.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>As palavras dos sábios são como aguilhões. Como pregos bem fixados são as palavras dos mestres nas coleções de seus provérbios, que são ministrados por um pastor.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Meu filho, fica ciente também disto: a escrita de muitos livros não tem limite, e o muito estudar traz cansaço ao corpo.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>O fim de tudo o que se tem ouvido é: teme a Deus, e guarda Seus mandamentos, pois esse é todo o dever da humanidade.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Porque Deus trará toda ação a julgamento, juntamente com tudo o que está oculto, seja ele bom ou mau.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="EC" data-chapter="12"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="EC" data-chapter="12"
+                                data-total="12" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

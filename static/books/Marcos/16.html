@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Marcos, 16</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/MC/16. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Marcos, <span id="chapter">16</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Ao final do Sabbath, Maria Madalena, Maria, a mãe de Tiago e Salomé compraram especiarias aromáticas para ir ungir o corpo de Jesus.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>No primeiro dia da semana, bem cedo, ao nascer do sol, elas foram até o sepulcro.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Elas se perguntavam umas às outras: "Quem rolará para nós a pedra do sepulcro?".</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Quando ergueram os olhos, viram que alguém havia rolado a pedra, que era muito grande.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Entrando no sepulcro, viram um jovem vestido com manto branco, sentado ao lado direito, e ficaram atônitas.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Ele lhes disse: "Não temais. Procurais por Jesus, o Nazareno, que foi crucificado. Ele ressuscitou!. Não está aqui. Vede o lugar onde O puseram.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Mas ide dizer a Seus discípulos e a Pedro que Jesus vai adiante de vós para a Galileia. Lá O vereis, como Ele lhes havia dito".</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Elas saíram e correram do sepulcro, estavam tremendo e assombradas. Não disseram nada a ninguém, pois tinham muito medo.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>[Os melhores manuscritos antigos omitem os versículos de 9 a 20.] Tendo ressuscitado na manhã do primeiro dia da semana, Jesus apareceu primeiro a Maria Madalena, de quem expulsara sete demônios.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Ela saiu e contou o que tinha visto a todos que estiveram com Ele, enquanto esses lamentavam e choravam.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Eles ouviram que Jesus estava vivo e que fora visto por ela, mas não creram.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Depois destas coisas, Ele apareceu em uma forma diferente para mais dois deles, enquanto estavam a caminho do campo.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Eles foram contar ao resto dos discípulos, mas estes não creram.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Depois, Jesus apareceu aos onze, enquanto eles se reclinavam à mesa, e os censurou pela incredulidade e dureza de coração, por não terem crido naqueles que O viram depois de ter ressuscitado.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Então, disse-lhes: "Ide pelo mundo todo, pregai o Evangelho a toda criatura.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Quem crer e for batizado será salvo, e o que não crer será condenado.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Estes sinais acompanharão aqueles que creem: em Meu nome expulsarão demônios, falarão novas línguas,</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>pegarão serpentes com as mãos e se beberem algo venenoso, isso não os ferirá; imporão as mãos sobre os doentes e eles serão curados".</span></p> 
+<p class="verse "><span class="number ">19</span>&ensp;<span>Depois do Senhor Jesus ter falado com eles, foi levado aos céus e se assentou à direita de Deus.</span></p> 
+<p class="verse "><span class="number ">20</span>&ensp;<span>Os discípulos saíram e pregaram por toda parte, enquanto o Senhor trabalhava com eles e confirmava a palavra através dos milagrosos sinais que os seguiam.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="MC" data-chapter="16"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="MC" data-chapter="16"
+                                data-total="16" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

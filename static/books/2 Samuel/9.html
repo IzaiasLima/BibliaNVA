@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - 2 Samuel, 9</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/2SM/9. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">2 Samuel, <span id="chapter">9</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Davi disse: "Existe ainda alguém  da família de Saul a quem eu possa mostrar bondade, por amor de Jônatas?".</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Na família de Saul havia um servo que se chamava Ziba, e o levaram para Davi. O rei lhe disse: "Tu és Ziba?". Ele respondeu: "Sim, sou teu servo".</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Então, o rei disse: "Existe alguém ainda da família de Saul a quem eu possa mostrar a bondade de Deus?". Ziba respondeu para o rei: "Jônatas ainda tem um filho, que é aleijado dos pés".</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>O rei lhe disse: "Onde ele está?". Ziba respondeu ao rei: "Está na casa de Maquir, filho de Amiel, em Lo-Debar".</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Então, o rei Davi mandou trazê-lo, e o trouxeram da casa de Maquir, filho de Amil, de Lo-Debar.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Então, Mefibosete, filho de Jônatas, filho de Saul, veio a Davi e prostrou-se com a face no chão em honra a Davi. Davi disse: "Mefibosete!". Ele respondeu: "Sim, sou teu servo!".</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Davi lhe disse: "Não tenhas medo, pois certamente te mostrarei bondade por amor de Jônatas, teu pai, e restituirei todas as terras de Saul, teu avô, e comerás sempre à minha mesa".</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Mefibosete se prostrou e disse: "Quem é o teu servo, para teres olhado com favor para um cachorro morto como eu?".</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Então, o rei chamou por Ziba, o servo de Saul, e lhe disse: "Tudo o que pertencia a Saul e à sua família eu darei ao neto do teu senhor.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Tu, teus filhos e teus servos lavrareis a terra para ele e tu colherás a safra para que o neto do teu senhor tenha sempre o que comer. Todavia, Mefibosete, neto do teu senhor, sempre comerá à minha mesa". Ziba tinha quinze filhos e vinte servos.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Então, Ziba disse ao rei: "Teu servo fará tudo o que meu mestre, o rei, ordenar". O rei acrescentou: "A respeito de Mefibosete, ele comerá à minha mesa, como um dos filhos do rei".</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Mefibosete tinha um filho jovem que se chamava Mica. Todos os que viviam na casa de Ziba foram servos de Mefibosete.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Então, Mefibosete viveu em Jerusalém e  sempre comia à mesa do rei, mesmo sendo aleijado de ambos  os pés.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="2SM" data-chapter="9"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="2SM" data-chapter="9"
+                                data-total="24" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

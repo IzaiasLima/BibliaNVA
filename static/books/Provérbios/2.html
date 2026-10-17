@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Provérbios, 2</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/PV/2. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Provérbios, <span id="chapter">2</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Filho meu, se tu receberes minhas palavras e entesourares meus mandamentos contigo,</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>conserva teus ouvidos atentos à sabedoria e inclina teu coração ao entendimento.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Se clamares por entendimento e elevares tua voz por isso,</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>se buscares isso como quem busca prata e, procurares entendimento como quem procura tesouros escondidos,</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>então, tu entenderás o temor do <mark>Senhor</mark> e encontrarás o conhecimento de Deus.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Pois Yahweh dá sabedoria; de Sua boca, vêm conhecimento e entendimento.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Ele reserva a verdadeira sabedoria para aqueles que Lhe agradam; Ele é um escudo para os que andam em integridade.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Ele guarda as veredas da justiça e preservará o caminho dos que são fiéis a Ele.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Então, tu entenderás a retidão, a justiça, a equidade e todo bom caminho.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Pois a sabedoria entrará no teu coração, e o conhecimento será agradável à tua alma.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>O discernimento te vigiará, o entendimento te guardará.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Eles te resgatarão do caminho do mal, daqueles que falam coisas perversas,</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>daqueles que abandonam os caminhos justos e andam nos caminhos da escuridão.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Esses se alegram em fazer o mal e deleitam-se nas perversidades da maldade.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Eles seguem caminhos tortuosos e, usando o engano, escondem seus percursos.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>A sabedoria e a discrição te salvarão da mulher adúltera, da mulher imoral e de suas palavras sedutoras.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Ela abandona o companheiro de sua mocidade e se esquece da aliança de seu Deus.</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>Pois a sua casa se inclina para a morte e as suas trilhas, para a sepultura.</span></p> 
+<p class="verse "><span class="number ">19</span>&ensp;<span>Todos os que se dirigirem a ela não retornarão, nem encontrarão os caminhos da vida.</span></p> 
+<p class="verse "><span class="number ">20</span>&ensp;<span>Porém, tu andarás no caminho dos bons e seguirás as veredas dos justos.</span></p> 
+<p class="verse "><span class="number ">21</span>&ensp;<span>Pois os que agem corretamente habitarão na terra e os íntegros nela permanecerão.</span></p> 
+<p class="verse "><span class="number ">22</span>&ensp;<span>Mas os perversos serão eliminados da terra, e dela os infiéis serão arrancados.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="PV" data-chapter="2"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="PV" data-chapter="2"
+                                data-total="31" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

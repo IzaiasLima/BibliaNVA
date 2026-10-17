@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Tiago, 5</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/TG/5. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Tiago, <span id="chapter">5</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Vinde agora, vós que sois ricos, chorai e lamentai por causa das misérias que virão sobre vós.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Vossas riquezas apodreceram e vossas roupas foram comidas pela traça.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Vosso ouro e vossa prata se corroeram, e essa corrosão será testemunha contra vós. Ela devorará vossa carne como fogo. Guardastes o vosso tesouro para os últimos dias.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Vede, o pagamento dos trabalhadores está clamando, o pagamento que retivestes daqueles que colheram em vossos campos. Os clamores dos ceifeiros chegaram aos ouvidos do Senhor dos Exércitos.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Vivestes luxuosamente sobre a terra, satisfazendo os vossos prazeres. Engordastes os vossos corações para o dia da matança.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Condenastes e matastes o justo; ele não vos resistiu.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Portanto sede pacientes, irmãos, até a vinda do Senhor. Vede, o agricultor espera a valiosa colheita da terra. Ele espera pacientemente por isso, até que a terra receba as primeiras e as últimas chuvas.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Sede também pacientes. Fortalecei os vossos corações, porque a vinda do Senhor está próxima.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Não vos queixeis uns contra os outros, irmãos, para que não sejais julgados. Vede, o juiz está à porta.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Tomai como exemplo, irmãos, o sofrimento e a paciência dos profetas, os quais falaram no nome do Senhor.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Vede, consideramos felizes aqueles que perseveram. Ouvistes da perseverança de Jó, e conheceis o propósito do Senhor, quão compassivo e misericordioso Ele é.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Sobretudo, meus irmãos, não jureis, nem pelo céu nem pela terra, nem por qualquer outro voto. Em vez disso, que o vosso "Sim" signifique "Sim", e que o vosso "Não" signifique "Não", assim não caireis em juízo.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Está alguém entre vós sofrendo? Que ore. Está alguém alegre? Que cante louvores.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Está alguém entre vós doente? Que chame os presbíteros da igreja, e que orem sobre ele, ungindo-o com óleo em nome do Senhor.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>E a oração da fé vai curar o doente, e o Senhor o levantará. Se ele cometeu pecados, Deus o perdoará.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Portanto confessai vossos pecados uns aos outros e orai uns pelos outros para serdes curados. A oração do justo é poderosa e eficaz.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Elias foi um homem assim como nós. Ele orou fervorosamente para que não chovesse, e não choveu sobre a terra por três anos e seis meses.</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>E novamente Elias orou, e o céu deu chuva, e a terra produziu o seu fruto.</span></p> 
+<p class="verse "><span class="number ">19</span>&ensp;<span>Meus irmãos, se algum de vós se desvia da verdade, e alguém o traz de volta,</span></p> 
+<p class="verse "><span class="number ">20</span>&ensp;<span>sabei que a pessoa que resgata um pecador do seu caminho errado o salvará da morte, e cobrirá multidão de pecados.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="TG" data-chapter="5"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="TG" data-chapter="5"
+                                data-total="5" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

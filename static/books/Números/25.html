@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Números, 25</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/NM/25. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Números, <span id="chapter">25</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Israel ficou em Sitim, e os homens começaram a se prostituir com as mulheres de Moabe,</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>pois os moabitas convidaram o povo aos sacrifícios dos seus deuses. E o povo comeu e se prostou diante dos deuses moabitas.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Os homens de Israel se juntaram em adoração a Baal-Peor, e a ira do <mark>Senhor</mark> se acendeu contra Israel.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>O <mark>Senhor</mark> disse a Moisés: "Mata todos os líderes do povo e os pendura diante de Mim para expô-los à luz do dia, para que a Minha fúria se retire de Israel".</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Então, Moisés disse aos juízes de Israel: "Cada um de vós executará os homens de sua tribo que se juntaram em adoração a Baal-Peor".</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Então, um israelita veio e trouxe aos membros de sua família uma mulher midianita. Isso acontenceu à vista de Moisés e de toda a comunidade do povo de Israel, enquanto eles choravam diante da Tenda do Encontro.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Quando Fineias, filho de Eleazar, filho de Arão, o sacerdote, viu isso, levantou-se do meio da comunidade e pegou uma lança.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Ele seguiu o homem israelita até Tenda e atravessou ambos os corpos com a lança, o homem israelita e a mulher. Então, a praga que o Senhor havia mandado ao povo de Israel, cessou.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Aqueles que morreram pela praga foram vinte e quatro mil.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>O <mark>Senhor</mark> falou com Moisés e disse:</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>"Fineias, filho de Eleazar, filho de Arão, o sacerdote, desviou a Minha ira contra Israel, porque ele tinha paixão pelo Meu zelo entre eles. Assim, não consumi o povo de Israel em Minha ira.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Portanto, dize: Yahweh diz: "Eu estou entregando a Fineias a Minha aliança de paz.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Esta será aliança de um sacerdócio perpétuo, para ele e sua descendência depois dele, pois foi zeloso a Mim, seu Deus. Ele fez expiação pelo povo de Israel"".</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>O nome do homem israelita que foi morto com a mulher midianita era Zinri, filho de Salu, líder de uma casa paterna dos simeonitas.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>O nome da mulher midianita que foi morta era Cozbi, filha de Zur, cabeça de clã e família dentre os midianitas.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Também Yahweh falou com Moisés e lhe disse:</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>"Trata os midianitas como inimigos e os ataca,</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>pois eles vos trataram como inimigos,  com seu engano. Eles vos conduziram à maldade, no caso de Peor e no caso de sua irmã Cozbi, a filha do líder de Midiã, que foi morta no dia da praga, no caso de Peor".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="NM" data-chapter="25"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="NM" data-chapter="25"
+                                data-total="36" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

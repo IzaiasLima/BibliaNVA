@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - 2 Tessalonicenses, 2</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/2TS/2. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">2 Tessalonicenses, <span id="chapter">2</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Irmãos, a respeito da vinda do Senhor Jesus Cristo e da nossa reunião com Ele, pedimos</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>que não vos perturbeis ou inquieteis facilmente, quer seja por espírito, por palavra  ou por alguma carta que pareça ter sido enviada por nós, como se o Dia do Senhor já tenha chegado.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Ninguém vos engane de modo algum. Porque isso não acontecerá até que venha a apostasia e o homem da iniquidade seja revelado, o filho da destruição.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Esse é o que exalta a si mesmo e se opõe  contra tudo que é chamado Deus ou que é adorado. Como resultado, ele assenta-se no templo de Deus e apresenta a si mesmo como Deus.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Vós não lembrais de que, quando estive convosco, eu vos falei essas coisas?</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Agora vós sabeis o que o detém, portanto ele será revelado apenas no tempo certo.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Como o mistério da injustiça já está atuando, é necessário apenas que seja retirado do caminho aquele que o detém.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Então o ímpio será revelado, a quem o Senhor Jesus destruirá com o sopro da Sua boca. O Senhor o eliminará pela manifestação da Sua vinda.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>A vinda do ímpio será devido à ação de Satanás com todo poder, sinais, e falsas maravilhas,</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>e com todo o engano de injustiça para aqueles que estão perecendo, porque eles não receberam o amor da verdade a fim de serem salvos.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Por esta razão Deus está enviando-lhes a atuação do engano para que creiam na mentira</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>e sejam todos julgados, aqueles que não acreditaram na verdade, mas tiveram prazer na injustiça.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Mas nós devemos sempre dar graças a Deus por vós, irmãos amados pelo Senhor, porque Deus vos escolheu como primeiros frutos para salvação na santificação do Espírito e fé na verdade.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Porque Ele vos chamou através do nosso Evangelho para obter a glória do nosso Senhor Jesus Cristo.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Portanto, irmãos, permanecei firmes e agarrai-vos às tradições que vos foram ensinadas, quer pela palavra quer por nossas cartas.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Agora, pois, o próprio Senhor Jesus Cristo, e Deus, nosso Pai, que nos amou e nos deu eterno consolo e boa esperança para o futuro através da graça,</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>confortem e estabeleçam vossos corações em toda boa ação e palavra.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="2TS" data-chapter="2"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="2TS" data-chapter="2"
+                                data-total="3" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

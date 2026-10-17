@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Miquéias, 1</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/MQ/1. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Miquéias, <span id="chapter">1</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Esta é a palavra do <mark>Senhor</mark>, vinda em visão a Miqueias, o morastita, nos dias de Jotão, Acaz e Ezequias, reis de Judá, a respeito de Samaria e Jerusalém.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Ouvi, vós todos os povos. Ouvi, ó terra, e tudo que está em ti. Seja o Senhor Yahweh testemunha contra vós, o Senhor, do Seu santo templo.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Vede! Yahweh sai do Seu lugar; Ele descerá e pisará sobre os lugares altos na terra.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>As montanhas se derreterão diante Dele; os vales serão derretidos como a cera diante do fogo, como águas que são derramadas de lugares elevados.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Tudo isso por causa da rebelião de Jacó e por causa dos pecados da casa de Israel. Qual foi o motivo da rebelião de Jacó? Não foi Samaria? E dos lugares altos de Judá? Não foi Jerusalém?</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Farei de Samaria um monte de ruínas no campo, como um lugar para plantar vinhedos. Levarei suas pedras de construção para os vales e deixarei suas fundações expostas.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Todas as suas imagens esculpidas serão quebradas em pedaços; e todas as ofertas para ela serão queimadas. E de todos os seus ídolos farei uma ruína. Pois ela os ajuntou pelo pagamento de uma prostituta e por pagamento de uma prostituta eles voltarão.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Por essa razão, lamentarei e uivarei; andarei descalço e nu; lamentarei como os chacais e gemerei como a coruja.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Porque suas feridas são incuravéis, pois chegaram até Judá, e alcançaram o portão do meu povo, até Jerusalém.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Não faleis sobre isso em Gate; nem tampouco choreis. Em Bete-Leafra, eu me revolvo no pó.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Passai, habitantes de Safir, em vergonha e nudez. Não saiais, habitantes de Zaanã. Beth-Ezel, pranteai, porque a vossa proteção foi tirada.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Porque os habitantes de Marote esperam ansiosamente por boas novas, pois do <mark>Senhor</mark> desceu a calamidade até os portões de Jerusalém.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Atai os cavalos às carruagens, ó habitantes de Laquis. Tu, Laquis, foste o princípio do pecado para a filha de Sião, porque a transgressão de Israel foi achada em ti.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Por isso, oferecerás um presente de despedida a Moresete-Gate; a cidade de Acazib enganará os reis de Israel.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Eu trarei um conquistador para vós, habitantes de Maressa; o esplendor de Israel virá a Adulão.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Raspai vossas cabeças e cortai vossos cabelos por causa dos filhos de tuas delícias. Ficai calvos como águias, pois vossos filhos serão levados ao exílio.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="MQ" data-chapter="1"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="MQ" data-chapter="1"
+                                data-total="7" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

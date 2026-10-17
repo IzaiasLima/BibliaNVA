@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Jeremias, 21</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/JR/21. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Jeremias, <span id="chapter">21</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Esta é a palavra que veio do <mark>Senhor</mark> para Jeremias, quando o rei Zedequias enviou Pasur, filho de Malquias, e o sacerdote Sofonias, filho de Maaseias, que lhe disseram:</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>"Procura o conselho do <mark>Senhor</mark> a nosso favor, pois Nabucodonosor, rei da Babilônia, está levantando guerra contra nós. Talvez Yahweh realize milagres por nós, como no passado, e faça com que ele se afaste de nós".</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Então, Jeremias lhes disse: "Isto é o que deves dizer a Zedequias:</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>'Yahweh, Deus de Israel, diz: Vede, estou prestes a voltar contra vós os instrumentos de guerra que estão em vossas mãos, com os quais estais lutando contra o rei da Babilônia e os caldeus que vos estão cercando do outro lado dos muros! Eu os reunirei no meio desta cidade.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Então, Eu mesmo lutarei contra vós, com a mão erguida e o braço forte e com indignação, fúria e grande ira.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Pois Eu atacarei os habitantes desta cidade, tanto homens como animais, e eles morrerão com uma praga severa.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Depois disso – esta é a declaração do <mark>Senhor</mark> – Zedequias, rei de Judá, seus servos, o povo, e qualquer remanescente nesta cidade depois da praga, da espada e da fome, Eu entregarei todos nas mãos de Nabucodonosor, rei da Babilônia, de seus inimigos e daqueles que buscam tirar-lhes a vida. Então, ele os matará ao fio da espada. Ele não terá piedade, não os poupará ou terá compaixão.'</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Então, para este povo devereis dizer: 'Assim diz Yahweh: Vede, Eu estou prestes a colocar diante de vós o caminho da vida e o caminho da morte.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Qualquer um que permanecer nesta cidade morrerá pela espada, fome e praga; mas, qualquer um que sair e se ajoelhar diante dos babilônios que vos têm cercado, viverá. Este escapará com vida.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Pois eu estabeleci minha face contra esta cidade, em ordenança, para trazer desastre e não trazer o bem –esta é a declaração do <mark>Senhor</mark>. Ela está sendo entregue nas mãos do rei da Babilônia, e ele a queimará.'</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Acerca da casa do rei de Judá, escutai a palavra do <mark>Senhor</mark>:</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>'Casa de Davi', diz Yahweh, 'executa a  justiça pela manhã e resgata os que foram roubados pelas mãos do opressor, ou Minha fúria virá como fogo e te queimará, pois não há ninguém que possa apagá-la, por causa da maldade de tuas práticas.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Vede, habitantes do vale, planalto rochoso, Eu estou contra vós – esta é a declaração do <mark>Senhor</mark> – Eu estou contra qualquer um que está dizendo: "Quem subirá para nos atacar?" ou "Quem entrará em nossas casas?"</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Eu vos castigarei segundo o fruto de vossas práticas – esta é a declaração do <mark>Senhor</mark> – e Eu acenderei nos arvoredos um fogo que consumirá tudo à sua volta."</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="JR" data-chapter="21"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="JR" data-chapter="21"
+                                data-total="52" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

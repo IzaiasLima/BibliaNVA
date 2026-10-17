@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Zacarias, 6</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/ZC/6. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Zacarias, <span id="chapter">6</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Então, voltei, levantei meus olhos e vi quatro carruagens saindo dentre dois montes e os dois montes eram feitos de bronze.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>A primeira carruagem era de cavalos vermelhos, a segunda carruagem de cavalos pretos,</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>a terceira carruagem de cavalos brancos e a quarta carruagem de cavalos com pintas acinzentadas.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Então, perguntei ao anjo que falava comigo: "O que é isto meu senhor?".</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>E o anjo me respondeu, dizendo: "Estes são os quatro ventos do céu, que saem de onde estavam, diante do Senhor de toda a terra.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Aquele que está com os cavalos pretos vai para as terras do norte, os cavalos brancos vão para as terras do oeste; e os cavalos com pintas acinzentadas vão para as terras do sul.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>"Esses cavalos fortes saíram a percorrer toda terra; então, o anjo disse: 'Ide e percorrei toda a terra!'. E partiram por toda terra.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Ele me chamou e disse: 'Eis que os que vão para as terras do norte apaziguarão o meu espírito a respeito das terras do norte'".</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Então, veio a mim a palavra do <mark>Senhor</mark>, dizendo:</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>"Toma as ofertas dos exilados — de Heldai, de Tobias e de Jedaías — vai, neste mesmo dia, e leva à casa de Josias, filho de Sofonias, que veio da Babilônia.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Toma a prata e o ouro, faze uma coroa e coloca sobre a cabeça de Josué, filho de Jeozadaque, o sumo sacerdote.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Fala a ele: "Assim diz Yahweh dos Exércitos: 'este homem, cujo o nome é Renovo, crescerá onde está e edificará o templo do <mark>Senhor</mark>!</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Ele edificará o templo do <mark>Senhor</mark> e aumentará o seu esplendor; então, irá se assentar e reinará no seu trono. Ele será sacerdote sobre o seu trono e haverá entendimento de paz entre ambos'.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Uma coroa será colocada no templo do <mark>Senhor</mark> para honrar Heldai, Tobias e Jedaías, assim como memorial da bondade de Hem, filho de Sofonias.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Portanto, aqueles que estão longe virão e construirão o templo do <mark>Senhor</mark> e tu saberás que Yahweh dos Exércitos me enviou a vós; isto somente acontecerá, se ouvirdes a voz do <mark>Senhor</mark> vosso Deus!".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="ZC" data-chapter="6"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="ZC" data-chapter="6"
+                                data-total="14" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

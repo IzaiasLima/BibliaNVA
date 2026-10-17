@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Isaías, 27</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/IS/27. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Isaías, <span id="chapter">27</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Naquele dia, Yahweh, com Sua espada grande, forte e resistente, punirá o Leviatã, a serpente fugitiva, o Leviatã, a serpente tortuosa e matará o monstro, o dragão do mar.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Naquele dia, cantai sobre a videira.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>"Eu, Yahweh, sou Seu protetor; Eu a rego continuamente. Portanto, ninguém a danifique, pois Eu a vigio noite e dia.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Eu não estou irado. Ó, se na batalha houver tão somente espinhos e abrolhos, marcharei contra eles; Eu os queimarei todos juntos,</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>a menos que eles busquem Minha proteção e façam paz Comigo. Que eles façam paz Comigo.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>No dia vindouro, Jacó lançará raízes; Israel florescerá e brotará, enchendo de frutos toda a terra".</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Porventura, Yahweh já atacou Israel do modo como feriu as nações que lhe atacaram? Foram os israelitas mortos como no massacre dessas nações, que foram mortas por eles?</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Na medida exata, Tu os contestaste, enviando Israel embora; Tu os expulsaste com Teu impetuoso vento leste. [Nota: Ao invés de "Na medida exata", muitas versões modernas têm uma ideia similar de "Ao afastá-los"].</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Desta maneira, a iniquidade de Jacó será expiada e este será o fruto da remoção do seu pecado: quando Ele fizer todas as pedras do altar como pedaços de pedras de cal, nenhum poste de Aserá e nenhum altar de incenso permanecerão de pé.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Pois a cidade fortificada está desolada, a habitação está deserta e abandonada como o deserto. Ali, o bezerro comerá; ali, ele se deitará e consumirá os seus ramos.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Os galhos se quebrarão quando estiverem secos. Mulheres virão e farão fogo com eles, porque não é um povo com entendimento. Portanto, seu Criador não Se compadecerá; Aquele que os fez não terá misericórdia deles.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>E virá o dia em que Yahweh debulhará as suas espigas desde a correnteza do rio Eufrates até o ribeiro do Egito; e vós, povo de Israel, sereis colhidos um por um.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Naquele dia, uma grande trombeta tocará; os que estiverem perecendo na terra da Assíria e os exilados na terra do Egito virão e adorarão Yahweh no monte santo em Jerusalém.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="IS" data-chapter="27"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="IS" data-chapter="27"
+                                data-total="66" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

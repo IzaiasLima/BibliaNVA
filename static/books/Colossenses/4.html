@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Colossenses, 4</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/CL/4. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Colossenses, <span id="chapter">4</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Senhores, dai aos escravos o que é correto e justo, sabendo que também tendes um Senhor no céu.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Continuai firmes em oração, vigiando com ação de graças.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Orai, ao mesmo tempo, também por nós, para que Deus nos abra a porta da Palavra, a fim de falarmos do mistério de Cristo, pelo qual estou preso;</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>e orai para que eu possa falar claramente, que é como devo fazer.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Andai com sabedoria diante daqueles que são de fora; usai o tempo sabiamente.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Sejam vossas palavras sempre agradáveis, temperadas com sal, para que saibais como deveis responder a cada um.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Tíquico vos fará conhecer todas as coisas a meu respeito. Ele é um irmão amado, um ministro fiel, e um cooperador no serviço do Senhor.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Eu o enviei especificamente para que vós possais saber sobre nossa situação e, também,  que ele possa consolar vossos corações [Nota: Algumas versões antigas trazem: "Eu o envio a vós por isso, para que possa saber das coisas a vosso respeito, e que possa encorajar vossos corações"],</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>junto com Onésimo, irmão amado e fiel. Eles vos farão conhecer tudo o que está sendo feito aqui.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Aristarco, meu companheiro de prisão, vos cumprimenta, bem como Marcos, primo de Barnabé (de quem recebestes instruções; se ele vier a vós, recebei-o),</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>e Jesus, que é também chamado de Justo. Apenas estes da circuncisão são meus cooperadores de trabalho pelo Reino de Deus. Eles têm sido um consolo para mim.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Epafras, servo de Cristo Jesus e vosso conterrâneo, vos cumprimenta, sempre lutando por vós em oração, para que vos torneis completos, cheios de toda vontade de Deus.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Pois sou testemunha de que ele trabalha duro por vós, pelos de Laodiceia e pelos de Hierápolis.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Lucas, o médico amado, e Demas, vos cumprimentam.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Cumprimentai os irmãos de Laodiceia, e Ninfa e a igreja que está em sua casa.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Quando esta carta for lida perante vós, que também seja lida na igreja dos laodicenses, e certificai de ler, também, a carta de Laodiceia.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Dizei a Arquipo: "Atenta para o ministério que tens recebido no Senhor, para que o completes".</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>Estas saudações são de meu próprio punho, Paulo. Lembrai das minhas algemas. A graça seja convosco.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="CL" data-chapter="4"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="CL" data-chapter="4"
+                                data-total="4" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

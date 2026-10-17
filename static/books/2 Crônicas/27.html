@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - 2 Crônicas, 27</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/2CR/27. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">2 Crônicas, <span id="chapter">27</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Jotão tinha vinte e cinco anos quando começou a reinar; ele reinou dezesseis anos em Jerusalém. Sua mãe se chamava Jerusa; ela era filha de Zadoque.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Ele fez o que era reto aos olhos do <mark>Senhor</mark>, seguindo o exemplo de seu pai, Uzias, em tudo. Ele também se negou a entrar no Templo do <mark>Senhor</mark>. Mas o povo prosseguiu em suas práticas malignas.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Ele construiu o portão superior da casa do <mark>Senhor</mark> e construiu muito nas colinas de Ofel.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Também construiu cidades na região montanhosa de Judá e nas florestas ele construiu castelos e torres.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Ele também lutou contra o rei do povo de Amom e os derrotou. Naquele mesmo ano, o povo de Amom lhe deu cem talentos de prata, dez mil coros de trigo e dez mil de cevada. O povo de Amom lhe deu o mesmo no segundo e terceiro ano.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Então, Jotão tornou-se poderoso porque andava firmemente diante do <mark>Senhor</mark>, seu Deus.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Quanto aos outros atos de Jotão, todas as suas guerras e seus caminhos, eles estão escritos no livro dos reis de Israel e Judá.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Ele tinha vinte e cinco anos quando começou a reinar e reinou por dezesseis anos em Jerusalém.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Jotão dormiu com seus antepassados, e o enterraram na cidade de Davi. Acaz, seu filho, tornou-se rei em seu lugar.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="2CR" data-chapter="27"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="2CR" data-chapter="27"
+                                data-total="36" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

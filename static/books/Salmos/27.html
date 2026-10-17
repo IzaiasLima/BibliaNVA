@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Salmos, 27</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/SL/27. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Salmos, <span id="chapter">27</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title">Salmo de Davi.</p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>O <mark>Senhor</mark> é a minha luz e a minha salvação; de quem terei medo? O <mark>Senhor</mark> é o refúgio da minha vida; de quem teria pavor?</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Quando os malfeitores se achegaram para devorar a minha carne, meus adversários e inimigos é que tropeçaram e caíram.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Embora um exército se acampe contra mim, meu coração não terá medo; embora declarem guerra contra mim, mesmo assim eu continuarei confiante.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Uma coisa eu peço a Yahweh e isto buscarei: que eu possa viver na casa do <mark>Senhor</mark> todos os dias da minha vida, para ver a beleza do <mark>Senhor</mark> e meditar no Seu templo.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Pois no dia da tribulação, Ele me esconderá no Seu abrigo; Ele me esconderá no interior de Sua tenda. Ele me levantará sobre o alto de uma rocha!</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Então, minha cabeça estará erguida acima dos inimigos que me cercam. Com alegria, oferecerei sacrifícios em Sua tenda; cantarei e louvarei a Yahweh!</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Ouve, Yahweh, minha voz quando a Ti clamo! Tem misericórdia de mim e responde-me.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Meu coração fala sobre Ti: "Buscai a Minha presença!" A Tua presença, Yahweh, eu buscarei!</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Não escondas a Tua face de mim; não rejeites Teu servo com ira; Tu tens sido o meu ajudador; não me deixes nem me abandones, Deus da minha salvação!</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Mesmo que meu pai e minha mãe me abandonem, Yahweh me acolherá.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Ensina-me o Teu caminho, Yahweh! Conduze-me em um caminho plano por causa dos meus inimigos.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Não me entregues aos desejos dos meus inimigos, pois testemunhas falsas têm-se levantado contra mim, respirando violência.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>O que teria acontecido comigo se eu não acreditasse que veria a bondade do <mark>Senhor</mark> na terra dos viventes?</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Espera por Yahweh! Sê forte e valente em teu coração! Espera por Yahweh!</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="SL" data-chapter="27"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="SL" data-chapter="27"
+                                data-total="150" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

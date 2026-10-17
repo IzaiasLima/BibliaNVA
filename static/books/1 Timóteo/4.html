@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - 1 Timóteo, 4</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/1TM/4. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">1 Timóteo, <span id="chapter">4</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>O Espírito fala claramente que nos últimos tempos algumas pessoas abandonarão a fé e darão atenção aos espíritos enganadores e aos ensinamentos de demônios,</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>por causa da mentira e da hipocrisia dos que tem a própria consciência cauterizada.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Eles proíbem o casamento e ordenam a abstinência de alimentos que Deus criou para partilhar com ação de graças entre os fiéis e os que conhecem a verdade.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Pois todas as coisas criadas por Deus são boas. Nada que recebemos com ações de graças deve ser rejeitado,</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>porque é consagrado pela palavra de Deus e pela oração.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Se colocares essas coisas perante os irmãos, serás um bom servo de Jesus Cristo, porque és alimentado pelas palavras da fé e pelo bom ensino que tens seguido.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Mas rejeita os mitos tolos e profanos, típicos de velhas caducas. Em vez disso, exercita-te na piedade,</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>pois o exercício físico tem pouca utilidade, mas a piedade é útil para todas as coisas e contém a promessa para a vida presente e futura.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Essa mensagem é confiável e digna de toda aceitação.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Pois é por isso que nos esforçamos e trabalhamos muito, porque temos confiança no Deus vivo, que é o Salvador de todas as pessoas, mas especialmente dos que creem.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Proclama e ensina essas coisas.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Não deixes ninguém desprezar a tua juventude, em vez disso, sê um exemplo aos que creem, na fala, no amor, na fidelidade e na pureza.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Até eu voltar, atenta para a leitura, para a exortação e para o ensino.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Não negligencies o dom que há em ti, que te foi dado através de profecia, com a imposição de mãos dos anciãos.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Cuida dessas coisas, permanece nelas, para que o teu progresso seja evidente a todas as pessoas.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Cuida de ti mesmo e do ensino. Continua nessas coisas porque fazendo isso salvarás a ti mesmo e a quem te ouve.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="1TM" data-chapter="4"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="1TM" data-chapter="4"
+                                data-total="6" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

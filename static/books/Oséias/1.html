@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Oséias, 1</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/OS/1. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Oséias, <span id="chapter">1</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Esta é a palavra do <mark>Senhor</mark>, que veio a Oseias, filho de Beeri, nos dias de Uzias, Jotão, Acaz e Ezequias, reis de Judá, e nos dias de Jeroboão, filho de Joás, rei de Israel.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Quando a princípio, Yahweh falou por intermédio de Oseias, disse a ele: "Vai, toma para ti uma mulher que seja prostituta. Ela terá filhos, resultado da prostituição. A terra cometeu grande prostituição por abandonar Yahweh."</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Então, Oseias se casou com Gômer, filha de Diblaim, e ela concebeu e lhe deu um filho.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>O <mark>Senhor</mark> disse a Oseias: "Põe nele o nome de Jezreel. Pois, em breve, punirei a casa de Jeú pelo derramamento do sangue de Jezreel e cessarei o reino da casa de Israel.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Acontecerá no dia em que quebrarei o arco de Israel no vale de Jezreel."</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Gômer concebeu novamente e deu à luz uma filha. Então, Yahweh disse a Oseias: "Põe nela o nome de Lo-Ruama, pois não terei mais misericórdia da casa de Israel,  põe-lhe o nome de Lo-Ruama; porque não me compadecerei da casa de Israel; de maneira alguma perdoarei por completo.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Contudo, terei misericórdia da casa de Judá, e os salvarei por Mim mesmo, Yahweh, o Deus deles. Não os salvarei pelo arco, nem pela espada, nem pela guerra, nem pelos cavalos e nem  por cavaleiros."</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Então, depois de Lo-Ruama ter desmamado, Gômer concebeu e deu à luz outro filho.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Então, Yahweh disse: "Põe-lhe o nome de Lo-Ami, pois, vós não sois Meu povo e nem Eu, vosso Deus.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Contudo, o número de filhos de Israel será como a areia do mar, que não pode ser medida, nem contada. Embora tenha sido dito a eles: 'Vós não sois Meu povo', se dirá: 'Sois povo do Deus vivo'.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>O filhos de Judá e os filhos de Israel se reunirão, designarão um líder, e subirão da terra, porque grande será o dia de Jezreel.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="OS" data-chapter="1"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="OS" data-chapter="1"
+                                data-total="14" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

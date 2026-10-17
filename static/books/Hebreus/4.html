@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Hebreus, 4</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/HB/4. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Hebreus, <span id="chapter">4</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Portanto, sejamos cautelosos para que nenhum de vós pareça ter falhado em alcançar a promessa, deixada para vós, de entrar no descanso de Deus.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Pois, recebemos as boas novas assim como eles, mas a mensagem não beneficia aqueles que a ouviram sem  nela depositar a sua fé.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Porque nós, os que cremos, somos aqueles que entraremos neste descanso, assim como foi dito: "Conforme jurei em minha ira, eles jamais entrarão no Meu descanso".  Embora, as Suas obras estivessem concluídas desde a fundação do mundo,</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>pois Ele disse, em algum lugar, a respeito do sétimo dia: "Deus descansou no sétimo dia de todas as Suas obras".</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Novamente, disse: "Eles não entrarão no Meu descanso".</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Entretanto, como o descanso de Deus ainda está reservado para alguns entrarem, e uma vez que muitos Israelitas que ouviram as boas novas a respeito do Seu descanso não entraram por causa da desobediência, Deus novamente reservou um dia específico, chamado "Hoje".</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Ele estabeleceu esse dia quando falou por meio de Davi, como já havia dito anteriormente: "Hoje, se ouvirdes a Sua voz, não endureçais o vosso coração".</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Pois, se Josué tivesse lhes dado descanso, Deus não vos teria falado acerca de outro dia.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Por isso, ainda existe um descanso sabático para o povo de Deus.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Porque aqueles que entram no descanso de Deus, descansam de suas obras, assim como Deus descansou das Suas.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Portanto, esforçai-vos para entrar nesse descanso, a fim de que ninguém caia no mesmo tipo de desobediência que eles caíram.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Porque a Palavra de Deus é viva e poderosa, mais afiada do que uma espada de dois gumes, a qual penetra até a divisão da alma e do espírito, das juntas e medulas, apta para discernir as intenções e pensamentos do coração.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Nenhuma criatura  está escondida diante de Seus olhos. Ao contrário, tudo está revelado e exposto diante dos olhos Daquele a quem deveremos prestar contas.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Tendo, então, um grande Sumo Sacerdote que atravessou os céus, Jesus, o filho de Deus, apeguemo-nos firmemente à nossa confissão.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Pois, nós não temos um sumo sacerdote que não se compadeça de nossas fraquezas, mas, Aquele que foi tentado assim como nós, exceto pelo fato de Ele não ter pecado.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Aproximemo-nos com ousadia ao trono da graça, para recebermos misericórdia e encontrarmos graça para ajudar-nos em tempo de necessidade.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="HB" data-chapter="4"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="HB" data-chapter="4"
+                                data-total="13" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

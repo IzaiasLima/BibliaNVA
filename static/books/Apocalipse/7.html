@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Apocalipse, 7</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/AP/7. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Apocalipse, <span id="chapter">7</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Depois disso, vi quatro anjos em pé nos quatro cantos da terra, retendo os quatro ventos da terra para que o vento não soprasse sobre a terra, nem sobre o mar, nem contra árvore alguma.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>E vi outro anjo subindo do lado do nascente do sol, tendo o selo do Deus vivo. E clamou com alta voz aos quatro anjos que tinham recebido autoridade para danificar a terra e o mar, dizendo:</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>"Não danifiqueis a terra, nem o mar, nem as árvores até selarmos as testas dos servos do nosso Deus".</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Eu escutei o número daqueles que foram selados, que era cento e quarenta e quatro mil, de todas as tribos dos filhos de Israel:</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>da tribo de Judá doze mil foram selados; da tribo de Rúben, doze mil; da tribo de Gade, doze mil;</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>da tribo de Aser, doze mil; da tribo de Naftali, doze mil; da tribo de Manassés, doze mil;</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>da tribo de Simeão, doze mil; da tribo de Levi, doze mil; da tribo de Issacar, doze mil;</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>da tribo de Zebulom, doze mil; da tribo de José, doze mil; da tribo de Benjamim doze mil foram selados.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Depois dessas coisas, eis que vi uma grande multidão que ninguém podia contar de todas as nações, tribos, povos e línguas, de pé, diante do trono e diante do Cordeiro, usando vestes brancas, com folhas de palmeiras nas suas mãos,</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>e clamavam em alta voz, dizendo: "A salvação pertence ao nosso Deus, que está sentado no trono, e ao Cordeiro!"</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Todos os anjos estavam de pé, em volta do trono, dos anciãos e dos quatro seres viventes, e se prostraram sobre seus rostos diante do trono, e adoraram a Deus</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>dizendo: "Amém! O louvor, a glória, a sabedoria, a ação de graças, a honra, o poder e a força pertencem ao nosso Deus, pelos séculos dos séculos! Amém"!</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>E um dos anciãos tomou a palavra, dizendo-me: "Estes, usando vestes brancas, quem são e de onde vieram?"</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>E eu lhe disse: "Meu senhor, tu sabes". E ele me disse: "Estes são os que vieram da grande tribulação e lavaram suas vestes e as tornaram brancas no sangue do Cordeiro".</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Por isso estão diante do trono de Deus e O servem dia e noite no Seu templo. O que está sentado no trono estenderá Sua tenda sobre eles.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Não terão mais fome, nem terão mais sede, nem jamais cairá sobre eles o sol, nem calor algum.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Pois o Cordeiro no meio do trono será o pastor deles, e Ele irá guiá-los às fontes de águas da vida, e Deus enxugará toda lágrima de seus olhos."</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="AP" data-chapter="7"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="AP" data-chapter="7"
+                                data-total="22" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

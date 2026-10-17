@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Jeremias, 24</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/JR/24. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Jeremias, <span id="chapter">24</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>O <mark>Senhor</mark> mostrou-me duas cestas de figos que estavam diante do templo do <mark>Senhor</mark>. (Esta visão aconteceu depois que Nabucodonosor, rei da Babilônia, levou para exílio Joaquim, filho de Jeoaquim, rei de Judá, os oficiais de Judá, o artesão e os ferreiros de Jerusalém e os trouxe à Babilônia).</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Uma das cestas de figos era muito boa, como os primeiros figos maduros, mas na outra cesta os figos eram tão ruins que eles não podiam ser comidos.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>O <mark>Senhor</mark> me disse: "O que vês, Jeremias?" Eu respondi: "Figos. Figos que estão muito bons e figos que estão tão ruins que não podem ser comidos."</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Então a palavra do <mark>Senhor</mark> veio a mim, dizendo:</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>"Yahweh, Deus de Israel, diz isto: Eu olharei para os exilados de Judá, para o benefício deles, justamente como estes bons figos, os exilados que mandei para fora deste lugar, para a terra dos babilônios.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Eu colocarei neles os Meus olhos para o bem e os restaurarei a esta terra. Eu os edificarei, e não os derrubarei. Eu os plantarei e não os arrancarei.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Então, Eu lhes darei um coração para Me conhecer, pois Eu sou Yahweh. Eles serão Meu povo e Eu serei seu Deus. Eles se voltarão a Mim com todo o seu coração.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Mas como os figos ruins, que estão tão ruins que não podem ser comidos, isso é o que Yahweh diz: 'Eu agirei desta maneira com Zedequias, rei de Judá, com seus oficiais e o resto de Jerusalém que restar nesta terra ou que ficar na terra do Egito.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Eu os transformarei em algo assustador, um desastre à vista de todos os reinos da terra, uma desgraça e assunto para provérbios, provocações e maldições em todos os lugares onde Eu os levar.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Eu enviarei a espada, a fome e a praga contra eles, até que sejam destruídos da terra que dei a eles e aos seus antepassados."</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="JR" data-chapter="24"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="JR" data-chapter="24"
+                                data-total="52" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

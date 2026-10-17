@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Jeremias, 19</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/JR/19. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Jeremias, <span id="chapter">19</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Disse Yahweh: "Vá e compra uma botija de barro do oleiro, e leva contigo os anciãos do povo e os sacerdotes.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Então, vá até o vale de Ben-Hinom que está à entrada do portão dos Cacos e lá proclama as palavras que Eu te direi.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Assim dirás: 'Ouvi a palavra do <mark>Senhor</mark>, reis de Judá e moradores de Jerusalém! Assim diz Yahweh dos Exércitos, o Deus de Israel: Eis que Eu estou para trazer calamidade sobre este lugar, e os ouvidos de todos que ouvirem sobre isso irão formigar.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Eu farei isso porque eles têm Me abandonado e profanaram este lugar. Neste lugar, eles ofereceram sacrifícios para deuses que nunca conheceram. Eles e seus ancestrais e os reis de Judá também têm enchido este lugar com sangue inocente.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Eles construíram os lugares altos de Baal para queimarem seus filhos como um holocausto, algo que Eu nunca mandei, nem falei e nem me passou pela cabeça.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Portanto, eis que os dias estão chegando – isto é uma declaração do <mark>Senhor</mark> – quando este lugar não será mais chamado de Tofete, nem o vale de Ben-Hinom, mas será vale da Matança.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Neste lugar, frustrarei os planos de Judá e Jerusalém; Eu os farei cair pela espada diante de seus inimigos e pela mão dos que procuram tirar-lhes a vida. Então, darei seus cadáveres como comida para os pássaros dos céus e para as feras da terra.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>E farei desta cidade uma ruína e um objeto de desprezo; todo aquele que passar por ela se espantará e zombará por causa de todas as suas pragas.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>E os farei comer a carne dos seus filhos e filhas, cada homem consumirá a carne do seu próximo, no cerco e na angústia provocados pelos seus inimigos, por aqueles que querem tirar-lhes a vida".</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Então, quebrarás a botija na presença dos homens que foram contigo.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Tu dirás a eles: 'Assim diz Yahweh dos Exércitos: Eu farei a mesma coisa com este povo e com esta cidade – esta é a declaração do <mark>Senhor</mark> – assim como Jeremias despedaçou a botija de barro, de modo que ela não possa ser reparada novamente, o povo enterrará os mortos em Tofete, até que não haja mais lugar para enterrá-los.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Isto é o que farei com este lugar e com os seus moradores; esta cidade será como Tofete – esta é a declaração do <mark>Senhor</mark>.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>As casas de Jerusalém e dos reis de Judá serão imundas como Tofete, assim como todas as casas daqueles que, nos terraços, adoram todas as estrelas dos céus e oferecem ofertas de bebida a outros deuses."</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Então, Jeremias regressou de Tofete, lugar para ondo <mark>Senhor</mark> o havia enviado para profetizar. Pondo-se em pé no pátio da Casa do <mark>Senhor</mark>, disse a todo o povo:</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>"Assim diz Yahweh dos Exércitos, Deus de Israel: Eis que, trarei sobre esta cidade e sobre todas as cidades, toda a calamidade que proclamei contra ela, pois endureceram seus pescoços e se recusaram a ouvir as minhas Palavras".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="JR" data-chapter="19"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="JR" data-chapter="19"
+                                data-total="52" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

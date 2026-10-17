@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Salmos, 59</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/SL/59. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Salmos, <span id="chapter">59</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title">Para o regente musical; adaptado para Al Tachete. Salmo de Davi, quando Saul mandou que vigiassem a sua casa para matá-lo. Um mictam.</p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Resgata-me dos meus inimigos, meu Deus; defende-me daqueles que se levantam contra mim.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Mantém-me a salvo dos que praticam a iniquidade e salva-me dos homens sanguinários.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Pois eles esperam em uma emboscada para tirar-me a vida. Homens poderosos se reúnem contra mim, mas não por causa das minhas transgressões ou dos meus pecados, Yahweh.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Eles se preparam para me atacar, embora eu esteja sem culpa. Desperta, vê e ajuda-me!</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Tu, Yahweh, Deus dos Exércitos, o Deus de Israel, levanta e pune todas as nações; não sejas misericordioso para com nenhum transgressor perverso. [Interlúdio]</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Eles retornam ao entardecer, uivam como cães e andam ao redor da cidade.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Vê, eles ameaçam com suas bocas; seus lábios são como espadas, pois dizem: "Quem pode nos escutar?"</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Mas Tu, Yahweh, escarneces deles. Tu zombas de todas as nações.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Deus, minha força, eu esperarei por Ti; Tu és minha torre alta!</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Meu Deus virá me encontrar com Seu amor leal; Deus me fará ver o meu desejo sobre meus inimigos.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Não os mates, ou o meu povo se esquecerá. Espalha-os pelo Teu poder e faze-os cair, Yahweh, nosso escudo.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Pelos pecados de suas bocas e pelas palavras de seus lábios, sejam eles capturados em seu orgulho e pelas maldições e mentiras que relatam.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Consome-os em ira, consome-os até que eles não mais existam; que eles saibam que Deus reina em Jacó e até os confins da terra. [Interlúdio]</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Ao entardecer, eles retornam, uivando como cães e contornando a cidade.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Eles vagueiam procurando comida e, enquanto não estão satisfeitos, rosnam como cachorros.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Todavia, eu cantarei sobre a Tua força, e pela manhã cantarei sobre o teu amor constante! Pois Tu tens sido minha torre alta e refúgio no dia da minha angústia.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>A Ti, minha força, eu cantarei louvores, pois Deus é a minha torre alta, o Deus de amor leal.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="SL" data-chapter="59"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="SL" data-chapter="59"
+                                data-total="150" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

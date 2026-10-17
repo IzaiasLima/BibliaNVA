@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Salmos, 30</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/SL/30. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Salmos, <span id="chapter">30</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title">Salmo. Cântico na dedicação do Templo. Salmo de Davi.</p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Eu Te exaltarei, Yahweh, pois me ergueste e não permitiste que meus inimigos se regozijassem sobre mim;</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Yahweh, meu Deus, eu clamei a Ti por socorro e Tu me curaste.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Yahweh, Tu tiraste a minha alma do Sheol, Tu me mantiveste vivo para eu não descer ao túmulo.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Cantai louvores a Yahweh, vós que sois Seu povo fiel! Dai graças quando vos lembrardes da Sua santidade.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Pois Sua ira é apenas por um momento, mas Seu favor é por toda a vida. O choro vem por uma noite, mas a alegria vem pela manhã.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Confiantemente, eu disse: "Nunca serei abalado".</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Yahweh, por Teu favor, Tu me estabeleceste como uma montanha forte; mas quando escondeste a Tua face, fiquei perturbado.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Clamei a Ti, Yahweh, e busquei o favor do meu Senhor!</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Que vantagem há em minha morte, se eu descer para o túmulo? Será que o pó Te louvará? Declarará Tua fidelidade?</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Ouve, Yahweh, e tem misericórdia de mim! Yahweh, sê meu ajudador!</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Tu transformaste meu pranto em júbilo; Tu removeste minha roupa de saco e me vestiste com alegria.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Então, agora, meu coração honrado cantará louvores a Ti e não ficará em silêncio. Yahweh, meu Deus, eu Te agradecerei para sempre!</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="SL" data-chapter="30"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="SL" data-chapter="30"
+                                data-total="150" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

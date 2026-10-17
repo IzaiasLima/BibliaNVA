@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Malaquias, 1</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/ML/1. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Malaquias, <span id="chapter">1</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Palavra do <mark>Senhor</mark> para Israel por intermédio de Malaquias.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>"Eu vos tenho amado", diz Yahweh. "Mas vós dizeis: 'Como nos tens amado?' Não foi Esaú irmão de Jacó?", diz Yahweh. "Ainda assim tenho amado Jacó,</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>mas Esaú Eu tenho odiado. Tenho devastado suas montanhas e abandonado sua herança para os chacais do deserto.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>E Edom diz: 'Estamos abatidos,  mas edificaremos as ruínas'". Yahweh dos Exércitos diz: "Eles poderão edificar, mas Eu destruirei. Os homens os chamarão 'o país da maldade' e 'as pessoas as quais Yahweh tem amaldiçoado para sempre'.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Seus próprios olhos verão, e dirão: 'Grande é Yahweh além das fronteiras de Israel'.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>O filho honra seu pai, e o servo honra seu senhor. Se Eu sou o pai, onde está a Minha honra? Se Eu Sou o Senhor, onde está a Minha reverência?", diz Yahweh dos Exércitos aos sacerdotes, que desprezam o Meu Nome. "Mas dizeis: 'Como desprezamos o Teu Nome?'</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Oferecendo pão impuro sobre o Meu altar. E dizeis: 'Como temos Te profanado?' Dizendo que a mesa do <mark>Senhor</mark> é desprezível.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Quando oferecem animais cegos para o sacrifício, não é isso mal? E, quando ofereceis o coxo e o doente, não é isso mal? Apresentai isso ao vosso governador. Ele vos aceitará ou terá agrado de vós?", diz Yahweh dos Exércitos.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>"E agora tentai pedir favor a Deus, de modo que Ele seja gracioso convosco. Com uma oferta dessa em vossas mãos, Ele se agradará de vós?", diz Yahweh dos Exércitos.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>"Oh, se houvesse um entre vós que fechasse a porta do templo, para que não acendêsseis o fogo no Meu altar em vão! Não tenho prazer em vós", diz Yahweh dos Exércitos. "Não aceitarei nenhuma oferta de vossas mãos.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Porque desde o nascer até o pôr do sol, Meu Nome será grande entre as nações, e em todos os lugares, incenso e ofertas puras serão oferecidos ao Meu Nome. Porque o Meu Nome será grande entre as nações", diz Yahweh dos Exércitos.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>"Mas vós estais profanando Meu Nome, quando dizeis que a mesa do Senhor é impura e seus frutos são desprezíveis.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Vós também dizeis: 'Como é cansativo!', e Me desprezais", diz Yahweh dos Exércitos. "Vós trazeis o animal que foi roubado, o coxo ou o doente; e isso trazeis como vossa oferta! Devo aceitar isso de vossas mãos?",  diz Yahweh.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>"Maldito seja o enganador, que tem um animal sem defeito, macho do seu rebanho, e faz voto de o dar a Mim, mas ainda assim sacrifica a Mim um defeituoso", diz o Senhor. "Pois Eu Sou o grande Rei", diz Yahweh dos Exércitos, "e Meu Nome será honrado entre as nações".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="ML" data-chapter="1"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="ML" data-chapter="1"
+                                data-total="4" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

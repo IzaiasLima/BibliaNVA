@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Salmos, 34</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/SL/34. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Salmos, <span id="chapter">34</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title">Salmo de Davi, quando ele fingiu estar louco perante Abimeleque, que o expulsou de sua presença.</p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Eu louvarei Yahweh em todo o tempo; Seu louvor estará sempre em minha boca.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Eu louvarei Yahweh! Que os oprimidos ouçam e regozijem-se.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Louvai Yahweh comigo; exaltemos juntos o Seu nome.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Eu busquei Yahweh e Ele me respondeu; deu-me vitória sobre todos os meus medos.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Aqueles que olham para Ele ficam radiantes e suas faces não são envergonhadas.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Este homem oprimido clamou e Yahweh o ouviu; Ele o libertou de todas as suas angústias.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>O Anjo do <mark>Senhor</mark> acampa-se ao redor dos que O temem e os livra.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Experimentai e vede que Yahweh é bom; feliz é o homem que Nele se refugia.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Temei Yahweh, vós os Seus santos; nada falta aos que O temem.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Aos leões jovens, às vezes, falta comida e sofrem com a fome, mas àqueles que buscam Yahweh nada de bom faltará.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Vinde, filhos, escutai-me; eu ensinarei a vós o temor do <mark>Senhor</mark>.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Qual homem que deseja a vida, e anseia viver muitos dias para ver o bem?</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Guarda a tua língua do mal e os teus lábios de proferirem engano.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Afasta-te do mal e faze o bem; busca a paz e segue-a.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Os olhos do <mark>Senhor</mark> estão sobre os justos e Seus ouvidos, atentos ao seu clamor.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>A face do <mark>Senhor</mark> está contra aqueles que praticam o mal, a fim de remover a sua memória da terra.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Os justos clamam e Yahweh ouve, e os livra de todas as suas aflições.</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>O <mark>Senhor</mark> está próximo dos quebrantados de coração e salva os de espírito abatido.</span></p> 
+<p class="verse "><span class="number ">19</span>&ensp;<span>Muitas são as aflições do justo, mas Yahweh o livra de todas.</span></p> 
+<p class="verse "><span class="number ">20</span>&ensp;<span>Ele protege seus ossos; nenhum deles será quebrado.</span></p> 
+<p class="verse "><span class="number ">21</span>&ensp;<span>A maldade matará o corrupto; aqueles que odeiam o justo serão condenados.</span></p> 
+<p class="verse "><span class="number ">22</span>&ensp;<span>O <mark>Senhor</mark> redime a alma dos seus servos; dos que Nele se refugiam, nenhum será condenado.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="SL" data-chapter="34"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="SL" data-chapter="34"
+                                data-total="150" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

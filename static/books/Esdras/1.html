@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Esdras, 1</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/ED/1. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Esdras, <span id="chapter">1</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>No primeiro ano de Ciro, rei da Pérsia, Yahweh cumpriu a Sua palavra que veio da boca de Jeremias e avivou o espírito de Ciro, rei da Pérsia. A voz de Ciro, foi ouvida por todo o seu reino. Isto é o que estava escrito e foi falado:</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>"Assim diz Ciro, rei da Pérsia: 'Yahweh, Deus dos céus, me deu todos os reinos da Terra e me nomeou para construir para Ele um templo em Jerusalém, que fica em Judá.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Aquele dentre vós que for do Seu povo, que Deus seja com esta pessoa, para que suba para Jerusalém, que fica em Judá, e construa o templo para Yahweh, Deus de Israel, que habita em Jerusalém.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Povos de todas as partes do reino, onde sobreviventes daquela terra estão vivendo, devem provê-los com prata, ouro, posses e animais, assim como ofertas voluntárias para o templo de Deus em Jerusalém'".</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Então, levantaram-se os chefes das famílias de Judá e de Benjamim, os sacerdotes e levitas e todos a quem o Espírito de Deus despertou para subir e construir a cidade Dele.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Todos os que habitavam nos arredores os ajudaram com prata, objetos de ouro, posses, animais, itens valiosos e ofertas voluntárias.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>O rei Ciro também cedeu os objetos que pertenciam ao templo do <mark>Senhor</mark>, aqueles que Nabucodonosor havia trazido de Jerusalém e colocado na casa de seus próprios deuses.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Ciro, rei da Pérsia, os colocou sobre o controle de Mitredate, o tesoureiro, para que ele os contasse e os entregasse a Sesbazar, o líder de Judá.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Esta era a quantidade de objetos: trinta bacias de ouro, mil bacias de prata, vinte e nove facas,</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>trinta tigelas de ouro, quatrocentas e dez pequenas tigelas de prata e outros mil objetos.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Havia ao todo cinco mil e quatrocentos itens de ouro e prata. Sesbazar trouxe todos eles quando os exilados vieram da Babilônia para Jerusalém.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="ED" data-chapter="1"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="ED" data-chapter="1"
+                                data-total="10" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

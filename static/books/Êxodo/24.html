@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Êxodo, 24</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/EX/24. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Êxodo, <span id="chapter">24</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Então Yahweh disse para Moisés: "Subi até Mim, tu, Arão, Nadabe, Abiú e setenta anciãos de Israel, e me adorareis de longe.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Somente Moisés pode vir para perto de Mim. Os outros não deverão chegar perto, nem o povo poderá subir com ele".</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Moisés foi e relatou para o povo toda as Palavras e Decretos do <mark>Senhor</mark>. Todo o povo respondeu em uma só voz e disse: "Nós faremos o que a Palavra do <mark>Senhor</mark> tem dito".</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Então Moisés escreveu toda a Palavra do <mark>Senhor</mark>. De manhã cedo, Moisés construiu um altar no pé da montanha e arrumou doze pilares de pedra, assim essas pedras representam as doze tribos de Israel.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Ele enviou alguns jovens israelitas para ofertar holocaustos e sacrificar ofertas de comunhão de bois para Yahweh.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Moisés pegou metade do sangue e colocou dentro de bacias; ele aspergiu a outra metade sobre altar.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Ele pegou o Livro da Aliança e leu em voz alta para o povo. Ele disse: "Nós faremos o que Yahweh tem falado. Nós seremos obedientes".</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Então Moisés pegou o sangue aspergiu sobre o povo. Ele disse: "Este é o sangue da Aliança que Yahweh tem feito convosco dando-lhes esta promessa com todas estas Palavras".</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Depois Moisés, Arão, Nadabe, Abiú, e setenta dos anciãos israelitas subiram para a montanha.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Eles viram o Deus de Israel. Sob seus pés estava a calçada feita de pedra de safira, tão clara quanto o próprio céu.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Deus não estendeu sua mão irada sobre os líderes Israelitas. Eles viram a Deus, e eles comeram e beberam.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>O <mark>Senhor</mark> disse para Moisés: "Sobe até Mim na montanha e fica lá. Eu te darei as tábuas de pedra e a Lei e os Mandamentos que Eu tenho escrito, para que tu possas ensiná-los.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Então Moisés partiu com Josué, seu assistente, e subiu para a Montanha de Deus.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Moisés tinha dito para os anciãos: "Ficai aqui e esperai por nós até que retornemos para vós. Arão e Hur estarão convosco. Se alguém tiver alguma questão ide até eles".</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Então Moisés subiu até a montanha, e a nuvem o cobriu.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>A glória do <mark>Senhor</mark> se estabeleceu no Monte Sinai e a nuvem o cobriu por seis dias. No sétimo dia, Yahweh chamou por Moisés da nuvem.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>A aparência da glória do <mark>Senhor</mark> era como um fogo devorador no topo da montanha aos olhos dos israelitas.</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>Moisés entrou na nuvem e subiu para a montanha. Ele esteve na montanha por quarenta dias e quarenta noites.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="EX" data-chapter="24"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="EX" data-chapter="24"
+                                data-total="40" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

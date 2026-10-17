@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Isaías, 64</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/IS/64. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Isaías, <span id="chapter">64</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Oh, se tivesses aberto os céus e descido! As montanhas se abalariam com Tua presença,</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>assim como o fogo acende os gravetos e faz ferver a água. Oh, que Teu nome seja conhecido por Teus adversários, que as nações tremam em Tua presença!</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Anteriormente, quando fizeste coisas admiráveis que não esperávamos, desceste, e as montanhas tremeram em Tua presença.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Desde os tempos antigos, ninguém ouviu ou percebeu, ninguém viu outro Deus além de Ti, que trabalha para os que Nele esperam.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Tu vens para ajudar aqueles que se alegram em fazer o que é correto, aqueles que Lhe obedecem e se dedicam aos Teus caminhos. Tu te iraste quando pecamos. Em Teus caminhos nós sempre seremos resgatados.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Nós somos todos como imundos e toda nossa justiça é como um trapo de imundície. Todos nós murchamos como folhas, e nossas iniquidades, como o vento, transportam-nos para longe.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Não há ninguém que invoque o Teu nome, que faça um esforço para apegar-se a Ti, pois escondeste Tua face de nós e nos entregaste aos nossos pecados.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Ainda assim, Yahweh, Tu és o nosso Pai. Somos barro e Tu és nosso oleiro; e todos nós somos obras de Tuas mãos.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Não fiques demasiadamente irado, Yahweh, nem te lembres sempre dos nossos pecados. Por favor, olha para nós, Teu povo.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Tua santa cidade tornou-se um deserto; Sião tornou-se um deserto, sim, Jerusalém é uma desolação.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Nosso santo e lindo templo, onde nossos pais oravam a Ti, foi destruído pelo fogo, e tudo que era tão precioso está em ruínas.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Como podes ainda Te conter, Yahweh? Como podes permanecer em silêncio e continuar a nos humilhar?</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="IS" data-chapter="64"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="IS" data-chapter="64"
+                                data-total="66" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

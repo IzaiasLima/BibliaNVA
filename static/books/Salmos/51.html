@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Salmos, 51</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/SL/51. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Salmos, <span id="chapter">51</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title">Para o regente musical. Salmo de Davi, quando o profeta Natã veio até Davi, depois que este se deitou com Bate-Seba.</p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Tem misericórdia de mim, ó Deus, por causa do Teu amor leal; por amor das Tuas muitas misericórdias, apaga as minhas transgressões.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Lava-me completamente da minha iniquidade e purifica-me do meu pecado.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Pois eu conheço as minhas transgressões, e o meu pecado está sempre diante de mim.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Contra Ti, contra Ti somente, eu pequei e fiz o que é mau à Tua vista, de maneira que és justo quando falas, e correto quando julgas.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Eis que eu nasci em iniquidade; em pecado minha mãe me concebeu.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Eis que Tu desejas a verdade no meu íntimo, e no coração me ensinas a sabedoria.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Purifica-me com hissopo e ficarei limpo; lava-me, e eu ficarei mais branco do que a neve.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Faze-me ouvir júbilo de alegria para que os ossos que Tu quebraste se regozijem.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Esconde a Tua face dos meus pecados e apaga todas as minhas iniquidades.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Cria em mim, ó Deus, um coração puro, e renova em mim um espírito reto.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Não me lances fora da Tua presença, e não retires o Teu Santo Espírito de mim.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Restaura-me a alegria da Tua salvação, e sustém-me com um espírito disposto a obedecer.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Então eu ensinarei aos transgressores os Teus caminhos, e os pecadores se converterão a Ti.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Perdoa-me por derramar sangue, Deus da minha salvação, e eu aclamarei de alegria pela Tua justiça.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Senhor, abre os meus lábios, e a minha boca proclamará o Teu louvor.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Pois Tu não Te agradas de sacrifício, senão eu o daria; Tu não tens prazer em holocaustos.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Os sacrifícios que agradam a Deus são um espírito quebrantado; um coração contrito e arrependido Tu não desprezarás, ó Deus.</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>Faze o bem a Sião, segundo a Tua boa vontade; reconstrói os muros de Jerusalém.</span></p> 
+<p class="verse "><span class="number ">19</span>&ensp;<span>Então Tu Te alegrarás nos sacrifícios de justiça, nas ofertas queimadas e nos holocaustos; e nosso povo oferecerá novilhos em Teu altar.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="SL" data-chapter="51"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="SL" data-chapter="51"
+                                data-total="150" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

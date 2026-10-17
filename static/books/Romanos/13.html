@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Romanos, 13</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/RM/13. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Romanos, <span id="chapter">13</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Que toda pessoa seja obediente às autoridades superiores, porque não há autoridade, a menos que esta venha de Deus; e as que existem foram designadas por Deus.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Portanto, aquele que resiste à autoridade se opõe à ordem de Deus; e aqueles que se opõem a ela receberão julgamento sobre si mesmos.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Pois os governantes não são um terror para as boas obras, mas para as más obras.  Não queres ter medo da autoridade? Faze o que é bom, e terás sua aprovação.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Porque ela é uma serva de Deus para o teu bem. Mas, se fizeres o que é mal, teme, porque ela não carrega espada sem razão; pois é uma serva de Deus, uma vingadora para ira contra aquele que pratica o mal.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Portanto, deves obedecer, não apenas por causa da ira, mas também por causa da consciência.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Por isso, pagas tributos também. Porque as autoridades são servas de Deus, que se dedicam a todas essas coisas.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Paga a todos o que lhes é devido: a quem tributo, tributo; a quem imposto, imposto; a quem temor, temor; a quem honra, honra.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Não devas a ninguém coisa alguma, exceto o amor uns pelos outros. Porque aquele que ama seu próximo tem cumprido a lei.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Os mandamentos: "Não cometerás adultério", "Não matarás", "Não roubarás", "Não cobiçarás", e se há qualquer outro mandamento também, tudo é resumido na seguinte ordem: "Amarás o teu próximo como a ti mesmo".</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>O amor não causa dano ao seu próximo. Portanto, o amor é o cumprimento da lei.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Por causa disso, tu conheces o tempo, que já é hora de despertardes do sono. Pois agora nossa salvação está mais próxima do que quando cremos no princípio.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>A noite está avançada, e o dia vem se aproximando. Vamos, portanto, deixar as obras das trevas, e nos vestir das armas da luz.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Vamos andar de maneira digna, como em pleno dia; não em orgias ou bebedeiras; não em imoralidade sexual ou depravação; não em contendas ou invejas.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Mas revesti-vos do Senhor Jesus Cristo, e não alimenteis a carne, nos seus desejos.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="RM" data-chapter="13"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="RM" data-chapter="13"
+                                data-total="16" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Salmos, 38</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/SL/38. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Salmos, <span id="chapter">38</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title">Salmo de Davi, para trazer à memória.</p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Yahweh, não me repreendas em Tua ira, não me castigues em Tua fúria.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Pois as Tuas flechas me perfuram e a Tua mão me pressiona.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Meu corpo todo está enfermo por causa da Tua ira; não há saúde em meus ossos por causa dos meus pecados.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Pois minhas iniquidades me afogam; elas são um fardo pesado demais para mim.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Minhas feridas estão infectadas e cheiram mal por causa da minha insensatez .</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Estou curvado e humilhado; lamento constantemente o dia todo.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Pois meu interior está ardendo, e não há nada saudável em minha carne.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Estou entorpecido e completamente esmagado. Meu coração angustiado me faz gemer.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Senhor, Tu entendes os anseios mais profundos do meu coração e meus gemidos não estão escondidos de Ti.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Meu coração bate depressa, minha força se vai e minha visão diminui.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Meus amigos e companheiros se afastam por causa da minha condição, meus vizinhos se mantêm longe.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Aqueles que buscam tirar-me a vida colocam armadilhas para mim. Eles buscam me machucar; falam palavras destrutivas, dizem palavras enganosas o dia inteiro.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Todavia, eu sou como um surdo e não escuto nada; sou como um mudo, que não diz nada.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Eu sou como um homem que não ouve e que não dá resposta.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Certamente espero por Ti, Yahweh; Tu responderás, Senhor meu Deus.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Eu digo isto para que meus inimigos não se regozijem sobre mim. Se meu pé escorregar, eles farão coisas terríveis contra mim.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Pois estou prestes a tropeçar e estou constantemente em dor.</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>Eu confesso minha culpa, estou ciente do meu pecado.</span></p> 
+<p class="verse "><span class="number ">19</span>&ensp;<span>Mas meus inimigos são numerosos; aqueles que me odeiam injustamente são muitos.</span></p> 
+<p class="verse "><span class="number ">20</span>&ensp;<span>Eles me pagam o bem com o mal; proferem acusações contra mim, mesmo que eu tenha buscado o que é correto.</span></p> 
+<p class="verse "><span class="number ">21</span>&ensp;<span>Não me abandones, Yahweh; meu Deus, não Te afastes de mim.</span></p> 
+<p class="verse "><span class="number ">22</span>&ensp;<span>Vem rapidamente me ajudar, ó Senhor, minha salvação.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="SL" data-chapter="38"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="SL" data-chapter="38"
+                                data-total="150" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

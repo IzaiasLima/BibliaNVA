@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Provérbios, 9</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/PV/9. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Provérbios, <span id="chapter">9</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>A sabedoria já edificou sua própria casa; ela talhou sete pilares de pedras.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Ela já abateu seus animais para a refeição, misturou seu vinho e pôs a mesa.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Ela enviou convites com suas criadas e exclamou dos pontos mais altos da cidade:</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>"Vós que sois ingênuos, vinde para cá!". Ela fala aos que não têm bom senso:</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>"Vinde! Comei da minha comida e bebei do vinho que misturei.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Deixai vossas atitudes insensatas e vivei; andai no caminho do entendimento.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Quem corrige um zombador recebe afronta, e quem repreende uma pessoa maldosa recebe insultos.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Não repreendas o zombador, ou ele te odiará; repreende o sábio, e ele te amará.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Dá instrução a um sábio, e ele se tornará ainda mais sábio; ensina o justo, e ele crescerá em seu conhecimento.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>O temor do <mark>Senhor</mark> é o princípio da sabedoria, e o conhecimento do Santo é o entendimento.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Pois, através de Mim, teus dias serão multiplicados, e anos de vida te serão acrescentados.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Se tu fores sábio, serás sábio para ti mesmo, mas, se tu fores zombador, suportarás isso sozinho”.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>A insensatez é mulher ignorante; ela é indisciplinada e não sabe de nada.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Ela se assenta à porta de sua casa, toma um assento nos lugares altos da cidade.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Ela chama os que passam, aqueles que andam em linha reta em seus caminhos.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>"Vinde aqui, vós que sois ingênuos!", ela diz para aqueles que não têm sensatez:</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>"As águas roubadas são doces, e o pão comido em secreto é delicioso".</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>Eles, porém, não sabem que a morte está ali, que seus convidados estão nas profundezas do mundo dos mortos.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="PV" data-chapter="9"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="PV" data-chapter="9"
+                                data-total="31" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

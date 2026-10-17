@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - 1 Coríntios, 13</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/1CO/13. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">1 Coríntios, <span id="chapter">13</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Mesmo que eu falasse as línguas dos homens e dos anjos, se eu não tivesse amor, seria como um sino que soa ou um címbalo que retine.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Mesmo que eu tivesse o dom de profecia e entendesse todas as verdades escondidas e todo o conhecimento e tivesse toda a fé para remover montanhas, se não tivesse amor, eu não seria nada.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>E se eu desse tudo o que possuo para alimentar os pobres e se eu desse o meu corpo para ser queimado, mas não tivesse amor, de nada adiantaria.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>O amor é paciente e bondoso. O amor não inveja, nem se orgulha; não é arrogante,</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>nem rude; não busca os próprios interesses; não se ira facilmente; não leva em conta o mal.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Não se alegra com a injustiça, mas se alegra com a verdade.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>O amor tudo sofre, tudo crê, tudo espera e tudo suporta.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>O amor jamais acaba. Havendo profecias, elas passarão; havendo línguas, elas cessarão; havendo conhecimento, este passará.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Pois nós conhecemos em parte e em parte profetizamos ,</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>mas, quando o que é perfeito vier, aquilo que é em parte passará.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Quando eu era uma criança, eu falava como criança, pensava como criança, julgava como criança. Quando me tornei um adulto, deixei as coisas de criança.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Por agora, vemos como em espelho, sem clareza, mas depois veremos face a face. Agora eu conheço em parte, mas então conhecerei completamente assim como fui completamente conhecido.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Agora permanecem estes três: a fé, a esperança e o amor, mas o maior deles é o amor.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="1CO" data-chapter="13"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="1CO" data-chapter="13"
+                                data-total="16" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

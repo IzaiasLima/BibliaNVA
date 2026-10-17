@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Apocalipse, 10</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/AP/10. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Apocalipse, <span id="chapter">10</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Então eu vi outro anjo poderoso descendo do céu. Ele estava envolto em uma nuvem, e tinha um arco-íris sobre a sua cabeça. Sua face era como o sol e seus pés como pilares de fogo.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Ele tinha em sua mão um pequeno rolo que estava aberto, e pôs seu pé direito sobre o mar e seu pé esquerdo sobre a terra,</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>E bradou em alta voz como um rugido de leão.  E, quando ele bradou, os sete trovões falaram.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Logo que falaram os sete trovões, eu estava prestes a escrever, mas ouvi uma voz do céu, dizendo: "Guarda em segredo as coisas que os sete trovões falaram, e não as escrevas".</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Depois disso, o anjo que vi sobre o mar e sobre a terra ergueu sua mão direita ao céu</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>e jurou por Aquele que vive para todo o sempre, o qual criou o céu e tudo o que nele há, a terra e tudo o que nela há, o mar e tudo que nele existe: "Já não haverá mais demora,</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>mas, no dia em que o sétimo anjo estiver prestes a tocar sua trombeta, então o mistério de Deus será cumprido, como anunciou aos seus servos, os profetas".</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>E a voz que ouvi do céu falou novamente comigo, dizendo: "Vai, toma o livro que se acha aberto na mão do anjo que está em pé sobre o mar e sobre a terra".</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Então fui até o anjo, dizendo-lhe para dar-me o livrinho. Ele me disse: "Toma-o e come-o; e ele será amargo ao teu estômago, mas em tua boca será tão doce quanto mel".</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Tomei o livrinho da mão do anjo e o comi. Era tão doce quanto o mel em minha boca; mas, depois de comê-lo, meu estômago ficou amargo.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Então me disseram: "É necessário que profetizes novamente a muitos povos, nações, línguas e reis".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="AP" data-chapter="10"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="AP" data-chapter="10"
+                                data-total="22" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

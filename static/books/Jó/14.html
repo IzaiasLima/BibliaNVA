@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Jó, 14</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/JÓ/14. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Jó, <span id="chapter">14</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>O homem, que é nascido de mulher, vive apenas alguns dias e está cheio de problemas.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Ele brota do chão como uma flor e é cortado, foge como uma sombra e não dura.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Tu olhas para alguém assim? E me levas a julgamento contigo?</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Quem pode tirar coisa limpa a partir de uma coisa suja? Ninguém.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Os dias do homem são determinados. O número dos seus meses estão Contigo. Tu apontaste os limites dos quais ele não pode passar.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Desvia-te dele para que possa descansar, para que possa aproveitar seu dia como um diarista, se puder fazê-lo.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Pode haver esperança para uma árvore; se for cortada, poderá brotar de novo, para que seu caule tenro não desapareça.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Embora sua raiz envelheça na terra e seu toco morra no chão,</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>apenas com o cheiro das águas, brotará e dará ramos como uma planta.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Mas o homem morre. Ele se torna fraco. De fato, o homem para de respirar e onde está?</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Como a água desaparece de um lago e como o rio perde água e seca,</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>assim as pessoas se deitam e não se levantam novamente. Até que os céus não existam mais, eles não acordarão nem se despertarão do seu sono.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Ah! Se Tu me escondesses no Sheol longe dos problemas, se me escondesses até que a Tua ira passasse, fixasses o tempo da minha permanência lá e Te lembrasses de mim!</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Se um homem morre, ele viverá novamente? Se assim for, desejaria esperar todo o meu tempo penoso até que minha libertação chegasse.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Tu chamarias e eu responderia. Desejarias ver a obra de Tuas mãos.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Tu contarias e cuidaria dos meus passos; não vigiarias meu pecado.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Minha transgressão seria selada em uma bolsa. Tu cobririas a minha iniquidade.</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>Mas até montanhas caem e não dão em nada; até as rochas são removidas do seu lugar;</span></p> 
+<p class="verse "><span class="number ">19</span>&ensp;<span>as águas desgastam as pedras e suas enchentes lavam o pó da terra e Tu destróis a esperança do homem.</span></p> 
+<p class="verse "><span class="number ">20</span>&ensp;<span>Tu sempre o derrotas e ele passa. Tu mudas o rosto dele e o mandas para morrer.</span></p> 
+<p class="verse "><span class="number ">21</span>&ensp;<span>Se seus filhos são honrados, ele não sabe disso. E, se são humilhados, ele não os vê.</span></p> 
+<p class="verse "><span class="number ">22</span>&ensp;<span>Ele sente apenas a dor do próprio corpo e lamenta por si mesmo".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="JÓ" data-chapter="14"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="JÓ" data-chapter="14"
+                                data-total="42" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

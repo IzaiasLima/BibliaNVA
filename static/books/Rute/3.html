@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Rute, 3</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/RT/3. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Rute, <span id="chapter">3</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Noemi, sua sogra, disse-lhe: "Minha filha, não devo procurar um lugar de descanso para ti, para que fiques bem?</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Lembra de Boaz, o homem que te deixou trabalhar com suas jovens servas; não é ele o nosso parente? Ele estará esta noite limpando a cevada na eira.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Portanto, lava-te, perfuma-te, põe tua melhor roupa, e desce para a eira. Mas não permitas que ele te veja até que ele termine de comer e beber.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Mas, quando ele se deitar, toma conhecimento do lugar onde ele se deitou; porque mais tarde tu irás até ele, descobrirás seus pés e deitarás ali. Então ele te dirá o que fazer".</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Rute disse a Noemi: "Eu farei tudo que disseste".</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Então ela desceu até a eira, e seguiu as instruções que sua sogra lhe havia falado.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Quando Boaz comeu e bebeu, seu coração se alegrou, e ele foi deitar junto à pilha de grãos. Ela veio suavemente, descobriu seus pés e se deitou.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>E sucedeu que, à meia-noite, o homem foi surpreendido. Ele virou-se e lá estava uma mulher deitada aos seus pés!</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Ele disse: "Quem és tu?" E ela respondeu: "Eu sou Rute, tua serva; estende o teu manto sobre tua serva, pois tu és um parente próximo".</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Boaz disse: "Minha filha, que sejas abençoada por Yahweh. Tu mostraste mais bondade agora do que antes, pois não fostes atrás de nenhum jovem, seja rico ou pobre.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>E agora, minha filha, não temas! Eu farei tudo o que disseste, porque toda a cidade do meu povo sabe que tu és uma mulher de valor.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>É bem verdade que eu sou um parente próximo, mas acontece que existe um parente mais próximo do que eu.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Fica aqui esta noite e, pela manhã, se ele quiser te resgatar, assim seja. Caso ele não faça o que deve fazer para contigo, então o farei, assim como vive Yahweh. Deita-te até que amanheça".</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Então ela deitou a seus pés, até de manhã. Mas levantou-se antes que uma pessoa a pudesse reconhecer. Pois Boaz tinha dito: "Que ninguém saiba que uma mulher veio à eira".</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Então Boaz disse: "Traze o manto com que te cobres e segura-o". Quando ela assim o fez, ele despejou seis medidas de cevada e o colocou sobre os ombros dela. Então, ele foi para a cidade.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Quando Rute voltou, sua sogra disse-lhe: "Como foi, minha filha?" Então Rute disse tudo que o homem havia feito por ela.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Ela disse: "Estas seis medidas de cevada são o que ele me deu, pois ele disse: 'Não voltes de mãos vazias para a tua sogra'".</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>Então, Noemi disse: "Fica aqui, minha filha, até que saibas como será resolvido, pois aquele homem não descansará enquanto não tiver resolvido esta questão ainda hoje".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="RT" data-chapter="3"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="RT" data-chapter="3"
+                                data-total="4" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

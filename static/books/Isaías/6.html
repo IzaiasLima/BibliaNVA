@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Isaías, 6</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/IS/6. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Isaías, <span id="chapter">6</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>No ano em que o rei Uzias morreu, eu vi o Senhor assentado em um trono alto e sublime; e a bainha do Seu manto enchia o templo.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Acima Dele, estavam os serafins; cada um tinha  seis asas: com duas cobriam o rosto, com duas cobriam os pés, e com duas voavam.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>E diziam, em alta voz, uns aos outros: "Santo, Santo, Santo é Yahweh dos Exércitos! Toda a terra está cheia da Sua glória".</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>As bases das portas tremiam à voz dos que clamavam, e a casa  se encheu de fumaça.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Então eu disse: "Ai de mim, pois estou perdido! Porque sou um homem de lábios impuros e vivo no meio de um povo de lábios impuros, e os meus olhos viram o Rei, Yahweh dos Exércitos!".</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Então, um dos serafins voou até mim, trazendo em sua mão uma brasa que havia tirado do altar com uma tenaz.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Ele tocou minha boca com a brasa e disse: "Vê! Isto tocou os teus lábios, tua culpa foi removida e teu pecado, perdoado".</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Ouvi a voz do Senhor dizendo: "A quem enviarei? Quem irá por Nós?" Então eu disse: "Aqui estou eu, envia-me".</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Ele disse: "Vai e dize a este povo: 'Ouvireis, mas não entendereis; vereis, mas não percebereis'.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Torna o coração deste povo insensível; seus ouvidos fiquem surdos e seus olhos, cegos, para que eles não vejam com seus olhos, não ouçam com seus ouvidos, não entendam com o coração, e não se voltem e sejam curados".</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Então eu disse: "Senhor, por quanto tempo?". Ele me respondeu: "Até que as cidades fiquem devastadas e sem habitantes, as casas fiquem sem moradores e a terra se torne despovoada;</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>e até que Yahweh mande o povo para longe, e grande seja a solidão da terra.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Mesmo que um décimo do povo permaneça nela, será novamente destruída; como o terebinto e o carvalho que são derrubados, e seu tronco permanece, assim a santa semente estará nesse toco".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="IS" data-chapter="6"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="IS" data-chapter="6"
+                                data-total="66" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

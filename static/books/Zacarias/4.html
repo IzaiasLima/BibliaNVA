@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Zacarias, 4</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/ZC/4. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Zacarias, <span id="chapter">4</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Então, o anjo que falava comigo voltou e me despertou, como se eu estivera dormindo.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Ele me perguntou: "O que tu vês?". Respondi: "Vejo um candelabro feito de ouro maciço, com uma bacia por cima. Há sete lâmpadas sobre ele e sete tubos em cima de cada lâmpada.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Duas oliveiras estão nele, uma no lado direito do vaso, e outra no lado esquerdo".</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Então, perguntei ao anjo que falava comigo: "O que significam essas coisas, meu senhor?".</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>O anjo me respondeu: "Tu não sabes o que essas coisas significam?". Respondi: "Não, meu senhor".</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Então, ele me disse: "Esta é a palavra do <mark>Senhor</mark> para Zorobabel: Não por força nem por poder, mas pelo Meu Espírito" — diz Yahweh dos Exércitos.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>"Quem és tu, grande monte? Diante de Zorobabel, irás te tornar uma planície, e ele colocará a pedra angular, exclamando 'Graça! Graça sobre ela!'".</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>A palavra do <mark>Senhor</mark> veio a mim, dizendo:</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>"As mãos de Zorobabel lançaram a fundação desta casa e elas irão concluí-la. Então, saberás que Yahweh dos Exércitos me enviou a ti.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Quem desprezou o dia das pequenas coisas? Este povo se alegrará e verá o prumo de pedra nas mãos de Zorobabel. (Estas sete lâmpadas são os olhos do <mark>Senhor</mark> que percorrem toda a terra)".</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Então, eu perguntei ao anjo: "O que são essas duas oliveiras que estão ao lado esquerdo e à direita do candelabro?".</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Novamente perguntei: "O que são esses dois ramos de oliveira ao lado dos dois tubos de ouro que vertem azeite dourado?".</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Então, ele me perguntou: "Tu não sabes o que é isto?". Eu disse: Não, meu senhor".</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Então, ele disse: "Estes são os dois ungidos que estão diante do Senhor de toda a terra".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="ZC" data-chapter="4"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="ZC" data-chapter="4"
+                                data-total="14" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Apocalipse, 20</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/AP/20. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Apocalipse, <span id="chapter">20</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Então vi um anjo descer do céu. Ele tinha a chave do abismo e uma grande corrente na mão.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Ele prendeu o dragão, a antiga serpente, a qual é o diabo ou Satanás, e o amarrou por mil anos.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Ele o lançou no abismo, fechou-o e pôs um selo sobre ele, para que não mais enganasse as nações até que os mil anos se completassem. Depois disso, ele será solto por um pouco tempo.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Então vi tronos, nos quais estavam assentados os que tinham recebido autoridade para julgar. Eu também vi as almas dos que tinham sido decapitados por causa do testemunho de Jesus e da palavra de Deus. Eles não haviam adorado a besta ou sua imagem e se recusaram a receber a marca na testa ou na mão. Eles reviveram e reinaram com Cristo por mil anos.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Os outros mortos não reviveram até que se completassem os mil anos. Essa é a primeira ressureição.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Bem-aventurado e santo é aquele que faz parte da primeira ressureição! Sobre estes a segunda morte não tem poder.  Eles serão sacerdotes de Deus e de Cristo e reinarão com Ele por mil anos.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Quando os mil anos chegarem ao fim, Satanás será solto da sua prisão.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Ele sairá para enganar as nações que estão nos quatro cantos da terra - Gogue e Magogue - a fim de ajuntá-las para a batalha, cujo número será como a areia do mar.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Subiram sobre a ampla superfície da terra e cercaram o acampamento dos santos, a amada cidade. Mas fogo desceu do céu e as devorou.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>O diabo, que os enganava, foi lançado no lago de fogo e enxofre, onde a besta e o falso profeta foram lançados. Eles serão atormentados dia e noite, para sempre e sempre.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Em seguida, vi um grande trono branco e Aquele que estava sentado sobre ele. A terra e o céu fugiram da Sua presença e não havia lugar para irem.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Eu vi os mortos, grandes e pequenos, em pé diante do trono e os livros foram abertos. Então outro livro foi aberto, o Livro da Vida. Os mortos foram julgados segundo o que estava registrado nos livros, segundo as suas obras.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>O mar entregou os mortos que nele havia. A morte e o Hades entregaram também os mortos que neles havia, e os mortos foram julgados segundo as suas obras.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>A morte e o Hades foram jogados no lago de fogo. Esta é a segunda morte, o lago de fogo.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Se o nome de alguém não foi achado escrito no Livro da Vida, esse foi jogado no lago de fogo.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="AP" data-chapter="20"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="AP" data-chapter="20"
+                                data-total="22" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

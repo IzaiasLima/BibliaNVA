@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - 1 Samuel, 11</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/1SM/11. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">1 Samuel, <span id="chapter">11</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Então Naás, o amonita, saiu e sitiou Jabes Gileade. Todos os homens de Jabes disseram para Naás: "Faça um pacto conosco e nós te serviremos".</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Naás, o amonita, replicou: "Eu farei um acordo convosco, sob a condição de eu extrair o olho direito de todos vós, pois, desta maneira, trarei desgraça sobre todo o Israel".</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Os anciãos de Jabes lhe responderam: "Deixa-nos a sós por sete dias, e enviaremos mensageiros para todo o território de Israel. Então, se não houver alguém que nos ajude, nós nos renderemos a ti".</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Os mensageiros vieram para Gibeá, onde Saul morava, e falaram ao povo o que havia acontecido. Todo o povo chorou em alta voz.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Eis que Saul vinha do campo acompanhando os bois. Saul disse: "O que há de errado com as pessoas, pois estão chorando?". Eles contaram a Saul o que os homens de Jabes haviam dito.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Quando Saul ouviu o que eles disseram, o Espírito de Deus veio sobre ele, e ele ficou muito irado.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Tomou uma junta de bois, cortou-os em pedaços, e enviou as partes por todo o território de Israel, pelos mensageiros. Ele disse: "Isto é o que acontecerá aos bois de qualquer de vós que não sair após Saul e após Samuel". Logo, o temor do <mark>Senhor</mark> caiu sobre o povo, e eles saíram juntos, como um só homem.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Quando ele os reuniu em Beseque, todo o povo de Israel era trezentos mil, e os homens de Judá, trinta mil.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Eles disseram aos mensageiros: "Vós direis aos homens de Jabes Gileade: 'Amanhã, quando o sol estiver quente, vós sereis resgatados'". Então, os mensageiros saíram e falaram aos homens de Jabes, e eles se alegraram.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Então, os homens de Jabes disseram a Naás: "Amanhã nós nos renderemos a ti, e tu farás conosco o que bem te parecer".</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>No dia seguinte, Saul pôs o povo em três grupos. Eles vieram para o meio do acampamento durante a guarda matinal. Então, atacaram e derrotaram os amonitas até o calor do dia. Aqueles que sobreviveram foram dispersos, de maneira que não deixaram dois deles juntos.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>E o povo disse a Samuel: "Quem foi aquele que falou: 'Reinará Saul sobre nós?'. Trazei os homens! Assim, serão postos para morrer".</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Mas Saul falou: "Ninguém será morto neste dia, porque hoje Yahweh livrou Israel".</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Então, Samuel falou ao povo: "Vinde, vamos a Gilgal e renovemos ali a monarquia".</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>E o povo foi para Gilgal e fez Saul rei diante do <mark>Senhor</mark>, em Gilgal. Lá, eles sacrificaram ofertas pacíficas diante do <mark>Senhor</mark>. Saul, com todos os homens de Israel, regozijaram-se grandemente.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="1SM" data-chapter="11"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="1SM" data-chapter="11"
+                                data-total="31" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Isaías, 35</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/IS/35. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Isaías, <span id="chapter">35</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>O deserto e a terra seca ficarão felizes; o deserto se regozijará e florescerá.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Florescerá abundantemente e se regozijará, cantando com alegria; a glória do Líbano lhe será dada, o esplendor do Carmelo e Sarom; eles verão a glória do <mark>Senhor</mark>, o esplendor do nosso Deus.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Fortalecei as mãos fracas e firmai os joelhos que tremem.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Dizei àqueles de coração aflito: "Sede fortes, não temais! Vede! Vosso Deus virá com vingança, com recompensa; Ele virá e vos salvará".</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Então, os olhos dos cegos verão e os ouvidos dos surdos ouvirão.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>O homem manco saltará como um cervo e a língua muda cantará, pois água brotará nos lugares desolados e rios, no deserto.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>A areia, que queima, se tornará um lago e a terra sedenta, mananciais de água. Na habitação dos chacais, onde uma vez se deitaram, haverá gramado com canas e juncos.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Haverá ali uma estrada que será chamada o Caminho Santo. O impuro não passará por lá. Será para aqueles que andam no caminho de Deus, nenhum tolo andará nele.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Nenhum leão estará lá, nenhuma besta feroz andará nele; eles não serão achados no caminho; porém, o redimido caminhará nele.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Os resgatados do <mark>Senhor</mark> retornarão e virão cantando para Sião, a alegria eterna estará em suas cabeças; felicidade e alegria tomarão conta deles; tristeza e pranto fugirão.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="IS" data-chapter="35"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="IS" data-chapter="35"
+                                data-total="66" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

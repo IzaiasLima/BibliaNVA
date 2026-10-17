@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Jó, 42</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/JÓ/42. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Jó, <span id="chapter">42</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Então, Jó respondeu a Yahweh, dizendo:</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>"Eu sei que Tu podes fazer todas as coisas, que nenhum propósito Teu pode ser impedido.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Tu me perguntaste: 'Quem é este que, sem conhecimento, encobre planos?'. De fato, falei coisas que eu não entendia, coisas muito difíceis de compreender, sobre as quais eu nada sabia.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Tu me disseste: 'Escuta, agora, e Eu falarei; perguntar-te-ei e tu me dirás'.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Eu Te conhecia  pelo escutar de meus ouvidos, mas agora meus olhos Te veem.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Eu me desprezo; arrependo-me no pó e na cinza".</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Aconteceu que depois de ter dito estas palavras para Jó, Yahweh disse a Elifaz, o temanita: "Minha ira inflamou-se contra ti e contra teus dois amigos por não terdes dito coisas certas acerca de Mim como fez meu servo Jó.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Agora, então, levai para vós sete touros e sete carneiros, ide ao meu servo Jó e oferecei-os para vós em holocausto. Meu servo Jó intercederá por vós e Eu aceitarei a sua oração para que Eu não vos trate conforme a vossa insensatez. Pois não dissestes o que é certo a Meu respeito, como Meu servo Jó fez".</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Então, Elifaz, o temanita, Bildad, o suíta, e Zofar, o naamatita, foram e fizeram o que Yahweh havia lhes ordenado e Yahweh aceitou a intercessão de Jó.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Quando Jó orou pelos seus amigos, Yahweh restaurou seus bens. Yahweh deu-lhe o dobro do que ele possuía antes.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Então, todos os irmãos de Jó e todas as suas irmãs e todos os que antes o conheciam vieram e comeram com ele uma refeição em sua casa. Consolaram e confortaram-lhe sobre todas as desgraças que Yahweh lhe trouxera. Cada pessoa deu a Jó uma moeda de prata e um anel de ouro.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>O <mark>Senhor</mark> abençoou o final da vida de Jó mais que o começo; ele tinha catorze mil ovelhas, seis mil camelos, mil juntas de bois e mil jumentas.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Ele tinha também sete filhos e três filhas.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>A primeira filha chamou-lhe Jemima, a segunda, Quézia e a terceira, Quéren-Hapuque.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Em toda a Terra, não foram achadas mulheres tão formosas como as filhas de Jó. Seu pai deu-lhes uma herança bem como aos seus irmãos.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Depois disso, Jó viveu cento e quarenta anos; ele viu seus filhos e os filhos dos seus filhos até a quarta geração.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Então, Jó morreu, sendo velho e cheio de dias.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="JÓ" data-chapter="42"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="JÓ" data-chapter="42"
+                                data-total="42" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

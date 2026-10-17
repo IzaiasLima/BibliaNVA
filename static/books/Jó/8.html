@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Jó, 8</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/JÓ/8. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Jó, <span id="chapter">8</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Então, respondeu Bildade, o suíta, dizendo:</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>"Até quando falarás tais coisas? Até quando serão as palavras da tua boca como vento impetuoso?</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Pode Deus perverter o direito e o Todo Poderoso corromper a justiça?</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Teus filhos pecaram contra Ele; nós sabemos disso, pois Ele os entregou às suas transgressões.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Mas, se buscares diligentemente a Deus e apresentares ao Todo Poderoso a tua petição;</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>se o teu coração e tuas ações forem retas, Ele certamente te faria o bem, te recompensaria dando novamente tua família e te fazendo próspero.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Embora os teus planos iniciais fossem humildes, ainda tua condição final seria grandiosa.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Por favor, pergunta às gerações passadas e considera o que os antepassados aprenderam!</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Nós sabemos que nascemos ontem e que não sabemos nada pois nossos dias na terra são apenas sombra.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Eles não te ensinarão, nem te contarão? Eles não dirão palavras vindas dos seus corações?</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Pode o papiro crescer sem lodo ou o junco crescer sem água?</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Estando ainda eles verdes, sem ter sido cortados, secam-se antes de qualquer outra planta.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>São assim também os passos de todo que se esquece de Deus, a esperança do corrupto perecerá.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Sua confiança se desfará e sua segurança será frágil como uma teia de arranha.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Ele se apoia em sua casa, mas ela não permanecerá em pé; segura-se nela, mas ela não se sustentará.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Sob o sol, eles são verdes e seus ramos passam para além de todo o jardim;</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>suas raízes envolvem os montes de pedras e procuram bons lugares nas rochas.</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>Mas, se esta pessoa é destruida fora de seu lugar, então, aquele lugar irá negá-lo e dirá: 'nunca te vi'.</span></p> 
+<p class="verse "><span class="number ">19</span>&ensp;<span>Eis a "alegria" das pessoas com esses comportamentos; outras plantas brotarão em seu lugar no mesmo solo.</span></p> 
+<p class="verse "><span class="number ">20</span>&ensp;<span>Deus nunca castigará um homem inocente, nem segurará pela mão o malfeitor.</span></p> 
+<p class="verse "><span class="number ">21</span>&ensp;<span>Ele irá encher sua boca de risos e seus lábios de gritos de júbilo.</span></p> 
+<p class="verse "><span class="number ">22</span>&ensp;<span>Aqueles que te odeiam se vestirão de vergonha e a tenda dos corrupto não mais existirá".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="JÓ" data-chapter="8"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="JÓ" data-chapter="8"
+                                data-total="42" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

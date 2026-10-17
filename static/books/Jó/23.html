@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Jó, 23</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/JÓ/23. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Jó, <span id="chapter">23</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Depois, Jó respondeu e disse:</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>"Ainda hoje, a minha queixa é amarga; minha mão é pesada por causa do meu sofrimento.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Ah, se eu soubesse onde encontrá-Lo! Ah, se eu pudesse ir ao Seu lugar!</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Eu apresentaria o meu caso diante Dele e encheria a minha boca com argumentos.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Eu aprenderia as palavras com as quais Ele me responderia e entenderia o que Ele me diria.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Ele iria argumentar contra mim segundo a grandeza do Seu poder? Não, Ele prestaria atenção em mim.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Então, um homem reto poderia argumentar com Ele. Assim, eu seria liberto para sempre pelo meu juiz.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Vê, eu vou para o oriente, mas Ele não está lá; vou para o ocidente, mas não consigo achá-Lo.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Mesmo para o norte, onde Ele está a trabalhar, não posso vê-Lo; e, para o sul, onde Ele se esconde, eu não posso vê-Lo.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Mas Ele conhece o caminho em que ando; quando Ele me prova, eu saio como o ouro.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Os meus pés seguiram apressadamente as Suas pisadas; eu guardei o Seu caminho e não me desviei dele.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Não abadonei o mandamento dos Seus lábios; Eu guardei como um tesouro as palavras da Sua boca mais que minha porção de comida.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Mas Ele é único, quem pode Lhe virar as costas? Aquilo que Ele deseja, faz.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Ele carrega Seu decreto contra mim; e há muitas outras coisas como essas.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Por isso, estou aterrorizado em Sua presença; quando eu penso Nele, fico com medo.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Pois Deus fez enfraquecer o meu coração; oTodo Poderoso aterrorizou-me.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Porém, eu não fui destruído pelas trevas, as densas trevas que encobrem o meu rosto.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="JÓ" data-chapter="23"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="JÓ" data-chapter="23"
+                                data-total="42" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

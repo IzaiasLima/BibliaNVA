@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - Habacuque, 1</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/HC/1. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Habacuque, <span id="chapter">1</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>A mensagem que o profeta Habacuque recebeu:</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>"Yahweh, até quando devo clamar por ajuda, e Tu não ouvirás? Tenho gritado a Ti: 'Violência!', mas Tu não me salvas.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Por que Tu me fazes ver a iniquidade e contemplar a transgressão? Destruição e violência estão diante de mim; há dissenção e se levantam contendas!</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Por isso, a Lei é enfraquecida e a justiça não dura tempo algum. Pois os maus cercam os justos; por isso, a falsa justiça sobressai". Yahweh responde a Habacuque:</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>"Olha as nações e as examina; deslumbra-te e maravilha-te! Pois certamente farei algo em teus dias que não acreditarás quando te for anunciado a ti.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Pois, vê! Estou prestes a levantar os caldeus, aquela nação feroz e impetuosa, que está marchando por toda a largura da Terra, para se apoderarem de casas que não lhes pertencem.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>São aterrorizantes e amedrontadores; deles mesmos procedem seu julgamento e esplendor.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Seus cavalos também são mais velozes que leopardos, mais rápidos que lobos ao entardecer. Assim, seus cavalos trotam e seus cavaleiros vêm de grande distância; eles voam como uma águia que se apressa para comer.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Todos eles vêm para trazer violência, suas multidões vão como o vento do deserto e eles juntam os cativos como areia. [O texto hebraico aqui traduzido como "suas multidões vão como o vento do deserto" é muito difícil; muitas versões modernas têm outras interpretações.]</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Então, eles zombam dos reis, e os governantes são apenas objeto de escárnio para eles. Eles riem a cada fortaleza, porque amontoam terras e as tomam.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Então, o vento se moverá velozmente e passará — eles são homens culpados, cujo deus é sua força". Habacuque faz outra pergunta a Yahweh:</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>"Tu não vens de tempos antigos, Yahweh,  meu Deus, meu Santo? Nós não morreremos. Yahweh os destinou para julgamento, e Tu, Rocha, os estabeleceste para correção.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Teus olhos são puros demais para contemplar o mal, e Tu não és capaz de olhar para a transgressão com favor. Por que, então, Tu tens olhado favoravelmente àqueles que traem? Por que estás calado, enquanto os maus engolem os que são mais justos que eles?</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Tu fazes homens como peixes no mar, como répteis que não têm quem os governe.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Eles levantam a todos com anzol; arrastam homens com suas redes de pesca e os juntam em suas redes de arrasto. Por isso, eles se regozijam e se alegram.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Por isso, eles sacrificam a suas redes de pesca e queimam incenso a suas redes de arrasto, porque é por suas redes que vivem no luxo, e sua comida é da melhor espécie!</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Por acaso, continuarão a esvaziar suas redes e continuarão a massacrar as nações, sem sentirem compaixão?".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="HC" data-chapter="1"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="HC" data-chapter="1"
+                                data-total="3" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

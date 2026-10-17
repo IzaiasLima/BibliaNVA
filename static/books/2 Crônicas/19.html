@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+        <title>Bíblia NVA - 2 Crônicas, 19</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/2CR/19. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">2 Crônicas, <span id="chapter">19</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Josáfa, rei de Judá, retornou em paz para sua casa em Jerusalém.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Então, Jeú, filho de Hanani, o vidente, foi ao encontro do rei Josafá e lhe disse: "Deverias tu ajudar o perverso? Deverias tu amar aqueles que odeiam Yahweh? Por isso, a ira do <mark>Senhor</mark> está sobre ti.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>No entanto, alguma bondade pode ser encontrada em ti, porque tiraste os postes de Aserá da terra e dispuseste teu coração a buscar a Deus".</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Josafá viveu em Jerusalém e foi novamente passar pelo meio do povo, de Berseba até as regiões montanhosas de Efraim, e os trouxe de volta a Yahweh, o Deus de seus pais.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Ele estabeleceu juízes na terra de uma a outra extremidade, em todas as cidades fortificadas de Judá, cidade por cidade.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Ele disse aos juízes: "Considerai o que fareis, porque não julgareis para homens, mas para Yahweh! Ele está convosco nos julgamentos.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Que o temor do <mark>Senhor</mark> esteja sobre vós. Sede cuidadosos quando julgardes, pois não há iniquidade com Yahweh, vosso Deus, nem qualquer favoritismo ou barganha".</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Além disso, em Jerusalém, Josafá nomeou alguns dos levitas, sacerdotes e alguns dos ancestrais das famílias de Israel para cuidar dos julgamentos para Yahweh e por causa das disputas. Então, retornaram a Jerusalém.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Ele os instruiu, dizendo-lhes: "Deveis servir em reverência a Yahweh, com fidelidade e com um coração perfeito. Isso é o que deveis fazer:</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Sempre que chegar até vós alguma controvérsia de vossos irmãos que vivem em vossas cidades, seja sobre derramamento de sangue, sobre leis e mandamentos, sobre estatutos ou decretos, devereis avisá-los para que não cometam pecado contra Yahweh, e então Sua ira não virá sobre vós e sobre vossos irmãos. Se agirdes dessa forma, não sereis culpados.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Vede! Amarias, o chefe dos sacerdotes, presidirá sobre vós nos negócios que pertencem a Yahweh; Zebadias, filho de Ismael, chefe da tribo de Judá, está encarregado de todos os assuntos do rei; e também os levitas serão oficiais a vosso serviço. Procedei corajosamente, e que Yahweh esteja com aqueles que são bons".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="2CR" data-chapter="19"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="2CR" data-chapter="19"
+                                data-total="36" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+
+                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/client-side-templates.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>
