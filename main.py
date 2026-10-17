@@ -1,3 +1,5 @@
+import os
+
 from fastapi import FastAPI, Depends
 from fastapi.responses import FileResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
@@ -32,7 +34,23 @@ app = FastAPI(
     },
 )
 
-app.mount("/pages", StaticFiles(directory="static"), name="static")
+class _StaticFilesWithHtmlFallback(StaticFiles):
+    """StaticFiles que também resolve caminhos sem extensão (``.html``).
+
+    A navegação e os links internos usam ``.html``, mas um caminho limpo como
+    ``/pages/bible/Salmos/119`` deve servir o mesmo conteúdo de
+    ``static/bible/Salmos/119.html``. O fallback delega ao ``lookup_path`` da
+    classe base, preservando a proteção contra path traversal.
+    """
+
+    def lookup_path(self, path: str):
+        full_path, stat_result = super().lookup_path(path)
+        if stat_result is None or not os.path.isfile(full_path):
+            full_path, stat_result = super().lookup_path(f"{path}.html")
+        return full_path, stat_result
+
+
+app.mount("/pages", _StaticFilesWithHtmlFallback(directory="static"), name="static")
 
 
 @app.exception_handler(Exception)
@@ -349,10 +367,19 @@ def get_bible_verses(
 
 if __name__ == "__main__":
     # uvicorn.run(app, host="0.0.0.0", port=8000)
+    # Os certificados mkcert (localhost*.pem) são gerados localmente e ficam fora
+    # do versionamento. Sem eles, o uvicorn abortava com FileNotFoundError
+    # antes de subir o servidor — por isso o fallback para HTTP puro.
+    ssl_keyfile = "./localhost+2-key.pem"
+    ssl_certfile = "./localhost+2.pem"
+    ssl_args = (
+        {"ssl_keyfile": ssl_keyfile, "ssl_certfile": ssl_certfile}
+        if os.path.exists(ssl_keyfile) and os.path.exists(ssl_certfile)
+        else {}
+    )
     uvicorn.run(
         app,
         host="127.0.0.1",
         port=8000,
-        ssl_keyfile="./localhost+2-key.pem",
-        ssl_certfile="./localhost+2.pem",
+        **ssl_args,
     )

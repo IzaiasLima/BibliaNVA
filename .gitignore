@@ -22,4 +22,4 @@ wheels/
 .freebuff
 
 # Certificados locais (mkcert) — a chave privada NUNCA deve ser commitada
-localhost*.pem
+*.pem

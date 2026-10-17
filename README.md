@@ -51,6 +51,42 @@ Este serviço é gratuito, disponível para uso por qualquer pessoa, desde que n
 
 Não há garantia de disponibilidade, qualidade ou a corretude deste serviço. O serviço pode ficar fora do ar ocasionalmente, pois é disponibilizado apenas como um hobby. O código e os dados deste site/aplicativo estão disponíveis neste repositório, caso prefira hospedá-lo você mesmo.
 
+## Páginas estáticas por capítulo
+
+O script `generate_pages.py` reproduz, em HTML estático, o mesmo conteúdo que a
+navegação exibiria para um capítulo — ou seja, o template `chapter-template` de
+`static/bible.html` renderizado com a resposta de `/api/{livro}/{capítulo}`.
+As páginas são gravadas em `static/books/<NomeDoLivro>/<capítulo>.html` (ex.:
+`static/books/Salmos/23.html`) e ficam acessíveis também sem a extensão, em
+`/pages/books/Salmos/23`.
+
+O servidor precisa estar em execução (por padrão em `http://127.0.0.1:8000`):
+
+```shell
+python3 sources/generate_pages.py chapter SL 23    # um capítulo
+python3 sources/generate_pages.py book SL          # um livro completo
+python3 sources/generate_pages.py all              # toda a Bíblia
+```
+
+Opções úteis: `--dry-run` (lista sem gravar), `--force` (reescreve páginas já
+existentes; sem ele, existentes são mantidas), `--delay 0.2` (intervalo entre
+requisições, relevante em `all`), `--base-url` e `--out`. Em ambiente local com
+certificado autoassinado, use `--https`.
+
+O modo `all` percorre os 66 livros e os 1189 capítulos anunciados pela API;
+uma falha isolada não interrompe a execução — as páginas restantes são geradas
+e o resumo final informa quantas falharam. O script usa apenas a biblioteca
+padrão (sem dependências novas).
+
+A lista de livros também tem uma réplica dinâmica em
+`static/bible/bible.html` (servida em `/pages/bible/bible.html`): é uma cópia
+de `static/bible.html` que continua consultando a API (HTMX + Mustache), com
+uma diferença — na lista de capítulos, cada número é um link para a página
+estática correspondente (`/pages/bible/{Livro}/{capítulo}`) em vez de
+renderizar o capítulo na própria página. Busca, favoritos, último capítulo e
+modo off-line seguem funcionando pela API, como no original. Capítulos sem
+página estática gerada respondem 404 — gere-os com o script acima.
+
 ## Processamento dos arquivos
 
 **Baixe os arquivos fontes do GitHub**
