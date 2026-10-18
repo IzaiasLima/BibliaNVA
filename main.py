@@ -50,7 +50,16 @@ class _StaticFilesWithHtmlFallback(StaticFiles):
         return full_path, stat_result
 
 
-app.mount("/pages", _StaticFilesWithHtmlFallback(directory="public/pages"), name="static")
+# Na Vercel, public/ é o diretório estático servido pela CDN e NÃO entra no
+# bundle da função — /var/task/public/pages não existe lá e o mount derrubaria
+# o import (RuntimeError: Directory does not exist). Localmente e na
+# auto-hospedagem o diretório existe e o mount continua ativo.
+if os.path.isdir("public/pages"):
+    app.mount(
+        "/pages",
+        _StaticFilesWithHtmlFallback(directory="public/pages"),
+        name="static",
+    )
 
 
 @app.exception_handler(Exception)

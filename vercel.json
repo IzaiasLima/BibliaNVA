@@ -1,6 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/service-worker.js",
+      "destination": "/pages/js/service-worker.js"
+    }
+  ],
   "headers": [
     {
       "source": "/service-worker.js",
