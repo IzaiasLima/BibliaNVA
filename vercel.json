@@ -1,10 +1,33 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "cleanUrls": true,
   "rewrites": [
+    {
+      "source": "/",
+      "destination": "/pages/index.html"
+    },
     {
       "source": "/service-worker.js",
       "destination": "/pages/js/service-worker.js"
+    },
+    {
+      "source": "/pages/books/:book/:chapter",
+      "destination": "/pages/books/:book/:chapter.html"
+    },
+    {
+      "source": "/pages/books",
+      "destination": "/pages/books/index.html"
+    },
+    {
+      "source": "/pages",
+      "destination": "/pages/index.html"
+    },
+    {
+      "source": "/pages/",
+      "destination": "/pages/index.html"
+    },
+    {
+      "source": "/pages/:page",
+      "destination": "/pages/:page.html"
     }
   ],
   "headers": [
