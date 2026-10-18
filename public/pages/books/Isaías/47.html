@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Isaías, 47</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/IS/47. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Isaías, <span id="chapter">47</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Desce e senta-te no pó, virgem filha da Babilônia; senta-te no chão sem um trono, filha dos caldeus. Tu não mais serás chamada graciosa e delicada.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Pega o moinho e mói a farinha; remove teu véu e a cauda de teu vestido, descobre tuas pernas, atravessa os ribeiros.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Tua nudez será descoberta, sim, tua vergonha será vista: Eu Me vingarei e não pouparei um homem sequer.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Nosso Redentor, Yahweh dos Exércitos, é o Seu nome, o Santo de Israel.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Senta-te em silêncio e vai para a escuridão, filha dos caldeus; pois não mais serás chamada rainha de reinos.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Eu estava furioso com Meu povo; corrompi a Minha herança e a dei em tuas mãos, mas tu não mostraste qualquer misericórdia; colocaste pesada opressão sobre os idosos.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Disseste: "Dominarei para sempre como rainha soberana". E, até agora, não levaste a sério essas coisas, nem consideraste como elas terminariam.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Então, agora ouve isto, tu que amas o prazer e estás segura, tu que dizes em teu coração: "Eu existo, e não há ninguém como eu; nunca me tornarei viúva, nem jamais experimentarei a perda de filhos".</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Mas ambas estas coisas acontecerão num momento, num dia: a perda de filhos e a viuvez; virão com grande força, apesar das tuas feitiçarias, teus muitos encantos e amuletos.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Tu confiaste na tua maldade e disseste: "Ninguém me vê"; tua sabedoria e teu conhecimento te desviaram, mas tu dizes em teu coração: "Eu existo e não há ninguém igual a mim".</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>O desastre te sobrevirá; tu não serás capaz de evitá-lo com teus encantamentos. A destruição virá e tu não serás capaz de desviar-te dela, e a calamidade te atacará de repente, antes que tu saibas.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Persiste em lançar teus encantamentos e tuas muitas feitiçarias, as quais tens recitado fielmente desde tua infância; talvez tu serás bem sucedida, talvez espantarás o desastre.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Tu estás cansada com tuas muitas consultas; que esses homens te levantem e te salvem, esses que mapeiam os céus e olham para as estrelas, esses que anunciam as luas novas — que eles te salvem do que te acontecerá.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Vê, eles se tornarão como restolho e o fogo os queimará. Eles não salvarão a si mesmos do poder das chamas. Não há carvão para aquecê-los e nem fogo para se sentarem em volta!</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Isso é o que eles se tornaram para ti, aqueles com quem tu trabalhaste, com quem  fizeste comércio desde a tua juventude; cada um deles continua cometendo suas próprias tolices; e, quando tu clamares por socorro, não haverá ninguém para te salvar.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="IS" data-chapter="47"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="IS" data-chapter="47"
+                                data-total="66" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

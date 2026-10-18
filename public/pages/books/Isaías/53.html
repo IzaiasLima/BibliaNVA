@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Isaías, 53</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/IS/53. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Isaías, <span id="chapter">53</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Quem acreditou em nossa mensagem? E a quem foi revelado o braço do <mark>Senhor</mark>?</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Pois Ele cresceu diante do <mark>Senhor</mark> como um rebento e como o germinar de um broto na terra seca. Ele não tinha nenhuma aparência notável nem esplendor; quando O vimos, não havia beleza Nele que pudesse nos atrair.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Ele foi desprezado e rejeitado pelas pessoas, um homem de sofrimento, familiarizado com a dor. Como um de quem os homens escondem o rosto, Ele foi desprezado e O consideramos insignificante.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Mas Ele, certamente, suportou nossas doenças e carregou nosso sofrimento; ainda que achássemos que Ele estava sendo punido por Yahweh, atingido e afligido por Yahweh.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Ele foi perfurado por causa de nossa rebeldia; Ele foi esmagado por causa de nossos pecados. A punição que nos traz a paz estava sobre Ele e, por Suas feridas, fomos sarados.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Nós todos, como ovelhas, havíamos nos desviado; cada um em direção a seu próprio caminho; e Yahweh colocou sobre Ele a iniquidade de todos nós.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Ele foi oprimido; contudo, quando foi humilhado, não abriu a Sua boca. Como um cordeiro que é conduzido para o abate, e como ovelhas que, diante de seus tosquiadores, ficam em silêncio, Ele não abriu a Sua boca.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Por opressão e julgamento, Ele foi condenado. Quem daquela geração pensava mais sobre Ele? Ele foi cortado da terra dos viventes; por causa das ofensas do meu povo, a punição foi colocada sobre Ele.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Eles colocaram Sua sepultura com os criminosos, e com o homem rico em Sua morte, embora Ele não tivesse cometido nenhuma violência, nem houvesse engano em Sua boca.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>No entanto, foi a vontade do <mark>Senhor</mark> esmagá-Lo e fazê-Lo adoecer. Quando Ele fizer de Sua vida uma oferta pelo pecado, Ele verá Sua descendência, prolongará Seus dias e o propósito do <mark>Senhor</mark> se cumprirá através Dele.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Depois do sofrimento de Sua vida, verá o que Ele fez e ficará satisfeito com isso. [Nota: Em vez de "depois do sofrimento de Sua vida", algumas versões modernas trazem "a partir do sofrimento de Sua vida Ele verá o resultado".] Meu justo Servo justificará muitos e carregará suas iniquidades. [Nota: Muitas versões modernas trazem "luz". Algumas versões modernas trazem "Por seu conhecimento, Meu servo justo justificará muitos".]</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Portanto, darei Sua porção entre as multidões e Ele dividirá os despojos com muitos, porque Ele Se expôs à morte e foi contado com os transgressores. Ele carregou os pecados de muitos e intercedeu pelos transgressores.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="IS" data-chapter="53"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="IS" data-chapter="53"
+                                data-total="66" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

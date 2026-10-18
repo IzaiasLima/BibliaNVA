@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Josué, 20</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/JS/20. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Josué, <span id="chapter">20</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Então, Yahweh disse a Josué:</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>"Fala ao povo de Israel, dizendo: 'Designai as cidades de refúgio de que Eu vos falei por meio de Moisés.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Fazei isto para que alguém que tenha matado uma pessoa involuntariamente possa ir para lá. Essas cidades serão lugar de refúgio contra qualquer um que procura vingar o sangue de alguém que foi morto.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Aquele que matou correrá para uma dessas cidades, ficará à entrada do seu portão e explicará seu caso aos anciãos daquela cidade. Então, eles o levarão para dentro da cidade e lhes darão um lugar para habitar entre eles.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>E, se alguém vier tentar vingar o sangue de quem foi morto, as pessoas da cidade não lhe entregarão aquele que matou. Eles não o farão, pois matou seu próximo sem intenção e não tinha nenhum ódio por ele anteriormente.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>O homicida deve permanecer naquela cidade até que compareça diante da assembleia para julgamento, e ali permanecerá até a morte do sumo sacerdote que estava servindo naqueles dias. Então, aquele que, acidentalmente, matou alguém poderá voltar à sua própria cidade e à sua casa, à cidade de onde fugiu'".</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Então, os israelitas designaram Quedes, na Galileia, na região montanhosa de Naftali; Siquém, na região montanhosa de Efraim; e Queriate-Arba (que é Hebrom), na região montanhosa de Judá.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Além do Jordão, a leste de Jericó, designaram Bezer, no deserto no planalto da tribo de Rúben; Ramote, em Gileade, da tribo de Gade; e Golã, em Basã, da tribo de Manassés.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Essas foram as cidades designadas para todo o povo de Israel e para os forasteiros que habitam entre eles, para que aquele que matar alguém, sem intenção, possa fugir até elas, buscando segurança. Esse não morrerá pela mão daquele que deseja vingar o sangue que foi derramado, sem haver sido apresentado à assembleia para ser julgado.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="JS" data-chapter="20"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="JS" data-chapter="20"
+                                data-total="24" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

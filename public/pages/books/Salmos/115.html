@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Salmos, 115</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/SL/115. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Salmos, <span id="chapter">115</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Não a nós, Yahweh, não a nós, mas ao Teu nome seja a glória, por causa do Teu amor e da Tua fidelidade.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Por que as nações diriam: "Onde está o Deus deles?"</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Nosso Deus está nos Céus; Ele faz conforme Lhe agrada.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Os ídolos das nações são ouro e prata, obra das mãos dos homens.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Esses ídolos têm boca, mas não falam; têm olhos, mas não veem;</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>têm ouvidos, mas não ouvem; têm nariz, mas não cheiram;</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>eles têm mãos, mas não sentem; eles têm pés, mas não andam, nem falam com suas próprias bocas.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Aqueles que os fazem são semelhantes a eles, assim como todos os que neles confiam.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Israel, confia em Yahweh; Ele é teu socorro e escudo.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Casa de Aarão, confia em Yahweh; Ele é teu socorro e escudo.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Tu que honras Yahweh, confia Nele; Ele é o teu socorro e escudo.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>O <mark>Senhor</mark> tem-se lembrado de nós e nos abençoará. Ele abençoará a casa de Israel, abençoará a casa de Aarão.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Ele abençoará aqueles que O honram, tanto jovens como velhos.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Que Yahweh vos multiplique mais e mais, vós e vossos descendentes.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Que sejais abençoados por Yahweh, que fez os céus e a terra.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Os céus pertencem a Yahweh, mas a terra foi dada à humanidade.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Os mortos não louvam a Yahweh, nem os que descem ao silêncio;</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>mas nós bendiremos a Yahweh, agora e para sempre. Louvai a Yahweh!</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="SL" data-chapter="115"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="SL" data-chapter="115"
+                                data-total="150" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

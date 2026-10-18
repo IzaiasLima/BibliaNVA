@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Isaías, 21</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/IS/21. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Isaías, <span id="chapter">21</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Declaração acerca do deserto que fica junto ao mar. Como tempestades de vento varrendo o Neguebe, ele vem do deserto, de uma terra horrível.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Foi-me dada uma terrível visão: o homem traidor continua traindo e o destruidor destrói. Sobe e ataca, ó Elão; sitia, ó Média; Eu cessarei todo o seu gemido.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Por isso, meus lombos estão cheios de dores; dores como de uma mulher na hora do parto se apoderaram de mim; fiquei abatido pelo que ouvi e estou transtornado pelo que vi.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Meu coração se agita; o horror me apavora; a noite que eu desejava se tornou terror para mim.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Eles preparam a mesa, estendem os tapetes, comem e bebem; levantai-vos, príncipes, e ungi vossos escudos com óleo.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Pois isto é o que o Senhor me disse: "Vai, coloca uma sentinela, que deve relatar o que vir.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Quando esse vigia vir uma carruagem, um par de cavaleiros, pessoas montadas em jumentos e camelos, então, ele ficará atento e muito alerta".</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Então, gritou a sentinela: "Senhor, na torre de vigia, eu fico o dia todo, todos os dias, e permaneço no meu posto durante a noite toda".</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Aí vem uma carruagem com um homem e um par de cavaleiros. Ele exclama: "Caiu! A Babilônia caiu! E todas as imagens esculpidas de seus deuses estão quebradas no chão!"</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Ó meu povo, debulhado e peneirado, filhos da minha eira! O que eu ouvi do <mark>Senhor</mark> dos Exércitos, o Deus de Israel, isso eu vos declarei.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Declaração acerca de Dumá. Alguém de Seir me chama: "Sentinela, o que resta da noite? Sentinela, o que resta da noite?".</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>A sentinela disse: "A manhã vem e também a noite. Se quiseres perguntar, então, volta e pergunta novamente".</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Uma declaração acerca da Arábia. No deserto da Arábia passais a noite, vós, caravanas de dedanitas.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Trazei água para os sedentos, ó habitantes da terra de Tema, encontrai os fugitivos com pão.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Pois eles fugiram da espada, da espada desembainhada, do arco armado e da pressão da guerra.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Pois isto é o que o Senhor me disse: "Dentro de um ano, como o ano de um trabalhador assalariado, toda a glória de Quedar despedaçará.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Restarão apenas poucos flecheiros, os valentes de Quedar", pois Yahweh, o Deus de Israel, assim falou.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="IS" data-chapter="21"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="IS" data-chapter="21"
+                                data-total="66" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Eclesiastes, 11</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/EC/11. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Eclesiastes, <span id="chapter">11</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Lança teu pão sobre as águas, pois tu o encontrarás novamente, após muitos dias.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Reparte-o com sete, ou até com oito pessoas, pois tu não sabes que desastres virão sobre a terra.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Se as nuvens estão cheias de chuva, elas se esvaziam na terra; e, se uma árvore cai em direção ao sul ou ao norte, não importa onde, lá permanecerá.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Qualquer um que observar o vento não plantará, e quem observar as nuvens não colherá.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Como não sabes o caminho do vento, nem como os ossos de uma criança crescem no ventre materno, [Algumas versões modernas trazem: "Como não sabes o caminho do espírito aos ossos de um criança no útero materno"] assim também não podes compreender a obra de Deus, que criou todas as coisas.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>De manhã, planta tua semente; até o começo da noite, trabalha com tuas mãos como for preciso, pois não sabes o que prosperará: se a da manhã ou a da noite, ou se ambas igualmente serão boas.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Verdadeiramente, a luz é doce, e é agradável aos olhos ver o sol.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Se alguém vive muitos anos, deixa-o ser feliz em todos eles, mas deixa-o pensar sobre os dias vindouros da escuridão, pois eles serão muitos. Tudo o que virá será vaidade.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Alegra-te, jovem, na tua juventude, e que teu coração seja cheio de alegrias nos dias de tua mocidade. Persegue os bons desejos de teu coração e o que quer que esteja à vista de teus olhos. Contudo sabe tu que Deus te pedirá contas de todas essas coisas.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Aparta a ira de teu coração e ignora qualquer dor no teu corpo, porque a juventude e o seu vigor são vaidade.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="EC" data-chapter="11"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="EC" data-chapter="11"
+                                data-total="12" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

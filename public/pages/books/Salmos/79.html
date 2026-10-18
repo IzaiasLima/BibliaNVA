@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Salmos, 79</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/SL/79. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Salmos, <span id="chapter">79</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title">Salmo de Asafe.</p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Ó Deus, nações estrangeiras invadiram Tua herança; eles contaminaram Teu santo templo e transformaram Jerusalém em um monte de ruínas.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Eles deram os cadáveres dos Teus servos como alimento às aves do céu, os corpos de Teu povo fiel, às bestas da terra.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Eles derramaram o sangue dos cadáveres como água, em torno de Jerusalém, e não havia ninguém para os enterrar.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Nós nos tornamos motivo de repreensão para nossos vizinhos, motivo de zombaria e escárnio daqueles que nos cercam.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Por quanto tempo, Yahweh? Tu ficarás irado para sempre? Por quanto tempo, arderá  o Teu ciúme como fogo?</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Derrama Tua ira sobre as nações que não Te conhecem e sobre os reinos que não invocam o Teu nome.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Pois eles devoraram Jacó e destruíram suas vilas.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Não cobres de nós os pecados dos nossos antepassados; que Teus atos misericordiosos venham a nós, pois estamos muito desanimados.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Ajuda-nos, Deus da nossa salvação, por causa da glória do Teu nome; salva-nos e perdoa nossos pecados por amor do Teu nome.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Por que as nações diriam: “Onde está o Deus deles?”. Que o sangue derramado de Teus servos seja vingado nas nações, diante dos nossos olhos.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Que os lamentos dos prisioneiros venham diante de Ti; com a grandeza de Teu poder, preservas os condenados à morte.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Retribui às nossas nações vizinhas sete vezes o insulto que fizeram a Ti, Senhor.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Então, nós, o Teu povo e Tuas ovelhas do Teu pasto, Te daremos graças para sempre. Nós contaremos os Teus louvores a todas as gerações.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="SL" data-chapter="79"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="SL" data-chapter="79"
+                                data-total="150" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

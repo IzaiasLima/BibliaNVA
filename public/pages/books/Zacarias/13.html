@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Zacarias, 13</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/ZC/13. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Zacarias, <span id="chapter">13</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>"Naquele dia, uma fonte se abrirá para a casa de Davi e os habitantes de Jerusalém, pelo seu pecado e impureza.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Naquele dia — esta é a declaração do <mark>Senhor</mark> dos Exércitos —, cortarei os nomes dos ídolos da terra para que não mais sejam lembrados. Eu também farei com que os falsos profetas e o espírito imundo saiam da terra.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Se algum homem continuar a profetizar, seu pai e sua mãe que o geraram lhe dirão: 'Não viverás, porque falas mentiras em Nome do <mark>Senhor</mark>!'. Então, seu pai e sua mãe que o geraram, o transpassarão à espada quando ele profetizar.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Naquele dia, cada profeta ficará envergonhado de sua visão quando for profetizar. Esses profetas não usarão mais um manto de pele a fim de enganar o povo;</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>cada um dirá: 'Eu não sou um profeta! Eu sou lavrador, pois a terra tornou-se meu trabalho quando ainda era jovem!'.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Mas alguém lhe dirá: 'O que são essas feridas nas tuas mãos?'. Ele responderá: 'Fui ferido na casa dos meus amigos'".</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>"Espada! Levanta-te contra o Meu pastor, o homem que está perto de Mim!" — esta é a declaração do <mark>Senhor</mark> dos Exércitos. "Fere o pastor e as ovelhas se dispersarão! Porque virarei a Minha mão contra os pequeninos".</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>"Então, de toda a terra," — esta é a declaração do <mark>Senhor</mark> — "dois terços serão cortados! Essas pessoas irão perecer; apenas um terço permanecerá.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Farei aquela terceira parte passar pelo fogo e os refinarei como a prata é refinada; vou testá-los como o ouro é testado. Eles invocarão o Meu nome e lhes responderei e direi: 'Este é o Meu povo!'. E eles dirão: 'Yahweh é o meu Deus!'".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="ZC" data-chapter="13"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="ZC" data-chapter="13"
+                                data-total="14" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

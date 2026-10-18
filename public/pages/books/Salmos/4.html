@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Salmos, 4</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/SL/4. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Salmos, <span id="chapter">4</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title">Para o regente musical; com instrumentos de cordas. Salmo de Davi.</p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Responde-me quando clamo, Deus da minha justiça; em minha aflição, Tu tens me aliviado. Tem misericórdia de mim e escuta a minha oração.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Ó povo, até quando transformareis minha honra em vergonha? Até quando amareis aquilo que é inútil e procurareis mentiras? [Interlúdio]</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Sabei que Yahweh separa os piedosos para Si mesmo; Yahweh ouvirá quando eu clamar por Ele.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Irai-vos, mas não pequeis! Meditai em vosso coração na vossa cama e em silêncio. [Interlúdio]</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Oferecei sacrifícios de justiça e colocai vossa confiança em Yahweh.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Muitos dizem: "Quem vai nos mostrar algo bom?". Yahweh, levanta a luz do Teu rosto sobre nós.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Tu tens dado mais alegria ao meu coração que a alegria deles quando abundantes são seus grãos e vinhos novos.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>É em paz que eu me deitarei e dormirei, pois somente Tu, Yahweh, me trazes segurança e proteção.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="SL" data-chapter="4"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="SL" data-chapter="4"
+                                data-total="150" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Isaías, 61</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/IS/61. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Isaías, <span id="chapter">61</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>O Espírito do Senhor Yahweh está sobre Mim, porque Yahweh Me ungiu para pregar as boas novas aos oprimidos; Ele Me enviou para curar os de coração quebrantado, para proclamar liberdade aos cativos e para abrir as cadeias dos que estão presos.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Ele Me enviou para proclamar o ano aceitável do <mark>Senhor</mark>, o dia da vingança do nosso Deus, e para consolar todos os que choram.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Ele Me enviou para dar a todos os que choram, em Sião, uma coroa ao invés de cinzas, óleo de alegria ao invés de luto, veste de louvor em lugar de um espírito angustiado; a fim de que se chamem carvalhos de justiça, plantados por Yahweh, para a Sua glória.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Eles reconstruirão as antigas ruínas, restaurarão os lugares antes destruídos e reedificarão as cidades assoladas — desolações de muitas gerações anteriores.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Os estrangeiros ficarão de pé e alimentarão os vossos rebanhos, e os filhos dos estrangeiros trabalharão nos vossos campos e vinhedos.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Vós sereis chamados sacerdotes do <mark>Senhor</mark> e vos chamarão como servos do nosso Deus. Comereis a fartura das nações e vos gloriareis nas riquezas delas.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Ao invés de vergonha, tereis dupla honra; em lugar de desonra, exultareis em vossa herança; por isso, na vossa terra possuireis o dobro, e tereis eterna alegria.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Porque Eu, Yahweh, amo a justiça, odeio o roubo e toda a maldade. Eu, fielmente, lhes retribuirei e farei com eles uma aliança eterna.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>A sua posteridade será conhecida entre as nações e os seus descendentes, entre os povos; todos quantos os virem os reconhecerão como o povo que Yahweh abençoou.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Eu me regozijarei muito em Yahweh; eu me alegrarei muito em meu Deus, porque Ele me vestiu com vestes de salvação e me envolveu com o manto de justiça, como um noivo que se adorna com um turbante e como uma noiva que se adorna com as suas joias.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Porque assim como a terra produz as plantas que brotam e como o jardim faz crescer o seu plantio, assim o Senhor Yahweh fará brotar a justiça e o louvor perante todas as nações.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="IS" data-chapter="61"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="IS" data-chapter="61"
+                                data-total="66" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

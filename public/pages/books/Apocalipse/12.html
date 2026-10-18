@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Apocalipse, 12</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/AP/12. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Apocalipse, <span id="chapter">12</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Um grande sinal foi visto no céu: uma mulher vestida com o sol e com a lua debaixo dos seus pés e uma coroa de doze estrelas na sua cabeça.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Ela estava grávida e gritava com  as dores do parto, na angústia para dar à luz.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>E outro sinal foi visto no céu: Eis que havia um  grande dragão vermelho que tinha sete cabeças e dez chifres, e havia sete coroas nas suas cabeças.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Sua cauda arrastava um terço das estrelas no céu, lançando-as sobre a terra. O dragão ficou diante da mulher que estava para dar à luz, para que, quando ela desse à luz, ele devorasse seu filho.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Ela deu à luz um filho, um menino que governará todas as nações com um cetro de ferro. Seu filho foi arrebatado para junto de Deus e de Seu trono,</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>e a mulher fugiu para o deserto, onde Deus havia preparado um lugar para ela, para que ela pudesse ser sustentada por mil duzentos e sessenta dias.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Houve então guerra no céu. Miguel e seus anjos lutaram contra o dragão; e o dragão e seus anjos revidaram.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Mas o dragão não foi forte o suficiente para vencer. Então não havia mais lugar no céu para ele e seus anjos.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>O grande dragão, aquela antiga serpente chamada diabo ou Satanás, que engana o mundo inteiro, foi expulso para a terra, junto com seus anjos.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Então ouvi uma voz alta no céu: "Agora veio a salvação, o poder, o reino do nosso Deus e a autoridade do Seu Cristo. Pois o acusador de nossos irmãos foi expulso, aquele que os acusava diante do nosso Deus dia e noite.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Eles o venceram por causa do sangue do Cordeiro e pela palavra do testemunho deles, pois eles não amaram suas vidas até à morte.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Portanto alegrai-vos, ó céus, e todos os que neles habitam. Mas ai da terra e do mar, pois o diabo desceu até vós. Ele está coberto de grande furor, pois ele sabe que tem pouco tempo".</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Quando o dragão percebeu que havia sido lançado para a terra, ele perseguiu a mulher que havia dado à luz o menino.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Mas à mulher foram dadas as asas de uma grande águia, para que pudesse voar ao lugar preparado para ela no deserto, onde seria sustentada por um tempo, tempos, e metade de um tempo, fora da presença da serpente.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>A serpente derramou água para fora de sua boca como um rio, para que pudesse causar um alagamento e arrastar a mulher de lá.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Mas a terra ajudou a mulher, abrindo sua boca e engolindo o rio que o dragão havia derramado.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Então o dragão ficou enfurecido com a mulher e foi guerrear contra o restante dos descendentes dela, aqueles que obedecem os mandamentos de Deus e mantêm o testemunho de Jesus.</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>Então o dragão se pôs em pé na areia do mar.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="AP" data-chapter="12"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="AP" data-chapter="12"
+                                data-total="22" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Salmos, 16</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/SL/16. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Salmos, <span id="chapter">16</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title">Miktam de Davi.</p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Protege-me, ó Deus, pois me refugio em Ti.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Digo a Yahweh: "Tu és o meu Senhor. Vem de Ti tudo o que tenho de bom".</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Quanto às pessoas santas que estão na terra, elas é que são nobres; todo o meu prazer está na companhia delas.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Os que buscam outros deuses aumentarão suas aflições. Não derramarei ofertas de sangue aos seus deuses, nem exaltarei seus nomes com os meus lábios.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Yahweh, Tu és a minha porção escolhida e meu cálice; Tu sustentas o meu destino.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>As divisas caíram para mim em lugares agradáveis; certamente, a minha herança é prazerosa.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Glorificarei a Yahweh, que me aconselha; até mesmo à noite, minha mente me instrui.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Em todo o tempo, tenho Yahweh diante de mim; não serei abalado, pois Ele está à minha direita.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Portanto, o meu coração se alegra e o meu espírito exulta. Certamente, vou viver em segurança.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Pois não abandonarás a minha alma no Sheol, nem permitirás que o Teu fiel experimente a decomposição.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Tu me ensinas o caminho da vida; na Tua presença, há alegria abundante; na Tua mão direita, há prazer eterno.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="SL" data-chapter="16"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="SL" data-chapter="16"
+                                data-total="150" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

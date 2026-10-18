@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Números, 12</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/NM/12. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Números, <span id="chapter">12</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Miriã e Arão falaram contra Moisés, por causa de mulher etíope com quem ele se casou.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>E disseram: "Yahweh falou somente com Moisés? Ele não falou conosco também?". Então, Yahweh ouviu o que disseram.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Moisés era um homem humilde, o mais humilde de toda a terra.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Imediatamente, Yahweh falou a Moisés, Arão e Miriã: "Saí os três para a Tenda do Encontro". Então, os três saíram.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Depois, Yahweh desceu em uma coluna de nuvem. Colocando-Se na entrada da Tenda, chamou Arão e Miriã e ambos vieram à frente.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>O <mark>Senhor</mark> disse: "Agora, ouvi as Minhas palavras. Quando um profeta Meu estiver entre vós, Eu revelarei a Mim mesmo a ele em visões e falarei com ele em sonhos.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Meu servo Moisés não é como esses. Ele é fiel a toda a Minha casa.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Eu falo diretamente com Moisés, não por visões ou enigmas. Ele vê a Minha forma. Então, por que não temestes falar contra Meu servo, contra Moisés?".</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>A ira do <mark>Senhor</mark> se acendeu contra eles e, então, Ele os deixou.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>A nuvem deixou a Tenda, e, subitamente, Miriã ficou com lepra — branca como a neve. Quando Arão se virou para Miriã, viu que ela estava com lepra.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Arão disse a Moisés: "Ah, meu mestre, rogo-te, não nos imputes  este pecado. Nós falamos tolices e pecamos.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Por favor,  não a deixes parecida com um recém-nascido morto, cuja carne está consumida pela metade quando sai do ventre de sua mãe".</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Então, Moisés clamou a Yahweh. Disse ele: "Por favor, Deus, cura Miriã, por favor!".</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>O <mark>Senhor</mark> disse a Moisés: "Se o seu pai cuspisse na face dela, ela seria desonrada por sete dias. Deixa sua irmã fora do acampamento por sete dias. Depois, traz Miriã de volta".</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Então, Miriã foi retirada do acampamento por sete dias. O povo não partiu até que ela retornou ao acampamento.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Depois disso, o povo seguiu sua jornada para Hazerote e acampou no deserto de Parã.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="NM" data-chapter="12"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="NM" data-chapter="12"
+                                data-total="36" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

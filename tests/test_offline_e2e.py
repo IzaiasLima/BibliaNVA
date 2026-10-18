@@ -33,8 +33,10 @@ import urllib.parse
 import urllib.request
 
 HOST = "127.0.0.1"
-PORT = 8000
-BASE = f"http://localhost:{PORT}"
+# BASE/PORT podem apontar para um deploy remoto (ex.: preview da Vercel) via
+# variáveis de ambiente nas etapas que não dependem de servidor local.
+PORT = int(os.environ.get("BIBLIA_TEST_PORT", "8000"))
+BASE = os.environ.get("BIBLIA_TEST_BASE", f"http://localhost:{PORT}")
 UVICORN_LOG = "/tmp/biblia-uvicorn.log"
 
 
@@ -273,15 +275,21 @@ def ensure_controller(cdp, timeout=150):
 
 
 def count_cached_chapters(cdp):
-    """Conta capítulos no cache da API, agnóstico à versão do cache."""
+    """Conta páginas estáticas de capítulo no cache, agnóstico à versão.
+
+    A partir da v11 o download guarda as páginas HTML de public/pages/books/
+    (chaves limpas /pages/books/<Livro>/<n>, sem .html) em vez dos JSONs
+    da API — é o que se conta aqui.
+    """
     return cdp_eval(
         cdp,
         "caches.keys().then(keys => Promise.all("
-        "keys.filter(k => k.startsWith('biblia-api-'))"
+        "keys.filter(k => k.startsWith('biblia-static-'))"
         ".map(k => caches.open(k).then(c => c.keys()))))"
         ".then(all => all.flat().filter(r => { "
         "const q = new URL(r.url).pathname.split('/').filter(Boolean); "
-        "return q.length === 3 && q[0] === 'api' && !isNaN(parseInt(q[2])); }).length)",
+        "return q.length === 4 && q[0] === 'pages' && q[1] === 'books' "
+        "&& /^\\d+$/.test(q[3]); }).length)",
         await_promise=True,
     )
 

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - 1 Samuel, 29</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/1SM/29. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">1 Samuel, <span id="chapter">29</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Os filiteus recolheram todo o seu exército em Afeque; os israelistas acamparam-se junto à fonte que estava em Jezreel.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Os príncipes dos filisteus passaram por centenas e milhares; Davi e seus homens passaram na retaguarda com Áquis.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Então, os príncipes dos filisteus disseram: "O que esses hebreus estão fazendo aqui?". Áquis disse para os outros príncipes dos filisteus: "Não é este Davi, servo de Saul, o rei de Israel, que tem estado comigo nestes dias, ou nestes anos, e em quem eu não tenho encontrado nenhuma culpa desde que ele veio a mim até hoje?".</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Mas os príncipes dos filisteus estavam zangados com ele; eles lhe disseram: "Faze este homem ir embora, que ele vá de volta para o lugar que tu lhe deste; não deixes que ele vá conosco na batalha, de modo que ele não se torne um inimigo para nós durante a batalha. Por quanto mais poderia esse homem fazer as pazes com seu mestre? Não estaria com a cabeça dos nossos homens?</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Não é este o Davi de quem cantam um ao outro em danças, dizendo: 'Saul feriu os seus milhares, e Davi os seus dez milhares?'"</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Então, Áquis chamou Davi e lhe disse: "Como Yahweh vive, tu tens sido bom, e, no meu ponto de vista, a tua saída e a tua entrada comigo no exército é boa; pois não encontro nada de errado contigo desde o dia em que vieste a mim até hoje. Todavia, os príncipes não são favoráveis a ti.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Então, retorna e vai em paz, para que não desagrades os príncipes dos filisteus".</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Davi disse a Áquis: "Mas o que eu tenho feito? O que encontraste em teu servo desde o dia em que eu vim ter contigo até este dia, que eu não possa ir e lutar contra os inimigos do meu senhor rei?".</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Áquis respondeu, dizendo: "Eu sei que tu és tão irrepreensível diante dos meus olhos quanto um anjo de Deus, embora os príncipes dos filisteus tenham dito, 'ele não deve ir conosco à batalha'.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Então, levanta-te de manhã cedo, tu e os servos de teu mestre que vieram contigo; assim que estiveres levantado de manhã cedo, quando tiver luz, ide embora".</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Então, Davi levantou-se cedo, ele e os homens, para, de manhã, retornarem à terra dos filisteus. Mas os filisteus foram para Jezreel.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="1SM" data-chapter="29"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="1SM" data-chapter="29"
+                                data-total="31" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Tito, 3</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/TT/3. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Tito, <span id="chapter">3</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Lembra a eles que se submetam aos governantes e autoridades e os obedecem, para estarem prontos para toda boa obra;</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>não injurieis a ninguém, evitai discutir, mostrai benevolência e humildade para com todas as pessoas.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Pois nós também, outrora, éramos sem juízo e desobedientes; éramos desgarrados e escravizados por várias paixões e prazeres; nós vivíamos na maldade e na inveja. Éramos detestáveis e rancorosos uns para com os outros.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Mas quando a bondade de Deus, nosso Salvador, e Seu amor para com a humanidade apareceu,</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Ele nos salvou, lavando-nos mediante o novo nascimento, e renovando-nos pelo Espírito Santo, não pelas obras que havíamos feito em justiça, mas de acordo com a Sua misericórdia.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Deus ricamente derramou o Espírito Santo sobre nós, mediante o nosso Salvador Jesus Cristo,</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>de modo que, justificados pela Sua graça, nos tornemos herdeiros da esperança da vida eterna.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Fiel é a Palavra. Quero que fales confiantemente sobre essas coisas, de modo que aqueles que confiam em Deus possam pensar seriamente em praticar boas obras. Essas coisas são boas e proveitosas para todas as pessoas.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Mas, evita debates tolos, genealogias, contendas e debates sobre a lei. Essas coisas são sem valor e sem proveito.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Rejeita qualquer um que esteja causando divisões entre vós, depois de uma ou duas advertências,</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>e sabe que tal pessoa desviou-se do caminho certo e está pecando e condenando a si mesma.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Quando eu te enviar Artemas ou Tíquico, apressa-te, e vem até mim em Nicópolis, onde decidi passar o inverno.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Apressa-te e envia Zenas, o jurista, e Apolo, com todas as coisas que eles precisam.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Nosso povo deve aprender a se comprometer com as boas obras para atender às necessidades urgentes, de modo que não sejam infrutíferos.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Todos aqueles que estão comigo te saúdam. Saúda tu aqueles que nos amam na fé. Graça seja com todos vós.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="TT" data-chapter="3"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="TT" data-chapter="3"
+                                data-total="3" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

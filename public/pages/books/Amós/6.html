@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Amós, 6</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/AM/6. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Amós, <span id="chapter">6</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Ai daqueles que estão tranquilos em Sião e daqueles que se sentem seguros no monte de Samaria, os homens notáveis das melhores nações, dos quais a casa de Israel busca auxílio.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Vossos líderes dizem: "Ide a Calné, e vede; depois ide a Hamate, a grande cidade; então, descei a Gate dos filisteus. São eles melhores do que vossos dois reinos? As fronteiras deles são mais extensas do que as vossas?".</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Ai daqueles que afastam o dia da desgraça e fazem com que o trono da violência se aproxime.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Deitam-se nas camas de marfim e se estendem nos seus sofás. Comem cordeiros do rebanho e novilhos do curral.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Eles inventam canções tolas ao som da harpa;  improvisam instrumentos, como fez Davi.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Bebem vinho dos barris e se ungem com o mais fino óleo, mas não lamentam a ruína de José.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Portanto, eles serão exilados com os primeiros deportados; os banquetes dos preguiçosos cessarão.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Eu, o Senhor Yahweh, jurei por Mim mesmo". Esta é a declaração do Senhor Yahweh, o Deus dos exércitos: "Eu detesto o orgulho de Jacó; Eu odeio suas fortalezas. Portanto, entregarei a cidade e tudo o que nela há".</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>E acontecerá que, se dez homens restarem em uma casa, morrerão todos.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Se o familiar de um homem vier buscar seus cadáveres — aquele que for cremá-los, depois de retirar os corpos da casa — se ele disser para a pessoa na casa: ''Está alguém contigo?", e essa pessoa disser: "Não", então ele dirá: "Cala-te, pois não devemos mencionar o nome do <mark>Senhor</mark>!".</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Pois, vede, Yahweh dará uma ordem, e a grande casa cairá em ruínas; e a casa pequena, em pequenos pedaços.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Por acaso, correm os cavalos sobre as rochas? Ou se pode arar ali com bois? Vós, porém, transformastes justiça em veneno e o fruto da retidão em amargura.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Vós, que vos alegrais sobre Lo-Debar, dizendo: "Não tomamos Carnaim por nossa própria força?''.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>"Mas, vede, Eu levantarei contra vós uma nação, casa de Israel", esta é a declaração do Senhor Yahweh, o Senhor dos Exércitos: ''Ela te afligirá desde Lebo-Hamate até a fonte de Arabá".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="AM" data-chapter="6"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="AM" data-chapter="6"
+                                data-total="9" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

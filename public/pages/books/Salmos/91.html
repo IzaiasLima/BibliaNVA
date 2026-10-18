@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Salmos, 91</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/SL/91. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Salmos, <span id="chapter">91</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Aquele que habita no abrigo do Altíssimo descansará à sombra do Onipotente, e</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>dirá do <mark>Senhor</mark>: "Ele é meu refúgio e minha fortaleza, meu Deus, em Quem confio."</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Pois Ele te resgatará do laço do caçador e da praga mortal.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Ele te protegerá com Suas penas e, sob Suas asas, encontrarás refúgio. Sua verdade é um escudo e proteção.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Tu não temerás o terror da noite ou a flecha lançada de dia,</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>nem a praga que se alastra  na escuridão ou a doença que vem ao meio-dia.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Ainda que milhares caiam ao teu lado e dezenas de milhares, à tua direita, tu não serás atingido.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Tu apenas observarás e verás a recompensa dos ímpios.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Pois disseste: "Yahweh é meu refúgio", e fizeste do Altíssimo a tua habitação.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Nenhum mal te sucederá, nem praga alguma chegará à tua tenda.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Pois Ele dará ordem a Seus anjos para te protegerem e guardarem em todos os teus caminhos.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Eles te sustentarão com suas mãos para que não tropeces em alguma pedra.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Esmagarás leões e víboras debaixo de teus pés; pisotearás leões jovens e serpentes.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Porque a Mim se apegou com amor, Eu o livrarei. Eu o protegerei porque ele é leal a Mim.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Quando ele Me invocar, eu lhe responderei. Estarei com ele nas tribulações; Eu lhe darei vitória e o honrarei.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Eu o satisfarei com vida longa e lhe mostrarei a Minha salvação.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="SL" data-chapter="91"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="SL" data-chapter="91"
+                                data-total="150" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Apocalipse, 5</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/AP/5. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Apocalipse, <span id="chapter">5</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Então vi, na mão direita Daquele que estava sentado no trono, um rolo escrito por dentro e por fora. Este estava selado com sete selos.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Vi um anjo poderoso proclamando em alta voz: "Quem é digno de abrir o rolo e de romper os seus selos?"</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Ninguém no céu, nem na terra, nem debaixo da terra, estava apto para abrir ou ler o rolo.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Eu chorava amargamente porque ninguém foi encontrado digno de abrir nem de ler o rolo.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Mas um dos anciãos me disse: "Não chores. Eis que o Leão da Tribo de Judá, a Raiz de Davi, venceu para abrir o rolo e seus sete selos".</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Vi um Cordeiro em pé, entre o trono e os quatro seres viventes e entre os anciãos. O Cordeiro parecia ter sido morto. Ele tinha sete chifres e sete olhos. Estes são os espíritos de Deus enviados sobre toda a terra.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Ele veio e tomou o rolo da mão direita Daquele que estava sentado no trono.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Quando o Cordeiro tomou o rolo, os quatro seres viventes e os vinte e quatro anciãos prostraram-se diante Dele. Cada um deles tinha uma harpa e uma taça de ouro cheia de incenso, que são as orações dos santos.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Eles cantavam uma nova canção: "Tu és digno de tomar o rolo e de abrir os seus selos, porque foste morto e, com o Teu sangue, compraste para Deus pessoas de toda tribo, língua, povo e nação.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Tu os constituíste reino e sacerdotes para servirem o nosso Deus, e eles reinarão sobre a terra".</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Então olhei e ouvi o som de muitos anjos, ao redor do trono, dos seres viventes e dos anciãos, cujo número total era de milhares de milhares e de milhões de milhões.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Eles falavam em alta voz: "Digno é o Cordeiro que foi morto de receber poder, riqueza, sabedoria, força, honra, glória e louvor".</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Ouvi toda criatura que estava no céu, na terra, debaixo da terra e  no mar -  tudo o que neles há -  dizendo: "Àquele que está sentado no trono e ao Cordeiro seja o louvor, a honra, a glória e o poder para reinar para sempre".</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Os quatro seres viventes disseram: "Amém!" E os anciãos prostraram-se e O adoraram.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="AP" data-chapter="5"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="AP" data-chapter="5"
+                                data-total="22" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Isaías, 54</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/IS/54. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Isaías, <span id="chapter">54</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>"Canta, mulher estéril, tu que não deste à luz! Canta alegremente e clama, tu que nunca tiveste dores de parto. Porque os filhos da desamparada são mais do que os da mulher casada", diz Yahweh.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>"Alarga a tua tenda e abre livremente as suas cortinas; estica suas cordas e firma bem as suas estacas.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Porque te espalharás para a direita e para a esquerda; teus descendentes conquistarão nações e reassentarão cidades desoladas.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Não temas, pois não serás envergonhada, nem desanimes, pois não serás desonrada; tu esquecerás a vergonha da tua juventude e a desgraça do teu abandono.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Pois o teu Criador é o teu marido; o Seu nome é Yahweh dos Exércitos. O Santo de Israel é o teu Redentor; Ele é chamado o Deus de toda a terra.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Porque Yahweh te chamou de volta como se fosses uma esposa abandonada e aflita de espírito, como uma mulher jovem que se casou e foi rejeitada", diz o teu Deus.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>"Por um breve momento, Eu te abandonei, mas, com grande compaixão, Eu te trarei de volta.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Num transbordar de ira, escondi Meu rosto de ti por um momento, mas, com eterno amor leal, terei misericórdia de ti" — diz Yahweh, Aquele que te salva.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>"Pois isto é para Mim como as águas de Noé; como jurei que as águas de Noé não mais inundariam a terra, assim também jurei que não mais me irarei contra ti ou te castigarei.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Ainda que as montanhas caiam e os montes sejam sacudidos, ainda assim, Meu amor inabalável não se afastará de ti, nem Minha aliança de paz será abalada" — diz Yahweh, que tem misericórdia de ti.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>"Ó, aflita, açoitada pela tempestade e desconsolada, vê! Eu assentarei tuas pedras com turquesas e edificarei teus alicerces com safiras.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Farei as tuas colunas de rubis, as tuas portas de pedras brilhantes e as tuas muralhas de pedras preciosas.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Todos os teus filhos serão ensinados por Yahweh; e a paz de teus filhos será grande.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Serás restabelecida em retidão; não mais experimentarás a perseguição; não temerás, pois nada amedrontador chegará a ti.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Vê! Se alguém levantar contenda, não virá de Mim; qualquer que levantar contenda contra ti cairá em derrota.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Olha! Fui Eu Quem criou o ferreiro, que sopra as brasas e produz ferramentas para o seu trabalho, e fui Eu Quem criou o devastador, para destruir.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Nenhuma arma forjada contra ti prosperará; e tu condenarás todos os que te acusarem. Esta é a herança dos servos do <mark>Senhor</mark> e a sua defesa diante de Mim" —  declara Yahweh.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="IS" data-chapter="54"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="IS" data-chapter="54"
+                                data-total="66" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

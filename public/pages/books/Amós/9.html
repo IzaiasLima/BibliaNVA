@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Amós, 9</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/AM/9. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Amós, <span id="chapter">9</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Eu vi o Senhor em pé, junto ao altar, e Ele disse: "Bate no topo dos pilares, assim as fundações tremerão, de modo que se quebrem em pedaços sobre  as cabeças deles. Eu matarei o último deles com a espada. Nenhum deles conseguirá fugir, nenhum deles escapará.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Ainda que cavem até o Sheol, lá, Minha mão os tomará. Ainda que subam ao céu, de lá os farei descer.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Ainda que se escondam no topo do Carmelo, lá os procurarei e os tomarei. Ainda que se escondam da Minha vista no fundo do mar, lá Eu darei ordem à serpente, e serão picados.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Ainda que vão para o cativeiro, conduzidos por seus inimigos diante deles, lá Eu darei ordens para a espada, e ela os matará. Eu manterei Meus olhos sobre eles, para lhes causar mal, e não o bem".</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>O Senhor Yahweh dos Exércitos toca a terra, e ela se derrete; todos os que vivem nela pranteiam; tudo isso se levantará como rio e diminuirá novamente, como o rio do Egito.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>É Ele que constrói sua escada nos céus, e tem estabelecido Seu firmamento sobre a terra. Ele chama as águas do mar e as derrama sobre a face da terra. Yahweh é Seu Nome.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Assim diz Yahweh: "Povo de Israel, não sois para Mim como o povo da Etiópia? Não fiz Eu subir a Israel da terra do Egito; e os filisteus, do Caftor; e os sírios, de Quir?</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Vede, os olhos do Senhor Yahweh estão sobre o reino pecaminoso, e Eu o destruirei da face da terra, mas não destruirei totalmente a casa de Jacó". Esta é a declaração do <mark>Senhor</mark>.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>"Vede, Eu darei ordens e sacudirei a casa de Israel dentre as nações, como se agitam os grãos numa peneira, de modo que nem a menor pedra cairá no chão.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Todos os pecadores do Meu povo morrerão pela espada, aqueles que dizem: 'Desastre não nos atingirá nem nos encontrará'.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Naquele dia, levantarei a tenda de Davi, que caiu, e fecharei suas brechas. Levantarei suas ruínas e as reconstruirei como nos dias passados.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Que eles possuam o remanescente de Edom e todas as nações que são chamadas pelo Meu Nome". Esta é a declaração do <mark>Senhor</mark>, que faz isso.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>"Vede, os dias virão", diz Yahweh, "em que o lavrador alcançará o que ceifa, e o que pisa as uvas alcançará o que planta as sementes. Então, as montanhas destilarão vinho doce, e todas as colinas derramarão dele.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Eu trarei de volta do cativeiro Meu povo Israel. Eles construirão as cidades arruinadas e habitarão nelas. Plantarão vinhas e beberão do seu vinho, farão jardins e comerão dos seus frutos.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Eu os plantarei em suas terras, e eles nunca serão desarraigados da terra que lhes tenho dado", diz Yahweh, teu Deus.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="AM" data-chapter="9"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="AM" data-chapter="9"
+                                data-total="9" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Êxodo, 1</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/EX/1. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Êxodo, <span id="chapter">1</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Estes são os nomes dos filhos de Israel que vieram para o Egito com Jacó, cada um com sua casa:</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Rúben, Simeão, Levi e Judá,</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Issacar, Zebulon e Benjamin,</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Dã, Naftali, Gade e Aser.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Todos os descendentes de Jacó eram setenta. José já estava no Egito.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Então José, todos os seus irmãos e toda aquela geração morreu.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Os israelitas eram frutíferos, numerosos e se tornaram fortes; a terra estava cheia deles.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Então, um novo rei se levantou no Egito, o qual não se importava com a memória de José.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Ele disse ao seu povo: "Olhai os israelitas; eles são mais numerosos e fortes que nós.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Vide. Vamos lidar sabiamente com eles. Caso contrário, eles continuarão a multiplicar-se e, se acontecer uma guerra, eles se juntarão aos nossos inimigos, lutarão contra nós, e deixarão a terra".</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Então, eles colocaram feitores que os oprimiam com trabalhos pesados. Os israelitas construíram cidades-armazéns para Faraó: Pitom e Ramessés.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Porém, quanto mais os egípcios os oprimiam, mais os israelitas se tornavam numerosos e se espalhavam. Então, os egípcios começaram a temer os israelitas.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Os egípcios fizeram os israelitas trabalharem rigorosamente.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Eles tornaram a vida deles amarga, com trabalhos pesados com barro e tijolo, e com todo tipo de trabalho nos campos. Todo o trabalho exigido era pesado.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Em seguida, o rei do Egito falou às parteiras dos hebreus; o nome de uma era Sifrá, e a outra se chamava Puá.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Ele disse: "Quando vós ajudardes as hebreias no parto, observai quando elas derem à luz. Se for menino, então deveis matá-lo; mas, se for menina, ela viverá".</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Entretanto as parteiras temiam a Deus e não fizeram como o rei do Egito lhes ordenara. Em vez disso, deixaram que os meninos vivessem.</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>O rei do Egito convocou as parteiras e lhes disse: "Por que deixastes os meninos viverem?".</span></p> 
+<p class="verse "><span class="number ">19</span>&ensp;<span>As parteiras responderam a Faraó: "As hebreias não são como as egípcias; elas são vigorosas e terminam de dar à luz antes que uma parteira chegue a até elas".</span></p> 
+<p class="verse "><span class="number ">20</span>&ensp;<span>Deus protegeu aquelas parteiras. O povo cresceu numerosamente e se tornou muito forte.</span></p> 
+<p class="verse "><span class="number ">21</span>&ensp;<span>Por conta do temor das parteiras, Deus lhes deu famílias.</span></p> 
+<p class="verse "><span class="number ">22</span>&ensp;<span>Faraó ordenou a todo o seu povo: "Deveis jogar no rio todos os meninos nascidos, mas deixai todas as meninas viverem".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="EX" data-chapter="1"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="EX" data-chapter="1"
+                                data-total="40" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Isaías, 31</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/IS/31. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Isaías, <span id="chapter">31</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Ai daqueles que descem para o Egito em busca de ajuda, que dependem de cavalos. Colocam sua confiança em carros, por serem muitos, e em cavaleiros, por serem incontáveis, mas não se preocupam com o Santo de Israel e não buscam Yahweh!</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Porém, Ele é sábio e trará desastre, e não retirará as Suas palavras. Ele se levantará contra a casa dos perversos e contra aqueles que ajudam os que cometem pecado.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Os egípcios são homens, e não Deus. Seus cavalos são carne, e não espírito. Quando Yahweh estender Sua mão, tanto quem ajuda tropeçará, quanto quem busca ajuda cairá; ambos perecerão juntos.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Isto é o que Yahweh me diz: "Como um leão, mesmo um jovem leão, que rosna sobre sua presa, não se assusta e nem foge quando um grupo de pastores se reúne contra ele, com suas vozes e barulho, assim Yahweh dos Exércitos descerá para lutar no monte Sião, sobre sua colina.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Como pássaros em voo, assim Yahweh dos Exércitos protegerá Jerusalém. Yahweh a protegerá e a resgatará; enquanto voa por cima dela, a preservará.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Voltai-vos para Ele, contra quem vos rebelastes profundamente, povo de Israel.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Porque, naquele dia, cada um jogará fora seus ídolos de prata e deuses de ouro, feitos pelas vossas mãos pecaminosas.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>A Assíria cairá pela espada; uma espada, feita não por homens, a consumirá. Ela fugirá da espada e seus jovens serão submetidos a trabalhos forçados.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Eles perderão toda a confiança por causa do terror, e seus príncipes temerão quando virem a bandeira de guerra do <mark>Senhor</mark> — essa é a declaração do <mark>Senhor</mark>, cujo fogo está em Sião, e cuja fornalha está em Jerusalém".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="IS" data-chapter="31"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="IS" data-chapter="31"
+                                data-total="66" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

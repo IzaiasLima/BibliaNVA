@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Jó, 26</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/JÓ/26. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Jó, <span id="chapter">26</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Então, Jó respondeu e disse,</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>"Como tu tens ajudado ao que não tem força! Como tens salvado o braço que não tem força!</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Como tens aconselhado ao que não tem sabedoria e revelado a ele melhor conhecimento!</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Com ajuda de quem proferiste estas palavras? E de quem era o espírito que saiu de ti?</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Os mortos tremem, aqueles que estão debaixo das águas e todos que habitam nelas.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>O Sheol está nu perante Deus; a própria destruição não tem cobertura contra Ele.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Ele estende os céus do norte sobre espaço vazio e suspende a Terra acima do nada.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Ele prende as águas nas Suas densas nuvens, mas as nuvens não se rasgam debaixo delas.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Ele encobre a face da lua e espalha as suas nuvens sobre ela.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Ele marcou um limite circular por cima das águas como a linha entre a luz e as trevas.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Os pilares do céu estremecem e são surpreendidos pela Sua repreensão.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Ele acalmou o mar pela Sua força; pelo Seu conhecimento, despedaça a Raabe.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Pelo Seu sopro, limpou os céus; a Sua mão feriu a serpente fugitiva.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Vê, esses são apenas a beirada dos Seus caminhos. Quão pequeno é um sussurro que podemos ouvir Dele! Quem pode compreender o trovão do Seu poder?".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="JÓ" data-chapter="26"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="JÓ" data-chapter="26"
+                                data-total="42" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

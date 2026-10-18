@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - 2 Coríntios, 4</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/2CO/4. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">2 Coríntios, <span id="chapter">4</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Dessa forma, por termos este ministério, e conforme a misericórdia que recebemos, não nos desanimamos.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Pelo contrário, renunciamos aos caminhos vergonhosos e ocultos. Não vivemos pela astúcia, e não falsificamos a Palavra de Deus. Ao apresentar a verdade, nos recomendamos à consciência de todo homem, à vista de Deus.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Mas, se o nosso Evangelho está encoberto, está encoberto apenas para aqueles que estão perecendo.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>No caso deles, o deus deste mundo cegou suas mentes incrédulas, e, por isso, não conseguem ver a luz do Evangelho da glória de Cristo, que é a imagem de Deus.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Pois não anunciamos a nós mesmos, mas a Cristo Jesus como Senhor, e a nós mesmos como vossos servos, por causa de Jesus.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Porque foi Deus quem disse: "A luz brilhará das trevas". Ele brilhou em nossos corações para iluminar o conhecimento da glória de Deus na face de Jesus Cristo.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Porém, temos este tesouro em vasos de barro, para que fique claro que o supremo poder pertence a Deus, e não a nós.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Somos afligidos de todas as maneiras, mas não derrotados; perplexos, mas não desesperados;</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>perseguidos, mas não abandonados; abatidos, mas não destruídos.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Carregamos sempre no corpo a morte de Jesus, para que a Sua vida também seja mostrada em nosso corpo.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Nós, que vivemos, somos sempre entregues à morte por causa de Jesus, para que a vida de Jesus seja mostrada em nosso corpo humano.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>De modo que a morte opera em nós, mas a vida em vós.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Mas nós temos o mesmo espírito de fé, de acordo com o que está escrito: "Eu cri e, por isso, falei." Nós também cremos e, por isso, também falamos.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Sabemos que Aquele que ressuscitou o Senhor Jesus também nos ressuscitará com Jesus, e nos trará convosco à Sua presença.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Todas as coisas são por vossa causa, para que, mediante a graça abundante a muitos, as ações de graças excedam para a glória de Deus.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Então, não nos desanimamos. Mesmo que externamente sejamos consumidos, internamente somos renovados dia a dia.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Pois esta leve e momentânea aflição nos prepara para um eterno peso de glória que excede toda medida.</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>Não nos atentamos às coisas que se veem, mas às coisas que não se veem. As coisas que podemos ver são temporárias, mas as coisas que não podemos ver são eternas.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="2CO" data-chapter="4"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="2CO" data-chapter="4"
+                                data-total="13" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

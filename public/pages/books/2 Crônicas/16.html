@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - 2 Crônicas, 16</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/2CR/16. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">2 Crônicas, <span id="chapter">16</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>No trigésimo sexto ano do reinado de Asa, sendo Baasa o rei de Israel, este invadiu Judá e fortificou Ramá, para que ninguém pudesse sair do território de Asa, rei de Judá, ou entrar nele.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Então, Asa trouxe a prata e o ouro dos depósitos da casa do <mark>Senhor</mark> e da casa do rei e enviou a Ben-Hadade, rei da Síria, que morava em Damasco. Ele disse:</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>"Haja uma aliança entre mim e ti, como havia entre meu pai e teu pai. Olha, eu te enviei prata e outro. Quebra a aliança com Baasa, rei de Israel, para que assim ele possa me deixar em paz".</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Ben-Hadade deu ouvidos ao rei Asa e enviou os comandantes dos seus exércitos contra as cidades de Israel. Eles atacaram Ijom, Dã, Abel-Maim e todas as cidades de armazenamento de Naftali.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Quando Baasa ouviu isso, ele parou de fortificar Ramá e cessou esse trabalho.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Então o rei Asa levou todo o Judá consigo, eles pegaram as pedras e as madeiras de Ramá, com as quais Baasa estava fortificando essa cidade, e usaram esse material para construir Geba e Mispá.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Naquele tempo o vidente Hanani veio a Asa, rei de Judá, e lhe disse: "O exército do rei da Síria escapou das tuas mãos porque tu confiaste no rei da Síria  e não confiaste em Yahweh, teu Deus.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Não eram os etíopes e os líbios um exército enorme, com muitos carros de guerra e cavaleiros? Contudo, porque tu confiaste em Yahweh, Ele te deu a vitória sobre eles.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Os olhos do <mark>Senhor</mark> percorrem todos os lugares sobre toda a terra, a fim de  mostrar que Ele é  forte para aqueles cujos corações são íntegros para com ele. Mas tu procedeste de forma tola nessa questão. Portanto, de ora em diante, tu terás guerra."</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Então, irado por causa dessa questão, Asa lançou o vidente na prisão. Ao mesmo tempo, Asa oprimiu alguns do povo.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Eis que os feitos de Asa, do primeiro ao último,  estão escritos no Livros dos Reis de Judá e Israel.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>No trigésimo nono ano do seu reinado, Asa foi acometido de uma doença muito grave nos pés. Mesmo assim, ele não buscou ajuda do <mark>Senhor</mark>, mas apenas dos médicos.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>No quadragésimo primeiro ano do seu reinado, Asa morreu e descansou com seus antepassados.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Ele foi sepultado no mesmo túmulo que havia cavado para si na cidade de Davi. Seu corpo foi colocado num esquife cheio de incensos doces e vários tipos de especiarias preparadas por perfumistas habilidosos, e  fizeram uma grande fogueira, em sua homenagem.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="2CR" data-chapter="16"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="2CR" data-chapter="16"
+                                data-total="36" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

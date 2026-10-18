@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Jonas, 2</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/JN/2. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Jonas, <span id="chapter">2</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>E orou Jonas a Yahweh, seu Deus, das entranhas do peixe.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>E disse: "Na minha angústia clamei a Yahweh e Ele me respondeu; do ventre do Sheol gritei por socorro e Tu ouviste a minha voz.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Tu me lançaste no profundo, no coração dos mares, e as correntes me rodearam; todas as Tuas ondas e Tuas torrentes passaram sobre mim.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Então eu disse: Fui expulso de diante dos Teus olhos; tornarei, porventura, a ver o Teu santo templo?</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>As águas me cercaram até a alma; o abismo estava à minha volta, as algas se enrolaram na minha cabeça.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Eu desci até às bases das montanhas; as trancas da terra me encarceraram para sempre. Mesmo assim, trouxeste a minha vida de volta da cova, Ó Yahweh, meu Deus!</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Quando a minha alma já desfalecia dentro de mim, eu me lembrei do <mark>Senhor</mark>; então a minha oração subiu a Ti, no Teu santo templo."</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Aqueles que se apegam aos falsos ídolos afastam de si a Tua misericórdia.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Quanto a mim, oferecerei a Ti sacrifícios com voz de agradecimento; o que prometi, cumprirei. A Yahweh pertence a salvação!</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Falou, pois, Yahweh ao peixe, o qual vomitou Jonas sobre a terra seca.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="JN" data-chapter="2"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="JN" data-chapter="2"
+                                data-total="4" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

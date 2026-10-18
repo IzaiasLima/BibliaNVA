@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - 2 Coríntios, 2</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/2CO/2. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">2 Coríntios, <span id="chapter">2</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Decidi por mim mesmo que não viria até vós novamente em circunstâncias dolorosas.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Se vos causei dor, quem poderia me animar senão aquele que foi entristecido por mim?</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Escrevi dessa forma para que, quando vos visitasse, eu não fosse entristecido pelos que deveriam me fazer regozijar. Eu confio que minha alegria é a mesma que a de todos vós.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Pois vos escrevi em grande aflição, com angústia de coração, e com muitas lágrimas. Eu não queria vos causar dor; em vez disso, queria que Conhecêsseis a profundidade do amor que tenho por vós.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Se alguém causou dor, não causou apenas a mim, mas em certa medida, a todos vós, para não ser tão severo.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>A punição dessa pessoa pela maioria é suficiente.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Agora, ao invés da punição, deveis perdoá-lo e confortá-lo, para que ele não seja sobrecarregado de tanta tristeza.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Então, encorajo-vos a afirmar publicamente o vosso amor por ele.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Esse foi o motivo por que escrevi, para que eu pudesse vos examinar e entender se sois obedientes em tudo.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Se perdoais a alguém, também perdoo essa pessoa. O que perdoei, se é que perdoei alguma coisa, está perdoado por vossa causa na presença de Cristo,</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>para que Satanás não nos engane. Pois nós não somos ignorantes de seus planos.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Uma porta me foi aberta pelo Senhor quando fui à cidade de Trôade para pregar o Evangelho de Cristo.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Ainda assim, não tive paz de espírito, porque não encontrei meu irmão Tito. Então eu os deixei e voltei à Macedônia.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Mas, graças sejam dadas a Deus, que em Cristo sempre nos conduz em triunfo. Por meio de nós, Ele espalha o doce aroma do Seu conhecimento em todo lugar.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Pois nós somos para Deus o doce perfume de Cristo, tanto entre aqueles que são salvos como entre aqueles que estão perecendo.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Para os que estão perecendo, é um aroma de morte para a morte. Para os que estão sendo salvos, é um aroma de vida para a vida. Quem é digno dessas coisas?</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Pois nós não somos como tantas pessoas que vendem a palavra de Deus pelo lucro. Ao invés disso, com motivos puros, falamos em Cristo, como enviados de Deus, à vista de Deus.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="2CO" data-chapter="2"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="2CO" data-chapter="2"
+                                data-total="13" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

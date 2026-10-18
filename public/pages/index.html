@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="htmx-config" content='{"htmx.config.requestClass":""}'>
+    <title>Bíblia NVA</title>
+    <link rel="manifest" href="/pages/js/manifest.json">
+    <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/pages/css/animate.min.css">
+    <link rel="stylesheet" href="/pages/css/styles.css">
+
+</head>
+
+<body>
+    <div hx-on="htmx:configRequest: event.detail.headers=''; 
+        event.detail.headers['Content-Type']='application/x-www-form-urlencoded; 
+        charset=UTF-8'" />
+    <div class="container home">
+        <div class="hero">
+
+            <div class="logo">
+                <h1 class="title">Biblia NVA</h1>
+                <img class="logo" src="/pages/images/nva-logo.png" alt="logotipo">
+            </div>
+
+            <!-- <div class="spinner"></div> -->
+
+            <div id="data-render">
+                <!-- Hook para renderizar os dados -->
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <a hx-ext="client-side-templates" hx-get="/api/favorite/random" hx-trigger="load" hx-swap="innerHTML"
+        hx-target="#data-render" mustache-array-template="verse-of-day"> </a>
+
+    <template id="verse-of-day">
+        {{#data}}
+        {{#verses}}
+        <a class="card" href="/pages/books/index.html?book={{{bookAbbr}}}&chapter={{{chapter}}}&verse={{{verse}}}">
+            <p>{{{text}}}</p>
+        </a>
+        {{/verses}}
+        {{/data}}
+    </template>
+
+    <div id="toast" class="animate__animated animate__faster">
+        <!-- Hook para exibir mensagem de erro -->
+    </div>
+
+
+    <div id="search-position" class="animate__animated animate__faster">
+        <!-- Pesquisar por palavras -->
+        <div class="search-container">
+            <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <a href="/pages/books/index.html">
+                <img class="icon" src="./icons/book.svg" onclick="showSpinner()" alt="livros">
+            </a>
+
+            <a href="/pages/about.html">
+                <img class="icon" src="./icons/license.svg" alt="license">
+            </a>
+        </div>
+    </footer>
+    </div>
+
+    <script src="./js/functions.js"></script>
+    <script src="/pages/js/htmx.min.js"></script>
+    <script src="/pages/js/client-side-templates.min.js"></script>
+    <script src="/pages/js/mustache.min.js"></script>
+
+</body>
+
+</html>

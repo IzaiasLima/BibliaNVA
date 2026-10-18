@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - 1 Samuel, 5</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/1SM/5. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">1 Samuel, <span id="chapter">5</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Os filisteus capturaram a Arca da Aliança e a trouxeram de Ebenézer a Asdode.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Eles a levaram para dentro da casa de Dagom e a colocaram ao seu lado.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Quando as pessoas de Asdode acordaram, no dia seguinte, observaram que Dagom havia caído, com o rosto em terra, diante da Arca do <mark>Senhor</mark>. Então, eles o levantaram e o puseram de volta no seu lugar.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Quando acordaram pela manhã do dia seguinte, observaram que Dagom havia caído, com o rosto em terra, diante da Arca do <mark>Senhor</mark>. Sua cabeça e ambas as mãos haviam sido cortadas e deixadas na entrada. Somente o tronco de Dagom permaneceu.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Esse é o motivo pelo qual, até hoje, os sacerdotes de Dagom e qualquer um que chegue à sua casa não pisam na entrada da casa de Dagom, em Asdode.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>A mão do <mark>Senhor</mark> pesou sobre os habitantes de Asdode. Ele destruiu e afligiu com tumores Asdode juntamente com seus territórios.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Quando os homens de Asdode perceberam o que estava acontecendo, eles disseram: "A Arca do Deus de Israel não deve ficar conosco, pois Sua mão é dura contra nós e contra Dagom, nosso deus".</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Então, eles mandaram reunir todos os governantes dos filisteus, e lhes disseram: "O que devemos fazer com a Arca do Deus de Israel?". Eles responderam: "Deixe que a Arca do Deus de Israel seja levada para Gate". E eles carregaram a Arca do Deus de Israel até lá.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Mas, depois que eles a levaram, a mão do <mark>Senhor</mark> foi contra a cidade, causando grande confusão. Ele afligiu os homens da cidade, tanto o grande quanto o pequeno, e tumores apareceram neles.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Então, eles enviaram a Arca da Aliança para Ecrom. Mas, assim que a Arca da Aliança chegou lá, os ecronitas clamaram, dizendo: "Eles nos trouxeram a Arca do Deus de Israel, para matar a nós e ao nosso povo".</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Então, eles mandaram reunir todos os governantes dos filisteus, e lhes disseram: "Mandem embora a Arca do Deus de Israel, e deixai-a retornar ao seu lugar, para que não mate a nós e ao nosso povo". Pois havia pânico mortal por toda a cidade, e a mão de Deus foi muito pesada lá.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>O homem que não morreu foi afligido por tumores, e o choro da cidade subiu aos céus.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="1SM" data-chapter="5"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="1SM" data-chapter="5"
+                                data-total="31" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Lamentações, 5</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/LM/5. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Lamentações, <span id="chapter">5</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Lembra-te, Yahweh, do que aconteceu conosco. Vê e considera a nossa vergonha.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Nossa herança foi entregue a estranhos; nossas casas, a estrangeiros.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Nós nos tornamos órfãos, pois não temos pai, e nossas mães são como viúvas.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Temos que pagar com prata a água que bebemos e temos que pagar com prata para buscar nossa própria madeira.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Os que nos perseguem estão próximos de nós; estamos cansados, não encontramos descanso.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Temos nos entregado aos egípcios e aos assírios para obter comida suficiente.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Nossos pais pecaram; eles não existem mais, e nós  suportamos suas iniquidades.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Escravos dominam sobre nós, e não há ninguém para nos resgatar de suas mãos.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Arriscamos nossas vidas para obter o nosso pão, por causa da espada no deserto.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Nossa pele se tornou quente como um forno, por causa do ardor da fome.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Mulheres são violadas em Sião; e as virgens, nas cidades de Judá.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>O príncipes são por eles enforcados, e não é dada honra os anciãos.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Os jovens são forçados a moer com a pedra de moinho, e meninos cambaleiam sob pesadas cargas de lenha.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Os anciãos deixaram o portão da cidade, e os jovens deixaram sua música.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>A alegria do nosso coração acabou, e a nossa dança se transformou em lamento.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>A coroa caiu de nossa cabeça! Ai de nós, porque pecamos!</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Por isso nosso coração adoeceu, e nossos olhos se escureceram.  Por essas coisas nossos olhos escurecem, porque chacais passeiam no Monte Sião, que está desolado.</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span></span></p> 
+<p class="verse "><span class="number ">19</span>&ensp;<span>Mas Tu, Yahweh, reinas para sempre e Te assentarás sobre Teu trono, de geração em geração.</span></p> 
+<p class="verse "><span class="number ">20</span>&ensp;<span>Por que Te esqueceste de nós para sempre? Por que nos deixarás por tantos dias?</span></p> 
+<p class="verse "><span class="number ">21</span>&ensp;<span>Restaura-nos a Ti, Yahweh, e nós seremos restaurados. Renova nossos dias como nos tempos antigos,</span></p> 
+<p class="verse "><span class="number ">22</span>&ensp;<span>a menos que nos tenhas rejeitado totalmente e estejas irado conosco além da medida!</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="LM" data-chapter="5"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="LM" data-chapter="5"
+                                data-total="5" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

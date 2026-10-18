@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Isaías, 16</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/IS/16. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Isaías, <span id="chapter">16</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Enviai carneiros ao governador da terra, desde Selá, no deserto, até ao monte da filha de Sião.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Como pássaros errantes, como ninhada dispersa, assim são as filhas de Moabe nos vaus do rio de Arnom.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>"Dá conselhos!", elas clamam. "Executa justiça; providencia alguma sombra como a noite no meio do dia; esconde os refugiados; não traias os fugitivos.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Que os refugiados de Moabe vivam entre vós; sê para eles um esconderijo contra o destruidor". Pois, quando a opressão for interrompida, e a destruição cessar, e desaparecer da terra aqueles que oprimem,</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>um trono será estabelecido em fidelidade à aliança; alguém vindo da tenda de Davi se assentará com fidelidade. Ele julgará enquanto busca a justiça e pratica o que é correto.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Temos ouvido falar do orgulho de Moabe, sua arrogância, sua soberba e sua ira. Porém, seu discurso soberbo são palavras vazias.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Assim, Moabe geme por Moabe, todos eles lamentam. Vós, que fostes completamente devastados, chorai pelos bolos de passas de Quir-Haresete.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Os campos de Hesbom estão secos, bem como as videiras de Sibma. Os governantes das nações pisaram as videiras selecionadas, que alcançavam Jazer e espalhavam-se até o deserto. Seus brotos se espalhavam e iam além do mar.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Na verdade, chorarei juntamente com Jazer pela vinha de Sibma. Eu vos regarei com Minhas lágrimas, Hesbom e Eleale. Pois, em vossos campos de frutas de verão e de colheita, Eu acabei com os gritos de alegria.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>O regozijo e a alegria desapareceram dos pomares; e, nas vinhas, não se canta nem há gritos alegres. Não há quem pise vinho nos lagares. Eu fiz cessar os gritos de júbilo dos pisadores.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Então, Meu coração suspira como uma harpa por Moabe, e Meu íntimo, por Quir-Heres.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Quando Moabe se apresentar cansado no lugar alto, e entrar em seu templo para orar, suas orações nada alcançarão.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Esta é a palavra que Yahweh disse, anteriormente, a respeito de Moabe.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Novamente, Yahweh diz: "Dentro de três anos, a glória de Moabe desaparecerá; a despeito de seus muitos habitantes, os remanescentes serão pouquíssimos e insignificantes".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="IS" data-chapter="16"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="IS" data-chapter="16"
+                                data-total="66" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

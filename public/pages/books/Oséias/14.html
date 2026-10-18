@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Oséias, 14</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/OS/14. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Oséias, <span id="chapter">14</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Israel, volta a Yahweh teu Deus, pois tens caído, por causa da tua iniquidade.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Toma contigo as palavras e converte-te a Yahweh. Diz a Ele: "Tira para fora toda nossa iniquidade, e aceita o que é bom, então vamos oferecer-Te os frutos dos nossos lábios.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>A Assíria não nos salvará; não iremos cavalgar em cavalos para a guerra. Nem mesmo diremos mais para a obra das nossas mãos: 'Vós sois nossos deuses'; porque só em Ti órfão encontra misericórdia."</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>"Eu os curarei da sua infidelidade; Eu os amarei livremente, porque a minha ira se afastou deles.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Eu serei como orvalho para Israel; ele florescerá como o lírio, e lançarei as suas raízes como um cedro do Líbano.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Os seus ramos se espalharão; sua formosura será como a das oliveiras, e sua fragrância será como os cedros do Líbano.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Os  que viviam à sua sombra voltarão; eles serão vivificados como as sementes e florescerão como a videira. A sua fama será como a vide do Líbano.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Efraim, o que tenho Eu com os ídolos? Eu te responderei e cuidarei de ti. Eu Sou como o cipreste cujas folhas estão sempre verdes; o teu fruto procede de Mim"</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Quem é sábio para que entenda estas coisas? Quem compreende estas coisas, para que as conheça?  Porque os caminhos do <mark>Senhor</mark> são retos, e os justos andarão neles, mas os rebeldes neles tropeçarão.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="OS" data-chapter="14"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="OS" data-chapter="14"
+                                data-total="14" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

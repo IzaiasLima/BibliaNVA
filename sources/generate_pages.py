@@ -3,11 +3,11 @@
 
 Reproduz, para um capítulo arbitrário, um livro completo ou toda a Bíblia, o
 mesmo HTML que a navegação do aplicativo exibiria — ou seja, o template
-``chapter-template`` de ``static/bible.html`` renderizado com a resposta de
+``chapter-template`` de ``public/pages/bible.html`` renderizado com a resposta de
 ``GET /api/{book}/{chapter}``.
 
 O caminho de saída segue o padrão já adotado no projeto:
-``static/books/<NomeDoLivro>/<capítulo>.html`` (ex. ``static/books/Salmos/23.html``).
+``public/pages/books/<NomeDoLivro>/<capítulo>.html`` (ex. ``public/pages/books/Salmos/23.html``).
 Como o backend agora resolve caminhos sem extensão, a página também fica
 acessível em ``/pages/books/Salmos/23``.
 
@@ -19,7 +19,7 @@ Uso (servidor em execução, por padrão em http://127.0.0.1:8000):
 
 Opções comuns:
     --base-url  URL do servidor (padrão: http://127.0.0.1:8000)
-    --out       diretório raiz de saída (padrão: static/books)
+    --out       diretório raiz de saída (padrão: public/pages/books)
     --force     reescreve páginas já existentes (padrão: pula existentes)
     --delay     intervalo em segundos entre requisições (padrão: 0.5;
                 use 0 para desativar — relevante apenas em `all`)
@@ -51,7 +51,7 @@ from pathlib import Path
 API_ROOT = "/api"
 PAGE_TITLE = "Bíblia NVA - {bookName}, {chapter}"
 
-# Mesmo template "chapter-template" de static/books/index.html, com {{...}}
+# Mesmo template "chapter-template" de public/pages/books/index.html, com {{...}}
 # pré-expandido. Os espaços residuais (ex.: class="verse ") são os que o
 # Mustache deixa ao renderizar, e são mantidos de propósito para que a página
 # gerada seja idêntica à exibida pela navegação.
@@ -61,7 +61,6 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="htmx-config" content='{{"htmx.config.requestClass":""}}'>
         <title>{title}</title>
         <link rel="manifest" href="/pages/js/manifest.json">
         <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
@@ -134,6 +133,12 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 
             </div>
 
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
             <div id="toast" class="animate__animated animate__faster">
                 <!-- Hook para exibir mensagem de erro -->
             </div>
@@ -150,15 +155,12 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
                 <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
 
                 <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
-
-                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
             </div>
         </footer>
 
         <script src="/pages/js/functions.js"></script>
         <script src="/pages/js/htmx.min.js"></script>
         <script src="/pages/js/mustache.min.js"></script>
-        <script src="/pages/js/client-side-templates.min.js"></script>
         <script src="/pages/js/swiped.js"></script>
 
     </body>
@@ -310,7 +312,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     parser.add_argument("args", nargs="*", help="[abreviação] [capítulo]")
     parser.add_argument("--base-url", default="http://127.0.0.1:8000")
-    parser.add_argument("--out", default="../static/books")
+    parser.add_argument("--out", default="../public/pages/books")
     parser.add_argument("--force", action="store_true", help="reescreve existentes")
     parser.add_argument("--delay", type=float, default=0.5)
     parser.add_argument("--dry-run", action="store_true")

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Josué, 14</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/JS/14. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Josué, <span id="chapter">14</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Estas são as áreas que o povo de Israel recebeu como herança na terra de Canaã, distribuídas a eles por Eleazar, o sacerdote, por Josué, filho de Num, e pelos líderes dos clãs das tribos dentre o povo de Israel.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>A sua herança foi repartida por sorteio entre as nove tribos e meia, assim como Yahweh havia ordenado por intermédio de Moisés.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Porque Moisés já havia dado a herança das duas tribos e meia além do Jordão, mas não deu aos levitas herança alguma.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>A tribo de José era, na verdade, duas tribos: Manassés e Efraim. Mas nenhuma parte da herança na terra foi dada aos levitas, exceto algumas cidades para que habitassem, e os seus arredores para o seu gado e para os seus bens materiais.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>O povo de Israel fez como Yahweh havia ordenado a Moisés e, assim, repartiram a terra.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Então, a tribo de Judá veio até Josué em Gilgal. Calebe, filho de Jefoné, o quenezeu, disse-lhe: "Tu sabes o que Yahweh disse a Moisés, homem de Deus, a respeito de nós em Cades-Barneia.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Eu tinha quarenta anos quando Moisés, servo do <mark>Senhor</mark>, me enviou de Cades-Barneia para espionar a terra. Eu lhe trouxe um relatório conforme estava no meu coração para fazer.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Porém, meus irmãos que subiram comigo fizeram o coração do povo derreter de medo. Mas eu perseverei em seguir Yahweh, meu Deus.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Moisés jurou naquele dia, dizendo: 'Certamente, a terra que pisou o teu pé será herança para ti e para teus filhos para sempre, porque seguiste completamente a Yahweh, meu Deus'.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Agora, eis que Yahweh me conservou vivo durante estes quarenta e cinco anos como Ele prometeu. Yahweh falou esta palavra a Moisés quando Israel ainda peregrinava no deserto. Hoje estou com oitenta e cinco anos de idade.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>E ainda sou tão forte hoje como era no dia em que Moisés me enviou. Tenho tanta força agora para guerrear, para ir e para vir, como eu tinha antes.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Agora, dá-me essa região montanhosa que Yahweh me prometeu naquele dia. Porque tu ouviste naquele dia que os anaqueus ali habitavam em grandes cidades fortificadas. Se Yahweh estiver comigo, eu os expulsarei, assim como Yahweh disse".</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Então, Josué abençoou Calebe, filho de Jofoné, e deu-lhe Hebrom como herança.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Assim, Hebrom tornou-se herança de Calebe, filho de Jefoné, o quenezeu, até o dia de hoje, porque ele seguiu fielmente a Yahweh, o Deus de Israel.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>O nome de Hebrom, anteriormente, era Quiriate-Arba (Arba havia sido o maior homem entre os anaqueus). E a terra descansou da guerra.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="JS" data-chapter="14"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="JS" data-chapter="14"
+                                data-total="24" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

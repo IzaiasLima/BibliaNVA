@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Salmos, 76</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/SL/76. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Salmos, <span id="chapter">76</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title">Para o regente musical, com instrumentos de cordas. Salmo de Asafe. Um cântico.</p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Deus tornou-Se conhecido em Judá; Seu nome é grande em Israel.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Sua tenda fica em Salém; Sua morada está em Sião.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Ali, Ele quebrou as flechas dos arcos, o escudo, a espada e as outras armas de guerra. [Interlúdio]</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Tu és mais glorioso e excelente que as montanhas de despojos.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Aqueles que têm o coração valente foram saqueados; eles caíram no sono. Todos os guerreiros foram inúteis.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Diante da Tua repreensão, ó Deus de Jacó, cavaleiros e cavalos adormecem.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Somente Tu és temido. Quem pode ficar ao Teu lado quando estás irado?</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Dos céus, fizeste Teu julgamento ser ouvido; a terra ficou temerosa e em silêncio</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>quando Tu, ó Deus, Te levantaste para executar julgamento e para salvar todos os oprimidos da terra. [Interlúdio]</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Certamente, a Tua ira contra os homens será para o Teu louvor, e, com o restante da ira, Te cingirás.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Fazei votos a Yahweh, vosso Deus, e os cumpri. Que todos os que estão ao Seu redor tragam presentes, pois Ele deve ser temido.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Ele retira o espírito dos príncipes; Ele é temido pelos reis da terra!</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="SL" data-chapter="76"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="SL" data-chapter="76"
+                                data-total="150" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

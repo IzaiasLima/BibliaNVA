@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Eclesiastes, 10</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/EC/10. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Eclesiastes, <span id="chapter">10</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Como uma mosca morta faz o perfume cheirar mal, assim uma pequena tolice pode superar a sabedoria e a honra.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>O coração de uma pessoa sábia tende para a direita, mas o coração de um tolo tende para a esquerda.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Quando um tolo caminha pela rua, seu pensamento é deficiente, provando a todos que ele é um tolo.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Se as emoções de um governante se levantarem contra ti, não deixes teu trabalho. A calma pode tranquilizar um grande ultraje.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Há um mal que tenho visto sob o sol, um tipo de erro que vem do governante:</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>aos tolos são dadas posições de liderança, enquanto aos homens  bem-sucedidos, posições inferiores.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Tenho visto escravos montando cavalos e homens bem-sucedidos andando a pé, como escravos.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Aquele que cava um buraco pode cair nele e, sempre que alguém derruba um muro, uma cobra pode picá-lo.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Qualquer um que corte pedras pode ser machucado por elas, e o homem que corta madeira está em perigo por isso.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Se uma lâmina de ferro está cega, e um homem não a afia, então ele deve usar mais força; mas a sabedoria oferece uma vantagem para o sucesso.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Se uma cobra morde, antes de ser encantada, não há vantagem para o encantador.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>As palavras da boca de um homem sábio são graciosas, mas os lábios do tolo o devoram.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Assim que as palavras começam a fluir da boca de um tolo, as tolices aparecem e, no fim, sua boca flui com loucura cruel.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Um tolo multiplica palavras, mas ninguém sabe o que está por vir. Quem sabe o que acontecerá com ele?</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>O trabalho duro dos tolos os fadiga, de modo que eles nem sabem o caminho para a cidade.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Ai de ti, terra, se teu rei é um menino, e se teus líderes começam a festejar de manhã!</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Mas abençoada és tu, terra, se teu rei é filho de nobres, e se teus líderes comem na hora certa, para obter força, e não para embriaguez!</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>Por causa da preguiça, o teto desmorona, e por causa das mãos ociosas, a casa tem goteiras.</span></p> 
+<p class="verse "><span class="number ">19</span>&ensp;<span>As pessoas preparam comida para alegrar-se; o vinho traz prazer à vida, e o dinheiro preenche todas as necessidades.</span></p> 
+<p class="verse "><span class="number ">20</span>&ensp;<span>Não amaldiçoes o rei, nem mesmo em tua mente, e não amaldiçoes os ricos em teu quarto, pois uma ave do céu pode levar tuas palavras. Tudo que tem asas pode espalhar o assunto.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="EC" data-chapter="10"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="EC" data-chapter="10"
+                                data-total="12" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

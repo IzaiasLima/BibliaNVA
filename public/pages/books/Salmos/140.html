@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Salmos, 140</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/SL/140. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Salmos, <span id="chapter">140</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title">Ao regente musical. Salmo de Davi.</p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Yahweh, salva-me do ímpio; preserva-me dos homens violentos.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Em seu coração, eles planejam o mal; eles provocam brigas todos os dias.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Sua língua fere como serpente; veneno de víboras está em seus lábios. [Interlúdio]</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Livra-me das mãos dos ímpios, Yahweh; preserva-me dos homens violentos que planejam me derrubar.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Os arrogantes prepararam uma armadilha para mim; estenderam-me uma rede; eles armaram uma cilada para mim. [Interlúdio]</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Eu disse para Yahweh: Tu és o meu Deus! Escuta meu clamor por misericórdia.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Yahweh, meu Senhor, Tu és poderoso para salvar-me; Tu proteges minha cabeça no dia da batalha.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Yahweh, não concedas ao ímpio os seus desejos; não permitas que seus planos tenham êxito. [Interlúdio]</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Todos os que me cercam erguem a cabeça; deixa que a maldade dos seus lábios os cubra.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Permite que as brasas quentes caiam sobre eles; lança-os dentro do fogo, dentro de poços sem fundo, para nunca mais se erguerem.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Que os caluniadores não estejam seguros na terra; ao homem violento, que o mal o persiga e o derrube.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Eu sei que Yahweh julgará em favor do aflito, e que Ele exercerá justiça aos necessitados.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Certamente, os justos darão graças ao Teu nome; os retos viverão na Tua presença.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="SL" data-chapter="140"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="SL" data-chapter="140"
+                                data-total="150" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

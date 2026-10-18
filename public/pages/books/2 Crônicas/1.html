@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - 2 Crônicas, 1</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/2CR/1. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">2 Crônicas, <span id="chapter">1</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Salomão, filho de Davi, se fortaleceu no seu governo e Yahweh, seu Deus, era com ele e o engrandeceu muito.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Salomão falou a todo o Israel, aos comandantes de mil e de cem, aos juízes, a todo príncipe em todo o Israel e aos chefes das famílias.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Então, Salomão e toda a congregação foram ao lugar alto que estava em Gibeão, pois lá estava a Tenda do Encontro de Deus, que Moisés, o servo do <mark>Senhor</mark>, fizera no deserto.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Mas, Davi tinha levado a Arca de Deus de Quiriate-Jearim para o lugar que tinha preparado, pois ele tinha levantado uma tenda para ela em Jerusalém.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Além disso, o altar de bronze que Bezalel, filho de Uri, filho de Ur, tinha feito, estava diante do Tabernáculo do <mark>Senhor</mark>; Salomão e a congregação foram até ele.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Salomão foi até o altar de bronze, diante do <mark>Senhor</mark>, que estava na Tenda do Encontro e ofereceu mil sacrifícios sobre ele.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Deus apareceu a Salomão naquela noite e disse-lhe: "Pede! O que tu queres?".</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Salomão disse a Deus: "Tu mostraste grande aliança de fidelidade para com meu pai, Davi, e me fizestes rei em seu lugar.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Agora, Deus Yahweh, cumpra-se Tua promessa a Davi meu pai, pois Tu me fizeste rei sobre um povo tão numeroso como o pó da terra.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Agora, dá-me sabedoria e conhecimento, para que eu possa liderar esse povo, pois quem pode julgar Teu povo, que é tão numeroso?".</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Deus disse a Salomão: "Porque isso estava em teu coração e porque não pediste por riquezas, bens ou honra, nem pela vida daqueles que te odeiam, nem por uma vida longa para ti, mas porque tu pediste por sabedoria e conhecimento para ti, para que possas governar meu povo, sobre o qual eu te fiz rei, isto é o que te farei.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Sabedoria e conhecimento te darei; Eu também lhe darei riquezas, bens, honra, como nenhum rei teve antes de ti e nenhum outro terá, depois de ti.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Então, Salomão saiu de diante da Tenda do Encontro, no lugar alto que estava em Gibeá, veio para Jerusalém e reinou sobre Israel.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Salomão reuniu carros e cavaleiros: e ele tinha mil e quatrocentos carros e doze mil cavaleiros e os colocou nas cidades dos carros e junto de si, em Jerusalém.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>O rei fez com que o ouro e a prata se tornassem tão comuns como as pedras em Jerusalém, e ele fez madeira de cedro tão comum como os sicômoros que há nas terras baixas.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Quanto às importações de cavalos do Egito e Coa para Salomão seus mercadores compravam de Coa por um preço determinado.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Eles importavam um carro do Egito por seiscentos siclos de prata, e um cavalo por cento e cinquenta siclos. E também exportavam esses carros e cavalos para os reis dos heteus e arameus.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="2CR" data-chapter="1"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="2CR" data-chapter="1"
+                                data-total="36" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

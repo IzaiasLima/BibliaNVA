@@ -39,7 +39,7 @@ class _StaticFilesWithHtmlFallback(StaticFiles):
 
     A navegação e os links internos usam ``.html``, mas um caminho limpo como
     ``/pages/bible/Salmos/119`` deve servir o mesmo conteúdo de
-    ``static/bible/Salmos/119.html``. O fallback delega ao ``lookup_path`` da
+    ``public/pages/bible/Salmos/119.html``. O fallback delega ao ``lookup_path`` da
     classe base, preservando a proteção contra path traversal.
     """
 
@@ -50,7 +50,7 @@ class _StaticFilesWithHtmlFallback(StaticFiles):
         return full_path, stat_result
 
 
-app.mount("/pages", _StaticFilesWithHtmlFallback(directory="static"), name="static")
+app.mount("/pages", _StaticFilesWithHtmlFallback(directory="public/pages"), name="static")
 
 
 @app.exception_handler(Exception)
@@ -75,7 +75,7 @@ def service_worker():
     off-line). Cache-Control no-cache garante atualização do SW.
     """
     return FileResponse(
-        "static/js/service-worker.js",
+        "public/pages/js/service-worker.js",
         media_type="application/javascript",
         headers={"Cache-Control": "no-cache", "Service-Worker-Allowed": "/"},
     )

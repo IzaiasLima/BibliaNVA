@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Amós, 4</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/AM/4. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Amós, <span id="chapter">4</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Ouvi esta palavra, vacas de Basã, vós que estais no monte de Samaria, que oprimis o pobre, que esmagais o necessitado, e dizeis a vossos maridos: "Trazei-nos bebidas".</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>O Senhor Yahweh jurou por Sua santidade: "Vede, dias virão sobre vós, quando vos levarão com anzóis, os últimos de vós com arpões.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Saireis pelas brechas dos muros, cada um de vós atravessareis e sereis lançados em direção do Harmon!" Assim diz Yahweh.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>"Vinde para Betel e pecai, ide para Gilgal e multiplicai os pecados. Trazei, todas as manhãs, os vossos sacrifícios; e os vossos dízimos, de três em três dias.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Oferecei sacrifícios de ações de graça com pão; proclamai ofertas voluntárias, anunciai-as, pois isso te agrada, ó povo de Israel!" Assim diz o Senhor Yahweh.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>"Eu vos deixei de dentes limpos, em todas as vossas cidades, e deixei faltar pão em todos os vossos lugares. No entanto, vós não voltastes para Mim", assim diz Yahweh.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>"Eu também retive de vós a chuva quando ainda faltavam três meses para a colheita. Eu fiz chover sobre uma cidade, e não fiz chover sobre a outra. Houve chuva em uma parte da terra, mas a parte de terra em que não choveu, essa secou.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Duas ou três cidades cambaleavam até outra cidade para beber água, mas as pessoas não se saciavam. No entanto, vós não voltastes para Mim!" assim diz Yahweh.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>"Eu vos afligi com ferrugem e mofo. A multidão de teus jardins, tuas vinhas, tuas figueiras e tuas oliveiras, o gafanhoto a devorou . No entanto, vós não voltastes para Mim", assim diz Yahweh.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>"Eu enviei a praga sobre vós, como no Egito. Eu matei vossos jovens com a espada, arrastei vossos cavalos e fiz o mau cheiro dos vossos campos chegar a vossas narinas. No entanto, não vos voltastes para Mim", assim diz Yahweh.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>"Eu derrubei cidades no meio de ti, assim como derrubei Sodoma e Gomorra. Vós éreis como um tição tirado do fogo; no entanto, não voltastes para Mim", assim diz Yahweh.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Portanto, Eu farei algo terrível contigo, Israel! E porque Eu farei algo terrível contigo, prepara-te para te encontrares com teu Deus, Israel!</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Porque é Ele que forma as montanhas e também cria o vento, revela Seus pensamentos à humanidade, faz a escuridão da manhã e pisa sobre os lugares altos da Terra. Yahweh, Deus dos Exércitos, é Seu Nome.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="AM" data-chapter="4"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="AM" data-chapter="4"
+                                data-total="9" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

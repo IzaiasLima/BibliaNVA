@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Juízes, 17</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/JZ/17. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Juízes, <span id="chapter">17</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Havia um homem na região montanhosa de Efraim, e seu nome era Mica.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Ele disse à sua mãe: "As mil e cem peças de prata que foram tiradas de ti, pelas quais falaste uma maldição (eu a escutei), olha aqui: eu tenho a prata comigo. Fui eu que a roubei". Sua mãe lhe disse: "Que Yahweh te abençoe, meu filho!".</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Ele devolveu as mil e cem peças de prata à sua mãe, e ela disse: "Dedico esta prata à Yahweh, para que meu filho faça imagens de escultura e de metal de fundição. Assim, agora eu a devolvo a ti".</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Quando ele devolveu o dinheiro à sua mãe, ela tomou duzentas peças de prata e as deu a um ourives. Ele fez delas imagens de escultura e de metal de fundição, que foram colocadas na casa de Mica.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Esse homem, Mica, tinha uma casa de ídolos. Ele fez um colete sacerdotal e alguns deuses da casa, e constituiu um de seus filhos como sacerdote.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Não havia rei em Israel naqueles dias, e todos faziam o que lhes parecia certo aos seus próprios olhos.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Havia um jovem de Belém de Judá, da família de Judá, que era levita. Ele estava ali para cumprir seus deveres.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Esse homem deixou Belém de Judá para ir encontrar um lugar para morar. Enquanto viajava, ele veio à casa de Mica, na região montanhosa de Efraim.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Mica disse-lhe: "De onde vens?". O homem lhe respondeu: "Eu sou um levita de Belém de Judá, e estou viajando para encontrar um lugar em que possa morar".</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Mica disse-lhe: "Mora comigo e sê para mim um pai e sacerdote. Eu te darei dez peças de prata por ano, um conjunto de roupas e tua comida". Então, o levita aceitou ficar em sua casa.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>O levita estava contente em morar com aquele homem, e o jovem tornou-se para Mica como um de seus filhos.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Mica separou o levita para os deveres sagrados, e o jovem tornou-se o seu sacerdote, e ficou na casa de Mica.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Então, Mica disse: "Agora eu sei que Yahweh me fará bem, porque este levita tornou-se o meu sacerdote".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="JZ" data-chapter="17"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="JZ" data-chapter="17"
+                                data-total="21" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

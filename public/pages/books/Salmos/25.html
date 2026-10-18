@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Salmos, 25</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/SL/25. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Salmos, <span id="chapter">25</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title">Salmo de Davi.</p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>A Ti, Yahweh, eu elevo a minha alma!</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Meu Deus, confio em Ti. Não permitas que eu seja humilhado, nem que meus inimigos se regozijem triunfantes sobre mim.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Nenhum dos que esperam em Ti sejam desonrados, mas que sejam envergonhados aqueles que agem traiçoeiramente, sem motivo.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Faze-me conhecer os Teus caminhos, Yahweh; ensina-me Tuas veredas.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Guia-me em Tua verdade e ensina-me, pois Tu és o Deus da minha salvação; em Ti está minha esperança o tempo todo.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Lembra-Te, Yahweh, dos Teus atos de compaixão e da Tua fidelidade à aliança, pois eles sempre existiram.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Não Te lembres dos pecados ou da rebelião da minha juventude; lembra-Te de mim pela fidelidade à aliança, Yahweh, por causa da Tua bondade.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>O <mark>Senhor</mark> é bom e justo; por isso, Ele ensina o caminho aos pecadores.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Ele guia os humildes naquilo que é justo e lhes ensina o Seu caminho.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Todos os caminhos do <mark>Senhor</mark> são de amor constante e de fidelidade àqueles que guardam Sua aliança e Seus testemunhos.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Por amor do Teu nome, Yahweh, perdoa meu pecado, que é tão grande!</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Quem é o homem que teme a Yahweh? O Senhor o instruirá no caminho que deve escolher.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Ele habitará em prosperidade, e seus descendentes herdarão a terra.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>A intimidade do <mark>Senhor</mark> é para aqueles que O temem; Ele os faz conhecer a Sua aliança.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Meus olhos estão sempre em Yahweh, pois Ele tirará meus pés da armadilha.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Volta-Te para mim e tem misericórdia de mim, pois estou sozinho e aflito.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>As tribulações do meu coração têm-se multiplicado; livra-me do meu sofrimento!</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>Vê minha aflição e minha fadiga; perdoa todos os meus pecados.</span></p> 
+<p class="verse "><span class="number ">19</span>&ensp;<span>Vê como são muitos os meus inimigos; eles me odeiam com ódio cruel.</span></p> 
+<p class="verse "><span class="number ">20</span>&ensp;<span>Protege minha vida e me resgata; não permitas que eu seja humilhado, pois em Ti me refugio!</span></p> 
+<p class="verse "><span class="number ">21</span>&ensp;<span>Que a integridade e a retidão me protejam, pois eu espero em Ti.</span></p> 
+<p class="verse "><span class="number ">22</span>&ensp;<span>Ó Deus, resgata Israel de todas as suas tribulações!</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="SL" data-chapter="25"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="SL" data-chapter="25"
+                                data-total="150" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

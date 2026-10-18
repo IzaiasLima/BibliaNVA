@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Salmos, 97</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/SL/97. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Salmos, <span id="chapter">97</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>O <mark>Senhor</mark> reina; alegre-se a terra, alegrem-se as muitas ilhas.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Nuvens e escuridão O cercam; retidão e justiça são a base do Seu trono.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Fogo vai adiante Dele e consome Seus adversários  por todos os lados.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Sua luz ilumina o mundo; a terra vê e treme.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>As montanhas derretem como cera diante do <mark>Senhor</mark>, o Senhor de toda a terra.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Os céus declaram Sua justiça, e todas as nações veem a Sua glória.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Sejam envergonhados todos os que servem os ídolos e se orgulham de imagens inúteis. Prostem-se diante Dele todos os deuses.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Yahweh, Sião ouviu e se orgulhou, e as filhas de Judá se alegraram por causa dos Teus julgamentos.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Pois tu, Yahweh, és o Altíssimo sobre a terra. Tu és exaltado sobre todos os deuses.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Vós que amais Yahweh, odiai o mal! Ele protege a vida de Seus santos, e Ele os tira da mão do perverso.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>A luz é espalhada sobre os justos e a alegria, sobre os retos de coração.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Alegrai-vos em Yahweh, vós justos, e dai graças ao lembrar do Seu santo nome.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="SL" data-chapter="97"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="SL" data-chapter="97"
+                                data-total="150" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

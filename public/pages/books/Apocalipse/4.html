@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Apocalipse, 4</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/AP/4. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Apocalipse, <span id="chapter">4</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Depois dessas coisas, eu olhei e vi que havia uma porta aberta no céu.  A primeira voz que ouvi, como voz de trombeta falando comigo, disse: "Sobe aqui e te mostrarei o que deve acontecer depois dessas coisas".</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Imediatamente, eu estava no Espírito e vi que havia um trono posto no céu, com alguém sentado nele.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>O que estava sentado era semelhante à pedra de jaspe e sardônio. Ao redor do trono, havia um arco-íris semelhante à esmeralda.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Ao redor do trono, havia vinte e quatro tronos e, sentados neles, havia vinte e quatro anciãos. Eles vestiam roupas brancas e tinham coroas de ouro em suas cabeças.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Do trono saíam relâmpagos, estrondos e barulhos de trovão. E, diante dele, sete lâmpadas queimando, que são os sete Espíritos de Deus.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>E, diante do trono, havia um mar como de vidro semelhante ao cristal. No meio e ao redor do trono, havia quatro seres viventes, cheios de olhos tanto na frente como atrás.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>O primeiro ser vivente era como um leão; o segundo ser vivente, como um bezerro; o terceiro ser vivente tinha a face como a de um homem; e o quarto ser vivente era como uma águia voando.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Os quatro seres viventes tinham seis asas e eram cheios de olhos em cima e embaixo. De dia e de noite, eles não paravam de dizer: "Santo, Santo, Santo é o Senhor Deus Todo-Poderoso, o que era, e que é, e o que há de vir".</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>E sempre que os seres viventes davam glória, honra e gratidão ao que estava sentado no trono, ao que vive por toda eternidade,</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>os vinte e quatro anciãos prostravam-se diante do que estava sentado no trono. Eles adoravam ao que vive para todo sempre e lançavam suas coroas diante do trono, dizendo:</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>"Digno és, nosso Senhor e nosso Deus, de receber a glória e a honra e o poder. Por Ti todas as coisas foram criadas e, por Tua vontade, existiram e foram criadas".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="AP" data-chapter="4"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="AP" data-chapter="4"
+                                data-total="22" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

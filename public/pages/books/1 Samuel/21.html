@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - 1 Samuel, 21</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/1SM/21. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">1 Samuel, <span id="chapter">21</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Então, Davi veio a Nobe para ver Aimeleque, o sacerdote. Aimeleque veio, trêmulo, encontrar-se com Davi e lhe disse: "Por que estás sozinho e não há ninguém contigo?".</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Davi disse a Aimeleque, o sacerdote: "O rei me mandou em uma missão e disse-me: 'Não deixes que ninguém saiba sobre o negócio que eu estou te enviando, e o que te ordenei.' Estou sozinho porque encaminhei os jovens para um certo lugar.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Agora, o que tens nas mãos? Dá-me cinco fatias de pão, ou qualquer coisa que tiveres aí".</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>O sacerdote respondeu a Davi e disse: "Não há pão comum, porém há pão santo — se os jovens tiverem se privado de mulheres".</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Davi respondeu ao sacerdote: "Certamente estamos privados de mulheres durante estes três dias. Quando eu parti, os corpos dos jovens foram dedicados a Yahweh, ainda que fosse uma jornada comum. Quanto mais hoje seus corpos serão dedicados a Yahweh?".</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Então, o sacerdote lhe deu o pão que foi dedicado a Yahweh. Pois não havia pão ali, apenas o pão da presença, que foi removido de diante do <mark>Senhor</mark> a fim de que se colocasse pão quente em seu lugar.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Um dos servos de Saul estava lá naquele dia, detido perante Yahweh. Seu nome era Doegue, o edomeu, o chefe dos pastores de Saul.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Davi disse a Aimeleque: "Não haveria aqui alguma lança ou espada? Pois eu não trouxe nem minha espada nem minhas armas comigo, porque o negócio do rei era urgente". O sacerdote disse:</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>"A espada de Golias, o filisteu a quem tu mataste no vale de Elá, está aqui, embalada em um pano atrás do manto sacerdotal. Se tu quiseres levá-la, pega-a, pois não há outra arma aqui". Davi disse: "Não há outra espada como aquela; dá-me, pois."</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Davi levantou-se e escapou de Saul naquele dia e foi a Áquis, o rei de Gate.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Os servos de Áquis lhe disseram: "Não é este Davi o rei da terra? Eles não cantaram uns para os outros sobre ele com danças: 'Saul matou seus milhares, e Davi seus dez milhares'?"</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Davi levou essas palavras a sério e teve muito medo de Áquis, o rei de Gate.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Ele mudou seu comportamento diante deles e fingiu ser louco nas mãos deles; e ele fez marcas nas portas e deixou que sua saliva escorresse por sua barba.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Então Áquis disse a seus servos: "Vós não vedes que o homem é louco? Por que vós o trouxestes para mim?</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Teria eu necessidade de homens loucos para que vós trouxésseis este indivíduo para agir como um em minha presença? Este indivíduo realmente entrará na minha casa?".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="1SM" data-chapter="21"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="1SM" data-chapter="21"
+                                data-total="31" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

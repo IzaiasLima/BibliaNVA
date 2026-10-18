@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - 1 Crônicas, 10</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/1CR/10. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">1 Crônicas, <span id="chapter">10</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Os filisteus lutaram contra Israel. Todos os homens de Israel fugiram de diante dos filisteus e caíram mortos no Monte Gilboa.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Os filisteus perseguiram Saul e seus filhos. Mataram Jônatas, Abinadabe e Malquisua, filhos de Saul,</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>A batalha contra Saul foi severa, e os arqueiros o alcançaram. Ele foi gravemente ferido por eles.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Então, Saul disse ao seu escudeiro: "Tira a tua espada e mata-me. De outra maneira, esses incircuncisos virão e abusarão de mim". Mas seu escudeiro não o fez, porque estava com muito medo. Então, Saul tomou sua própria espada e jogou-se sobre ela.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Quando o seu escudeiro viu que Saul estava morto, ele também  jogou-se sobre sua espada e morreu.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Assim morreram Saul e seus três filhos; todos os membros de sua casa morreram juntos.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Quando todos os homens de Israel que estavam no vale viram que eles fugiram e que Saul e seus filhos estavam mortos, eles abandonaram suas cidades e fugiram. Então, os filisteus vieram e habitaram nelas.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>No dia seguinte, quando os filisteus vieram saquear os mortos, eles encontraram os corpos de Saul e seus filhos no monte Gilboa.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Eles saquearam seu corpo, cortaram sua cabeça e tiraram sua armadura. Enviaram mensageiros por toda a Filístia para levarem a notícia aos seus ídolos e ao povo.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Eles colocaram a armadura de Saul no templo de seus deuses e pregaram sua cabeça no templo de Dagom.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Quando todos em Jabes-Gileade ouviram tudo o que os filisteus fizeram a Saul,</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>todos os guerreiros foram e pegaram o corpo de Saul e de seus filhos e os trouxeram para Jabes. Eles enterraram seus ossos debaixo do carvalho em Jabes e jejuaram por sete dias.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Assim, Saul morreu porque foi infiel a Yahweh. Ele não obedeceu as instruções do <mark>Senhor</mark>, mas pediu conselhos a alguém que consultava os mortos.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Ele não buscou a orientação do <mark>Senhor</mark>, por isso, Yahweh o matou e entregou o reino a Davi, filho de Jessé.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="1CR" data-chapter="10"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="1CR" data-chapter="10"
+                                data-total="29" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

@@ -35,16 +35,56 @@ Exemplos: [/api/jó/1/22](https://biblia.izaias.com.br/api/jó/1/22); [/api/jo/1
 
 ## Modo off-line
 
-O aplicativo pode armazenar todo o texto bíblico no dispositivo, permitindo a leitura sem conexão com a internet. Os dados ficam no Cache Storage do navegador, gerenciado pelo _Service Worker_ (`static/js/service-worker.js`). O modo off-line foi desenvolvido com a ajuda de inteligência artificial usando o agente de programação [Freebuff](www.freebuff.com). 
+O aplicativo pode armazenar todo o texto bíblico no dispositivo, permitindo a leitura sem conexão com a internet. Os dados ficam no Cache Storage do navegador, gerenciado pelo _Service Worker_ (`public/pages/js/service-worker.js`). O modo off-line foi desenvolvido com a ajuda de inteligência artificial usando o agente de programação [Freebuff](www.freebuff.com). 
 
 **Como usar:**
 
 1. Abra o aplicativo e toque no ícone de download (nuvem) na barra inferior;
-2. Toque em **Baixar Bíblia** e aguarde (~10 MB, pode levar alguns minutos);
+2. Toque em **Baixar Bíblia** e aguarde (~14 MB de páginas HTML prontas — poucos segundos numa boa conexão);
 3. Após a conclusão, o texto completo fica disponível off-line.
+
+**O que é baixado** (três fases, executadas pelo Service Worker):
+
+1. o _shell_ do aplicativo — telas, CSS, JavaScript, ícones, fontes e imagens;
+2. os metadados da API (`/api` e `/api/{book}` — lista de livros e de capítulos de cada livro);
+3. as 1.189 páginas estáticas de capítulo de `public/pages/books/`, buscadas diretamente no servidor.
+
+Como as páginas já chegam prontas do servidor, o download dura segundos — a
+versão anterior baixava 1.189 JSONs da API, uma requisição por capítulo, e
+levava minutos. A rotina exige que as páginas existam em `public/pages/books/`
+(gere-as com `python3 sources/generate_pages.py all`; neste repositório já
+vêm geradas): capítulo ausente conta como falha e o resultado é exibido como
+*parcial*, nunca como concluído. **Limpar dados** remove apenas o conteúdo
+(páginas de capítulo e cache da API), preservando o _shell_ do aplicativo.
+
+O ciclo completo pode ser validado automaticamente (download → off-line em
+rede emulada → servidor parado → limpeza) com o roteiro em
+`tests/test_offline_e2e.py`:
+
+```shell
+python3 tests/test_offline_e2e.py env-up
+python3 tests/test_offline_e2e.py download && python3 tests/test_offline_e2e.py download-wait
+python3 tests/test_offline_e2e.py offline-cdp
+python3 tests/test_offline_e2e.py server-off
+python3 tests/test_offline_e2e.py cleanup
+python3 tests/test_offline_e2e.py env-down
+```
 
 O download pode ser interrompido com **Cancelar** (o que foi baixado é mantido) e os dados podem ser liberados a qualquer momento com **Limpar dados**. A busca por palavras continua dependendo de conexão, pois é processada no servidor.
 
+
+## Hospedagem (Vercel)
+
+O projeto é estruturado para ser hospedado na Vercel:
+
+- `public/pages/` — todo o estático (páginas de capítulo, telas, CSS, JS,
+  ícones, fontes) é servido pela CDN da borda, sem invocar a função Python;
+  a compressão (Brotli/Gzip) é aplicada automaticamente pela CDN.
+- função Python (FastAPI, `main.py`) — apenas a `/api` (banco Turso) e o
+  redirect de `/`; o entrypoint `main:app` é detectado automaticamente.
+- `vercel.json` — `cleanUrls` (os links usam URLs sem `.html`) e
+  `Cache-Control: no-cache` para `/service-worker.js`.
+- variáveis de ambiente no projeto Vercel: `DATABASE_URL` e `DB_AUTH_TOKEN`.
 
 ## Termos de Uso
 Este serviço é gratuito, disponível para uso por qualquer pessoa, desde que não haja abuso em sua utlização. O serviço tem um limite de requisições por segundo, portanto não use esta API para baixar a Bíblia inteira. Em vez disso, obtenha os dados da fonte original, informada no site oficial da NVA. Também não use os nossos endpoints como backend para uma aplicação que tenha alta demanda de acessos.
@@ -55,9 +95,9 @@ Não há garantia de disponibilidade, qualidade ou a corretude deste serviço. O
 
 O script `generate_pages.py` reproduz, em HTML estático, o mesmo conteúdo que a
 navegação exibiria para um capítulo — ou seja, o template `chapter-template` de
-`static/bible.html` renderizado com a resposta de `/api/{livro}/{capítulo}`.
-As páginas são gravadas em `static/books/<NomeDoLivro>/<capítulo>.html` (ex.:
-`static/books/Salmos/23.html`) e ficam acessíveis também sem a extensão, em
+`public/pages/bible.html` renderizado com a resposta de `/api/{livro}/{capítulo}`.
+As páginas são gravadas em `public/pages/books/<NomeDoLivro>/<capítulo>.html` (ex.:
+`public/pages/books/Salmos/23.html`) e ficam acessíveis também sem a extensão, em
 `/pages/books/Salmos/23`.
 
 O servidor precisa estar em execução (por padrão em `http://127.0.0.1:8000`):
@@ -79,8 +119,8 @@ e o resumo final informa quantas falharam. O script usa apenas a biblioteca
 padrão (sem dependências novas).
 
 A lista de livros também tem uma réplica dinâmica em
-`static/bible/bible.html` (servida em `/pages/bible/bible.html`): é uma cópia
-de `static/bible.html` que continua consultando a API (HTMX + Mustache), com
+`public/pages/bible/bible.html` (servida em `/pages/bible/bible.html`): é uma cópia
+de `public/pages/bible.html` que continua consultando a API (HTMX + Mustache), com
 uma diferença — na lista de capítulos, cada número é um link para a página
 estática correspondente (`/pages/bible/{Livro}/{capítulo}`) em vez de
 renderizar o capítulo na própria página. Busca, favoritos, último capítulo e

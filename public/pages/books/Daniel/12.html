@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Daniel, 12</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/DN/12. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Daniel, <span id="chapter">12</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Naquele tempo, Miguel, o grande príncipe que guarda o teu povo se levantará. Haverá um tempo de tribulação como nunca houve desde o início de qualquer nação até então. Naquele tempo, teu povo será salvo, todo aquele cujo nome for achado escrito no Livro.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Muitos desses que dormem no pó da terra ressuscitarão, alguns para a vida eterna e outros para vergonha e desprezo eterno.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Aqueles que são sábios resplandecerão como o brilho do céu acima, e aqueles que convertem muitos para a justiça brilharão como as estrelas, para sempre e sempre.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Mas tu, Daniel, sela estas palavras; guarda o livro selado até o fim do tempo. Muitos correrão aqui e ali, e o conhecimento aumentará".</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Então, eu, Daniel, olhei e havia outros dois em pé; um ficou de um lado da margem do rio e o outro do outro lado.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Um deles disse para o homem vestido de linho, aquele que estava rio acima: "Quanto tempo haverá até o fim desses eventos maravilhosos?".</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Eu ouvi o homem vestido de linho, que estava rio acima, ele levantou suas mãos para o céu e jurou por Aquele que vive para sempre, que haveria um tempo, tempos e metade de um tempo. Quando o poder do povo santo tiver sido destruído, todas essas coisas terão acontecido.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Eu ouvi, mas não entendi. Então, perguntei: "Meu senhor, qual será o resultado de todas essas coisas?".</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Ele disse: "Vai-te, Daniel, porque essas palavras estão lacradas e seladas até o fim dos tempos.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Muitos serão purificados, limpos e refinados, mas os maus agirão com maldade. Nenhum dos maus entenderá, mas aqueles que são sábios entenderão.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Desde o tempo que o sacrifício diário for tirado e a abominação que causa completa desolação estiver estabelecida, haverá um mil duzentos e noventa dias.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Bendito é o que espera até o fim de mil trezentos e trinta e cinco dias.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Tu deves seguir teu caminho até o fim, e descansarás. Tu descansarás e te levantarás no lugar designado para ti no fim dos dias".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="DN" data-chapter="12"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="DN" data-chapter="12"
+                                data-total="12" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

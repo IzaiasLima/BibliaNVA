@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Isaías, 62</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/IS/62. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Isaías, <span id="chapter">62</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Por amor a Sião, não me silenciarei; por amor a Jerusalém, não descansarei até que a sua justiça resplandeça como o nascer do sol, e a sua salvação queime como uma tocha acesa.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>As nações verão a tua justiça e todos os reis, a tua glória. Tu serás chamada por um novo nome, que Yahweh escolherá.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Tu também serás como uma bela coroa real na mão do <mark>Senhor</mark>, como um turbante de realeza na mão do teu Deus.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>De ti, nunca mais será dito "Abandonada"; de tua terra, nunca mais será dito "Desolada". Certamente, tu serás chamada "Meu prazer está nela", e a tua terra se chamará "Casada", pois Yahweh Se alegra em ti e a tua terra se casará.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Verdadeiramente, como um homem jovem que se casa com uma mulher jovem, assim teus filhos se casarão contigo; como um noivo se alegra com sua noiva, teu Deus Se alegrará contigo.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Tenho colocado vigias nas tuas muralhas, ó Jerusalém; eles não estão em silêncio nem de dia, nem de noite. Vós, que continuamente vos  lembrais do <mark>Senhor</mark>, não pareis.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Não permitais que Ele descanse até que restabeleça Jerusalém e faça dela um louvor na terra.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>O <mark>Senhor</mark> declarou pela Sua mão direita e pelo Seu braço forte: "Certamente, não darei mais os teus grãos como comida aos teus inimigos. Estrangeiros não mais beberão teu vinho novo, para o qual tens trabalhado.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Pois aqueles que colherem grãos, deles comerão e louvarão a Yahweh, e aqueles que colherem uvas, delas beberão vinho nos pátios do Meu santuário".</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Passai, passai pelos portões! Preparai o caminho para o povo! Construí a estrada, construí-a! Ajuntai as pedras! Levantai uma bandeira como sinal para as nações!</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Vede, Yahweh anuncia aos confins da terra: "Dizei à filha de Sião: Vê, teu Salvador está vindo! Vê, tua recompensa vem com Ele e tua recompensa está indo à frente Dele".</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Eles vos chamarão de "Povo santo, os redimidos do <mark>Senhor</mark>". E tu, Sião, serás chamada de "Procurada, uma cidade que não está abandonada".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="IS" data-chapter="62"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="IS" data-chapter="62"
+                                data-total="66" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

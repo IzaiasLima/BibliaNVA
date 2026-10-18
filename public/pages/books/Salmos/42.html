@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Salmos, 42</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/SL/42. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Salmos, <span id="chapter">42</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title">Para o regente musical. Masquil dos filhos de Corá.</p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Assim como a corça anseia por correntes de água, também tenho sede de Ti, ó Deus.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Tenho sede de Deus, do Deus vivo. Quando virei e me apresentarei diante de Deus?</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Minhas lágrimas têm sido o meu alimento dia e noite, enquanto meus inimigos estão sempre me dizendo: "Onde está o teu Deus?"</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Derrama-se em pranto a minha alma, quando trago à mente as lembranças de como eu andava com a multidão, guiando o povo à casa de Deus, com vozes de alegria e louvor; uma multidão celebrando em festa.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Por que estás abatida, ó minha alma? Por que estás angustiada dentro de mim? Espera em Deus, pois ainda O louvarei. Ele é a minha salvação.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Meu Deus, minha alma está abatida dentro de mim; por isso, eu Te trago à memória nas terras do Jordão, nos três picos do Monte Hermom e no monte Mizar.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Um abismo chama outro abismo ao barulho de Tuas cachoeiras; todas as Tuas ondas e vagalhões vieram sobre mim.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Ainda assim, Yahweh ordenará Seu amor leal durante o dia; à noite, Sua canção estará comigo, uma oração ao Deus da minha vida.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Eu direi a Deus, minha Rocha: "Por que Te esqueceste de mim? Por que ando lamentando por causa da opressão do inimigo?”</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Semelhante a uma espada em meus ossos é quando meus adversários me insultam, sempre a perguntar: “Onde está o teu Deus?”</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Por que estás abatida, ó minha alma? Por que estás angustiada dentro de mim? Espera em Deus, pois ainda O louvarei. Ele é a minha salvação e o meu Deus.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="SL" data-chapter="42"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="SL" data-chapter="42"
+                                data-total="150" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

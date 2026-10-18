@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - 2 Coríntios, 13</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/2CO/13. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">2 Coríntios, <span id="chapter">13</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Esta é a terceira vez que eu irei até vós. "Toda acusação deve ser resolvida pela palavra de duas ou três testemunhas".</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Eu já falei para aqueles que pecaram anteriormente e para todos os demais, quando estive convosco pela segunda vez, e digo de novo: quando voltar novamente, não vos pouparei.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Eu vos digo isso porque estais procurando evidências de que Cristo está falando através de mim. Ele não é fraco para convosco. Ao contrário, Ele é poderoso em vós.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Pois Ele foi crucificado em fraqueza, mas está vivo pelo poder de Deus. Pois nós também somos fracos Nele, mas viveremos com Ele pelo poder de Deus entre vós.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Examinai a vós mesmos para saberdes se estais na fé. Provai a vós mesmos. Não percebeis que Jesus Cristo está em vós? A não ser que já estais reprovados.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>E eu estou confiante de que reconhecereis que não somos reprovados.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Oramos a Deus para que não façais mal algum. Não oro para que pareçamos aprovados. Em vez disso, oro para que façais o que é certo, embora pareça que fomos reprovados no teste.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Pois não podemos fazer coisa alguma contra a verdade, mas apenas em favor da verdade.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Pois nos alegramos quando estamos fracos e vós estais fortes. Nós também oramos para que sejais aperfeiçoados.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Escrevo essas coisas enquanto estou distante de vós, para que, quando eu estiver convosco, não precise vos tratar com rigor no uso da minha autoridade, a qual o Senhor me deu, para que eu possa vos edificar, e não vos destruir.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Finalmente, irmãos, alegrai-vos! Trabalhai para serdes aperfeiçoados, sedes encorajados, concordai uns com os outros, vivei em paz. E o Deus de amor e paz estará convosco.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Saudai-vos uns aos outros com um beijo santo.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Todos os santos vos saúdam.[]</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Que a graça do Senhor Jesus Cristo, o amor de Deus, e a comunhão do Espírito Santo sejam com todos vós.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="2CO" data-chapter="13"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="2CO" data-chapter="13"
+                                data-total="13" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

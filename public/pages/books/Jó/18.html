@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Jó, 18</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/JÓ/18. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Jó, <span id="chapter">18</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Então, Bildade, o suíta, respondeu:</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>"Quando irás parar de falar? Considera, depois falaremos".</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Por que nós somos tratados como animais; por que nos tornamos ignorantes na tua presença?</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Tu, que te despedaças na tua ira, poderia a Terra ser abandonada por tua causa ou poderiam as pedras serem removidas de seus lugares?</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Realmente, a luz de uma pessoa corrupta será apagada; a faísca do seu fogo não brilhará.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>A luz se escurecerá na sua tenda e a lâmpada sobre ela será tirada.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Os seus passos firmes ficarão curtos; os seus próprios planos o lançarão para baixo.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Porque, por seus próprios pés, será lançado na rede e andará nos fios enredados.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>A armadilha o pega pelo calcanhar; o laço o prende firme.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Uma corda está escondida para ele no chão; e uma armadilha no caminho.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Terrores o farão sentir medo por todos os lados; eles o perseguirão pelo calcanhar.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Suas riquezas se tornarão em fome e a calamidade estará pronta ao seu lado.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>As partes do seu corpo serão devoradas; realmente, o primogênito da morte o devorará.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Ele é arrancado da segurança da sua tenda, levado para o rei dos terrores.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Um povo que não é seu habitará na sua tenda depois que eles virem o enxofre espalhado dentro de sua casa.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Suas raízes secarão por baixo; por cima, serão cortados os seus ramos.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Sua memória perecerá na Terra; e, pelas ruas, não terá nome.</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>Ele será tirado da luz para as trevas e será expulso deste mundo.</span></p> 
+<p class="verse "><span class="number ">19</span>&ensp;<span>Ele não terá filhos ou netos em sua geração e também nenhuma lembrança dos parentes de onde morava.</span></p> 
+<p class="verse "><span class="number ">20</span>&ensp;<span>Aqueles que vivem no ocidente serão amedrontados pelo que lhe acontece em um dia; aqueles que vivem no oriente ficarão amedrontados por isso.</span></p> 
+<p class="verse "><span class="number ">21</span>&ensp;<span>Certamente, tais são as casas dos corruptos, lugares daqueles que não conhecem a Deus".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="JÓ" data-chapter="18"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="JÓ" data-chapter="18"
+                                data-total="42" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

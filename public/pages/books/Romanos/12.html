@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Romanos, 12</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/RM/12. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Romanos, <span id="chapter">12</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Portanto, irmãos, eu insisto que, pelas misericórdias de Deus, apresenteis vossos corpos como sacrifício vivo, santo e agradável a Deus, que é o vosso culto racional.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Não vos conformeis com este mundo, mas transformai-vos pela renovação da vossa mente para que conheçais qual é a boa, agradável e perfeita vontade de Deus.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Porque, pela graça que me foi dada, eu vos digo que cada um de vós não deve pensar de si mesmo muito mais do que deveria; mas sim, pense sabiamente, segundo a medida da fé que Deus repartiu a cada um.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Pois nós temos muitos membros em um corpo, mas nem todos os membros têm a mesma função.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Assim também nós, que somos muitos, formamos um só corpo em Cristo e, individualmente, somos membros uns dos outros.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Nós temos diferentes dons de acordo com a graça que nos foi dada. Se o dom de alguém é profecia, que seja conforme a proporção da fé.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Se o dom é serviço, que sirva. Se o dom é ensinar, que ensine.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Se o dom é encorajamento, que encoraje. Se o dom é contribuir, que contribua generosamente. Se o dom é liderar, que lidere com zelo. Se o dom é misericórdia, que exerça misericórdia com alegria.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Que o amor seja sem hipocrisia. Odiai o mal; apegai-vos ao que é bom.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Quanto ao amor fraternal, sede afetuosos uns para com os outros. Quanto à honra, respeitai-vos uns aos outros.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Quanto ao zelo, não sejais descuidados. Sede fervorosos no espírito, servindo ao Senhor.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Alegrai-vos na esperança que tendes no futuro. Sede pacientes nas tribulações. Orai constantemente.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Compartilhai as necessidades dos santos e sede hospitaleiros.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Abençoai os que vos perseguem; abençoai e não amaldiçoeis.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Alegrai-vos com os que se alegram; chorai com os que choram.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Tende o mesmo sentimento uns para com os outros. Não penseis de maneira orgulhosa, mas aceitai as pessoas humildes. Não sejais sábios aos vossos próprios olhos.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>A ninguém pagueis mal por mal. Fazei o que é bom à vista de todos.</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>Se for possível, no que depender de vós, tende paz com todos.</span></p> 
+<p class="verse "><span class="number ">19</span>&ensp;<span>Amados, não vos vingueis a vós mesmos, mas dai lugar à ira de Deus. Porque está escrito: "'A vingança pertence a Mim; Eu retribuirei'. diz o Senhor".</span></p> 
+<p class="verse "><span class="number ">20</span>&ensp;<span>"Mas se o teu inimigo tiver fome, dá-lhe de comer. Se ele tiver sede, dá-lhe de beber. Porque se fizeres isso, tu amontoarás brasas de fogo sobre a cabeça dele".</span></p> 
+<p class="verse "><span class="number ">21</span>&ensp;<span>Não te deixes vencer pelo mal, mas vence o mal com o bem.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="RM" data-chapter="12"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="RM" data-chapter="12"
+                                data-total="16" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Sofonias, 2</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/SF/2. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Sofonias, <span id="chapter">2</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Reuni-vos, ajuntai-vos, nação sem pudor.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Antes que o decreto entre em vigor, antes que o dia passe como a palha, antes que venha sobre vós o furor da ira do <mark>Senhor</mark>, antes que o dia da ira do <mark>Senhor</mark> venha sobre vós.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Buscai Yahweh, todos os humildes da terra que obedeceis Seus decretos! Buscai a justiça! Buscai a humildade e talvez sejais protegidos no dia da ira do Senhor!</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Gaza será abandonada, e Asquelom será transformada em devastação! Expulsarão Asdode ao meio-dia, extirparão Ecrom!</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Ai dos habitantes da costa do mar, a nação dos quereteus! Yahweh falou contra vós, Canaã, terra dos filisteus. Eu vos destruirei até que não haja em vós remanescente!</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Então, a costa do mar se tornará em pasto, terra para pastores e currais para ovelhas.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>A região costeira pertencerá ao remanescente da casa de Judá, que apascentará os seus rebanhos. Seu povo se deitará ao entardecer, nas casas de Asquelom, e Yahweh, seu Deus, cuidará deles e restaurará sua sorte.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>"Eu ouvi as provocações de Moabe e as injúrias do povo de Amom quando eles provocaram Meu povo e violaram suas fronteiras.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Portanto, assim como Eu vivo", esta é a declaração do <mark>Senhor</mark> dos Exércitos, Deus de Israel, "Moabe se tornará como Sodoma, e o povo de Amom como Gomorra; um lugar de ervas daninhas e um poço de sal, devastada para sempre! Mas o remanescente do Meu povo os saqueará, e o remanescente da minha nação herdará a terra deles!".</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Isto acontecerá a Moabe e Amom por causa de seu orgulho, uma vez que provocaram e insultaram o povo do <mark>Senhor</mark> dos Exércitos!</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Então, eles temerão Yahweh, Ele zombará de todos os deuses da terra. Todos O adorarão, de todos os lugares, de toda beira-mar!</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Vós etíopes, também sereis perfurados pela Minha espada,</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>e a mão de Deus atacará o norte e destruirá a Assíria. Então, Nínive se tornará uma ruína, tão seca como o deserto.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Então, rebanhos descansarão lá, todos os animais das nações, tanto o pelicano como o ouriço, descansarão no topo de suas colunas. Suas vozes soarão na janela, e entulho estará nas portas; suas vigas de cedro entalhado serão expostas.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Essa é a cidade exultante que viveu sem medo e que disse no seu coração: "Eu sou, e não há outra igual". Ela se tornou um horror, um lugar para animais ferozes pastarem! Cada um que passa por ela zombará com assobios e farão gestos de desprezo.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="SF" data-chapter="2"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="SF" data-chapter="2"
+                                data-total="3" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

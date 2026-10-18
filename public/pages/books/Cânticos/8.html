@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Cânticos, 8</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/CT/8. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Cânticos, <span id="chapter">8</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>"Eu gostaria que fosses como meu irmão, amamentado pelos seios da minha mãe. Então sempre que eu te encontrasse lá fora, eu poderia beijar-te, e ninguém me desprezaria.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Eu te guiaria e te levaria para dentro da casa da minha mãe, e tu me ensinarias. Eu te daria vinho aromático para beber e um pouco do suco de minhas romãs". A jovem mulher falando para si mesma:</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>"Sua mão esquerda está sob minha cabeça e sua mão direita me abraça". A mulher falando para as outras mulheres:</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>"Eu quero que jureis, filhas dos homens de Jerusalém, que vós não interrompais nosso amor até que ele acabe". As mulheres de Jerusalém falando:</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>"Quem é essa que está vindo do deserto, inclinando-se em seu amado?". A jovem mulher falando para seu amor: "Eu te despertei debaixo da macieira; ali sua mãe te concebeu; ali ela te deu a luz, ela te trouxe.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Põe-me  como um selo no teu coração, como selo em teu braço, pois o amor é forte como a morte. A paixão é tão implacável quanto o Sheol; é explosão de fogo, é uma labareda de fogo, uma chama mais quente do que qualquer outro fogo.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Águas torrenciais não poderiam apagar o amor, nem a inundação poderia afogá-lo. Se um homem desse todos os bens de sua casa por amor, a oferta seria completamente desprezada". Os irmãos da jovem mulher falando entre eles:</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>"Nós temos uma pequena irmã, e ela ainda não tem seios formados. O que podemos fazer para nossa irmã no dia que ela for prometida em casamento?</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Se ela for uma parede, nós construiremos nela uma torre de prata. Se ela for uma porta, nós a decoramos com tábuas de cedro". A jovem falando de si mesma:</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>"Eu era uma parede, mas meus seios agora são como torres de fortaleza, então eu sou completamente madura aos seus olhos". A jovem falando de si mesma:</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>"Salomão tinha uma vinha em Baal-Hamom. Ele arrendou a vinha para aqueles que a manteriam. Cada um tinha que trazer doze quilos de prata por seus frutos.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Minha vinha é só minha, os doze quilos de prata pertecem a ti, meu querido Salomão, e os dois quilos e meio são para aqueles que a mantêm por seus frutos". O amante falando para ela:</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>"Vós que viveis nos jardins, meus companheiros estão ouvindo sua voz; deixe-me ser o único que ouve também". A jovem mulher falando para seu amante:</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>"Apressa-te, meu amado, e sê como a gazela ou um jovem cervo pelos montes perfumados!".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="CT" data-chapter="8"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="CT" data-chapter="8"
+                                data-total="8" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

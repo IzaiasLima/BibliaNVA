@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Jó, 35</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/JÓ/35. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Jó, <span id="chapter">35</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Posteriormente, Eliú continuou, dizendo:</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>"Pensas que é justo dizer: 'Meu direito perante Deus'?</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Pois perguntas: 'Qual utilidade isso tem para mim?' e 'Eu estaria melhor se tivesse pecado?'.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Eu vos responderei, a ti e aos teus amigos.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Olhai para os céus e vede; eis que as núvens estão muitos mais altas que vós.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Se tu pecares, que mal tu fazes a Deus? Se as tuas transgressões se amontoam, que fazes a Ele?</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Se és justo, que podes dar a Ele? Que receberá Ele da tua mão?</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>A tua maldade só pode ferir um homem, já que tu és homem; e a a tua justiça só pode favorecer a outro filho de um homem.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Por causa de muitos atos de opressão, pessoas lamentam; elas clamam por socorro dos braços de homens poderosos.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Mas ninguém diz: 'Onde está Deus, meu Criador, que nos dá canções à noite,</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>que nos ensina mais que às feras do campo e que nos faz mais sábios que os pássaros dos céus?'.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Ali eles lamentam, mas Deus não responde por causa do orgulho do homem mau.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Deus certamente não ouvirá um clamor insensato, o Todo Poderoso não prestará atenção a isso.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Quanto menos Ele lhe responderá se disseres que não O vê, que o teu caso está diante Dele e que estás esperando por Ele!</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Quanto menos Ele te responderá se disseres que Ele nunca pune a ninguém com ira e que Ele não está muito preocupado com o orgulho das pessoas.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Então, Jó abre a sua boca apenas para falar tolice, ele amontoa palavras sem entendimento".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="JÓ" data-chapter="35"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="JÓ" data-chapter="35"
+                                data-total="42" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Salmos, 72</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/SL/72. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Salmos, <span id="chapter">72</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title">Salmo de Salomão.</p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Dá ao rei Teus justos decretos, ó Deus, e Tua justiça, ao filho do rei.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Que ele julgue o Teu povo com retidão e os Teus pobres com justiça.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Que as montanhas produzam paz para o povo, e as colinas produzam retidão.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Que ele julgue os pobres do povo, salve os filhos dos necessitados e esmague o opressor.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Que eles Te honrem enquanto durar o sol e enquanto houver a lua, por todas as gerações.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Que ele desça como a chuva sobre a erva ceifada, como o aguaceiro que rega a terra.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Que os justos floresçam nos seus dias, e haja uma abundância de paz até que não mais exista a lua.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Que ele tenha domínio de um mar a outro, do rio até as extremidades da terra.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Que aqueles que vivem no deserto se inclinem diante dele, e seus inimigos lambam o pó.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Que os reis de Társis e das ilhas paguem-lhe tributos, e os reis de Sabá e de Seba ofereçam-lhe presentes.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Que todos os reis se prostrem diante dele, que todas as nações o sirvam.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Pois ele ajuda o necessitado, que clama, e o aflito, pois não têm quem os socorra.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Ele se compadece do pobre e do necessitado, e salva a vida dos que estão em necessidade.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Ele resgata as suas vidas da opressão e da violência, o sangue deles é precioso aos seus olhos.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Que viva o rei! Que o ouro de Sabá lhe seja dado. Que as pessoas sempre orem por ele, e Deus o abençoe em todo o dia.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Haja abundância de grãos na terra, no topo das montanhas, suas plantações se ondulem; que o seu fruto seja como o do Líbano, e que os habitantes das cidades floresçam como a relva no campo.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Que o seu nome permaneça para sempre, que seu nome continue assim como o sol; que as pessoas o abençoem e todas as nações o chamem de abençoado.</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>Bendito seja Yahweh Deus, o Deus de Israel, o único que faz maravilhas.</span></p> 
+<p class="verse "><span class="number ">19</span>&ensp;<span>Que Seu glorioso nome seja exaltado para sempre, e toda a terra se encha com a Sua glória! Amém e amém!</span></p> 
+<p class="verse "><span class="number ">20</span>&ensp;<span>As orações de Davi, filho de Jessé, terminam aqui.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="SL" data-chapter="72"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="SL" data-chapter="72"
+                                data-total="150" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

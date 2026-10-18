@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - 2 Coríntios, 3</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/2CO/3. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">2 Coríntios, <span id="chapter">3</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Começamos a nos gloriar novamente? Não precisamos de cartas de recomendações para vós ou de vós, como alguns, precisamos?</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Vós mesmos sois a nossa carta de recomendação, escrita em nossos corações, conhecida e lida por todos.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>E mostrais ser uma carta de Cristo, entregue por nós, escrita não com tinta, mas pelo Espírito do Deus vivo. Não escrita em tábuas de pedra, mas em tábuas de corações humanos.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>E essa é a confiança que temos em Deus por intermédio de Cristo.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Não somos competentes, por nós mesmos, para afirmarmos que qualquer coisa vem de nós, pelo contrário, nossa competência vem de Deus.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Foi Ele que nos capacitou para sermos servos da nova aliança, não da letra, mas do Espírito; pois a letra mata, mas o Espírito dá vida.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Ora, o ministério da morte, com letras gravadas em pedras, veio com tanta glória que o povo de Israel não podia olhar diretamente no rosto de Moisés, por causa da glória de seu rosto, a qual estava perdendo seu brilho.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Quão mais glorioso será o ministério do Espírito?</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Se o ministério da condenação possuía glória, quanto mais é abundante o ministério da justificação em glória!</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>De fato, aquilo que uma vez foi feito glorioso, nesse aspecto, deixou de ser, por causa da glória que o excede.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Pois, se aquilo que estava perdendo o brilho tinha glória, muito mais glória terá o que é permanente!</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Já que temos tal confiança, agimos com toda ousadia;</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>não como Moisés, que colocou um véu sobre seu rosto, para que o povo de Israel não pudesse perceber o fim da glória que estava perdendo o brilho.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Mas suas mentes estavam fechadas, pois, ainda hoje, o mesmo véu permanece na leitura da antiga aliança. Esse véu se mantém porque, apenas em Cristo, é removido.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Mesmo hoje, sempre que Moisés é lido, um véu é colocado sobre seus corações.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Porém, quando uma pessoa se volta para o Senhor, o véu é removido.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Pois o Senhor é o Espírito e, onde o Espírito do Senhor está, há liberdade.</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>Todos nós, com o rosto desvendado, vemos a glória do Senhor. E estamos sendo transformados, de glória em glória, na mesma imagem gloriosa, como da parte do Senhor, que é o Espírito.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="2CO" data-chapter="3"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="2CO" data-chapter="3"
+                                data-total="13" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

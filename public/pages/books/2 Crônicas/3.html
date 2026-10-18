@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - 2 Crônicas, 3</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/2CR/3. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">2 Crônicas, <span id="chapter">3</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Então, Salomão começou a construir a casa do <mark>Senhor</mark> em Jerusalém, no monte Moriá, ondo <mark>Senhor</mark> apareceu a seu pai, Davi.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Ele preparou o lugar que Davi planejou para isto, na eira de Ornã, o jebuseu. Ele começou a construir no segundo dia do segundo mês, no quarto ano do seu reino.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Estas foram as dimensões da fundação que Salomão colocou para a casa de Deus. Usando o velho estilo de côvado, e eram sessenta côvados de comprimento e vinte côvados de largura.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>O comprimento do pórtico na frente da casa era de vinte côvados, combinando com a largura do prédio. Sua altura também era de vinte côvados, e Salomão revestiu o interior com ouro puro.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Ele decorou o forro da entrada principal com cipreste, os quais ele revestiu de ouro fino, e entalhou com palmeiras e correntes.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Ele decorou a casa com pedras preciosas; o ouro era ouro de Parvaim.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Ele também revestiu as vigas, batentes, paredes e portas com ouro; ele entalhou querubins nas suas paredes.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Também construiu o Lugar Santíssimo. Seu comprimento combinava com a largura da casa, vinte côvados, e sua largura também era de vinte côvados. Revestiu-a com outro fino, totalizando seiscentos talentos.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>O peso dos pregos eram cinquenta siclos de ouro. Ele revestiu suas superfícies altas com ouro.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Fez duas imagens de querubins para o Lugar Santíssimo; artesãos revestiram-no com ouro.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>As asas dos querubins eram de vinte côvados de comprimento juntas; a asa de um querubim era de cinco côvados de comprimento, alcançando a parede da casa; a outra asa, era da mesma maneira, de cinco côvados de comprimento, alcançando a asa do outro querubim.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>A asa do outro querubim também era de cinco côvados, alcançando a parede da casa; sua outra asa também era de cinco côvados, tocando a asa do primeiro querubim.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>As asas desses querubins tomavam um total de vinte côvados. Os querubins foram postos de pé, com suas faces viradas à entrada principal.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Fez um véu de azul, púrpura, lã de carmesim e linho fino, e ele decorou querubins nele.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Salomão também fez dois pilares, cada um com trinta e cinco côvados de altura, para a frente da casa; os capitéis que eram no topo deles, cada um, tinha cinco côvados de altura.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Fez correntes para os pilares e os colocou no topo deles; ele também fez cem romãs e as juntou as correntes.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Colocou os pilares na frente do templo, um ao lado direito, e outro no lado esquerdo; nomeou o pilar da direita de Jaquim, e o pilar da esquerda de Boaz.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="2CR" data-chapter="3"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="2CR" data-chapter="3"
+                                data-total="36" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

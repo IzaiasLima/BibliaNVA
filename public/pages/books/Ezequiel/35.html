@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Ezequiel, 35</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/EZ/35. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Ezequiel, <span id="chapter">35</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Então, a palavra do <mark>Senhor</mark> veio a mim dizendo:</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>"Filho do homem, põe a tua face contra o monte Seir e profetiza contra ele.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Dize-lhe: 'Assim diz Yahweh Deus: Eis que Eu sou contra ti, monte Seir, e te golpearei com a Minha mão e te farei uma desolação e um horror.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Farei de tuas cidades ruínas, e vós tornareis desolados; então, sabereis que eu sou Yahweh.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Porque sempre foste hostil ao povo de Israel e porque os espalhaste pelas mãos da espada, no tempo da sua angústia, no momento em que o castigo era maior.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Assim como Eu vivo — esta é a declaração do <mark>Senhor</mark> Deus — Eu te prepararei para o derramamento de sangue e o sangue vai te perseguir! Já que tu não odeias o derramamento de sangue, o sangue te perseguirá.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Farei do monte Seir uma desolação completa, um deserto e eliminarei qualquer um que passar e retornar.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Então, encherei as suas montanhas com os seus mortos. Todos aqueles mortos pela espada, cairão em teus altos montes e vales, e em todos os teus córregos.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Farei de vós uma perpétua desolação. Vossas cidades não serão habitadas, assim vós sabereis que eu sou Yahweh.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Tu disseste: "Estas duas nações e estas duas terras se tornarão minhas e nós as possuiremos", mesmo que Yahweh esteja presente com eles.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Portanto, tão certo como Eu vivo — declara Yahweh Deus — assim farei segundo a tua ira e segundo o teu zelo que tiveste no teu ódio a Israel e Me mostrarei a eles quando Eu te julgar.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Assim saberás que Eu sou Yahweh. Eu ouvi todos os insultos que tu falaste contra os montes de Israel, quando tu disseste: "Eles foram destruídos, eles foram entregues a nós, para os devorar".</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Tu te exaltaste contra Mim com o que disseste e tu multiplicaste as palavras que falaste contra Mim; e Eu ouvi tudo.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Assim diz Yahweh Deus: Farei de ti uma desolação, enquanto toda terra se regozija.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Como te alegraste com a destruição da herança do povo de Israel, farei o mesmo a ti. Tu te tornarás uma desolação, monte Seir, e todo o Edom; sim todo ele! Então, eles saberão que Eu sou Yahweh".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="EZ" data-chapter="35"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="EZ" data-chapter="35"
+                                data-total="48" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

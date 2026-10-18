@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - 1 Pedro, 4</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/1PE/4. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">1 Pedro, <span id="chapter">4</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Portanto uma vez que Cristo sofreu na carne, armai-vos com a mesma convicção: aquele que sofreu na carne deixou o pecado.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Consequentemente, tal pessoa, pelo resto de seus dias na carne, não mais viverá para os desejos dos homens, mas para a vontade de Deus.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Porque basta o tempo que passastes praticando o que os gentios queriam fazer: sensualidade, paixão, bebedeiras, banquetes, orgias, e idolatrias abomináveis.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Eles acham estranho que não vos junteis a eles ao mesmo excesso de devassidão, por isso, eles falam mal de vós.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Mas disto eles prestarão contas Àquele que está pronto para julgar os vivos e os mortos.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Para este propósito, o Evangelho foi também pregado para os mortos, para que, embora julgados segundo os homens quando na carne, vivam no Espírito, segundo Deus.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>O fim de todas as coisas está próximo. Portanto sede sensatos e sóbrios em vossos pensamentos por causa das vossas orações.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Antes de todas as coisas, tende amor fervoroso uns pelos outros, porque o amor cobre uma multidão de pecados.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Sede hospitaleiros uns para com os outros, sem murmuração.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Conforme o dom que cada um de vós recebeu, usai-o para servir uns aos outros, como bons administradores da multiforme graça de Deus.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Se alguém fala, fale como quem transmite a Palavra de Deus; se alguém serve, sirva com a força que Deus lhe dá; assim, em todas as coisas, Deus seja glorificado por meio de Jesus Cristo, a quem pertence a glória e o poder pelos séculos dos séculos. Amém.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Amados, não estranheis a provação que vem como fogo para testá-los, como se  alguma coisa estranha estivesse acontecendo a vós.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Pelo contrário, por mais que experimenteis os sofrimentos de Cristo, alegrai-vos, para que também vos alegreis e exulteis na revelação de Sua Glória.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Se sois insultados por causa do nome de Cristo, vós sois abençoados, porque sobre vós está repousando o Espírito da glória, o Espírito de Deus.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Todavia, que ninguém sofra como assassino,  ladrão, malfeitor, ou como quem se intromete em negócios alheios.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Mas se alguém sofrer como um cristão, não se envergonhe, porém glorifique a Deus por ter esse nome.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Porque é o tempo de começar o juizo a partir da casa de Deus. E se isso começa conosco, qual será o fim daqueles que não obedecem o Evangelho de Deus?</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>E se "é com dificuldades que o justo é salvo, em que situação ficará o ímpio pecador?"</span></p> 
+<p class="verse "><span class="number ">19</span>&ensp;<span>Portanto aqueles que sofrem de acordo com a vontade de Deus, confiem suas almas ao fiel Criador, praticando o bem.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="1PE" data-chapter="4"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="1PE" data-chapter="4"
+                                data-total="5" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

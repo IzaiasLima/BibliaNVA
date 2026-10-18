@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Ezequiel, 4</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/EZ/4. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Ezequiel, <span id="chapter">4</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>E Tu, filho do homem, leva contigo um tijolo e coloca-o à tua frente. Nele, desenha a cidade de Jerusalém.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Em seguida, põe um cerco e edifica fortificações perante ela. Levanta uma rampa de assalto contra a cidade e põe acampamentos em torno dela e coloca os aríetes ao seu redor.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Então, pega para ti uma panela de ferro e usa como um muro de ferro entre ti e a cidade e dirige o teu rosto para ela, pois estará sitiada, e tu colocarás o cerco contra ela. Isso será um sinal para a casa de Israel.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Então, deita-te sobre o teu lado esquerdo e coloca sobre ele o pecado da casa de Israel; carregarás o seu pecado conforme o número dos dias em que te deitares, em frente à casa de Israel.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Eu mesmo estou atribuindo a ti um dia para representar cada ano de sua punição: trezentos e noventa dias. Dessa forma, tu carregarás o pecado da casa de Israel.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>E, quando completares esses dias, deita-te outra vez, agora sobre o teu lado direito. Assim, carregarás o pecado da casa de Judá por quarenta dias. Eu te atribuirei um dia para cada ano.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Põe o teu rosto em direção a Jerusalém, que está sob o cerco e, com o teu braço descoberto, profetiza contra ela.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Eis que Eu estou pondo cordas em ti. Assim, tu não virarás de um lado para o outro, até que tenhas completado os dias de teu cerco.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Toma para ti trigo, cevada, feijão, lentilhas, painço e espelta; coloca-os numa vasilha e faze pão para ti, segundo o número dos dias em que te deitares sobre o teu lado. Por trezentos e noventa dias, tu comerás isso.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>A comida que comerás será por peso, vinte siclos por dia, e comerás em horários determinados a cada dia.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Então, beberás água pela medida de um sexto de him e beberás em horários determinados.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Tu a comerás como bolos de cevada, mas a assarás sobre excremento humano, à vista deles!".</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Assim diz Yahweh: "Isso significa que o pão que o povo de Israel comerá ali será imundo entre as nações, para onde os banirei".</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Então, eu disse: "Ah, Senhor Yahweh! Eu nunca fui impuro! Também nunca comi nada morto, nem qualquer coisa morta por animais. Desde a minha juventude até agora, carne suja nunca entrou na minha boca!".</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Então, Ele me disse: "Olha! Eu te dou esterco de vaca em vez de excremento humano; assim, tu prepararás teu pão sobre ele".</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Ele também me disse: "Filho do homem, eis que estou tirando o sustento de pão em Jerusalém e eles, com ansiedade, farão racionamento de pão e, com desespero, beberão água racionada.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Porque terão falta de pão e de água, todo homem ficará apavorado com o seu irmão e serão consumidos por causa da sua iniquidade".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="EZ" data-chapter="4"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="EZ" data-chapter="4"
+                                data-total="48" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

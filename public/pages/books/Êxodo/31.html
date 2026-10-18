@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Êxodo, 31</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/EX/31. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Êxodo, <span id="chapter">31</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Disse Yahweh a Moisés:</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>"Vê, Eu tenho chamado pelo nome a Bezalel filho de Uri filho de Hur, da tribo de Judá.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Eu tenho enchido a Bezalel com meu Espírito, para dar-lhe sabedoria, entendimento e conhecimento em todo tipo de atividade artística,</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>para fazer desenhos artísticos e trabalhar em ouro, prata e bronze;</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>também para cortar e definir pedras e para fazer entalhe em madeira, ou seja, para trabalhar em toda atividade artística.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Além dele, Eu tenho designado também a Aoliabe, filho de Aisamaque, da tribo de Dã. Eu tenho colocado nos corações de todos os que são sábios para que eles possam fazer tudo o que Eu tenho te ordenado. Isso inclui</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>a Tenda do encontro, a Arca dos Decretos da Aliança, a tampa da expiação que estará sobre a Arca, e todos os utensílios da Tenda:</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>a mesa com seus utensílios, o candelabro de ouro puro com todos os seus utensílios, o altar do incenso,</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>o altar para as ofertas queimadas com os seus utensílios, e a pia grande com a sua base;</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>as vestes finamente tecidas, a saber, as vestes sagradas para Arão, o sacerdote, e as de seus filhos, separados para Me servirem como sacerdotes;</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Isso também inclui o óleo da unção e o incenso de aroma agradável para o lugar sagrado. Esses artesãos devem fazer todas as coisas como Eu te ordenei".</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Disse Yahweh a Moisés:</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>"Fala aos israelitas: 'Vós certamente guardareis os sábados do <mark>Senhor</mark>, porque isso será um sinal entre Ele e vós através das gerações; para que saibais que Ele é Yahweh, que vos separastes para Ele mesmo.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Então vós deveis guardar o sábado, tratá-lo como santo, separado para Ele. Quem profanar o sábado certamente deverá ser morto. Qualquer um que trabalhar no sábado, essa pessoa deverá ser expulsa do meio do seu povo.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Durante seis dias trabalharás, mas o sétimo dia será o sábado de descanso solene, santo, separado para a honra do <mark>Senhor</mark>. Quem fizer qualquer tipo de trabalho no dia de sábado certamente deverá ser morto.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Portanto os israelitas devem guardar o sábado, observando-o através das gerações como lei perpétua.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>O sábado será um sinal entre Yahweh e os israelitas para sempre, porque Yahweh fez os céus e a terra em seis dias e, no sétimo dia, descansou e tomou alento'".</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>Quando Deus acabou de falar com Moisés no monte Sinai, deu-lhe as duas tábuas dos Decretos da Aliança, tábuas feitas de pedra, escritas pela Sua própria mão.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="EX" data-chapter="31"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="EX" data-chapter="31"
+                                data-total="40" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Hebreus, 2</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/HB/2. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Hebreus, <span id="chapter">2</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Portanto, devemos prestar mais atenção ao que nós temos ouvido,  para que de maneira alguma nos apartemos disso.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Pois, se a palavra falada pelos anjos se tornou firme, e toda transgressão e desobediência recebeu justa punição,</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>como escaparemos se negligenciarmos tão grande salvação? Salvação esta que tendo sido anunciada inicialmente pelo Senhor, foi depois confirmada a nós pelos que a ouviram.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Testemunhando Deus juntamente com eles, por meio de sinais, maravilhas e vários milagres e ainda por dons do Espírito Santo, distribuídos de acordo com a Sua vontade.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Pois não foi a anjos que Deus sujeitou o mundo vindouro, do qual estamos falando.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Mas, em certo lugar,  alguém testemunhou, dizendo: "O que é o homem, para que dele Te lembres? Ou o filho do homem, para que o visites?</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Tu o fizeste um pouco menor que os anjos, de glória e de honra o coroaste. [Algumas versões antigas adicionam: "e o constituíste sobre as obras das tuas mãos".]</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Todas as coisas sujeitaste debaixo dos seus pés". Pois ao sujeitar todas as coisas a ele, nada deixou que não lhe fosse sujeito. Porém, agora, ainda não vemos todas as coisas sujeitas a ele.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Contudo, temos visto Aquele que se fez um pouco menor que os anjos, Jesus, por causa do sofrimento da morte, foi coroado de glória e de honra, para que, pela graça de Deus, provasse a morte por todo homem.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Porque convinha a Deus, para quem e por meio de quem todas as coisas existem, conduzindo muitos filhos à glória, aperfeiçoasse o Autor da salvação deles, por meio de sofrimentos.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Pois, tanto o que santifica quanto os que são santificados, todos vêm de uma só fonte, Deus. Por essa razão, Aquele que os santifica não Se envergonha de lhes chamar irmãos.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Ele diz: "Proclamarei o Teu nome para os meus irmãos; cantarei a Teu respeito no meio da congregação".</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>E de novo Ele diz: "Nele confiarei". E novamente: "Veja, aqui estou Eu e os filhos que Deus Me deu".</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Portanto, visto que os filhos de Deus compartilham carne e sangue, Jesus também compartilhou a mesma coisa, ou seja, por meio da morte Ele destruiu aquele que tem o poder da morte, isto é, o diabo.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>E, assim, Ele libertou todos aqueles que, por medo da morte, estavam sujeitos à escravidão por toda a vida.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Pois, certamente, não está preocupado em socorrer aos anjos, mas Ele socorre a descendência de Abraão.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Portanto, foi necessário que Ele fosse como Seus irmãos em todos os sentidos, para que se tornasse o Sumo Sacerdote misericordioso e fiel das coisas de Deus e, assim, fazer propiciação pelos pecados do povo.</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>Como Jesus sofreu, tendo sido tentado, Ele é capaz de ajudar aqueles que também estão sendo tentados.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="HB" data-chapter="2"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="HB" data-chapter="2"
+                                data-total="13" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

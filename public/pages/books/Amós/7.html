@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Amós, 7</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/AM/7. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Amós, <span id="chapter">7</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Isto é o que o Senhor Deus mostrou-me. Eis que Ele formou gafanhotos quando a erva começou a germinar. Eis que essa era a erva serôdia depois da colheita do rei.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Quando eles terminaram de comer a vegetação do solo, então eu disse: "Senhor Yahweh, perdoa, por favor! Jacó é muito pequeno, como sobreviverá?".</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>O <mark>Senhor</mark> cedeu com relação a isso. "Isso não acontecerá", disse Ele.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Isto é o que o Yahweh me mostrou: Eis que o Senhor Yahweh chamou o fogo para julgar. Secou as grandes e profundas águas embaixo da terra e poderia ter devorado o solo também;</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>mas eu disse: "Senhor Yahweh, para, por favor! Jacó é muito pequeno. Como sobreviverá?".</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>O <mark>Senhor</mark> cedeu acerca disso: "Isso também não acontecerá", disse o Senhor Yahweh.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Isto é o que Ele me mostrou: Eis que o Senhor parou ao lado do muro, com um prumo nas Suas mãos.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>O <mark>Senhor</mark> me disse: "Amós, o que vês?". Eu disse: "Um prumo". Então, o Senhor disse: "Olha, colocarei um prumo no meio do Meu povo Israel. Não vou mais poupá-lo.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Os lugares altos de Isaque serão destruídos; os santuários de Israel serão arruinados, e Me levantarei contra a casa de Jeroboão com a espada".</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Então, Amazias, o sacerdote de Betel, enviou mensagem para Jeroboão, rei de Israel: "Amós conspirou contra ti no meio da casa de Israel. A terra não pode suportar todas as suas palavras.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Porque isto é o que Amós disse: 'Jeroboão morrerá pela espada, e Israel certamente será levado ao exílio longe da sua terra'".</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Amazias disse a Amós: "Vidente, vai. Foge de volta para a terra de Judá, come pão lá e profetiza.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Mas não profetizes mais aqui em Betel, porque é o Santuário do rei e a casa real".</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Então, Amós disse a Amazias: "Eu não sou profeta, nem filho de profeta. Sou um vaqueiro e cultivador de sicômoros".</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Mas Yahweh me levou de onde eu estava pastoreando o rebanho e me disse: "Vai, profetiza para o Meu povo Israel".</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Agora, ouve a palavra do <mark>Senhor</mark>. Tu dizes: "Não profetizes contra Israel e não fales contra a casa de Isaque".</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Portanto, isto é o que Yahweh diz: "Tua esposa será prostituta na cidade; teus filhos e tuas filhas cairão pela espada; a tua terra será medida e dividida; tu morrerás numa terra impura e, sem dúvida, Israel irá para o exílio fora da sua terra".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="AM" data-chapter="7"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="AM" data-chapter="7"
+                                data-total="9" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

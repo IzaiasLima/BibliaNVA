@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Isaías, 58</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/IS/58. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Isaías, <span id="chapter">58</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>"Clama bem alto, não te detenhas! Levanta a tua voz como uma trombeta! Declara ao Meu povo a sua transgressão e à casa de Jacó, os seus pecados.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>No entanto, eles ainda Me buscam diariamente e se deleitam em conhecer os Meus caminhos, como uma nação que pratica a justiça e não abandona a Lei do seu Deus. Eles Me pedem por julgamentos retos e têm prazer em se aproximar de Deus.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>E dizem: 'Por que temos jejuado, mas Tu não vês? Por que temos nos humilhado, mas não percebes?'. Vede, no dia do vosso jejum, buscais o vosso próprio prazer e oprimis todos os vossos trabalhadores.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Vede, vós jejuais para contender, brigar e ferir com punho de iniquidade; jejuando como fazes hoje, não tereis a vossa voz ouvida lá no alto.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>É este o jejum que, de fato, Eu escolhi? Um dia para o homem humilhar a si mesmo, para curvar sua cabeça como um junco e deitar em panos de saco e cinzas? Vós, realmente, chamais isso de jejum, de um dia que agrada a Yahweh?</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Não é este o jejum que Eu escolhi, que quebres as cadeias da impiedade, desfaças as cordas da opressão, libertes os oprimidos e despedaces todo o jugo?</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Não é para que dividas o teu pão com o faminto e tragas o pobre e o desabrigado para a tua casa?"  Não é que quando vires alguém nu, vista-o e não te recuses socorrer o próximo?</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Então, a tua luz surgirá como o nascer do sol e a tua cura virá depressa; a tua retidão virá adiante de ti, e a glória do <mark>Senhor</mark> será a tua retaguarda.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Então, tu invocarás e Yahweh te responderá; clamarás e Ele dirá: "Estou aqui". Se arrancares do teu meio o jugo, o dedo acusador e a fala maliciosa,</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>se proveres para o faminto e satisfizeres a alma aflita, então, a tua luz brilhará nas trevas e serás como o meio dia.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Então, Yahweh te guiará continuamente e te satisfará numa terra seca, fortalecerá os teus ossos. Tu serás como um jardim regado e como um manancial, cujas águas jamais faltam.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Alguns reconstruirão as antigas ruínas, tu restaurarás os fundamentos de muitas gerações; serás chamado "o reparador de muro", "o restaurador de ruas para habitação".</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>"Se impedires os teus pés de profanarem o sábado, se não fizeres o que te agrada no Meu santo dia, se tu chamares o sábado de deleite e as coisas do <mark>Senhor</mark> de santas e honradas, se honrares o sábado, deixando os teus próprios negócios, não buscando o teu próprio prazer e não falando palavras vãs,</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>então, terás satisfação em Yahweh; Eu te farei cavalgar sobre os mais altos lugares da terra, e te sustentarei com a herança do teu pai Jacó — pois a boca do <mark>Senhor</mark> falou".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="IS" data-chapter="58"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="IS" data-chapter="58"
+                                data-total="66" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

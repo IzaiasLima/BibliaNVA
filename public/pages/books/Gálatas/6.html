@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Gálatas, 6</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/GL/6. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Gálatas, <span id="chapter">6</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Irmãos, se um homem for pego em alguma transgressão, vós que sois espirituais deveis restaurar esta pessoa com espírito de gentileza; e cuidai de vós mesmos, para que também não venhais a ser tentados.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Carregai os fardos uns dos outros, e assim cumprireis a lei de Cristo.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Pois se alguém pensa ser alguma coisa, quando não é nada, engana-se a si mesmo.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Cada um deve examinar sua própria conduta; então, terá algo apenas em si mesmo para se orgulhar, sem se comparar com qualquer outro.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Pois cada um vai carregar sua própria carga.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Aquele a quem é ensinada a Palavra precisa compartilhar todas as coisas boas com quem o instrui.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Não vos enganeis, de Deus não se zomba. Tudo aquilo que o homem plantar é o que ele também colherá.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Pois aquele que planta para sua própria natureza pecaminosa, colherá destruição; mas aquele que planta para o Espírito, colherá vida eterna do Espírito.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Nós não devemos nos cansar de fazer o bem, pois no tempo certo vamos alcançar a colheita, se não desistirmos.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Assim, enquanto temos oportunidade, façamos o bem a todos, especialmente para aqueles da família da fé.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Vede com que letras grandes eu vos escrevo com minha própria mão.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Aqueles que querem causar uma boa impressão na carne vos obrigam a ser circuncidados, somente para que eles não venham a ser perseguidos pela cruz de Cristo.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Pois nem aqueles que se circuncidam cumprem a Lei; mas eles querem que sejais circuncidados para terem motivo de orgulho na vossa carne.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Que nunca aconteça de eu me orgulhar, exceto da cruz de nosso Senhor Jesus Cristo, por meio do qual o mundo está crucificado para mim, e eu para o mundo.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Pois nem a circuncisão, nem a incircuncisão, é alguma coisa, mas o ser uma nova criação.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>E a todos que vivem de acordo com este padrão, que a paz e a misericórdia sejam sobre eles, e sobre o Israel de Deus.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Que, de agora em diante, ninguém me cause perturbações, pois carrego as marcas de Jesus em meu corpo.</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>Que a graça do nosso Senhor Jesus Cristo seja com o vosso espírito, irmãos. Amém.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="GL" data-chapter="6"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="GL" data-chapter="6"
+                                data-total="6" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

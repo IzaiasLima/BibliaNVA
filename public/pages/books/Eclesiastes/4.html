@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Eclesiastes, 4</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/EC/4. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Eclesiastes, <span id="chapter">4</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Mais uma vez, pensei sobre toda a opressão que ocorre debaixo do sol. Eis as lágrimas das pessoas oprimidas, e elas não tinham ninguém para confortá-las! O poder estava nas mãos de seus opressores, e não havia ninguém para trazer-lhes conforto!</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Logo, considero mais afortunadas as pessoas que já morreram do que aquelas que ainda estão vivas.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>No entanto, mais afortunado do que ambas é aquele que ainda não viveu, aquele que não viu quaisquer dos atos malignos que são cometidos debaixo do sol.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Então, vi que todo ato de fadiga, e todo trabalho habilidoso tornou-se motivo de inveja para o próximo. Isso também é vaidade e como a tentativa de agarrar o vento.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>O tolo fecha suas mãos e não trabalha; então sua própria carne torna-se sua comida.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Mas é melhor uma mão cheia de lucro com trabalho tranquilo, do que duas mãos cheias com o trabalho de tentar agarrar o vento.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Então refleti novamente sobre mais futilidades e mais vaidades que se dissipam sob o sol.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Há o tipo de homem que é solitário. Ele não tem ninguém, nem filho, nem irmão. Não há fim para todo seu trabalho, e seus olhos não ficam satisfeitos com a riqueza obtida. Então, ele questiona: para quem estou trabalhando duramente e me privando do prazer? Isso também é vaidade, uma má situação.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Duas pessoas juntas trabalham melhor que uma; juntas, elas podem obter melhor pagamento pelo seu trabalho.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Pois, se uma cair, a outra pode levantá-la. No entanto, a tristeza segue o que está sozinho; quando ele cai, não há ninguém para levantá-lo.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Se dois se deitarem juntos, eles podem se aquecer, mas como pode um se aquecer sozinho?</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Um homem sozinho pode ser dominado, mas dois podem resistir a um ataque. Uma corda tripla não será facilmente quebrada.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>É melhor ser um jovem pobre, mas sensato, do que um velho rei tolo que não sabe mais ouvir conselhos.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Isso é verdade, mesmo que o jovem se torne rei depois de sair de uma prisão, ou mesmo que ele tenha nascido pobre no seu reino.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Contudo eu vi todos os que estavam vivos e caminhando debaixo do sol, submetendo-se a outro jovem que foi levantado como rei.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Não tem fim o número de pessoas sobre quem o novo rei governa; mas, depois, muitas delas não o exaltarão mais. Certamente, essa situação é vaidade, e como a tentativa de agarrar o vento.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="EC" data-chapter="4"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="EC" data-chapter="4"
+                                data-total="12" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

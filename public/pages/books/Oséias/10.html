@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - Oséias, 10</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/OS/10. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">Oséias, <span id="chapter">10</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Israel é uma videira fértil que dá os seus frutos. Quantos mais seus frutos aumentaram, mais altares multiplicaram. Quanto mais produzia sua terra, mais aumentavam seus altares.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>O coração deles é enganador; agora devem carregar as suas culpas. Yahweh irá destruir seus altares; Ele irá destruir seus pilares.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Pois eles dirão: "Nós não temos rei, porque não tememos a Yahweh. E o rei — o que ele poderia fazer por nós?"</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Eles falam palavras vazias e fazem alianças, jurando falsamente. Então, a justiça brotará como uma erva daninha nos sulcos de um campo.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Os habitantes de Samaria serão atemorizados por causa do bezerro de Bete-Áven. Seu povo lamentará por causa dele, como aqueles sacerdotes idólatras que se regozijavam nele e pelo seu esplendor; porém ele já não existe mais.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Será levado para Assíria como um presente para o grande rei. Efraim será humilhado, e Israel sentirá vergonha do seu ídolo.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>O rei de Samaria será destruído como um pedaço de madeira lançado sobre a água.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Os lugares altos de iniquidade serão destruídos. Este é o pecado de Israel! Espinhos e abrolhos crescerão sobre seus altares. As pessoas dirão às montanhas: "Cobri-nos!", e às colinas: "Caí sobre nós!".</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>"Israel, tu tens pecado desde os dias de Gibeá; ali permaneceste. A guerra não alcançará os filhos da iniquidade em Gibeá?</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Quando Eu desejar, eu os disciplinarei. As nações irão se reunir contra eles  e irão prendê-los por sua dupla iniquidade.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Efraim é uma bezerra domada que gosta de debulhar o grão, por isso colocarei o jugo em seu pescoço. Porei o jugo sobre Efraim; Judá lavrará; Jacó desfará os torrões.</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Semeai para vós justiça, e colhei o fruto da misericórdia. Lavrai o solo da lavoura, porque já é tempo de buscar a Yahweh, até que Ele venha e faça chover justiça sobre vós.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Lavrastes a maldade, colhereis a iniquidade. Comestes o fruto da mentira, porque confiastes nos vossos planos e nos vossos muitos soldados.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Portanto, um tumulto de guerra se levantará no meio do teu povo, e todas as suas fortalezas serão destruídas. Será como Salmã, que destruiu Bete-Arbel no dia da batalha, quando as mães foram despedaçadas com seus filhos.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Assim acontecerá contigo, Betel, por causa da tua iniquidade. Ao romper do dia, o rei de Israel será completamente destruído".</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="OS" data-chapter="10"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="OS" data-chapter="10"
+                                data-total="14" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

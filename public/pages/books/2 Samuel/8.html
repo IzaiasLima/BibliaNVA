@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - 2 Samuel, 8</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/2SM/8. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">2 Samuel, <span id="chapter">8</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Depois disso, aconteceu que Davi atacou os filisteus e os derrotou. Assim, Davi tomou Gate e suas aldeias do controle dos filisteus.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Então, ele derrotou Moabe, fez com que seus homens se deitassem no chão e os mediu com uma corda, dessa forma: duas medidas de corda para matar, e uma medida inteira para manter com vida. Assim, os moabitas tornaram-se servos de Davi e lhe pagaram tributo.</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>Davi, então, derrotou Hadadezer, filho de Reobe, o rei de Zobá, enquanto Hadadezer estava viajando para recuperar o seu domínio ao longo do rio Eufrates.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Davi capturou mil e setecentas carruagens de guerra e vinte mil soldados de infantaria. Davi mutilou todos os cavalos das carruagens, mas reservou um número suficiente deles para cem carruagens.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Quando os sírios de Damasco vieram para ajudar a Hadadezer, rei de Zobá, Davi matou vinte e dois mil sírios.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Então, Davi pôs guarnições na Síria de Damasco, e os sírios tornaram-se servos dele e lhe pagavam tributos. Yahweh deu vitória a Davi onde quer que ele fosse.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Davi tomou os escudos de ouro que estavam sobre os servos Hadadezer e os trouxe a Jerusalém.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>De Betá e de Berotai, cidades de Hadadezer, o rei Davi tomou grande quantidade de bronze.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Quando Toí, rei de Hamate, ouviu que Davi havia derrotado todo o exército de Hadadezer,</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>enviou seu filho Jorão ao rei Davi para saudá-lo e abençoá-lo; porque Davi lutou contra Hadadezer e o derrotou. Também porque Hadadezer havia declarado guerra contra Toí. Jorão trouxe consigo objetos de prata, ouro e bronze.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>O rei Davi consagrou esses objetos a Yahweh, bem como a prata e o ouro de todas as nações que ele conquistou —</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>da Síria, de Moabe, de Amom, dos filisteus e de Amaleque, juntamente com todos os bens saqueados de Hadadezer, filho de Reobe, o rei de Zobá.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>O nome de Davi ficou bem conhecido após retornar, com seus dezoito mil homens, da conquista dos sírios no vale do Sal.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>Ele colocou guarnições em Edom e todos os edomitas tornaram-se servos dele. Yahweh dava vitória a Davi por onde ele ia.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>Davi reinou sobre todo o Israel; ele governava com justiça e equidade sobre todo o seu povo.</span></p> 
+<p class="verse "><span class="number ">16</span>&ensp;<span>Joabe, filho de Zeruia, era o comandante do exército; e Jeosafá, filho de Ailude, era cronista.</span></p> 
+<p class="verse "><span class="number ">17</span>&ensp;<span>Zadoque, filho de Aitube, e Aimeleque, filho de Abiatar, eram sacerdotes; Seraías era escriba;</span></p> 
+<p class="verse "><span class="number ">18</span>&ensp;<span>Benaia, filho de Joiada, liderava sobre os quereteus e peleteus; e os filhos de Davi eram conselheiros do rei.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="2SM" data-chapter="8"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="2SM" data-chapter="8"
+                                data-total="24" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>

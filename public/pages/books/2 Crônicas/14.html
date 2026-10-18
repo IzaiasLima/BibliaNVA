@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bíblia NVA - 2 Crônicas, 14</title>
+        <link rel="manifest" href="/pages/js/manifest.json">
+        <link rel="icon" href="/pages/icons/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/pages/css/animate.min.css">
+        <link rel="stylesheet" href="/pages/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+
+                <!-- Espelho do template "chapter-template" (bible.html) já renderizado
+                     com a resposta de GET /api/2CR/14. -->
+                <div id="data-render">
+                    <div id="chapter-render">
+
+                        <div class="header">
+                            <!-- reexibe os capítulos -->
+                            <a href="/pages/books/index.html">
+                                <img src="/pages/icons/chevron-left.svg" class="icon">
+                            </a>
+
+                            <!-- reexibe a lista de livros -->
+                            <a href="/pages/books/index.html">
+                                <h3 class="title">2 Crônicas, <span id="chapter">14</span></h3>
+                            </a>
+
+                            <div class="icon-alpha">
+                                <a onclick="decFontSize()">
+                                    <img src="/pages/icons/text-decrease.svg" class="icon text-decrease">
+                                </a>
+                                <a onclick="incFontSize()">
+                                    <img src="/pages/icons/text-increase.svg" class="icon text-increase">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="verses">
+                            <p class="title"></p>
+                            <p class="verse "><span class="number ">1</span>&ensp;<span>Abias descansou com seus antepassados, e eles o enterraram na cidade de Davi. Asa, seu filho, se tornou rei em seu lugar. Em seus dias a terra esteve em paz por dez anos.</span></p> 
+<p class="verse "><span class="number ">2</span>&ensp;<span>Asa fez o que era bom e certo aos olhos do <mark>Senhor</mark>, seu Deus,</span></p> 
+<p class="verse "><span class="number ">3</span>&ensp;<span>pois ele removeu os altares estrangeiros e os lugares altos; ele derrubou as colunas de pedra e cortou os postes de Aserá.</span></p> 
+<p class="verse "><span class="number ">4</span>&ensp;<span>Ele ordenou Judá a buscar Yahweh, o Deus de seus antepassados, e a obedecer as leis e os mandamentos.</span></p> 
+<p class="verse "><span class="number ">5</span>&ensp;<span>Ele também removeu de todas as cidades de Judá os lugares altos e altares de incenso. O reino estava em paz sob seu governo.</span></p> 
+<p class="verse "><span class="number ">6</span>&ensp;<span>Ele construiu cidades fortificadas em Judá, pois a terra estava em paz, e ele não teve guerra naqueles anos, pois Yahweh deu-lhe paz.</span></p> 
+<p class="verse "><span class="number ">7</span>&ensp;<span>Asa disse a Judá: "Vamos construir estas cidades e fazer muros ao redor delas, torres, portões e trancas; a terra ainda é nossa, pois nós buscamos Yahweh, nosso Deus. Nós O buscamos, e Ele nos deu paz de todos os lados". Então eles construíram e tiveram êxito.</span></p> 
+<p class="verse "><span class="number ">8</span>&ensp;<span>Asa tinha um exército que carregava escudos e lanças; de Judá ele tinha trezentos mil homens, e de Benjamim, duzentos e oitenta mil homens que carregavam escudos e atiravam com arcos. Todos esses eram homens corajosos e fortes.</span></p> 
+<p class="verse "><span class="number ">9</span>&ensp;<span>Zerá, o etíope, veio contra eles com um exército de um milhão de soldados e trezentas carruagens, e chegou a Maressa.</span></p> 
+<p class="verse "><span class="number ">10</span>&ensp;<span>Então, Asa foi ao encontro dele, e eles estabeleceram as linhas de batalha no vale de Zefatá em Maressa.</span></p> 
+<p class="verse "><span class="number ">11</span>&ensp;<span>Asa clamou a Yahweh, seu Deus, e disse: "Yahweh, não existe ninguém como Tu para socorrer os que não tem força, quando este está diante de muitos. Ajuda-nos, Yahweh, nosso Deus, pois confiamos em Ti, e em Teu nome viemos contra esse imenso número. Yahweh, Tu és nosso Deus; não deixa nenhum homem derrotar-Te".</span></p> 
+<p class="verse "><span class="number ">12</span>&ensp;<span>Então, Yahweh derrotou os etíopes diante de Asa e Judá; e os etíopes fugiram.</span></p> 
+<p class="verse "><span class="number ">13</span>&ensp;<span>Asa, e os seus soldados, os perseguiram até Gerar. Caíram tantos etíopes que eles não puderam se recuperar, pois eles foram completamente destruídos diante do <mark>Senhor</mark> e de Seu exército. O exército recolheu muito despojo.</span></p> 
+<p class="verse "><span class="number ">14</span>&ensp;<span>O exército destruiu todas as vilas ao redor de Gerar, pois o terror do <mark>Senhor</mark> veio sobre os habitantes. Também saqueou todas as vilas, pois havia muito despojo nelas.</span></p> 
+<p class="verse "><span class="number ">15</span>&ensp;<span>O exército também destruiu as tendas nômades; eles levaram ovelhas em abundância, assim como camelos, e, então, eles retornaram a Jerusalém.</span></p> 
+                        </div>
+
+                        <!-- Registrar que o capitulo foi lido -->
+                        <div id="btn-position" class="animate__animated animate__faster">
+                            <button id="btn-read" data-book="2CR" data-chapter="14"
+                                onclick="updateReadChapters(this.dataset.book, this.dataset.chapter)">
+                                Registrar como lido
+                            </button>
+                        </div>
+
+                        <nav class="navigation">
+                            <!-- previous chapter -->
+                            <div id="nav-arrow" class="chevron" data-book="2CR" data-chapter="14"
+                                data-total="36" onclick="navigation(-1)">
+                                &nbsp;
+                                <img src="/pages/icons/chevron-left.svg">
+                                &nbsp;
+                            </div>
+
+                            <!-- next chapter -->
+                            <div class="chevron" onclick="navigation(1)">
+                                &nbsp;
+                                <img class="chevron" src="/pages/icons/chevron-right.svg">
+                                &nbsp;
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-position" class="animate__animated animate__faster">
+                <div class="search-container">
+                    <input id="search" type="text" placeholder="Informe uma ou mais palavras.">
+                </div>
+            </div>
+
+            <div id="toast" class="animate__animated animate__faster">
+                <!-- Hook para exibir mensagem de erro -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <a href="/pages/books/index.html">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                </a>
+
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+
+                <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
+
+                <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
+            </div>
+        </footer>
+
+        <script src="/pages/js/functions.js"></script>
+        <script src="/pages/js/htmx.min.js"></script>
+        <script src="/pages/js/mustache.min.js"></script>
+        <script src="/pages/js/swiped.js"></script>
+
+    </body>
+
+</html>
