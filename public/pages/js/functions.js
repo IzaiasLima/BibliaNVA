@@ -48,6 +48,26 @@ document.addEventListener('htmx:responseError', evt => {
     }
 });
 
+// Resultado da busca → capítulo: o link já envia ?verse= e a API marca o
+// versículo com .strong, mas o swap (show:window:top) deixava a tela no topo.
+// Depois que o render assenta, rola até o versículo destacado — a mesma
+// experiência dos favoritos (highlightVerse na página estática).
+document.addEventListener('htmx:afterSettle', () => {
+    const rendered = document.getElementById('data-render');
+    if (!rendered) return;
+
+    const chapter = document.getElementById('chapter-render');
+    if (!chapter || !rendered.contains(chapter)) return;
+
+    const strong = rendered.querySelector('p.verse.strong');
+    if (!strong) return;
+
+    // setTimeout(0): o modificador show:window:top do hx-swap executa logo
+    // após este evento, dentro da mesma tarefa de settle — sem adiar, ele
+    // sobrescreveria a rolagem e a tela ficaria no topo.
+    setTimeout(() => strong.scrollIntoView({ block: 'center', behavior: 'auto' }), 0);
+});
+
 // document.addEventListener('htmx:beforeRequest', ev => {
 //     showSpinner();
 // });

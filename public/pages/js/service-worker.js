@@ -31,7 +31,10 @@
 // (#search-position) e o functions.js passa a carregar a extensão
 // client-side-templates sob demanda — sem o bump, o cache-first congelaria
 // o functions.js antigo e o ícone de busca seguiria quebrado.
-const CACHE_VERSION = 'v12';
+// v13: clicar num resultado da busca agora rola até o versículo destacado
+// (htmx:afterSettle em functions.js) — sem o bump, o cache-first congelaria
+// o functions.js antigo.
+const CACHE_VERSION = 'v13';
 const CACHE_API = `biblia-api-${CACHE_VERSION}`;
 const CACHE_STATIC = `biblia-static-${CACHE_VERSION}`;
 
