@@ -257,6 +257,7 @@ def biblie_search_words(words: str, db: Session = Depends(get_db)):
             bookName=d.BooksORM.book_name,
             bookAbbr=d.BooksORM.book_abbr,
             words=words,
+            strong="highlight" if terms else None,
         )
         for d in data
     ]

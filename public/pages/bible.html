@@ -18,7 +18,7 @@
         event.detail.headers['Content-Type']='application/x-www-form-urlencoded; 
         charset=UTF-8'" />
         <div class="container">
-            <div class="content">
+            <div class="content" onclick="window.location='/pages/books/index.html'">
 
                 <!-- Aguardando carregamento... -->
                 <!-- <div id="spinner" class="show">
@@ -309,10 +309,10 @@
         <footer>
             <div class="footer">
                 <a href="/pages/books/index.html">
-                    <img class="icon" src="/pages/icons/book.svg" alt="livros">
+                    <img class="icon" src="/pages/icons/book.svg" alt="livros" onerror="this.style.display='none'">
                 </a>
 
-                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search">
+                <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search" onerror="this.style.display='none'">
 
                 <img class="icon" src="/pages/icons/last-chapter.svg" onclick="getLastChapter()" alt="last chapter">
 
