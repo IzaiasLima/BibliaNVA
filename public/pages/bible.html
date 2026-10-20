@@ -18,7 +18,7 @@
         event.detail.headers['Content-Type']='application/x-www-form-urlencoded; 
         charset=UTF-8'" />
         <div class="container">
-            <div class="content" onclick="window.location='/pages/books/index.html'">
+            <div class="content">
 
                 <!-- Aguardando carregamento... -->
                 <!-- <div id="spinner" class="show">
@@ -308,9 +308,9 @@
         </div>
         <footer>
             <div class="footer">
-                <a href="/pages/books/index.html">
+                <!-- <a href="/pages/books/index.html">
                     <img class="icon" src="/pages/icons/book.svg" alt="livros" onerror="this.style.display='none'">
-                </a>
+                </a> -->
 
                 <img class="icon" src="/pages/icons/search.svg" onclick="searchShow()" alt="search" onerror="this.style.display='none'">
 
@@ -318,12 +318,12 @@
 
                 <img class="icon" src="/pages/icons/favorites.svg" onclick="getFavorites()" alt="favorites">
 
-                <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+                <!-- <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line"> -->
             </div>
         </footer>
 
         <!-- Painel do modo off-line: download e exclusão do conteúdo para uso sem conexão -->
-        <div id="offline-panel" class="animate__animated animate__faster">
+        <!-- <div id="offline-panel" class="animate__animated animate__faster">
             <div class="offline-header">
                 <span class="offline-title">Modo off-line</span>
                 <span id="offline-close" class="offline-close" onclick="toggleOfflinePanel()">&times;</span>
@@ -342,7 +342,7 @@
                         dados</button>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Confirmação antes de excluir o conteúdo baixado para uso off-line -->
         <div id="confirm-offline-delete" class="confirm-overlay hidden">

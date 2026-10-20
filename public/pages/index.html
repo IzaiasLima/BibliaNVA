@@ -18,7 +18,7 @@
         event.detail.headers['Content-Type']='application/x-www-form-urlencoded; 
         charset=UTF-8'" />
     <div class="container home">
-        <div class="hero">
+        <div class="hero" onclick="window.location='/pages/books/index.html'">
 
             <div class="logo">
                 <h1 class="title">Biblia NVA</h1>
@@ -59,8 +59,32 @@
         </div>
     </div>
 
+    <!-- Painel do modo off-line: download e exclusão do conteúdo para uso sem conexão -->
+        <div id="offline-panel" class="animate__animated animate__faster">
+            <div class="offline-header">
+                <span class="offline-title">Modo off-line</span>
+                <span id="offline-close" class="offline-close" onclick="toggleOfflinePanel()">&times;</span>
+            </div>
+
+            <div class="offline-body">
+                <p id="offline-status">Verificando dados armazenados...</p>
+                <div id="offline-progress">
+                    <div id="offline-progress-bar"></div>
+                </div>
+                <div class="offline-actions">
+                    <button id="btn-offline-download" onclick="startOfflineDownload()">Baixar Bíblia</button>
+                    <button id="btn-offline-cancel" class="hidden" onclick="cancelOfflineDownload()">Cancelar</button>
+                    <button id="btn-offline-delete" class="offline-danger hidden"
+                        onclick="confirmDeleteOfflineData()">Limpar
+                        dados</button>
+                </div>
+            </div>
+        </div>
+
     <footer>
         <div class="footer">
+            <img class="icon" src="/pages/icons/download.svg" onclick="toggleOfflinePanel()" alt="modo off-line">
+         
             <a href="/pages/books/index.html">
                 <img class="icon" src="./icons/book.svg" onclick="showSpinner()" alt="livros">
             </a>
@@ -68,6 +92,7 @@
             <a href="/pages/about.html">
                 <img class="icon" src="./icons/license.svg" alt="license">
             </a>
+
         </div>
     </footer>
     </div>
