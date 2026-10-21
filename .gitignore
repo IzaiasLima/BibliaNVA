@@ -17,10 +17,10 @@ wheels/
 
 # Environments
 .env
+.vercel
 
 # Ambiente de IA
 .freebuff
 
 # Certificados locais (mkcert) — a chave privada NUNCA deve ser commitada
 *.pem
-.vercel
